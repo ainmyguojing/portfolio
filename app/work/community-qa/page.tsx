@@ -396,13 +396,14 @@ export default function CommunityQA() {
         <Label>Key Interaction Decisions</Label>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 mt-2">
           {[
-            { q: "Should users be able to change location while asking?", detail: "Removed manual location editing — location is inferred automatically." },
-            { q: "What is the right interaction for business tagging?", detail: "Used inline tagging to keep the flow focused and avoid breaking the user's train of thought." },
-            { q: "When should business chips appear?", detail: "Show business chips only before the user has tagged a business — only needed as a starting point." },
-          ].map(({ q, detail }) => (
+            { q: "Should users be able to change location while asking?", detail: "Removed manual location editing — location is inferred automatically.", img: "/images/initiative-3-mocks-3-4.png" },
+            { q: "What is the right interaction for business tagging?", detail: "Used inline tagging to keep the flow focused and avoid breaking the user's train of thought.", img: "/images/initiative-3-mocks-3-5.png" },
+            { q: "When should business chips appear?", detail: "Show business chips only before the user has tagged a business — only needed as a starting point.", img: "/images/initiative-3-mocks-3-6.png" },
+          ].map(({ q, detail, img }) => (
             <div key={q} className="rounded-xl border border-neutral-200 p-5">
               <p className="text-sm font-semibold text-neutral-700 mb-2">{q}</p>
-              <p className="text-sm text-neutral-500">{detail}</p>
+              <p className="text-sm text-neutral-500 mb-4">{detail}</p>
+              <Image src={img} alt={q} width={400} height={400} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             </div>
           ))}
         </div>
