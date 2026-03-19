@@ -424,19 +424,33 @@ export default function CommunityQA() {
         <TwoCol
           left={<>
             <p className="text-sm font-semibold text-neutral-700 mb-2">Option A · Expandable Interaction Row</p>
-            <BulletList items={[
+            <BulletList className="mb-4" items={[
               "Built with future growth in mind",
               "Supports future interaction expansion",
               "Feels sparse in the current state with reactions only",
             ]} />
+            <div className="not-prose flex gap-2">
+              <figure className="w-1/2">
+                <Image src="/images/initiative-4-mocks-4-1.png" alt="Current state - reaction only" width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+                <figcaption className="text-xs text-neutral-400 text-center mt-2">🚫 Current state · Reaction only</figcaption>
+              </figure>
+              <figure className="w-1/2">
+                <Image src="/images/initiative-4-mocks-4-2.png" alt="Future state - reaction and reply" width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+                <figcaption className="text-xs text-neutral-400 text-center mt-2">✅ Future state · Reaction + Reply</figcaption>
+              </figure>
+            </div>
           </>}
           right={<>
             <p className="text-sm font-semibold text-neutral-700 mb-2">Option B · Inline Placement <span className="text-xs font-normal text-neutral-400">(Final)</span></p>
-            <BulletList items={[
+            <BulletList className="mb-4" items={[
               "Optimized for the current experience",
               "Keeps the layout compact and natural",
               "Avoids introducing empty or unused space",
             ]} />
+            <div className="not-prose flex gap-2">
+              <Image src="/images/initiative-4-mocks-4-3.png" alt="Option B - state 1" width={400} height={800} className="w-1/2 rounded-lg" style={{ objectFit: "contain" }} />
+              <Image src="/images/initiative-4-mocks-4-4.png" alt="Option B - state 2" width={400} height={800} className="w-1/2 rounded-lg" style={{ objectFit: "contain" }} />
+            </div>
           </>}
         />
         <Label>Impact</Label>
