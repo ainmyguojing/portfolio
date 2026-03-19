@@ -148,9 +148,17 @@ export default function CommunityQA() {
           ))}
         </div>
         <Label>Design Foundation</Label>
-        <ImageWithCaption src="/images/vision-diagram.png" alt="User roles and key touchpoints" caption="User roles and key touchpoints" />
-        <p className="text-sm text-neutral-600">
+        <p className="text-sm text-neutral-600 mb-6">
           Q&amp;A as a complementary layer — extending search and reviews rather than competing with them.
+        </p>
+        <Label>Key surfaces across the journey</Label>
+        <p className="text-sm text-neutral-600 mb-6">
+          This phase established a shared direction for the product: Q&amp;A as a complementary layer. It should extend search and reviews rather than competing with them.
+        </p>
+        <ImageWithCaption src="/images/vision-diagram.png" alt="User roles and key touchpoints" caption="User roles and key touchpoints" />
+        <Label>Which user flows to focus on?</Label>
+        <p className="text-sm text-neutral-600">
+          A key goal of the vision work was to surface the gaps between what Yelp currently offered and what users actually needed. The asking journey illustrates this most clearly. It&apos;s where unmet intent is most visible. I focused on two asking flows in the vision: search and AI chat. Here I&apos;ll use search as the example, since it represents the highest volume entry point for unanswered questions.
         </p>
       </Card>
 
