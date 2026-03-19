@@ -296,6 +296,12 @@ export default function CommunityQA() {
             ]} />
           </>}
         />
+        <Label>Key Design Moves</Label>
+        <BulletList className="mb-6" items={[
+          "Dynamic prompt suggestions",
+          "Inline clarification cues",
+          "Structured composition flow with progressive guidance",
+        ]} />
         <Label>Key Interaction Decisions</Label>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 mt-2">
           {[
