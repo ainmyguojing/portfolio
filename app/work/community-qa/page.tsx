@@ -4,6 +4,10 @@ export const metadata = {
   title: "Community Q&A — Jing Guo",
 };
 
+function SectionDivider() {
+  return <div style={{ height: 3, background: "var(--accent)", borderRadius: 2, margin: "3rem 0" }} />;
+}
+
 export default function CommunityQA() {
   return (
     <CaseStudyLayout
@@ -19,6 +23,8 @@ export default function CommunityQA() {
         and a data scientist. I shaped the product strategy, conducted all research, and owned every
         design decision from early concept through launch.
       </p>
+
+      <SectionDivider />
 
       <h2>01 — Context &amp; Opportunity</h2>
       <p>
@@ -38,6 +44,8 @@ export default function CommunityQA() {
           Add a layer of knowledge that works alongside reviews, not in competition with them.
         </li>
       </ul>
+
+      <SectionDivider />
 
       <h2>02 — Product Evolution Strategy</h2>
       <p>
@@ -117,6 +125,8 @@ export default function CommunityQA() {
         <li><strong>Channel expansion:</strong> Expanding Q&amp;A to Web and Android, introducing email and push notifications, adding more entry points to improve discoverability.</li>
         <li><strong>Ecosystem building:</strong> Lightweight reactions to close the loop, establishing the Community Q&amp;A Hub as a central destination.</li>
       </ul>
+
+      <SectionDivider />
 
       <h2>03 — Selected Design Initiatives from Stage 3</h2>
       <p>
@@ -246,6 +256,8 @@ export default function CommunityQA() {
         <li>Reinforced participation by giving contributors a signal that their answers were valued</li>
       </ul>
 
+      <SectionDivider />
+
       <h2>04 — Outcome &amp; Impact</h2>
       <p>
         Community Q&amp;A launched as a new content type on Yelp — and the results showed it was
@@ -266,6 +278,8 @@ export default function CommunityQA() {
           future teams a reusable foundation to build on.
         </li>
       </ul>
+
+      <SectionDivider />
 
       <h2>Reflections</h2>
       <p>
