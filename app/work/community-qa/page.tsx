@@ -123,11 +123,18 @@ export default function CommunityQA() {
           overlapping with reviews or adding noise instead of value.
         </p>
         <Label>Key Design Questions</Label>
-        <BulletList className="mb-6" items={[
-          "How should Q&A fit into Yelp? How can it integrate without becoming a separate system?",
-          "Who participates? Who asks questions, who answers them, and how do people move between reading and contributing?",
-          "How does intent become a question? How does a broad intent, such as searching, turn into a specific question?",
-        ]} />
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 mt-2">
+          {[
+            { q: "How should Q&A fit into Yelp?", detail: "How can it integrate without becoming a separate system?" },
+            { q: "Who participates?", detail: "Who asks questions, who answers them, and how do people move between reading and contributing?" },
+            { q: "How does intent become a question?", detail: "How does a broad intent, such as searching, turn into a specific question?" },
+          ].map(({ q, detail }) => (
+            <div key={q} className="rounded-xl border border-neutral-200 p-5">
+              <p className="text-sm font-semibold text-neutral-700 mb-2">{q}</p>
+              <p className="text-sm text-neutral-500">{detail}</p>
+            </div>
+          ))}
+        </div>
         <Label>Design Foundation</Label>
         <p className="text-sm text-neutral-600">
           Q&amp;A as a complementary layer — extending search and reviews rather than competing with them.
