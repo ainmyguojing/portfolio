@@ -448,8 +448,14 @@ export default function CommunityQA() {
               "Avoids introducing empty or unused space",
             ]} />
             <div className="not-prose flex gap-2">
-              <Image src="/images/initiative-4-mocks-4-3.png" alt="Option B - state 1" width={400} height={800} className="w-1/2 rounded-lg" style={{ objectFit: "contain" }} />
-              <Image src="/images/initiative-4-mocks-4-4.png" alt="Option B - state 2" width={400} height={800} className="w-1/2 rounded-lg" style={{ objectFit: "contain" }} />
+              <figure className="w-1/2">
+                <Image src="/images/initiative-4-mocks-4-3.png" alt="Current state - reaction only" width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+                <figcaption className="text-xs text-neutral-400 text-center mt-2">✅ Current state · Reaction only</figcaption>
+              </figure>
+              <figure className="w-1/2">
+                <Image src="/images/initiative-4-mocks-4-4.png" alt="Future state - reaction and reply" width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+                <figcaption className="text-xs text-neutral-400 text-center mt-2">🚫 Future state · Reaction + Reply</figcaption>
+              </figure>
             </div>
           </>}
         />
