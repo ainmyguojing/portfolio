@@ -173,7 +173,7 @@ export default function CommunityQA() {
           Once we confirmed genuine demand, the challenge shifted from proving the concept to ensuring
           the system could grow coherently across surfaces.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
             {
               label: "Friction Reduction",
@@ -188,7 +188,7 @@ export default function CommunityQA() {
               items: ["Lightweight reactions to close the loop", "Establishing the Community Q&A Hub as a central destination"],
             },
           ].map(({ label, items }) => (
-            <div key={label}>
+            <div key={label} className="rounded-xl border border-neutral-200 p-5">
               <Label>{label}</Label>
               <BulletList items={items} />
             </div>
