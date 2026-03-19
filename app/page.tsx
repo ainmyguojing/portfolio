@@ -1,101 +1,156 @@
-import Image from "next/image";
+"use client";
+
+import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
+import { useRef } from "react";
+
+const HOVER = { scale: 1.012, boxShadow: "0 2px 12px rgba(0,0,0,0.03)" };
+const HOVER_SM = { scale: 1.018, boxShadow: "0 2px 12px rgba(0,0,0,0.03)" };
+const HOVER_TRANSITION = { duration: 0.25, ease: [0.2, 0.8, 0.2, 1] as const };
+
+const featured = {
+  title: "Community Q&A",
+  description:
+    "Designed and scaled a 0→1 community-driven contribution model across multiple product surfaces at Yelp. Q&A volume reached 10% of Yelp's review volume by Q1 2026.",
+  tags: ["0→1", "Community", "Scale"],
+  href: "/work/community-qa",
+};
+
+const projects = [
+  {
+    title: "Recognition & Motivation System",
+    description:
+      "Reward and feedback systems that form contribution and engagement behaviors — closing the loop between action and identity.",
+    tags: ["Engagement", "Systems"],
+    href: "/work/recognition",
+  },
+  {
+    title: "Elite Ecosystem Experiences",
+    description:
+      "Awareness campaigns, nomination flows, and ecosystem experiences reinforcing belonging and long-term retention.",
+    tags: ["Community", "Campaigns"],
+    href: "/work/elite",
+  },
+  {
+    title: "Year on Yelp",
+    description:
+      "Reflection-driven experiences that reinforce user identity through personalized annual summaries.",
+    tags: ["Identity", "Engagement"],
+    href: "/work/year-on-yelp",
+  },
+];
+
+function ArrowIcon({ size = "md" }: { size?: "md" | "sm" }) {
+  const cls = size === "sm" ? "w-3.5 h-3.5 group-hover:translate-x-0.5" : "w-4 h-4 group-hover:translate-x-1";
+  return (
+    <svg className={`${cls} transition-transform duration-200`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+    </svg>
+  );
+}
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollY } = useScroll();
+  const circleY = useTransform(scrollY, [0, 400], [0, -700]);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div ref={containerRef} className="min-h-screen pt-14 overflow-x-hidden">
+
+      {/* Yellow circle */}
+      <motion.div
+        className="pointer-events-none select-none fixed z-0 rounded-full"
+        style={{
+          width: "66vw", height: "66vw",
+          background: "var(--accent)",
+          top: 0, left: 0,
+          translateX: "calc(-38% + 300px)",
+          translateY: circleY,
+          marginTop: "-320px",
+        }}
+        animate={{ scale: [1, 1.07, 1] }}
+        transition={{ scale: { duration: 5, repeat: Infinity, ease: "easeInOut" } }}
+      />
+
+      {/* Hero */}
+      <section className="relative z-10 max-w-[82vw] mx-auto pt-20 pb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
+        >
+          <h1 className="text-7xl sm:text-8xl text-neutral-900 leading-none tracking-tight mb-6">
+            Hello,<br />I&apos;m Jing.
+          </h1>
+          <p className="text-xl text-neutral-900 leading-relaxed max-w-xl">
+            Lead Product Designer at <span className="font-medium">Yelp</span>, focused on user
+            contribution, engagement, and community ecosystems at scale.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* Projects */}
+      <section className="relative z-10 max-w-[82vw] mx-auto pb-24 space-y-4">
+        <motion.p
+          className="section-label mb-5"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+        >
+          Selected Work · Yelp
+        </motion.p>
+
+        {/* Featured card */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
+        >
+          <Link href={featured.href} className="group block">
+            <motion.div className="card p-10" whileHover={HOVER} transition={HOVER_TRANSITION}>
+              <div className="flex justify-end mb-6 gap-2">
+                {featured.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
+              </div>
+              <h2 className="text-3xl tracking-tight mb-3 leading-tight">
+                <span className="title-highlight px-2">{featured.title}</span>
+              </h2>
+              <p className="text-base text-neutral-600 leading-relaxed mb-8 max-w-2xl">
+                {featured.description}
+              </p>
+              <span className="cta-link">View case study <ArrowIcon /></span>
+            </motion.div>
+          </Link>
+        </motion.div>
+
+        {/* Small cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {projects.map((project, i) => (
+            <motion.div
+              key={project.href}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.45, delay: i * 0.07, ease: [0.2, 0.8, 0.2, 1] }}
+            >
+              <Link href={project.href} className="group block h-full">
+                <motion.div className="card h-full p-6 flex flex-col" whileHover={HOVER_SM} transition={HOVER_TRANSITION}>
+                  <div className="flex justify-end mb-4 gap-1.5">
+                    {project.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
+                  </div>
+                  <h2 className="text-base text-neutral-900 mb-2 leading-snug">
+                    <span className="title-highlight px-1.5">{project.title}</span>
+                  </h2>
+                  <p className="text-sm text-neutral-600 leading-relaxed flex-1 mb-5">
+                    {project.description}
+                  </p>
+                  <span className="cta-link-sm">View case study <ArrowIcon size="sm" /></span>
+                </motion.div>
+              </Link>
+            </motion.div>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
     </div>
   );
 }

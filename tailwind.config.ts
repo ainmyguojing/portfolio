@@ -9,10 +9,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        accent: "#FFFF05",
+      },
+      boxShadow: {
+        "card-hover": "0 2px 12px rgba(0,0,0,0.03)",
+      },
+      transitionTimingFunction: {
+        snappy: "cubic-bezier(.2,.8,.2,1)",
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 } satisfies Config;
