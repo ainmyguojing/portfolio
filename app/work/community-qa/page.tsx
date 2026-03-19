@@ -283,7 +283,7 @@ export default function CommunityQA() {
           "Aligned the experience with how people think about search, so the transition felt natural",
           "Shifted the experience from passively browsing results to actively starting a conversation",
         ]} />
-        <div className="not-prose flex items-center gap-4 mb-6" style={{ width: "60%" }}>
+        <div className="not-prose flex items-center justify-center gap-4 mb-6" style={{ width: "60%", margin: "0 auto 1.5rem" }}>
           <figure className="flex-1">
             <Image src="/images/initiative-1-mocks-1-1.png" alt="Original design" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             <figcaption className="text-xs text-neutral-400 text-center mt-2">Original design</figcaption>
@@ -326,18 +326,24 @@ export default function CommunityQA() {
           "Added Q&A hub entry points across key surfaces — Home, Yelp Assistant, Business pages, and more",
           "Organized questions geo-based to surface locally relevant content",
         ]} />
-        <div className="not-prose grid grid-cols-4 gap-3 mb-6">
-          {[
-            { src: "/images/initiative-2-mocks-2-1.png", caption: "Home entry point" },
-            { src: "/images/initiative-2-mocks-2-2.png", caption: "Yelp Assistant entry point" },
-            { src: "/images/initiative-2-mocks-2-3.png", caption: "Business page entry point" },
-            { src: "/images/initiative-2-mocks-2-4.png", caption: "Geo based question hub" },
-          ].map(({ src, caption }) => (
-            <figure key={src}>
-              <Image src={src} alt={caption} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-              <figcaption className="text-xs text-neutral-400 text-center mt-2">{caption}</figcaption>
-            </figure>
-          ))}
+        <div className="not-prose flex items-center justify-center gap-3 mb-6">
+          <div className="flex gap-3 items-end" style={{ width: "80%" }}>
+            {[
+              { src: "/images/initiative-2-mocks-2-1.png", caption: "Home entry point" },
+              { src: "/images/initiative-2-mocks-2-2.png", caption: "Yelp Assistant entry point" },
+              { src: "/images/initiative-2-mocks-2-3.png", caption: "Business page entry point" },
+            ].map(({ src, caption }) => (
+              <figure key={src} className="flex-1">
+                <Image src={src} alt={caption} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+                <figcaption className="text-xs text-neutral-400 text-center mt-2">{caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+          <img src="/images/arrow.svg" alt="arrow" className="w-6 shrink-0" />
+          <figure style={{ width: "110%" }}>
+            <Image src="/images/initiative-2-mocks-2-4.png" alt="Geo based question hub" width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Geo based question hub</figcaption>
+          </figure>
         </div>
         <Label>Impact</Label>
         <BulletList items={[
