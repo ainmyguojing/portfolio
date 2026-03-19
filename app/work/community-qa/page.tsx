@@ -327,7 +327,7 @@ export default function CommunityQA() {
           "Organized questions geo-based to surface locally relevant content",
         ]} />
         <div className="not-prose flex items-center justify-center gap-3 mb-6">
-          <div className="flex gap-3 items-end" style={{ width: "80%" }}>
+          <div className="flex gap-3 items-end" style={{ flex: 3 }}>
             {[
               { src: "/images/initiative-2-mocks-2-1.png", caption: "Home entry point" },
               { src: "/images/initiative-2-mocks-2-2.png", caption: "Yelp Assistant entry point" },
@@ -340,7 +340,7 @@ export default function CommunityQA() {
             ))}
           </div>
           <img src="/images/arrow.svg" alt="arrow" className="w-6 shrink-0" />
-          <figure style={{ width: "110%" }}>
+          <figure style={{ flex: "1.2" }}>
             <Image src="/images/initiative-2-mocks-2-4.png" alt="Geo based question hub" width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             <figcaption className="text-xs text-neutral-400 text-center mt-2">Geo based question hub</figcaption>
           </figure>
