@@ -297,11 +297,18 @@ export default function CommunityQA() {
           </>}
         />
         <Label>Key Interaction Decisions</Label>
-        <BulletList className="mb-6" items={[
-          "Should users be able to change location while asking? → Removed manual location editing — location is inferred automatically.",
-          "What is the right interaction for business tagging? → Used inline tagging to keep the flow focused and avoid breaking the user's train of thought.",
-          "When should business chips appear? → Show business chips only before the user has tagged a business — only needed as a starting point.",
-        ]} />
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 mt-2">
+          {[
+            { q: "Should users be able to change location while asking?", detail: "Removed manual location editing — location is inferred automatically." },
+            { q: "What is the right interaction for business tagging?", detail: "Used inline tagging to keep the flow focused and avoid breaking the user's train of thought." },
+            { q: "When should business chips appear?", detail: "Show business chips only before the user has tagged a business — only needed as a starting point." },
+          ].map(({ q, detail }) => (
+            <div key={q} className="rounded-xl border border-neutral-200 p-5">
+              <p className="text-sm font-semibold text-neutral-700 mb-2">{q}</p>
+              <p className="text-sm text-neutral-500">{detail}</p>
+            </div>
+          ))}
+        </div>
         <Label>Impact</Label>
         <BulletList items={[
           "Improved the quality and relevance of replies by grounding them in specific businesses",
