@@ -45,7 +45,7 @@ function SideIndex({ sections }: { sections: Section[] }) {
 
   useEffect(() => {
     const getActive = () => {
-      const threshold = window.innerHeight * 0.3;
+      const threshold = window.innerHeight * 0.4;
       let current = sections[0].id;
       for (const section of sections) {
         // Check divider first, then the section heading
@@ -76,7 +76,7 @@ function SideIndex({ sections }: { sections: Section[] }) {
       let current = "";
       for (const { id } of allSubsections) {
         const el = document.getElementById(id);
-        if (el && el.getBoundingClientRect().top <= window.innerHeight * 0.3) {
+        if (el && el.getBoundingClientRect().top <= window.innerHeight * 0.4) {
           current = id;
         }
       }
