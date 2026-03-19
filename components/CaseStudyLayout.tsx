@@ -2,6 +2,12 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+
+interface Section {
+  id: string;
+  title: string;
+}
 
 interface CaseStudyLayoutProps {
   title: string;
@@ -10,7 +16,100 @@ interface CaseStudyLayoutProps {
   team: string;
   year: string;
   tags: string[];
+  sections?: Section[];
   children: React.ReactNode;
+}
+
+function SideIndex({ sections }: { sections: Section[] }) {
+  const [activeId, setActiveId] = useState<string>("");
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    const headings = sections
+      .map(({ id }) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
+
+    if (headings.length === 0) return;
+
+    // Track which sections are above/at viewport
+    const visibleMap = new Map<string, number>();
+
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          visibleMap.set(entry.target.id, entry.boundingClientRect.top);
+        });
+
+        // Active = the last section whose top is above or near the top of viewport
+        let active = "";
+        let closestAbove = Infinity;
+        visibleMap.forEach((top, id) => {
+          const dist = top - 120; // offset for nav bar
+          if (dist <= 0 && Math.abs(dist) < closestAbove) {
+            closestAbove = Math.abs(dist);
+            active = id;
+          }
+        });
+
+        if (active) setActiveId(active);
+        else if (visibleMap.size > 0) {
+          // Nothing above viewport yet — pick first
+          setActiveId(sections[0].id);
+        }
+      },
+      { rootMargin: "-80px 0px -60% 0px", threshold: [0, 1] }
+    );
+
+    headings.forEach((el) => observerRef.current!.observe(el));
+    // Set initial active to first section
+    setActiveId(sections[0].id);
+
+    return () => observerRef.current?.disconnect();
+  }, [sections]);
+
+  return (
+    <div className="fixed left-8 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-20 hidden xl:flex">
+      {sections.map(({ id, title }) => {
+        const isActive = activeId === id;
+        return (
+          <a
+            key={id}
+            href={`#${id}`}
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
+            className="flex items-center gap-2.5 group"
+            style={{ textDecoration: "none" }}
+          >
+            <div
+              style={{
+                width: isActive ? 28 : 16,
+                height: 2,
+                borderRadius: 2,
+                background: isActive ? "var(--accent)" : "#d4d4d4",
+                transition: "width 0.25s ease, background 0.25s ease",
+                flexShrink: 0,
+              }}
+            />
+            <span
+              style={{
+                fontSize: 11,
+                fontWeight: isActive ? 600 : 400,
+                color: isActive ? "var(--accent)" : "#a3a3a3",
+                letterSpacing: "0.03em",
+                lineHeight: 1,
+                transition: "color 0.25s ease, font-weight 0.25s ease",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {title}
+            </span>
+          </a>
+        );
+      })}
+    </div>
+  );
 }
 
 export default function CaseStudyLayout({
@@ -20,10 +119,13 @@ export default function CaseStudyLayout({
   team,
   year,
   tags,
+  sections,
   children,
 }: CaseStudyLayoutProps) {
   return (
     <div className="min-h-screen pt-14">
+      {sections && sections.length > 0 && <SideIndex sections={sections} />}
+
       {/* Hero */}
       <section className="max-w-3xl mx-auto px-6 pt-16 pb-12">
         <motion.div
