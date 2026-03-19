@@ -45,7 +45,8 @@ export default function CaseStudyLayout({
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs text-neutral-700 bg-accent px-2.5 py-1 rounded-full border border-yellow-300 font-medium"
+                className="text-xs text-neutral-700 px-2.5 py-1 rounded-full font-medium"
+                style={{ background: "var(--background)", border: "1.5px solid var(--accent)" }}
               >
                 {tag}
               </span>
@@ -58,7 +59,7 @@ export default function CaseStudyLayout({
           <p className="text-lg text-neutral-700 leading-relaxed mb-10">{subtitle}</p>
 
           {/* Meta row */}
-          <div className="grid grid-cols-3 gap-6 py-6 border-t border-b" style={{ borderColor: "var(--accent)" }}>
+          <div className="grid grid-cols-3 gap-6 py-6 border" style={{ borderColor: "var(--accent)", borderRadius: 10, paddingLeft: "1.5rem", paddingRight: "1.5rem" }}>
             <div>
               <p className="text-xs text-neutral-400 uppercase tracking-widest mb-1">Role</p>
               <p className="text-sm text-neutral-700 font-medium">{role}</p>
