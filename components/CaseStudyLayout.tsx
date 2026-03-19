@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Section {
   id: string;
@@ -21,54 +21,28 @@ interface CaseStudyLayoutProps {
 }
 
 function SideIndex({ sections }: { sections: Section[] }) {
-  const [activeId, setActiveId] = useState<string>("");
-  const observerRef = useRef<IntersectionObserver | null>(null);
+  const [activeId, setActiveId] = useState<string>(sections[0]?.id ?? "");
 
   useEffect(() => {
-    const headings = sections
-      .map(({ id }) => document.getElementById(id))
-      .filter(Boolean) as HTMLElement[];
-
-    if (headings.length === 0) return;
-
-    // Track which sections are above/at viewport
-    const visibleMap = new Map<string, number>();
-
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          visibleMap.set(entry.target.id, entry.boundingClientRect.top);
-        });
-
-        // Active = the last section whose top is above or near the top of viewport
-        let active = "";
-        let closestAbove = Infinity;
-        visibleMap.forEach((top, id) => {
-          const dist = top - 120; // offset for nav bar
-          if (dist <= 0 && Math.abs(dist) < closestAbove) {
-            closestAbove = Math.abs(dist);
-            active = id;
-          }
-        });
-
-        if (active) setActiveId(active);
-        else if (visibleMap.size > 0) {
-          // Nothing above viewport yet — pick first
-          setActiveId(sections[0].id);
+    const getActive = () => {
+      const offset = 120;
+      let current = sections[0].id;
+      for (const { id } of sections) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= offset) {
+          current = id;
         }
-      },
-      { rootMargin: "-80px 0px -60% 0px", threshold: [0, 1] }
-    );
+      }
+      setActiveId(current);
+    };
 
-    headings.forEach((el) => observerRef.current!.observe(el));
-    // Set initial active to first section
-    setActiveId(sections[0].id);
-
-    return () => observerRef.current?.disconnect();
+    getActive();
+    window.addEventListener("scroll", getActive, { passive: true });
+    return () => window.removeEventListener("scroll", getActive);
   }, [sections]);
 
   return (
-    <div className="fixed left-8 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-20 hidden xl:flex">
+    <div className="fixed left-8 top-1/2 -translate-y-1/2 flex-col gap-3 z-20 hidden xl:flex">
       {sections.map(({ id, title }) => {
         const isActive = activeId === id;
         return (
