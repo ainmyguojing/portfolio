@@ -1,4 +1,14 @@
 import CaseStudyLayout from "@/components/CaseStudyLayout";
+import Image from "next/image";
+
+function ImageWithCaption({ src, caption, alt }: { src: string; caption: string; alt: string }) {
+  return (
+    <figure className="not-prose my-6">
+      <Image src={src} alt={alt} width={1600} height={900} className="w-full rounded-xl" style={{ objectFit: "contain" }} />
+      <figcaption className="text-xs text-neutral-400 text-center mt-3">{caption}</figcaption>
+    </figure>
+  );
+}
 
 export const metadata = {
   title: "Community Q&A — Jing Guo",
@@ -114,6 +124,8 @@ export default function CommunityQA() {
         defining the vision, validating the user need, and then scaling the system.
       </p>
 
+      <ImageWithCaption src="/images/stage-diagram.png" alt="Main product stages diagram" caption="Main product stages" />
+
       <Card id="evolution-stage1">
         <h3 className="text-base font-semibold text-neutral-900 mb-1">Stage 1: Vision Work</h3>
         <p className="text-sm text-neutral-500 mb-6">Establish the right foundation before any design decisions were made.</p>
@@ -136,6 +148,7 @@ export default function CommunityQA() {
           ))}
         </div>
         <Label>Design Foundation</Label>
+        <ImageWithCaption src="/images/vision-diagram.png" alt="User roles and key touchpoints" caption="User roles and key touchpoints" />
         <p className="text-sm text-neutral-600">
           Q&amp;A as a complementary layer — extending search and reviews rather than competing with them.
         </p>
