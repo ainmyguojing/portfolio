@@ -110,11 +110,17 @@ export default function CommunityQA() {
         plateauing, which made finding new ways for people to contribute more urgent.
       </p>
       <p>We explored whether a community driven Q&amp;A model could:</p>
-      <ul>
-        <li>Open up new ways for people to contribute beyond writing reviews.</li>
-        <li>Lower the barrier to participation. Asking and answering a question is quicker and easier than writing a review.</li>
-        <li>Add a layer of knowledge that works alongside reviews, not in competition with them.</li>
-      </ul>
+      <div className="not-prose grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
+        {[
+          { text: "Open up new ways for people to contribute beyond writing reviews." },
+          { text: "Lower the barrier to participation. Asking and answering a question is quicker and easier than writing a review." },
+          { text: "Add a layer of knowledge that works alongside reviews, not in competition with them." },
+        ].map(({ text }) => (
+          <div key={text} className="rounded-xl border border-neutral-200 p-5">
+            <p className="text-sm text-neutral-600">{text}</p>
+          </div>
+        ))}
+      </div>
 
       <SectionDivider id="divider-evolution" />
 
@@ -185,10 +191,10 @@ export default function CommunityQA() {
           designed to test whether users would ask and answer questions organically.
         </p>
         <Label>Pilot Focus</Label>
-        <BulletList className="mb-6" items={[
-          "Establish the interaction model: consistent structure for questions and replies, supporting both asking and answering.",
-          "Cover key surfaces — identify discovery and contribution entry points within existing product flows.",
-        ]} />
+        <TwoCol
+          left={<p className="text-sm text-neutral-600">Establish the interaction model: consistent structure for questions and replies, supporting both asking and answering.</p>}
+          right={<p className="text-sm text-neutral-600">Cover key surfaces: identify discovery and contribution entry points within existing product flows.</p>}
+        />
         <Label>Design Foundation</Label>
         <p className="text-sm text-neutral-600 mb-6">
           Prioritized consistency over customization, keeping Q&amp;A close to Yelp&apos;s existing
