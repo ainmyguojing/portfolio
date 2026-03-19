@@ -50,6 +50,14 @@ function BulletList({ items, className }: { items: string[]; className?: string 
   );
 }
 
+const SECTIONS = [
+  { id: "context", title: "Context & Opportunity" },
+  { id: "evolution", title: "Product Evolution" },
+  { id: "initiatives", title: "Design Initiatives" },
+  { id: "outcome", title: "Outcome & Impact" },
+  { id: "reflections", title: "Reflections" },
+];
+
 export default function CommunityQA() {
   return (
     <CaseStudyLayout
@@ -59,6 +67,7 @@ export default function CommunityQA() {
       team="1 PM · 6 Engineers · 1 Data Scientist"
       year="2023–2026"
       tags={["0→1 Product", "Community", "Contribution Systems", "Scale"]}
+      sections={SECTIONS}
     >
       <p>
         I led design end-to-end as the sole designer on this project, working with a PM, 6 engineers,
@@ -68,7 +77,7 @@ export default function CommunityQA() {
 
       <SectionDivider />
 
-      <h2>01 — Context &amp; Opportunity</h2>
+      <h2 id="context">01 — Context &amp; Opportunity</h2>
       <p>
         Yelp&apos;s contribution model had long centered on reviews, but reviews couldn&apos;t answer
         everything. People had questions that cannot be easily answered by reviews, and there was no
@@ -84,7 +93,7 @@ export default function CommunityQA() {
 
       <SectionDivider />
 
-      <h2>02 — Product Evolution Strategy</h2>
+      <h2 id="evolution">02 — Product Evolution Strategy</h2>
       <p>
         Community Q&amp;A did not launch as a single feature. It developed in three stages —
         defining the vision, validating the user need, and then scaling the system.
@@ -167,7 +176,7 @@ export default function CommunityQA() {
 
       <SectionDivider />
 
-      <h2>03 — Selected Design Initiatives from Stage 3</h2>
+      <h2 id="initiatives">03 — Selected Design Initiatives from Stage 3</h2>
       <p>
         These initiatives span multiple layers of product design — from shifting user behavior and
         integrating systems, to refining contribution quality and feedback mechanics.
@@ -313,7 +322,7 @@ export default function CommunityQA() {
 
       <SectionDivider />
 
-      <h2>04 — Outcome &amp; Impact</h2>
+      <h2 id="outcome">04 — Outcome &amp; Impact</h2>
       <p>
         Community Q&amp;A launched as a new content type on Yelp — and the results showed it was
         filling a real gap.
@@ -336,7 +345,7 @@ export default function CommunityQA() {
 
       <SectionDivider />
 
-      <h2>Reflections</h2>
+      <h2 id="reflections">Reflections</h2>
       <p>
         Building Q&amp;A from scratch and seeing it reach scale taught me a lot about what it takes
         to introduce a new behavior to an established product.
