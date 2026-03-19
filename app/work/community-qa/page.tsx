@@ -87,7 +87,7 @@ export default function CommunityQA() {
   return (
     <CaseStudyLayout
       title="Community Q&A"
-      subtitle="When review volume plateaus, a new contribution type becomes critical. I led the design of Community Q&A — a complementary contribution model that grew to 10% of Yelp's review volume in three years."
+      subtitle="When review volume plateaus, a new contribution type becomes critical. I led the design of Community Q&A, a complementary contribution model that grew to 10% of Yelp's review volume in three years."
       role="Lead Designer (Sole)"
       team="1 PM · 6 Engineers · 1 Data Scientist"
       year="2023–2026"
@@ -120,7 +120,7 @@ export default function CommunityQA() {
 
       <h2 id="evolution">02 — Product Evolution Strategy</h2>
       <p>
-        Community Q&amp;A did not launch as a single feature. It developed in three stages —
+        Community Q&amp;A did not launch as a single feature. It developed in three stages:
         defining the vision, validating the user need, and then scaling the system.
       </p>
 
@@ -149,7 +149,7 @@ export default function CommunityQA() {
         </div>
         <Label>Design Foundation</Label>
         <p className="text-sm text-neutral-600 mb-6">
-          Q&amp;A as a complementary layer — extending search and reviews rather than competing with them.
+          Q&amp;A as a complementary layer, extending search and reviews rather than competing with them.
         </p>
         <Label>Key surfaces across the journey</Label>
         <p className="text-sm text-neutral-600 mb-6">
@@ -186,12 +186,12 @@ export default function CommunityQA() {
         </p>
         <Label>Pilot Focus</Label>
         <BulletList className="mb-6" items={[
-          "Establish the interaction model — consistent structure for questions and replies, supporting both asking and answering.",
+          "Establish the interaction model: consistent structure for questions and replies, supporting both asking and answering.",
           "Cover key surfaces — identify discovery and contribution entry points within existing product flows.",
         ]} />
         <Label>Design Foundation</Label>
         <p className="text-sm text-neutral-600 mb-6">
-          Prioritized consistency over customization — keeping Q&amp;A close to Yelp&apos;s existing
+          Prioritized consistency over customization, keeping Q&amp;A close to Yelp&apos;s existing
           interaction patterns so it felt familiar, not foreign.
         </p>
         <Label>Key screens launched in Pilot test</Label>
@@ -249,7 +249,7 @@ export default function CommunityQA() {
 
       <h2 id="initiatives">03 — Selected Design Initiatives from Stage 3</h2>
       <p>
-        These initiatives span multiple layers of product design — from shifting user behavior and
+        These initiatives span multiple layers of product design, from shifting user behavior and
         integrating systems, to refining contribution quality and feedback mechanics.
       </p>
 
@@ -323,7 +323,7 @@ export default function CommunityQA() {
         <Label>Key Design Moves</Label>
         <BulletList className="mb-6" items={[
           "Built a dedicated hub where users could browse, revisit, and engage with all Q&A content in one place",
-          "Added Q&A hub entry points across key surfaces — Home, Yelp Assistant, Business pages, and more",
+          "Added Q&A hub entry points across key surfaces: Home, Yelp Assistant, Business pages, and more",
           "Organized questions geo-based to surface locally relevant content",
         ]} />
         <div className="not-prose flex items-center justify-center gap-3 mb-6">
@@ -396,7 +396,7 @@ export default function CommunityQA() {
         <Label>Key Interaction Decisions</Label>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 mt-2">
           {[
-            { q: "Should users be able to change location while asking?", detail: "Removed manual location editing — location is inferred automatically.", img: "/images/initiative-3-mocks-3-4.png", caption: "Before: manual location selection added unnecessary steps" },
+            { q: "Should users be able to change location while asking?", detail: "Removed manual location editing. Location is inferred automatically.", img: "/images/initiative-3-mocks-3-4.png", caption: "Before: manual location selection added unnecessary steps" },
             { q: "What is the right interaction for business tagging?", detail: "Used inline tagging to keep the flow focused and avoid breaking the user's train of thought.", img: "/images/initiative-3-mocks-3-5.png", caption: "Attachment style tagging: clunky to use and hard to maintain" },
             { q: "When should business chips appear?", detail: "Show business chips only before the user has tagged a business — only needed as a starting point.", img: "/images/initiative-3-mocks-3-6.png", caption: "The suggested business shown as chips will be carried over in the default list after tapping @" },
           ].map(({ q, detail, img, caption }) => (
@@ -474,7 +474,7 @@ export default function CommunityQA() {
 
       <h2 id="outcome">04 — Outcome &amp; Impact</h2>
       <p>
-        Community Q&amp;A launched as a new content type on Yelp — and the results showed it was
+        Community Q&amp;A launched as a new content type on Yelp, and the results showed it was
         filling a real gap.
       </p>
       <ol>
@@ -487,8 +487,8 @@ export default function CommunityQA() {
           became a meaningful activity for users who had never written a review before.
         </li>
         <li>
-          Several interaction patterns developed for Q&amp;A — including progressive tagging, inline
-          prompting, and the question thread design — were added to Yelp&apos;s design system, giving
+          Several interaction patterns developed for Q&amp;A (including progressive tagging, inline
+          prompting, and the question thread design) were added to Yelp&apos;s design system, giving
           future teams a reusable foundation to build on.
         </li>
       </ol>
@@ -504,7 +504,7 @@ export default function CommunityQA() {
         <li>
           <strong>The pilot phase was the most important investment.</strong> Shipping something small
           and focused early gave us the evidence we needed to build with confidence. It&apos;s easy to
-          skip validation when you believe in the idea — but the pilot is what turned belief into a
+          skip validation when you believe in the idea. The pilot is what turned belief into a
           credible direction.
         </li>
         <li>
@@ -514,7 +514,7 @@ export default function CommunityQA() {
         </li>
         <li>
           <strong>Scale surfaces decisions you can&apos;t anticipate early.</strong> Many of the Stage
-          3 challenges — fragmentation, cross-surface consistency, contribution quality — only became
+          3 challenges (fragmentation, cross-surface consistency, contribution quality) only became
           visible once the product was real and growing. Staying close to the product post-launch was
           as important as the initial design work.
         </li>
