@@ -45,8 +45,7 @@ export default function CaseStudyLayout({
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs text-neutral-700 px-2.5 py-1 rounded-full font-medium"
-                style={{ background: "rgba(255,255,255,0.7)", border: "1.5px solid var(--accent)" }}
+                className="tag"
               >
                 {tag}
               </span>
