@@ -4,9 +4,16 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+interface Subsection {
+  id: string;
+  title: string;
+}
+
 interface Section {
   id: string;
   title: string;
+  divider?: string;
+  subsections?: Subsection[];
 }
 
 interface CaseStudyLayoutProps {
@@ -20,17 +27,31 @@ interface CaseStudyLayoutProps {
   children: React.ReactNode;
 }
 
+const NAV_HEIGHT = 56; // px — height of the top nav bar
+
+function scrollToDivider(dividerId: string | undefined, sectionId: string) {
+  // Scroll so the divider above the section sits at the bottom of the nav bar.
+  // If no divider, fall back to the section heading.
+  const target = dividerId
+    ? document.getElementById(dividerId)
+    : document.getElementById(sectionId);
+  if (!target) return;
+  const top = target.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT;
+  window.scrollTo({ top, behavior: "smooth" });
+}
+
 function SideIndex({ sections }: { sections: Section[] }) {
   const [activeId, setActiveId] = useState<string>(sections[0]?.id ?? "");
 
   useEffect(() => {
     const getActive = () => {
-      const offset = 120;
+      // Active section = the one whose divider has just passed the bottom of the nav bar
       let current = sections[0].id;
-      for (const { id } of sections) {
-        const el = document.getElementById(id);
-        if (el && el.getBoundingClientRect().top <= offset) {
-          current = id;
+      for (const section of sections) {
+        const anchorId = section.divider ?? section.id;
+        const el = document.getElementById(anchorId);
+        if (el && el.getBoundingClientRect().top <= NAV_HEIGHT) {
+          current = section.id;
         }
       }
       setActiveId(current);
@@ -41,45 +62,116 @@ function SideIndex({ sections }: { sections: Section[] }) {
     return () => window.removeEventListener("scroll", getActive);
   }, [sections]);
 
+  // Also track active subsection
+  const allSubsections = sections.flatMap((s) => s.subsections ?? []);
+  const [activeSubId, setActiveSubId] = useState<string>("");
+
+  useEffect(() => {
+    if (allSubsections.length === 0) return;
+    const getActiveSub = () => {
+      let current = "";
+      for (const { id } of allSubsections) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= NAV_HEIGHT + 40) {
+          current = id;
+        }
+      }
+      setActiveSubId(current);
+    };
+    getActiveSub();
+    window.addEventListener("scroll", getActiveSub, { passive: true });
+    return () => window.removeEventListener("scroll", getActiveSub);
+  }, [allSubsections]);
+
   return (
-    <div className="fixed left-8 top-1/2 -translate-y-1/2 flex-col gap-3 z-20 hidden xl:flex">
-      {sections.map(({ id, title }) => {
-        const isActive = activeId === id;
+    <div className="fixed left-8 top-1/2 -translate-y-1/2 flex-col gap-1 z-20 hidden xl:flex">
+      {sections.map((section) => {
+        const isActive = activeId === section.id;
         return (
-          <a
-            key={id}
-            href={`#${id}`}
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-            }}
-            className="flex items-center gap-2.5 group"
-            style={{ textDecoration: "none" }}
-          >
-            <div
-              style={{
-                width: isActive ? 28 : 16,
-                height: 2,
-                borderRadius: 2,
-                background: isActive ? "var(--accent)" : "#d4d4d4",
-                transition: "width 0.25s ease, background 0.25s ease",
-                flexShrink: 0,
+          <div key={section.id}>
+            {/* Chapter row */}
+            <a
+              href={`#${section.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToDivider(section.divider, section.id);
               }}
-            />
-            <span
-              style={{
-                fontSize: 11,
-                fontWeight: isActive ? 600 : 400,
-                color: isActive ? "var(--accent)" : "#a3a3a3",
-                letterSpacing: "0.03em",
-                lineHeight: 1,
-                transition: "color 0.25s ease, font-weight 0.25s ease",
-                whiteSpace: "nowrap",
-              }}
+              className="flex items-center gap-2.5 py-1"
+              style={{ textDecoration: "none" }}
             >
-              {title}
-            </span>
-          </a>
+              <div
+                style={{
+                  width: isActive ? 32 : 20,
+                  height: isActive ? 2.5 : 2,
+                  borderRadius: 2,
+                  background: isActive ? "#171717" : "#d4d4d4",
+                  transition: "width 0.25s ease, background 0.25s ease, height 0.25s ease",
+                  flexShrink: 0,
+                }}
+              />
+              <span
+                style={{
+                  fontSize: 11,
+                  fontWeight: isActive ? 600 : 400,
+                  color: isActive ? "#171717" : "#a3a3a3",
+                  letterSpacing: "0.03em",
+                  lineHeight: 1,
+                  transition: "color 0.25s ease",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {section.title}
+              </span>
+            </a>
+
+            {/* Subsection rows — only visible when parent is active */}
+            {section.subsections && isActive && (
+              <div className="flex flex-col gap-0 ml-1 mt-0.5 mb-1">
+                {section.subsections.map(({ id, title }) => {
+                  const isSubActive = activeSubId === id;
+                  return (
+                    <a
+                      key={id}
+                      href={`#${id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const el = document.getElementById(id);
+                        if (!el) return;
+                        const top = el.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT - 16;
+                        window.scrollTo({ top, behavior: "smooth" });
+                      }}
+                      className="flex items-center gap-2.5 py-0.5"
+                      style={{ textDecoration: "none" }}
+                    >
+                      <div
+                        style={{
+                          width: isSubActive ? 16 : 10,
+                          height: 2,
+                          borderRadius: 2,
+                          background: isSubActive ? "#a3a3a3" : "#e5e5e5",
+                          transition: "width 0.2s ease, background 0.2s ease",
+                          flexShrink: 0,
+                        }}
+                      />
+                      <span
+                        style={{
+                          fontSize: 10,
+                          fontWeight: isSubActive ? 500 : 400,
+                          color: isSubActive ? "#737373" : "#c4c4c4",
+                          letterSpacing: "0.03em",
+                          lineHeight: 1,
+                          transition: "color 0.2s ease",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        {title}
+                      </span>
+                    </a>
+                  );
+                })}
+              </div>
+            )}
+          </div>
         );
       })}
     </div>

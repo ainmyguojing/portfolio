@@ -4,13 +4,13 @@ export const metadata = {
   title: "Community Q&A — Jing Guo",
 };
 
-function SectionDivider() {
-  return <div style={{ height: 3, background: "var(--accent)", borderRadius: 2, margin: "3rem 0" }} />;
+function SectionDivider({ id }: { id?: string }) {
+  return <div id={id} style={{ height: 3, background: "var(--accent)", borderRadius: 2, margin: "3rem 0" }} />;
 }
 
-function Card({ children }: { children: React.ReactNode }) {
+function Card({ children, id }: { children: React.ReactNode; id?: string }) {
   return (
-    <div className="not-prose bg-white rounded-2xl border border-neutral-200 p-10 my-6">
+    <div id={id} className="not-prose bg-white rounded-2xl border border-neutral-200 p-10 my-6">
       {children}
     </div>
   );
@@ -51,11 +51,26 @@ function BulletList({ items, className }: { items: string[]; className?: string 
 }
 
 const SECTIONS = [
-  { id: "context", title: "Context & Opportunity" },
-  { id: "evolution", title: "Product Evolution" },
-  { id: "initiatives", title: "Design Initiatives" },
-  { id: "outcome", title: "Outcome & Impact" },
-  { id: "reflections", title: "Reflections" },
+  { id: "context", title: "Context & Opportunity", divider: "divider-context" },
+  {
+    id: "evolution", title: "Product Evolution", divider: "divider-evolution",
+    subsections: [
+      { id: "evolution-stage1", title: "Stage 1: Vision" },
+      { id: "evolution-stage2", title: "Stage 2: Pilot" },
+      { id: "evolution-stage3", title: "Stage 3: Scale" },
+    ],
+  },
+  {
+    id: "initiatives", title: "Design Initiatives", divider: "divider-initiatives",
+    subsections: [
+      { id: "initiative-search", title: "Search to Question" },
+      { id: "initiative-hub", title: "Q&A Hub" },
+      { id: "initiative-tagging", title: "Business Tagging" },
+      { id: "initiative-love", title: "Love a Reply" },
+    ],
+  },
+  { id: "outcome", title: "Outcome & Impact", divider: "divider-outcome" },
+  { id: "reflections", title: "Reflections", divider: "divider-reflections" },
 ];
 
 export default function CommunityQA() {
@@ -75,7 +90,7 @@ export default function CommunityQA() {
         design decision from early concept through launch.
       </p>
 
-      <SectionDivider />
+      <SectionDivider id="divider-context" />
 
       <h2 id="context">01 — Context &amp; Opportunity</h2>
       <p>
@@ -91,7 +106,7 @@ export default function CommunityQA() {
         <li>Add a layer of knowledge that works alongside reviews, not in competition with them.</li>
       </ul>
 
-      <SectionDivider />
+      <SectionDivider id="divider-evolution" />
 
       <h2 id="evolution">02 — Product Evolution Strategy</h2>
       <p>
@@ -99,7 +114,7 @@ export default function CommunityQA() {
         defining the vision, validating the user need, and then scaling the system.
       </p>
 
-      <Card>
+      <Card id="evolution-stage1">
         <h3 className="text-base font-semibold text-neutral-900 mb-1">Stage 1: Vision Work</h3>
         <p className="text-sm text-neutral-500 mb-6">Establish the right foundation before any design decisions were made.</p>
         <p className="text-sm text-neutral-700 mb-5">
@@ -119,7 +134,7 @@ export default function CommunityQA() {
         </p>
       </Card>
 
-      <Card>
+      <Card id="evolution-stage2">
         <h3 className="text-base font-semibold text-neutral-900 mb-1">Stage 2: Pilot / PMF Test</h3>
         <p className="text-sm text-neutral-500 mb-6">Validate whether Q&amp;A felt natural within Yelp without forcing the behavior.</p>
         <p className="text-sm text-neutral-700 mb-5">
@@ -144,7 +159,7 @@ export default function CommunityQA() {
         ]} />
       </Card>
 
-      <Card>
+      <Card id="evolution-stage3">
         <h3 className="text-base font-semibold text-neutral-900 mb-1">Stage 3: Scale</h3>
         <p className="text-sm text-neutral-500 mb-6">Make the system grow without breaking down.</p>
         <p className="text-sm text-neutral-700 mb-6">
@@ -174,7 +189,7 @@ export default function CommunityQA() {
         </div>
       </Card>
 
-      <SectionDivider />
+      <SectionDivider id="divider-initiatives" />
 
       <h2 id="initiatives">03 — Selected Design Initiatives from Stage 3</h2>
       <p>
@@ -182,7 +197,7 @@ export default function CommunityQA() {
         integrating systems, to refining contribution quality and feedback mechanics.
       </p>
 
-      <Card>
+      <Card id="initiative-search">
         <Label>Growth</Label>
         <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">Convert Search Query to Community Question</h3>
         <p className="text-sm text-neutral-500 mb-6">Many searches on Yelp were actually questions, but there was high friction for users to turn that intent into a community interaction.</p>
@@ -220,7 +235,7 @@ export default function CommunityQA() {
         ]} />
       </Card>
 
-      <Card>
+      <Card id="initiative-hub">
         <Label>Systems Building</Label>
         <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">Community Q&amp;A Hub</h3>
         <p className="text-sm text-neutral-500 mb-6">As Q&amp;A expanded, the content became scattered with no single place to browse, revisit, or engage.</p>
@@ -252,7 +267,7 @@ export default function CommunityQA() {
         ]} />
       </Card>
 
-      <Card>
+      <Card id="initiative-tagging">
         <Label>Interaction Craft</Label>
         <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">Business Tagging &amp; Prompting</h3>
         <p className="text-sm text-neutral-500 mb-6">Questions and replies often had no clear connection to specific businesses, making content harder to navigate.</p>
@@ -288,7 +303,7 @@ export default function CommunityQA() {
         ]} />
       </Card>
 
-      <Card>
+      <Card id="initiative-love">
         <Label>Feedback Mechanism</Label>
         <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">&ldquo;Love&rdquo; a Reply</h3>
         <p className="text-sm text-neutral-500 mb-6">A lightweight way to close the feedback loop for contributors.</p>
@@ -320,7 +335,7 @@ export default function CommunityQA() {
         ]} />
       </Card>
 
-      <SectionDivider />
+      <SectionDivider id="divider-outcome" />
 
       <h2 id="outcome">04 — Outcome &amp; Impact</h2>
       <p>
@@ -343,7 +358,7 @@ export default function CommunityQA() {
         </li>
       </ol>
 
-      <SectionDivider />
+      <SectionDivider id="divider-reflections" />
 
       <h2 id="reflections">Reflections</h2>
       <p>
