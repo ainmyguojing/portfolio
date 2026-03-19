@@ -33,7 +33,7 @@ export default function CaseStudyLayout({
         >
           <Link
             href="/"
-            className="inline-flex items-center gap-1.5 text-sm text-neutral-400 hover:text-accent transition-colors duration-200 mb-8"
+            className="inline-flex items-center gap-1.5 text-sm text-neutral-400 hover:text-neutral-900 transition-colors duration-200 mb-8"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
@@ -45,7 +45,7 @@ export default function CaseStudyLayout({
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs text-accent bg-orange-50 px-2.5 py-1 rounded-full border border-orange-100 font-medium"
+                className="text-xs text-neutral-700 bg-accent px-2.5 py-1 rounded-full border border-yellow-300 font-medium"
               >
                 {tag}
               </span>
@@ -55,10 +55,10 @@ export default function CaseStudyLayout({
           <h1 className="text-4xl sm:text-5xl font-bold text-neutral-900 leading-tight tracking-tight mb-4">
             {title}
           </h1>
-          <p className="text-lg text-neutral-500 leading-relaxed mb-10">{subtitle}</p>
+          <p className="text-lg text-neutral-700 leading-relaxed mb-10">{subtitle}</p>
 
           {/* Meta row */}
-          <div className="grid grid-cols-3 gap-6 py-6 border-t border-b border-neutral-100">
+          <div className="grid grid-cols-3 gap-6 py-6 border-t border-b" style={{ borderColor: "var(--accent)" }}>
             <div>
               <p className="text-xs text-neutral-400 uppercase tracking-widest mb-1">Role</p>
               <p className="text-sm text-neutral-700 font-medium">{role}</p>

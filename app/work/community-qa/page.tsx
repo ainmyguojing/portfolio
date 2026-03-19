@@ -298,7 +298,7 @@ export default function CommunityQA() {
         Community Q&amp;A launched as a new content type on Yelp — and the results showed it was
         filling a real gap.
       </p>
-      <ul>
+      <ol>
         <li>
           Q&amp;A volume reached <strong>10% of Yelp&apos;s review volume</strong> by Q1 2026,
           demonstrating that the community was willing to participate in a new way beyond writing reviews.
@@ -312,7 +312,7 @@ export default function CommunityQA() {
           prompting, and the question thread design — were added to Yelp&apos;s design system, giving
           future teams a reusable foundation to build on.
         </li>
-      </ul>
+      </ol>
 
       <SectionDivider />
 
@@ -321,7 +321,7 @@ export default function CommunityQA() {
         Building Q&amp;A from scratch and seeing it reach scale taught me a lot about what it takes
         to introduce a new behavior to an established product.
       </p>
-      <ul>
+      <ol>
         <li>
           <strong>The pilot phase was the most important investment.</strong> Shipping something small
           and focused early gave us the evidence we needed to build with confidence. It&apos;s easy to
@@ -339,7 +339,7 @@ export default function CommunityQA() {
           visible once the product was real and growing. Staying close to the product post-launch was
           as important as the initial design work.
         </li>
-      </ul>
+      </ol>
     </CaseStudyLayout>
   );
 }
