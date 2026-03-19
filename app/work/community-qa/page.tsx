@@ -194,6 +194,19 @@ export default function CommunityQA() {
           Prioritized consistency over customization — keeping Q&amp;A close to Yelp&apos;s existing
           interaction patterns so it felt familiar, not foreign.
         </p>
+        <Label>Key screens launched in Pilot test</Label>
+        <TwoCol
+          left={<>
+            <p className="text-sm font-semibold text-neutral-700 mb-1">Question asking</p>
+            <p className="text-xs text-neutral-400 mb-4">Prompt user to ask questions on SERP</p>
+            <Image src="/images/pmf-asking-mock.png" alt="Question asking mock" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          </>}
+          right={<>
+            <p className="text-sm font-semibold text-neutral-700 mb-1">Question answering</p>
+            <p className="text-xs text-neutral-400 mb-4">Solicit answers on Home and Post Review Screen</p>
+            <Image src="/images/pmf-answering-mock.png" alt="Question answering mock" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          </>}
+        />
         <Label>Design Outcome</Label>
         <BulletList items={[
           "Established a clear, consistent interaction model for asking and answering",
