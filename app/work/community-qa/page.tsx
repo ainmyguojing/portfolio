@@ -166,19 +166,27 @@ export default function CommunityQA() {
         <p className="text-sm text-neutral-600 mb-6">
           A key goal of the vision work was to surface the gaps between what Yelp currently offered and what users actually needed. The asking journey illustrates this most clearly. It&apos;s where unmet intent is most visible. I focused on two asking flows in the vision: search and AI chat. Here I&apos;ll use search as the example, since it represents the highest volume entry point for unanswered questions.
         </p>
-        <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
+        <div className="not-prose flex flex-col gap-4" style={{ width: "80%" }}>
           {[
-            { src: "/images/vision-mock-1-1b.png", caption: "Step 1: Simple search" },
-            { src: "/images/vision-mock-1-2b.png", caption: "Step 2: Long sentence search" },
-            { src: "/images/vision-mock-1-3b.png", caption: "Step 3: Prompt to post the search as a question" },
-            { src: "/images/vision-mock-1-4b.png", caption: "Step 4: Show user similar Q&As" },
-            { src: "/images/vision-mock-1-5b.png", caption: "Step 5: Notify user for new answer" },
-            { src: "/images/vision-mock-1-6b.png", caption: "Step 6: Lead user to business page" },
-          ].map(({ src, caption }) => (
-            <figure key={src} className="not-prose">
-              <Image src={src} alt={caption} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-              <figcaption className="text-xs text-neutral-400 text-center mt-2">{caption}</figcaption>
-            </figure>
+            [
+              { src: "/images/vision-mock-1-1b.png", caption: "Step 1: Simple search" },
+              { src: "/images/vision-mock-1-2b.png", caption: "Step 2: Long sentence search" },
+              { src: "/images/vision-mock-1-3b.png", caption: "Step 3: Prompt to post the search as a question" },
+            ],
+            [
+              { src: "/images/vision-mock-1-4b.png", caption: "Step 4: Show user similar Q&As" },
+              { src: "/images/vision-mock-1-5b.png", caption: "Step 5: Notify user for new answer" },
+              { src: "/images/vision-mock-1-6b.png", caption: "Step 6: Lead user to business page" },
+            ],
+          ].map((row, i) => (
+            <div key={i} className="grid grid-cols-3 gap-3">
+              {row.map(({ src, caption }) => (
+                <figure key={src}>
+                  <Image src={src} alt={caption} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+                  <figcaption className="text-xs text-neutral-400 text-center mt-2">{caption}</figcaption>
+                </figure>
+              ))}
+            </div>
           ))}
         </div>
       </Card>
@@ -294,7 +302,7 @@ export default function CommunityQA() {
             <Image src="/images/initiative-1-mocks-1-1.png" alt="Original design" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             <figcaption className="text-xs text-neutral-400 text-center mt-2">Original design</figcaption>
           </figure>
-          <img src="/images/arrow.svg" alt="arrow" className="w-6 shrink-0" />
+          <Image src="/images/arrow.svg" alt="arrow" width={24} height={24} className="w-6 shrink-0" />
           <figure className="flex-1">
             <Image src="/images/initiative-1-mocks-1-2.png" alt="Final design" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             <figcaption className="text-xs text-neutral-400 text-center mt-2">Final design</figcaption>
@@ -345,7 +353,7 @@ export default function CommunityQA() {
               </figure>
             ))}
           </div>
-          <img src="/images/arrow.svg" alt="arrow" className="w-6 shrink-0" />
+          <Image src="/images/arrow.svg" alt="arrow" width={24} height={24} className="w-6 shrink-0" />
           <figure style={{ flex: "1.15" }}>
             <Image src="/images/initiative-2-mocks-2-4.png" alt="Geo based question hub" width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             <figcaption className="text-xs text-neutral-400 text-center mt-2">Geo based question hub</figcaption>
@@ -404,7 +412,7 @@ export default function CommunityQA() {
           {[
             { q: "Should users be able to change location while asking?", detail: "Removed manual location editing. Location is inferred automatically.", img: "/images/initiative-3-mocks-3-4.png", caption: "Before: manual location selection added unnecessary steps" },
             { q: "What is the right interaction for business tagging?", detail: "Used inline tagging to keep the flow focused and avoid breaking the user's train of thought.", img: "/images/initiative-3-mocks-3-5.png", caption: "Attachment style tagging: clunky to use and hard to maintain" },
-            { q: "When should business chips appear?", detail: "Show business chips only before the user has tagged a business — only needed as a starting point.", img: "/images/initiative-3-mocks-3-6.png", caption: "The suggested business shown as chips will be carried over in the default list after tapping @" },
+            { q: "When should business chips appear?", detail: "Show business chips only before the user has tagged a business, only needed as a starting point.", img: "/images/initiative-3-mocks-3-6.png", caption: "The suggested business shown as chips will be carried over in the default list after tapping @" },
           ].map(({ q, detail, img, caption }) => (
             <div key={q} className="rounded-xl border border-neutral-200 p-5">
               <p className="text-sm font-semibold text-neutral-700 mb-2">{q}</p>
@@ -429,7 +437,6 @@ export default function CommunityQA() {
         <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">&ldquo;Love&rdquo; a Reply</h3>
         <p className="text-sm text-neutral-500 mb-6">A lightweight way to close the feedback loop for contributors.</p>
         <Label>Design Tradeoff: Reaction Placement</Label>
-        <div className="mt-2" />
         <TwoCol
           left={<>
             <p className="text-sm font-semibold text-neutral-700 mb-2">Option A · Expandable Interaction Row</p>
