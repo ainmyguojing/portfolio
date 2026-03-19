@@ -28,6 +28,15 @@ function Label({ children }: { children: React.ReactNode }) {
   );
 }
 
+function TwoCol({ left, right }: { left: React.ReactNode; right: React.ReactNode }) {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+      <div className="rounded-xl border border-neutral-200 p-5">{left}</div>
+      <div className="rounded-xl border border-neutral-200 p-5">{right}</div>
+    </div>
+  );
+}
+
 function BulletList({ items, className }: { items: string[]; className?: string }) {
   return (
     <ul className={`space-y-1.5 ${className ?? ""}`}>
@@ -168,8 +177,8 @@ export default function CommunityQA() {
         <Label>Growth</Label>
         <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">Convert Search Query to Community Question</h3>
         <p className="text-sm text-neutral-500 mb-6">Many searches on Yelp were actually questions, but there was high friction for users to turn that intent into a community interaction.</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-          <div>
+        <TwoCol
+          left={<>
             <Label>Design Challenges</Label>
             <BulletList items={[
               "Shift the experience from transactional search to conversational asking",
@@ -177,16 +186,16 @@ export default function CommunityQA() {
               "Balance getting more contributions with keeping content quality high",
               "Align across Search, AI, and Ranking teams who all had a stake in this surface",
             ]} />
-          </div>
-          <div>
+          </>}
+          right={<>
             <Label>Strategic Design Decisions</Label>
             <BulletList items={[
               "Keep question creation lightweight and in context, so it didn't feel like a detour",
               "Use progressive prompting only when the user's intent was unclear, to avoid interrupting confident searches",
               "Make the human element visible: real answers from real people, distinct from search results or AI chat",
             ]} />
-          </div>
-        </div>
+          </>}
+        />
         <Label>Key Design Moves</Label>
         <BulletList className="mb-6" items={[
           "Built a mechanism that recognized when a search looked like a question and offered to convert it",
@@ -206,10 +215,20 @@ export default function CommunityQA() {
         <Label>Systems Building</Label>
         <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">Community Q&amp;A Hub</h3>
         <p className="text-sm text-neutral-500 mb-6">As Q&amp;A expanded, the content became scattered with no single place to browse, revisit, or engage.</p>
-        <Label>Design Challenges</Label>
-        <BulletList className="mb-6" items={[
-          "How can Q&A integrate into the existing experience without becoming a separate system?",
-        ]} />
+        <TwoCol
+          left={<>
+            <Label>Design Challenges</Label>
+            <BulletList items={[
+              "How can Q&A integrate into the existing experience without becoming a separate system?",
+            ]} />
+          </>}
+          right={<>
+            <Label>Strategic Design Decisions</Label>
+            <BulletList items={[
+              "Who asks questions, who answers them, and how do people move between reading and contributing?",
+            ]} />
+          </>}
+        />
         <Label>Key Design Moves</Label>
         <BulletList className="mb-6" items={[
           "Built a dedicated hub where users could browse, revisit, and engage with all Q&A content in one place",
@@ -228,24 +247,24 @@ export default function CommunityQA() {
         <Label>Interaction Craft</Label>
         <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">Business Tagging &amp; Prompting</h3>
         <p className="text-sm text-neutral-500 mb-6">Questions and replies often had no clear connection to specific businesses, making content harder to navigate.</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-          <div>
+        <TwoCol
+          left={<>
             <Label>Design Challenges</Label>
             <BulletList items={[
               "Help users add business in their replies without feeling constrained or directed",
               "Balance AI driven suggestions with user autonomy: the system should assist, not dictate",
               "Introduce prompting in a way that works for all users, without overwhelming those who don't need it",
             ]} />
-          </div>
-          <div>
+          </>}
+          right={<>
             <Label>Strategic Design Decisions</Label>
             <BulletList items={[
               "Show the prompt upfront to prioritize education and drive feature adoption",
               "Trigger tagging based on signals in the user's reply: helpful when relevant, invisible when not",
               "Prioritize interaction quality over feature complexity, keeping the flow smooth and easy to follow",
             ]} />
-          </div>
-        </div>
+          </>}
+        />
         <Label>Key Interaction Decisions</Label>
         <BulletList className="mb-6" items={[
           "Should users be able to change location while asking? → Removed manual location editing — location is inferred automatically.",
@@ -265,24 +284,25 @@ export default function CommunityQA() {
         <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">&ldquo;Love&rdquo; a Reply</h3>
         <p className="text-sm text-neutral-500 mb-6">A lightweight way to close the feedback loop for contributors.</p>
         <Label>Design Tradeoff: Reaction Placement</Label>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2 mb-6">
-          <div className="rounded-xl border border-neutral-200 p-5">
+        <div className="mt-2" />
+        <TwoCol
+          left={<>
             <p className="text-sm font-semibold text-neutral-700 mb-2">Option A · Expandable Interaction Row</p>
             <BulletList items={[
               "Built with future growth in mind",
               "Supports future interaction expansion",
               "Feels sparse in the current state with reactions only",
             ]} />
-          </div>
-          <div className="rounded-xl border-2 p-5" style={{ borderColor: "var(--accent)" }}>
+          </>}
+          right={<>
             <p className="text-sm font-semibold text-neutral-700 mb-2">Option B · Inline Placement <span className="text-xs font-normal text-neutral-400">(Final)</span></p>
             <BulletList items={[
               "Optimized for the current experience",
               "Keeps the layout compact and natural",
               "Avoids introducing empty or unused space",
             ]} />
-          </div>
-        </div>
+          </>}
+        />
         <Label>Impact</Label>
         <BulletList items={[
           "Made it easy for readers to show appreciation, closing the feedback loop for contributors",
