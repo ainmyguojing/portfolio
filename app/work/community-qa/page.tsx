@@ -166,7 +166,7 @@ export default function CommunityQA() {
         <p className="text-sm text-neutral-600 mb-6">
           A key goal of the vision work was to surface the gaps between what Yelp currently offered and what users actually needed. The asking journey illustrates this most clearly. It&apos;s where unmet intent is most visible. I focused on two asking flows in the vision: search and AI chat. Here I&apos;ll use search as the example, since it represents the highest volume entry point for unanswered questions.
         </p>
-        <div className="not-prose flex flex-col gap-4" style={{ width: "80%" }}>
+        <div className="not-prose flex flex-col gap-4" style={{ width: "80%", margin: "0 auto" }}>
           {[
             [
               { src: "/images/vision-mock-1-1b.png", caption: "Step 1: Simple search" },
