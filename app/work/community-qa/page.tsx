@@ -340,7 +340,7 @@ export default function CommunityQA() {
             ))}
           </div>
           <img src="/images/arrow.svg" alt="arrow" className="w-6 shrink-0" />
-          <figure style={{ flex: "1.2" }}>
+          <figure style={{ flex: "1.15" }}>
             <Image src="/images/initiative-2-mocks-2-4.png" alt="Geo based question hub" width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             <figcaption className="text-xs text-neutral-400 text-center mt-2">Geo based question hub</figcaption>
           </figure>
@@ -376,11 +376,23 @@ export default function CommunityQA() {
           </>}
         />
         <Label>Key Design Moves</Label>
-        <BulletList className="mb-6" items={[
+        <BulletList className="mb-4" items={[
           "Dynamic prompt suggestions",
           "Inline clarification cues",
           "Structured composition flow with progressive guidance",
         ]} />
+        <div className="not-prose grid grid-cols-3 gap-3 mb-6">
+          {[
+            { src: "/images/initiative-3-mocks-3-1.png", caption: "Before typing a reply" },
+            { src: "/images/initiative-3-mocks-3-2.png", caption: "Search and tag a business" },
+            { src: "/images/initiative-3-mocks-3-3.png", caption: "Answer with businesses" },
+          ].map(({ src, caption }) => (
+            <figure key={src}>
+              <Image src={src} alt={caption} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <figcaption className="text-xs text-neutral-400 text-center mt-2">{caption}</figcaption>
+            </figure>
+          ))}
+        </div>
         <Label>Key Interaction Decisions</Label>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 mt-2">
           {[
