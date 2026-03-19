@@ -192,8 +192,8 @@ export default function CommunityQA() {
         </p>
         <Label>Pilot Focus</Label>
         <TwoCol
-          left={<p className="text-sm text-neutral-600">Establish the interaction model: consistent structure for questions and replies, supporting both asking and answering.</p>}
-          right={<p className="text-sm text-neutral-600">Cover key surfaces: identify discovery and contribution entry points within existing product flows.</p>}
+          left={<><p className="text-sm font-semibold text-neutral-700 mb-2">Establish the interaction model</p><p className="text-sm text-neutral-600">Consistent structure for questions and replies, supporting both asking and answering.</p></>}
+          right={<><p className="text-sm font-semibold text-neutral-700 mb-2">Cover key surfaces</p><p className="text-sm text-neutral-600">Identify discovery and contribution entry points within existing product flows.</p></>}
         />
         <Label>Design Foundation</Label>
         <p className="text-sm text-neutral-600 mb-6">
