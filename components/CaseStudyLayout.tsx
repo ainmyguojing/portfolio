@@ -45,12 +45,16 @@ function SideIndex({ sections }: { sections: Section[] }) {
 
   useEffect(() => {
     const getActive = () => {
-      // Active section = the one whose divider has just passed the bottom of the nav bar
+      const threshold = window.innerHeight * 0.3;
       let current = sections[0].id;
       for (const section of sections) {
-        const anchorId = section.divider ?? section.id;
-        const el = document.getElementById(anchorId);
-        if (el && el.getBoundingClientRect().top <= NAV_HEIGHT) {
+        // Check divider first, then the section heading
+        const dividerEl = section.divider ? document.getElementById(section.divider) : null;
+        const sectionEl = document.getElementById(section.id);
+        const dividerTop = dividerEl ? dividerEl.getBoundingClientRect().top : Infinity;
+        const sectionTop = sectionEl ? sectionEl.getBoundingClientRect().top : Infinity;
+        const triggerTop = Math.min(dividerTop, sectionTop);
+        if (triggerTop <= threshold) {
           current = section.id;
         }
       }
@@ -72,7 +76,7 @@ function SideIndex({ sections }: { sections: Section[] }) {
       let current = "";
       for (const { id } of allSubsections) {
         const el = document.getElementById(id);
-        if (el && el.getBoundingClientRect().top <= NAV_HEIGHT + 40) {
+        if (el && el.getBoundingClientRect().top <= window.innerHeight * 0.3) {
           current = id;
         }
       }
