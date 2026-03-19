@@ -283,6 +283,17 @@ export default function CommunityQA() {
           "Aligned the experience with how people think about search, so the transition felt natural",
           "Shifted the experience from passively browsing results to actively starting a conversation",
         ]} />
+        <div className="not-prose flex items-center gap-4 mb-6">
+          <figure className="flex-1">
+            <Image src="/images/initiative-1-mocks-1-1.png" alt="Original design" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Original design</figcaption>
+          </figure>
+          <img src="/images/arrow.svg" alt="arrow" className="w-6 shrink-0" />
+          <figure className="flex-1">
+            <Image src="/images/initiative-1-mocks-1-2.png" alt="Final design" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Final design</figcaption>
+          </figure>
+        </div>
         <Label>Impact</Label>
         <BulletList items={[
           "Increased both the rate and quality of questions submitted",
