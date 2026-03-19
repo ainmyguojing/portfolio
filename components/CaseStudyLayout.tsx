@@ -58,7 +58,7 @@ export default function CaseStudyLayout({
           <p className="text-lg text-neutral-700 leading-relaxed mb-10">{subtitle}</p>
 
           {/* Meta row */}
-          <div className="grid grid-cols-3 gap-6 py-6 border" style={{ borderColor: "var(--accent)", borderRadius: 10, paddingLeft: "1.5rem", paddingRight: "1.5rem", background: "rgba(255,255,255,0.7)" }}>
+          <div className="grid grid-cols-3 gap-6 py-6 px-6 bg-white rounded-2xl border border-neutral-200">
             <div>
               <p className="text-xs text-neutral-400 uppercase tracking-widest mb-1">Role</p>
               <p className="text-sm text-neutral-700 font-medium">{role}</p>
