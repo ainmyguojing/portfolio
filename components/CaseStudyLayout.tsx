@@ -126,7 +126,7 @@ function SideIndex({ sections }: { sections: Section[] }) {
 
             {/* Subsection rows — only visible when parent is active */}
             {section.subsections && isActive && (
-              <div className="flex flex-col gap-0 ml-1 mt-0.5 mb-1">
+              <div className="flex flex-col gap-2 ml-1 mt-0.5 mb-1">
                 {section.subsections.map(({ id, title }) => {
                   const isSubActive = activeSubId === id;
                   return (
