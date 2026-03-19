@@ -87,7 +87,7 @@ export default function CommunityQA() {
   return (
     <CaseStudyLayout
       title="Community Q&A"
-      subtitle="Designing and scaling a 0→1 community driven, new contribution model across multiple product surfaces."
+      subtitle="When review volume plateaus, a new contribution type becomes critical. I led the design of Community Q&A — a complementary contribution model that grew to 10% of Yelp's review volume in three years."
       role="Lead Designer (Sole)"
       team="1 PM · 6 Engineers · 1 Data Scientist"
       year="2023–2026"
@@ -396,14 +396,17 @@ export default function CommunityQA() {
         <Label>Key Interaction Decisions</Label>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 mt-2">
           {[
-            { q: "Should users be able to change location while asking?", detail: "Removed manual location editing — location is inferred automatically.", img: "/images/initiative-3-mocks-3-4.png" },
-            { q: "What is the right interaction for business tagging?", detail: "Used inline tagging to keep the flow focused and avoid breaking the user's train of thought.", img: "/images/initiative-3-mocks-3-5.png" },
-            { q: "When should business chips appear?", detail: "Show business chips only before the user has tagged a business — only needed as a starting point.", img: "/images/initiative-3-mocks-3-6.png" },
-          ].map(({ q, detail, img }) => (
+            { q: "Should users be able to change location while asking?", detail: "Removed manual location editing — location is inferred automatically.", img: "/images/initiative-3-mocks-3-4.png", caption: "Before: manual location selection added unnecessary steps" },
+            { q: "What is the right interaction for business tagging?", detail: "Used inline tagging to keep the flow focused and avoid breaking the user's train of thought.", img: "/images/initiative-3-mocks-3-5.png", caption: "Attachment style tagging: clunky to use and hard to maintain" },
+            { q: "When should business chips appear?", detail: "Show business chips only before the user has tagged a business — only needed as a starting point.", img: "/images/initiative-3-mocks-3-6.png", caption: "The suggested business shown as chips will be carried over in the default list after tapping @" },
+          ].map(({ q, detail, img, caption }) => (
             <div key={q} className="rounded-xl border border-neutral-200 p-5">
               <p className="text-sm font-semibold text-neutral-700 mb-2">{q}</p>
               <p className="text-sm text-neutral-500 mb-4">{detail}</p>
-              <Image src={img} alt={q} width={400} height={400} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <figure className="not-prose">
+                <Image src={img} alt={q} width={400} height={400} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+                <figcaption className="text-xs text-neutral-400 text-center mt-2">{caption}</figcaption>
+              </figure>
             </div>
           ))}
         </div>
