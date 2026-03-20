@@ -86,9 +86,8 @@ export default function Recognition() {
 
       <h2 id="foundation">01 — Foundation: The MVP Experiment <span className="text-neutral-400 font-normal text-base">(not my work)</span></h2>
       <p>
-        Before any permanent surfaces were designed, the team needed to answer a fundamental question:
-        do recognitions actually motivate reviewers to contribute more? A colleague ran an experiment
-        in late 2022 to find out.
+        This project starts with a hypothesis that recognitions could motivate reviewers to contribute
+        more. The MVP was trying to test out this hypothesis in late 2022.
       </p>
 
       <Card>
