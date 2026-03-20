@@ -86,12 +86,6 @@ export default function YearOnYelp() {
         top photos, reactions earned, recognitions, compliments. Part data visualization, part
         celebration, part motivation to keep contributing.
       </p>
-      <p>
-        2023 was the third year of the project. The first two years had used largely the same
-        visuals. Contributors who had received it before were no longer surprised. The challenge
-        wasn&apos;t just to refresh it — it was to make people actually look forward to it, and
-        want to share it.
-      </p>
 
       <SectionDivider id="divider-role" />
 
