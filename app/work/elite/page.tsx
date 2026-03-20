@@ -144,11 +144,21 @@ export default function Elite() {
         ]} />
 
         <Label>Why the Modal Doesn&apos;t Ask for Anything</Label>
-        <p className="text-sm text-neutral-600">
+        <p className="text-sm text-neutral-600 mb-6">
           The modal introduces the program and links to the Elite page. It does not ask the user to
           nominate themselves immediately. Keeping this step lightweight was intentional. An
           over-eager CTA at the awareness stage would feel transactional, not inspiring. The ask
           comes after the user has had a chance to learn more.
+        </p>
+
+        <Label>Visual Design: The Red Envelope</Label>
+        <p className="text-sm text-neutral-600">
+          The modal uses a red envelope as its hero visual — a deliberate choice to frame the
+          moment as an invitation rather than a notification. Envelopes carry connotations of
+          something personal, curated, and worth opening. The red color draws from Yelp&apos;s
+          brand palette while amplifying the sense of occasion. For a user who has never heard
+          of the Elite program, the first impression needed to feel exciting and exclusive, not
+          like a generic upsell prompt.
         </p>
       </Card>
 
@@ -190,13 +200,23 @@ export default function Elite() {
         </p>
 
         <Label>Key Decision: Eligibility Copy</Label>
-        <p className="text-sm text-neutral-600">
+        <p className="text-sm text-neutral-600 mb-6">
           The &ldquo;how to join&rdquo; section was deliberately non-specific about criteria. Legal constraints
           prevent publishing explicit requirements, and Elite members themselves report valuing the
           mystery of the program as part of its appeal. The copy communicates effort and character
           without setting a measurable bar: &ldquo;Share your experiences through thoughtful reviews&rdquo;
           rather than &ldquo;write X reviews per month.&rdquo; The design had to feel informative without
           over-promising.
+        </p>
+
+        <Label>Visual Design: Full-Bleed Hero</Label>
+        <p className="text-sm text-neutral-600">
+          With no new assets available, the visual strategy relied on making the most of existing
+          community photography. The hero section uses a full-bleed video and image treatment to
+          immediately immerse the user in the energy of the Elite community rather than describing
+          it. The constraint of no new assets pushed the design toward a bolder, more editorial
+          layout: large format, high contrast, minimal text overlay. The visual language signals
+          that this is a celebration of community, not a product page.
         </p>
       </Card>
 
@@ -239,6 +259,18 @@ export default function Elite() {
           not instantly dismissed. And it makes the outcome feel legitimate whether accepted or
           rejected. A result that arrives instantly feels arbitrary; one that arrives after a visible
           process feels earned.
+        </p>
+
+        <Label>Visual Design: The Incomplete Circle</Label>
+        <p className="text-sm text-neutral-600 mb-6">
+          The rejection result screen uses an intentionally incomplete circular progress animation
+          rather than a conventional error or failure state. A full circle would signal completion;
+          an X would signal failure. The incomplete circle — almost there, with a visible gap —
+          communicates something more nuanced: you are close, not disqualified. The small gap is
+          the point. It shows the user exactly how near they are to qualifying, which reframes the
+          rejection as a proximity signal rather than a verdict. The animation builds anticipation
+          through the loading sequence, then lands on the incomplete circle to hold that tension
+          and convert it into motivation rather than discouragement.
         </p>
 
         <TwoCol
