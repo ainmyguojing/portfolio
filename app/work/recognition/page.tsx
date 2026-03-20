@@ -78,9 +78,8 @@ export default function Recognition() {
       sections={SECTIONS}
     >
       <p>
-        This case study covers two connected phases. The first (the MVP experiment) was done by
-        another designer and established the concept. The second (surfacing recognitions permanently
-        in the app) is the work I led end-to-end.
+        This case study covers two connected phases: the MVP experiment and surfacing recognitions
+        permanently in the app. I own the design for the second part.
       </p>
 
       <SectionDivider id="divider-foundation" />
