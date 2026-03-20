@@ -73,7 +73,7 @@ export default function Elite() {
     >
       <p>
         Elite contributors are disproportionately valuable: they write more reviews, attend events,
-        and anchor the community. The design work here wasn&apos;t a single project — it was three
+        and anchor the community. The design work here wasn&apos;t a single project; it was three
         interventions at different points in the same broken pipeline, designed to work together.
       </p>
 
@@ -108,14 +108,14 @@ export default function Elite() {
       </div>
       <p>
         Each design decision was made with the full funnel in mind. The goal wasn&apos;t three better
-        features — it was one coherent pipeline.
+        features. It was one coherent pipeline.
       </p>
 
       <SectionDivider id="divider-awareness" />
 
       <h2 id="awareness">02 — Awareness: Getting the Right People In</h2>
       <p>
-        The problem wasn&apos;t that users weren&apos;t interested in Elite — it was that they never
+        The problem wasn&apos;t that users weren&apos;t interested in Elite; it was that they never
         found out it existed. The design challenge was surfacing the program at the right moment,
         to the right people, without feeling like an interruption.
       </p>
@@ -124,7 +124,7 @@ export default function Elite() {
         <Label>Design Decision: Surface on the Post-Review Screen</Label>
         <p className="text-sm text-neutral-700 mb-6">
           A modal shown to eligible contributors immediately after they submit a review. The post-review
-          screen captures a moment of completion — the user just contributed something and feels good
+          screen captures a moment of completion: the user just contributed something and feels good
           about it. That&apos;s the right moment to introduce an aspirational next step, not a cold
           interruption mid-session.
         </p>
@@ -146,7 +146,7 @@ export default function Elite() {
         <Label>Why the Modal Doesn&apos;t Ask for Anything</Label>
         <p className="text-sm text-neutral-600">
           The modal introduces the program and links to the Elite page. It does not ask the user to
-          nominate themselves immediately. Keeping this step lightweight was intentional — an
+          nominate themselves immediately. Keeping this step lightweight was intentional. An
           over-eager CTA at the awareness stage would feel transactional, not inspiring. The ask
           comes after the user has had a chance to learn more.
         </p>
@@ -183,7 +183,7 @@ export default function Elite() {
 
         <Label>Key Decision: Sticky CTA</Label>
         <p className="text-sm text-neutral-600 mb-6">
-          The status quo required users to scroll to the bottom of the page and then tap a CTA — two
+          The status quo required users to scroll to the bottom of the page and then tap a CTA; two
           steps to begin something they were already motivated to do. The sticky footer replaced that
           with a persistent CTA visible at all times. The friction was in the interaction pattern,
           not the motivation.
@@ -218,7 +218,7 @@ export default function Elite() {
         <Label>The Core Design Challenge</Label>
         <p className="text-sm text-neutral-700 mb-6">
           The user just made an effort to nominate themselves. A generic rejection at that moment
-          doesn&apos;t just fail to help — it actively damages motivation. The design question was
+          doesn&apos;t just fail to help; it actively damages motivation. The design question was
           how to turn rejection into a starting line rather than a wall.
         </p>
 
@@ -247,7 +247,7 @@ export default function Elite() {
               <Label>Rejection Page: Top Half</Label>
               <p className="text-sm text-neutral-600">
                 Specific reason for rejection and exactly what to do about it. Each of the five
-                rejection reasons has its own copy — generic feedback would have felt dismissive.
+                rejection reasons has its own copy; generic feedback would have felt dismissive.
                 Specific feedback makes the rejection credible and actionable.
               </p>
             </>
@@ -357,7 +357,7 @@ export default function Elite() {
         </li>
         <li>
           <strong>The rejection flow was the highest-leverage work.</strong> With 80% of nominations
-          rejected, the most impactful fix wasn&apos;t more top-of-funnel volume — it was stopping
+          rejected, the most impactful fix wasn&apos;t more top-of-funnel volume; it was stopping
           the bottom from hemorrhaging. One well-designed rejection screen changes the entire
           emotional arc of the experience.
         </li>
@@ -365,7 +365,7 @@ export default function Elite() {
           <strong>Copy is load-bearing.</strong> The Elite program deliberately withholds specific
           eligibility criteria. Designing within that constraint meant writing copy that felt
           informative and motivating without being explicit. The loading screen, the rejection
-          messages, the &ldquo;how to join&rdquo; section — all required language decisions that carried as
+          messages, the &ldquo;how to join&rdquo; section; all required language decisions that carried as
           much design intent as the layouts themselves.
         </li>
       </ol>
