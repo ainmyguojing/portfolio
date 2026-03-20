@@ -70,7 +70,7 @@ export default function Recognition() {
   return (
     <CaseStudyLayout
       title="Recognition & Motivation System"
-      subtitle="Yelp's recognition system started as a hypothesis and proved itself in an experiment. My work was the next chapter: taking a feature that existed only in a single fleeting moment and giving it a permanent, meaningful presence across the entire app."
+      subtitle="Yelp's recognition system started as a hypothesis and proved itself in an experiment. My work was the next chapter: taking a feature that existed only in a single fleeting moment and giving it a permanent, meaningful presence across the app."
       role="Lead Designer (Surfacing in App)"
       team="1 PM · Engineers · 1 PMM"
       year="2023–2026"
@@ -78,9 +78,9 @@ export default function Recognition() {
       sections={SECTIONS}
     >
       <p>
-        This case study covers two connected phases. The first — the MVP experiment — was done by
-        another designer and established the concept. The second — surfacing recognitions permanently
-        in the app — is the work I led end-to-end.
+        This case study covers two connected phases. The first (the MVP experiment) was done by
+        another designer and established the concept. The second (surfacing recognitions permanently
+        in the app) is the work I led end-to-end.
       </p>
 
       <SectionDivider id="divider-foundation" />
@@ -95,40 +95,18 @@ export default function Recognition() {
       <Card>
         <Label>The Concept</Label>
         <p className="text-sm text-neutral-700 mb-6">
-          Introduce a category expert recognition — surfaced as an in-the-moment experience in the
+          Introduce a category expert recognition surfaced as an in-the-moment experience in the
           post-review flow. After a user&apos;s 2nd review in a category (e.g. Tacos), they&apos;d
           see a nudge: one more review and you earn recognition. After the 3rd, a success screen and
-          badge. The recognition lived only in that moment — there was no permanent home for it yet.
+          badge. The recognition lived only in that moment, with no permanent home yet.
         </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-          {[
-            {
-              step: "After 2nd review",
-              desc: "Locked badge visual + progress bar. \"1 more review to earn Taco Fan status.\" CTA directs to write the 3rd review.",
-            },
-            {
-              step: "After 3rd review",
-              desc: "Success screen: \"It's official! You're a Taco Fan.\" Badge shown on post-review screen and in notification history.",
-            },
-            {
-              step: "That's it",
-              desc: "Once the screen dismissed, the recognition was gone. No profile entry, no permanent surface, no way for readers to see it.",
-            },
-          ].map(({ step, desc }) => (
-            <div key={step} className="rounded-xl border border-neutral-200 p-5">
-              <p className="text-xs text-neutral-400 mb-2">{step}</p>
-              <p className="text-sm text-neutral-500">{desc}</p>
-            </div>
-          ))}
-        </div>
 
         <Label>What the Experiment Proved</Label>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
           {[
             { stat: "+5.5–7.8%", detail: "lift in reviews written vs. status quo (~20–29K additional reviews/month at 100%)" },
-            { stat: "20%", detail: "of nudged users actually earned a badge — far exceeding push CTR benchmarks of 2–8%" },
-            { stat: "+6–8%", detail: "higher Yelp Sort score for badge-motivated reviews — users wrote more carefully about topics they cared about" },
+            { stat: "20%", detail: "of nudged users actually earned a badge, far exceeding push CTR benchmarks of 2–8%" },
+            { stat: "+6–8%", detail: "higher Yelp Sort score for badge-motivated reviews; users wrote more carefully about topics they cared about" },
           ].map(({ stat, detail }) => (
             <div key={stat} className="rounded-xl border border-neutral-100 bg-neutral-50 p-5">
               <p className="text-2xl font-semibold text-neutral-800 mb-1">{stat}</p>
@@ -151,11 +129,11 @@ export default function Recognition() {
       <p>
         The recognition system existed technically but had no presence in the product. Users earned
         badges they couldn&apos;t find, and readers had no way to know if a reviewer was a category
-        expert. The surface-level problem was &ldquo;where does this live?&rdquo; — but the real
+        expert. The surface-level problem was &ldquo;where does this live?&rdquo; but the real
         design challenge was harder:
       </p>
       <p>
-        <strong>How do you make a credibility signal feel earned, not gamed — and valuable to two
+        <strong>How do you make a credibility signal feel earned, not gamed, and valuable to two
         completely different audiences at once?</strong>
       </p>
 
@@ -163,7 +141,7 @@ export default function Recognition() {
         {[
           {
             audience: "For contributors",
-            need: "Recognitions need to feel like genuine acknowledgment — a reflection of real expertise, not a hollow badge for showing up.",
+            need: "Recognitions need to feel like genuine acknowledgment: a reflection of real expertise, not a hollow badge for showing up.",
           },
           {
             audience: "For readers",
@@ -228,7 +206,7 @@ export default function Recognition() {
         </div>
       </Card>
       <p>
-        This wasn&apos;t just a product roadmap — it was a <strong>design constraint</strong>. The
+        This wasn&apos;t just a product roadmap; it was a <strong>design constraint</strong>. The
         sequence ensured that every new surface had a coherent foundation to build on.
       </p>
 
@@ -237,7 +215,7 @@ export default function Recognition() {
       <h2 id="decisions">04 — Key Design Decisions</h2>
       <p>
         Each milestone introduced a distinct design problem. Here&apos;s where the most meaningful
-        decisions were made — and why.
+        decisions were made, and why.
       </p>
 
       <Card id="decision-metab">
@@ -245,7 +223,7 @@ export default function Recognition() {
         <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">MeTab: Where Do Recognitions Belong?</h3>
         <p className="text-sm text-neutral-500 mb-6">
           The existing Achievements section was cluttered, buried at the bottom of MeTab, and had low
-          engagement. The design constraint: don&apos;t restructure the whole MeTab — make the
+          engagement. The design constraint: don&apos;t restructure the whole MeTab. Make the
           smallest change that creates the biggest signal lift.
         </p>
 
@@ -254,7 +232,7 @@ export default function Recognition() {
           {[
             {
               direction: "Recognitions inside the Impact section",
-              reason: "Conflated two distinct concepts. Users understood Impact as metrics (reaction counts, view counts) — not milestones or achievements. Mixing them created confusion about what the recognition was measuring.",
+              reason: "Conflated two distinct concepts. Users understood Impact as metrics (reaction counts, view counts), not milestones or achievements. Mixing them created confusion about what the recognition was measuring.",
             },
             {
               direction: "Expandable / collapsed Achievements block",
@@ -273,12 +251,12 @@ export default function Recognition() {
         <Label>Final Approach</Label>
         <BulletList className="mb-6" items={[
           "Add \"Recognitions\" as a named entry point in Achievements, directly below Yelp Elite",
-          "Rename legacy \"Badges\" to \"Check-in Badges\" — a small copy change that clearly separates review-based from check-in-based achievements",
+          "Rename legacy \"Badges\" to \"Check-in Badges\": a small copy change that clearly separates review-based from check-in-based achievements",
           "Remove Dukedoms (outdated legacy) and Compliments (duplicate of Impact section)",
-          "Move Achievements section up in the MeTab hierarchy — below Impact, not buried at the bottom",
+          "Move Achievements section up in the MeTab hierarchy, below Impact rather than buried at the bottom",
         ]} />
 
-        <Label>One Hard Call — The Achieved Date</Label>
+        <Label>One Hard Call: The Achieved Date</Label>
         <p className="text-sm text-neutral-600">
           For backfilled recognitions, I chose to display the date of the <em>latest</em> qualifying
           review, not the earliest. Showing a date from 2005 would make the recognition feel like a
@@ -291,7 +269,7 @@ export default function Recognition() {
         <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">Biz Page: What Does a Recognition Look Like in Context?</h3>
         <p className="text-sm text-neutral-500 mb-6">
           This was the highest-stakes design surface. Readers encounter recognitions without any prior
-          education — the signal has to be legible in under 2 seconds or it fails.
+          education. The signal has to be legible in under 2 seconds or it fails.
         </p>
 
         <Label>Design Principle</Label>
@@ -313,7 +291,7 @@ export default function Recognition() {
             },
             {
               direction: "Recognition name only, no review count",
-              reason: "Stripped the signal of meaning. Nothing differentiated a user who just earned a recognition from one with 30 reviews in that category — the whole point of the credential.",
+              reason: "Stripped the signal of meaning. Nothing differentiated a user who just earned a recognition from one with 30 reviews in that category, which is the whole point of the credential.",
             },
           ].map(({ direction, reason }) => (
             <div key={direction} className="rounded-xl border border-neutral-200 p-5">
@@ -329,11 +307,11 @@ export default function Recognition() {
         <p className="text-sm text-neutral-600 mb-3">
           Replace the user passport row entirely for eligible users. Show recognition name + review
           count for that category. Clean, scannable, immediately meaningful. Tapping through leads to
-          the reviewer&apos;s category-specific review list — closing the loop for readers who want
+          the reviewer&apos;s category-specific review list, closing the loop for readers who want
           to verify.
         </p>
         <BulletList items={[
-          "One piece of information, clearly formatted — no competing elements",
+          "One piece of information, clearly formatted with no competing elements",
           "Review count provides the depth signal that makes the recognition credible",
           "Tap-through to the review list lets skeptical readers verify for themselves",
         ]} />
@@ -354,7 +332,7 @@ export default function Recognition() {
               <Label>The Framing Problem</Label>
               <p className="text-sm text-neutral-600">
                 &ldquo;Your recognition expired&rdquo; feels like a penalty. The system is technically
-                the same either way — but how contributors experience it depends entirely on the framing.
+                the same either way, but how contributors experience it depends entirely on the framing.
               </p>
             </>
           }
@@ -362,7 +340,7 @@ export default function Recognition() {
             <>
               <Label>The Design Reframe</Label>
               <p className="text-sm text-neutral-600">
-                Expiration isn&apos;t about taking a badge away — it&apos;s about keeping the signal
+                Expiration isn&apos;t about taking a badge away. It&apos;s about keeping the signal
                 honest for readers. Contributors still see all earned badges. Expired badges simply
                 stop showing publicly next to reviews.
               </p>
@@ -374,12 +352,12 @@ export default function Recognition() {
         <BulletList className="mb-4" items={[
           "Contributors: can always see earned recognitions in their profile, regardless of expiration",
           "Readers: only see recognitions from users who have reviewed in that category within the past year",
-          "Re-engagement mechanic: write one more review in the category to reactivate — an invitation, not a penalty",
+          "Re-engagement mechanic: write one more review in the category to reactivate, an invitation rather than a penalty",
         ]} />
         <p className="text-sm text-neutral-500 mt-2">
           The interface nudges use &ldquo;keep your recognition active&rdquo; language, never
           &ldquo;your recognition expired.&rdquo; Sometimes the most important design work isn&apos;t
-          the UI — it&apos;s the framing.
+          the UI; it&apos;s the framing.
         </p>
       </Card>
 
@@ -393,11 +371,11 @@ export default function Recognition() {
       <ol>
         <li>
           <strong>MeTab launch</strong> gave contributors a permanent, findable home for their
-          recognitions — the foundational piece the rest of the system depended on.
+          recognitions, the foundational piece the rest of the system depended on.
         </li>
         <li>
           <strong>Biz page launch (Dec 2023)</strong> gave readers a credibility signal at the exact
-          moment they&apos;re evaluating whether to trust a review — completing the reader half of
+          moment they&apos;re evaluating whether to trust a review, completing the reader half of
           the dual-audience design challenge.
         </li>
         <li>
@@ -411,7 +389,7 @@ export default function Recognition() {
       <h2 id="reflections">Reflections</h2>
       <p>
         Building on top of a validated experiment is a different challenge than starting from zero.
-        The proof of concept existed — but the design work of making it coherent, permanent, and
+        The proof of concept existed, but the design work of making it coherent, permanent, and
         trustworthy was still entirely ahead.
       </p>
       <ol>
@@ -423,7 +401,7 @@ export default function Recognition() {
         <li>
           <strong>Two-audience problems require explicit tradeoffs.</strong> Contributors needed
           pride; readers needed trust. Being deliberate about which need each surface was optimizing
-          for — rather than trying to serve both equally everywhere — is what kept the design coherent.
+          for, rather than trying to serve both equally everywhere, is what kept the design coherent.
         </li>
         <li>
           <strong>Framing matters as much as the interface.</strong> The expiration system is
