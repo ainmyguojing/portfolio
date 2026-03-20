@@ -73,7 +73,7 @@ export default function YearOnYelp() {
     >
       <p>
         This project required a different kind of design leadership. The brief didn&apos;t arrive
-        fully formed — I was responsible for writing it. Every visual, copy line, and animation
+        fully formed; I was responsible for writing it. Every visual, copy line, and animation
         downstream followed from the creative direction I established.
       </p>
 
@@ -92,15 +92,15 @@ export default function YearOnYelp() {
       <h2 id="role">02 — My Role: Design as Creative Direction</h2>
       <p>
         This wasn&apos;t a project where the brief arrived and I designed to it. I was responsible
-        for the brief itself — defining the creative direction that every downstream decision would
+        for the brief itself: defining the creative direction that every downstream decision would
         follow. That meant running the theme brainstorming workshop with product, design, content,
         creative, and engineering; developing the evaluation criteria and leading the team to a
         decision; writing the creative brief that went to the illustration and animation teams; and
         coordinating all creative deliverables across a 6-month timeline.
       </p>
       <p>
-        The design thinking happened before any visual was made. A team of 10+ contributors — three
-        animators, an illustrator, a copywriter, engineers, and a PMM — all needed a clear direction
+        The design thinking happened before any visual was made. A team of 10+ contributors (three
+        animators, an illustrator, a copywriter, engineers, and a PMM) all needed a clear direction
         to work from. My job was to create that clarity.
       </p>
 
@@ -150,7 +150,7 @@ export default function YearOnYelp() {
             <>
               <p className="text-sm font-semibold text-neutral-700 mb-2">Memory Jar</p>
               <BulletList items={[
-                "Strong emotional resonance — nostalgia-driven, immediately relatable",
+                "Strong emotional resonance, nostalgia-driven, immediately relatable",
                 "Users already describe previous YOY as a personal journal",
                 "High personalization potential through photo collage",
                 "Strategic weakness: centers the contributor's own memories, making it harder to communicate that contributions help other people",
@@ -161,10 +161,10 @@ export default function YearOnYelp() {
             <>
               <p className="text-sm font-semibold text-neutral-700 mb-2">Constellation <span className="text-xs font-normal text-neutral-400">(Selected)</span></p>
               <BulletList items={[
-                "Built on Yelp's existing star rating association — the metaphor didn't need to be invented, just activated",
+                "Built on Yelp's existing star rating association; the metaphor didn't need to be invented, just activated",
                 "Navigation by stars maps directly to contributors guiding others toward good businesses",
                 "Strong personalization potential: food-shaped constellations per category",
-                "Strategic strength: keeps the narrative focused outward — your contributions guided someone else",
+                "Strategic strength: keeps the narrative focused outward; your contributions guided someone else",
               ]} />
             </>
           }
@@ -188,7 +188,7 @@ export default function YearOnYelp() {
           card-by-card story format. This was a deliberate design decision: the card format mirrors
           how people consume stories on social platforms, creates natural moments of anticipation
           between reveals, and makes each module feel like its own beat rather than a section in a
-          document. It was a meaningful engineering investment, but a one-time one — the card
+          document. It was a meaningful engineering investment, but a one-time one; the card
           format would reduce design and engineering effort for all future YOY builds.
         </p>
 
@@ -203,8 +203,8 @@ export default function YearOnYelp() {
 
         <Label>Personalization at Scale</Label>
         <p className="text-sm text-neutral-600">
-          The most reviewed food category module had 14 visual variations — one for each of the
-          13 top food categories plus a general fallback — each with a unique constellation
+          The most reviewed food category module had 14 visual variations: one for each of the
+          13 top food categories plus a general fallback, each with a unique constellation
           illustration and distinct copy. Every user&apos;s most reviewed category would feel
           individually crafted. The design work was building the visual system and the logic that
           made this generatable; the craft was in the system, not the individual instances.
@@ -232,7 +232,7 @@ export default function YearOnYelp() {
             },
             {
               label: "Animation",
-              detail: "Three modules received Lottie animation treatment — intro, most popular photo, most popular review — reserved for the moments with the highest emotional stakes in the sequence.",
+              detail: "Three modules received Lottie animation treatment (intro, most popular photo, most popular review), reserved for the moments with the highest emotional stakes in the sequence.",
             },
           ].map(({ label, detail }) => (
             <div key={label} className="rounded-xl border border-neutral-200 p-5">
@@ -276,7 +276,7 @@ export default function YearOnYelp() {
       <ol>
         <li>
           <strong>The theme decision is a product decision.</strong> Choosing between Constellation
-          and Memory Jar wasn&apos;t a creative preference — it was a strategic call about whether
+          and Memory Jar wasn&apos;t a creative preference; it was a strategic call about whether
           YOY should center the contributor&apos;s personal memories or their impact on others.
           Getting that framing right determined what every screen said and felt like.
         </li>
@@ -289,7 +289,7 @@ export default function YearOnYelp() {
         <li>
           <strong>Personalization scales through systems, not instances.</strong> The 14 food
           category variations felt handcrafted to each user. The actual design work was building
-          the visual logic that made them generatable — the craft was in the system.
+          the visual logic that made them generatable; the craft was in the system.
         </li>
       </ol>
     </CaseStudyLayout>
