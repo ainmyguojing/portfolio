@@ -191,11 +191,11 @@ export default function Elite() {
 
         <Label>Key Decision: Eligibility Copy</Label>
         <p className="text-sm text-neutral-600">
-          The "how to join" section was deliberately non-specific about criteria. Legal constraints
+          The &ldquo;how to join&rdquo; section was deliberately non-specific about criteria. Legal constraints
           prevent publishing explicit requirements, and Elite members themselves report valuing the
           mystery of the program as part of its appeal. The copy communicates effort and character
-          without setting a measurable bar: "Share your experiences through thoughtful reviews"
-          rather than "write X reviews per month." The design had to feel informative without
+          without setting a measurable bar: &ldquo;Share your experiences through thoughtful reviews&rdquo;
+          rather than &ldquo;write X reviews per month.&rdquo; The design had to feel informative without
           over-promising.
         </p>
       </Card>
@@ -234,8 +234,8 @@ export default function Elite() {
         <Label>Key Decision: The Loading Screen</Label>
         <p className="text-sm text-neutral-600 mb-6">
           Before showing a result, users see a loading state that simulates a real review of their
-          account: "Analyzing your profile... Checking your contributions... Verifying your
-          eligibility." This does two things. It signals the nomination is being taken seriously,
+          account: &ldquo;Analyzing your profile... Checking your contributions... Verifying your
+          eligibility.&rdquo; This does two things. It signals the nomination is being taken seriously,
           not instantly dismissed. And it makes the outcome feel legitimate whether accepted or
           rejected. A result that arrives instantly feels arbitrary; one that arrives after a visible
           process feels earned.
@@ -365,7 +365,7 @@ export default function Elite() {
           <strong>Copy is load-bearing.</strong> The Elite program deliberately withholds specific
           eligibility criteria. Designing within that constraint meant writing copy that felt
           informative and motivating without being explicit. The loading screen, the rejection
-          messages, the "how to join" section — all required language decisions that carried as
+          messages, the &ldquo;how to join&rdquo; section — all required language decisions that carried as
           much design intent as the layouts themselves.
         </li>
       </ol>
