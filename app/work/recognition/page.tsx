@@ -246,6 +246,9 @@ export default function Recognition() {
           "Added \"Recognitions\" directly below Yelp Elite in Achievements",
           "Moved Achievements higher in MeTab for better discoverability",
         ]} />
+        <figure className="not-prose mx-auto" style={{ width: "70%" }}>
+          <Image src="/images/Recognition/Me-tab-final-design.png" alt="MeTab final design" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+        </figure>
       </Card>
 
       <Card id="decision-bizpage">
