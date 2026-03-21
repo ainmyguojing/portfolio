@@ -311,7 +311,7 @@ export default function Elite() {
 
       <SectionDivider id="divider-reflections" />
 
-      <h2 id="reflections">05 — Reflections</h2>
+      <h2 id="reflections">Reflections</h2>
       <ol>
         <li>
           <strong>Real change meant fixing the whole pipeline, not just pieces.</strong> Each piece
