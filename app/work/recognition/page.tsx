@@ -209,22 +209,22 @@ export default function Recognition() {
 
         <Label>Explored &amp; Rejected</Label>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 mt-2">
-          <div className="rounded-xl border border-neutral-200 p-5">
+          <div className="rounded-xl border border-neutral-200 p-5 flex flex-col">
             <p className="text-sm font-semibold text-neutral-700 mb-2">
               <span className="text-neutral-400 mr-1.5">✕</span>Recognitions inside the Impact section
             </p>
             <p className="text-sm text-neutral-500 mb-4">Conflated two distinct concepts. Users understood Impact as metrics (reaction counts, view counts), not milestones or achievements. Mixing them created confusion about what the recognition was measuring.</p>
-            <figure className="not-prose">
+            <figure className="not-prose mt-auto">
               <Image src="/images/Recognition/Me-tab-discarded-design-1-1.png" alt="Recognitions inside Impact section" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
               <figcaption className="text-xs text-neutral-400 text-center mt-2">Showing recognition in the Impact section</figcaption>
             </figure>
           </div>
-          <div className="rounded-xl border border-neutral-200 p-5">
+          <div className="rounded-xl border border-neutral-200 p-5 flex flex-col">
             <p className="text-sm font-semibold text-neutral-700 mb-2">
               <span className="text-neutral-400 mr-1.5">✕</span>Expandable / collapsed Achievements block
             </p>
             <p className="text-sm text-neutral-500 mb-4">Added interaction cost without adding delight. The problem was findability, not space. A collapsed pattern would have made recognitions harder to discover, not easier.</p>
-            <figure className="not-prose">
+            <figure className="not-prose mt-auto">
               <Image src="/images/Recognition/Me-tab-discarded-design-1-2.png" alt="Expandable collapsed Achievements block" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
               <figcaption className="text-xs text-neutral-400 text-center mt-2">Collapsed achievement section with both Elites and Recogntions</figcaption>
             </figure>
