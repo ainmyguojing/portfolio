@@ -248,6 +248,7 @@ export default function Recognition() {
         ]} />
         <figure className="not-prose mx-auto" style={{ width: "70%" }}>
           <Image src="/images/Recognition/Me-tab-final-design.png" alt="MeTab final design" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          <figcaption className="text-xs text-neutral-400 text-center mt-2">Final design - placement of recognition on Me Tab</figcaption>
         </figure>
       </Card>
 
