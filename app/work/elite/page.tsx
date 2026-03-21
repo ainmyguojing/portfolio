@@ -93,7 +93,7 @@ export default function Elite() {
 
       <Card>
         <Label>Discovery</Label>
-        <p className="text-sm text-neutral-600 mb-6">Awareness depended on manual outreach; most valuable reviewers never heard of Elite.</p>
+        <p className="text-sm text-neutral-600 mb-6">Awareness depended on manual outreach; most valuable reviewers never heard of Elite. The Elite Squad page was deeply buried in the Me Tab, making organic discovery rare. Occasionally users would spot the Elite badge on another reviewer&apos;s profile, but the badge alone offered little context about the program, leaving most readers unsure what it meant or how to get involved.</p>
         <div className="not-prose flex gap-4 mx-auto items-end" style={{ width: "70%" }}>
           <figure className="flex-1">
             <Image src="/images/Elite Ecosystem/SQ-Elite-page-entrypoint.png" alt="Hidden entry point on Me Tab" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
