@@ -52,19 +52,23 @@ function BulletList({ items, className }: { items: string[]; className?: string 
 
 const SECTIONS = [
   { id: "problem", title: "The System Problem", divider: "divider-problem" },
-  { id: "awareness", title: "Awareness: Getting the Right People In", divider: "divider-awareness" },
-  { id: "consideration", title: "Consideration: A Page That Converts", divider: "divider-consideration" },
-  { id: "conversion", title: "Conversion: Rejection as Re-engagement", divider: "divider-conversion" },
-  { id: "system", title: "The Funnel as a Design System", divider: "divider-system" },
-  { id: "outcome", title: "Outcome & Impact", divider: "divider-outcome" },
-  { id: "reflections", title: "Reflections", divider: "divider-reflections" },
+  {
+    id: "solution", title: "The Solution: A Coherent Funnel", divider: "divider-solution",
+    subsections: [
+      { id: "awareness", title: "Awareness: Right People, Right Moment" },
+      { id: "consideration", title: "Consideration: A Page That Converts" },
+      { id: "conversion", title: "Conversion: Turning Rejection into Re-engagement" },
+    ],
+  },
+  { id: "system", title: "The Funnel as Design System", divider: "divider-system" },
+  { id: "outcome", title: "Outcomes & Reflections", divider: "divider-outcome" },
 ];
 
 export default function Elite() {
   return (
     <CaseStudyLayout
       title="Elite Ecosystem Experiences"
-      subtitle="Yelp Elite is the top tier of the contributor community, but the pipeline was broken at every stage: most high-potential users had never heard of the program, the landing page was not converting, and 80% of nominations were rejected with no explanation. I redesigned the full funnel from awareness to conversion."
+      subtitle="Yelp Elite is our top contributor tier, but the path to get there was broken: few high-potential users knew it existed, the landing page underperformed, and 80% of nominations were rejected without explanation. I led the redesign from awareness to conversion."
       role="Lead Designer"
       team="1 PM · Engineers · Community Management · PMM"
       year="2024–2026"
@@ -72,32 +76,32 @@ export default function Elite() {
       sections={SECTIONS}
     >
       <p>
-        Elite contributors are disproportionately valuable: they write more reviews, attend events,
-        and anchor the community. The design work here wasn&apos;t a single project; it was three
-        interventions at different points in the same broken pipeline, designed to work together.
+        Elite contributors anchor our community with more reviews and higher engagement. This work
+        was a system-level redesign: three interventions fixing distinct, connected stages of a
+        leaky pipeline.
       </p>
 
       <SectionDivider id="divider-problem" />
 
       <h2 id="problem">01 — The System Problem</h2>
       <p>
-        The Elite program had a leaky pipeline at every stage. Each layer had its own failure mode,
-        and fixing one without the others would have left the funnel broken.
+        The Elite program lost candidates at every step. Each stage had unique issues, and patching
+        only one wouldn&apos;t fix the funnel.
       </p>
 
       <div className="not-prose grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
         {[
           {
             stage: "Discovery",
-            problem: "Awareness relied entirely on manual Community Manager outreach. Most high-potential contributors never learned the program existed.",
+            problem: "Awareness depended on manual outreach; most valuable reviewers never heard of Elite.",
           },
           {
             stage: "Consideration",
-            problem: "Users who found the Elite page encountered outdated, text-heavy content that didn't communicate the program's value or make nomination feel approachable.",
+            problem: "The Elite landing page was text-heavy and didn't convert; it lacked clarity and appeal.",
           },
           {
             stage: "Conversion",
-            problem: "80%+ of nominations were auto-rejected via a generic system modal with no explanation and no path forward.",
+            problem: "80%+ of nominations were auto-rejected, with generic feedback and no next step.",
           },
         ].map(({ stage, problem }) => (
           <div key={stage} className="rounded-xl border border-neutral-200 p-5">
@@ -107,72 +111,58 @@ export default function Elite() {
         ))}
       </div>
       <p>
-        Each design decision was made with the full funnel in mind. The goal wasn&apos;t three better
-        features. It was one coherent pipeline.
+        I approached every design choice with the full user journey in mind, aiming for a seamless
+        experience rather than just isolated improvements.
       </p>
 
-      <SectionDivider id="divider-awareness" />
+      <SectionDivider id="divider-solution" />
 
-      <h2 id="awareness">02 — Awareness: Getting the Right People In</h2>
+      <h2 id="solution">02 — The Solution: A Coherent Funnel</h2>
       <p>
-        The problem wasn&apos;t that users weren&apos;t interested in Elite; it was that they never
-        found out it existed. The design challenge was surfacing the program at the right moment,
-        to the right people, without feeling like an interruption.
+        Systemic issues required holistic fixes. This chapter breaks down the coordinated
+        interventions that repaired the pipeline, each working in concert.
       </p>
 
-      <Card>
-        <Label>Design Decision: Surface on the Post-Review Screen</Label>
+      <Card id="awareness">
+        <Label>2.1 — Awareness: Right People, Right Moment</Label>
         <p className="text-sm text-neutral-700 mb-6">
-          A modal shown to eligible contributors immediately after they submit a review. The post-review
-          screen captures a moment of completion: the user just contributed something and feels good
-          about it. That&apos;s the right moment to introduce an aspirational next step, not a cold
-          interruption mid-session.
+          Interest wasn&apos;t lacking — visibility was. The challenge was surfacing Elite at the
+          right time, without interruptive tactics.
         </p>
 
-        <Label>Eligibility Targeting</Label>
-        <BulletList className="mb-6" items={[
-          "2+ reviews in the last 30 days",
-          "6+ lifetime reviews",
-          "Not currently Elite, not ineligible, not nominated in the last 3 months",
-        ]} />
-
-        <Label>Design Constraints</Label>
-        <BulletList className="mb-6" items={[
-          "Must not interfere with other high-priority modals in the same flow",
-          "Frequency cap: shown once per 180 days per user",
-        ]} />
-
-        <Label>Why the Modal Doesn&apos;t Ask for Anything</Label>
+        <Label>Design: Post-Review Modal</Label>
         <p className="text-sm text-neutral-600 mb-6">
-          The modal introduces the program and links to the Elite page. It does not ask the user to
-          nominate themselves immediately. Keeping this step lightweight was intentional. An
-          over-eager CTA at the awareness stage would feel transactional, not inspiring. The ask
-          comes after the user has had a chance to learn more.
+          A modal appears to eligible contributors immediately after submitting a review, right when
+          users feel accomplished and open to next steps. The modal simply introduces Elite and links
+          to the landing page, intentionally avoiding a pushy call-to-action at this early stage.
         </p>
 
+        <Label>Eligibility Criteria</Label>
+        <BulletList className="mb-6" items={[
+          "2+ reviews in last 30 days",
+          "6+ lifetime reviews",
+          "Not already Elite, ineligible, or recently nominated",
+        ]} />
+
+        <Label>Impact</Label>
+        <p className="text-sm text-neutral-600">
+          ~880K eligible users per year, projecting 1K–5.8K incremental Elites and 10K–58K more
+          reviews annually.
+        </p>
       </Card>
 
-      <p>
-        Opportunity sizing: ~880K eligible reviewers annually, with projected 1K–5.8K incremental
-        new Elites per year and 10K–58K additional reviews at projected CTR.
-      </p>
+      <Card id="consideration">
+        <Label>2.2 — Consideration: A Page That Converts</Label>
+        <p className="text-sm text-neutral-700 mb-6">
+          Curious but uncommitted users hit a wall with the old landing page: it was wordy, dated,
+          and hard to act on. Without new assets, I focused on three principles.
+        </p>
 
-      <SectionDivider id="divider-consideration" />
-
-      <h2 id="consideration">03 — Consideration: A Landing Page That Converts</h2>
-      <p>
-        Users arriving at the Elite page were curious but not yet committed. The existing page
-        was text-heavy, visually outdated, and required two taps to start a nomination. The design
-        constraint made this harder: no new marketing assets were available.
-      </p>
-
-      <Card>
-        <Label>Design Principles</Label>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 mt-2">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
           {[
-            { principle: "Engaging", detail: "Bold visuals and more visual content. Less text. The existing page read like a brochure." },
-            { principle: "Clear narrative", detail: "Eight sections each with a single job: hero, community value, video, perks, how to join, events, CM support, sticky CTA." },
-            { principle: "Convenient", detail: "Sticky footer CTA always visible. One tap to start the nomination from anywhere on the page." },
+            { principle: "Engaging", detail: "Added bold visuals; reduced text." },
+            { principle: "Clear Narrative", detail: "Eight sections, each with a focused purpose: from community value to events to support." },
+            { principle: "Convenient", detail: "Persistent sticky CTA for seamless nomination; one tap from anywhere on the page." },
           ].map(({ principle, detail }) => (
             <div key={principle} className="rounded-xl border border-neutral-200 p-5">
               <p className="text-sm font-semibold text-neutral-700 mb-2">{principle}</p>
@@ -181,57 +171,31 @@ export default function Elite() {
           ))}
         </div>
 
-        <Label>Key Decision: Sticky CTA</Label>
+        <Label>Copy Choices</Label>
         <p className="text-sm text-neutral-600 mb-6">
-          The status quo required users to scroll to the bottom of the page and then tap a CTA; two
-          steps to begin something they were already motivated to do. The sticky footer replaced that
-          with a persistent CTA visible at all times. The friction was in the interaction pattern,
-          not the motivation.
+          The &ldquo;how to join&rdquo; section stayed non-specific by design. Legal and community
+          reasons require keeping eligibility mysterious, emphasizing effort and character over numbers.
         </p>
 
-        <Label>Key Decision: Eligibility Copy</Label>
+        <Label>Results Target</Label>
         <p className="text-sm text-neutral-600">
-          The &ldquo;how to join&rdquo; section was deliberately non-specific about criteria. Legal constraints
-          prevent publishing explicit requirements, and Elite members themselves report valuing the
-          mystery of the program as part of its appeal. The copy communicates effort and character
-          without setting a measurable bar: &ldquo;Share your experiences through thoughtful reviews&rdquo;
-          rather than &ldquo;write X reviews per month.&rdquo; The design had to feel informative without
-          over-promising.
+          A 2% bump in nominations: 175 more Elites and about 3,500 extra reviews each month.
         </p>
       </Card>
 
-      <p>
-        Target: a 2% increase in nominations = 175 more Elites = approximately 3,500 additional
-        reviews per month.
-      </p>
-
-      <SectionDivider id="divider-conversion" />
-
-      <h2 id="conversion">04 — Conversion: Turning Rejection into Re-engagement</h2>
-      <p>
-        With 80%+ of nominations auto-rejected, fixing the top of the funnel alone would not have
-        moved the needle. The highest-leverage design work was here: converting a dead-end rejection
-        into a specific, actionable nudge.
-      </p>
-
-      <Card>
-        <Label>The Core Design Challenge</Label>
+      <Card id="conversion">
+        <Label>2.3 — Conversion: Turning Rejection into Re-engagement</Label>
         <p className="text-sm text-neutral-700 mb-6">
-          The user just made an effort to nominate themselves. A generic rejection at that moment
-          doesn&apos;t just fail to help; it actively damages motivation. The design question was
-          how to turn rejection into a starting line rather than a wall.
+          Fixing the funnel top wasn&apos;t enough. Rejection was the biggest drop-off. Generic,
+          instant rejection wasn&apos;t just unhelpful; it hurt motivation.
         </p>
 
-        <Label>Key Decision: The Loading Screen</Label>
+        <Label>Design: Loading and Rejection Screens</Label>
         <p className="text-sm text-neutral-600 mb-6">
-          Nominations can be auto-rejected for various reasons — insufficient recent reviews,
-          low review quality, account too new, missing profile photo, or already nominated.
-          Rather than surfacing an instant rejection for any of these, users first see a loading
-          state that simulates a real review of their account: &ldquo;Analyzing your profile...
-          Checking your contributions... Verifying your eligibility.&rdquo; This signals the
-          nomination is being taken seriously, not instantly dismissed, and makes the outcome
-          feel legitimate whether accepted or rejected. A result that arrives instantly feels
-          arbitrary; one that arrives after a visible process feels earned.
+          Nominations now display a loading state (&ldquo;Analyzing your profile...&rdquo;) to show
+          serious review. On rejection, users see clear, specific reasons and actionable feedback
+          for improvement, each mapped to the actual eligibility roadblock, plus a nudge to write
+          another review. The outcome feels credible and constructive.
         </p>
 
         <TwoCol
@@ -240,8 +204,8 @@ export default function Elite() {
               <Label>Rejection Page: Top Half</Label>
               <p className="text-sm text-neutral-600">
                 Specific reason for rejection and exactly what to do about it. Each of the five
-                rejection reasons has its own copy; generic feedback would have felt dismissive.
-                Specific feedback makes the rejection credible and actionable.
+                rejection reasons has its own copy. Specific feedback makes the rejection credible
+                and actionable.
               </p>
             </>
           }
@@ -249,32 +213,32 @@ export default function Elite() {
             <>
               <Label>Rejection Page: Bottom Half</Label>
               <p className="text-sm text-neutral-600">
-                A YNRA (You Might Want to Review Again) section with contextual copy nudging the
-                user toward their next review. The rejection screen becomes a contribution prompt.
-                The user leaves with something to do, not just a door closed in their face.
+                A YNRA section nudging the user toward their next review. The rejection screen
+                becomes a contribution prompt. The user leaves with something to do, not just a
+                door closed in their face.
               </p>
             </>
           }
         />
 
-        <Label>Small Fix, Big Impact: Location Confirmation</Label>
+        <Label>Small Fix, Big Win: Location Confirmation</Label>
+        <p className="text-sm text-neutral-600 mb-6">
+          Letting users confirm or correct their primary location eliminated many false rejections
+          from stale location data.
+        </p>
+
+        <Label>Impact</Label>
         <p className="text-sm text-neutral-600">
-          Some users had stale locations from recent moves, causing false rejections that had nothing
-          to do with their contribution quality. Adding the ability to confirm or correct primary
-          location in the nomination modal removed an entire category of preventable rejections.
+          Raising valid nominations from 20% to 25% = ~5K more Elites and 65K additional reviews
+          annually.
         </p>
       </Card>
 
-      <p>
-        Opportunity: improving the valid nomination rate from 20% to 25% across 100K expected
-        nominations = ~5K additional Elites = estimated 65K incremental reviews per year.
-      </p>
-
       <SectionDivider id="divider-system" />
 
-      <h2 id="system">05 — The Funnel as a Design System</h2>
+      <h2 id="system">03 — The Funnel as Design System</h2>
       <p>
-        The three interventions form a coherent pipeline. None of them works in isolation.
+        No single fix worked in isolation.
       </p>
 
       <Card>
@@ -292,17 +256,17 @@ export default function Elite() {
                 {
                   stage: "Discovery",
                   problem: "Unaware the program exists",
-                  response: "Post-review awareness modal targeting eligible contributors",
+                  response: "Modal for immediate, relevant awareness",
                 },
                 {
                   stage: "Consideration",
                   problem: "Landing page doesn't convert curious users",
-                  response: "Elite page revamp with clear narrative, bold visuals, and sticky CTA",
+                  response: "Revamped landing page with sticky CTA",
                 },
                 {
                   stage: "Conversion",
                   problem: "Rejection kills momentum",
-                  response: "Auto-rejection flow with specific feedback and contribution nudge",
+                  response: "New rejection flow with feedback and motivation",
                 },
               ].map(({ stage, problem, response }) => (
                 <tr key={stage}>
@@ -314,66 +278,46 @@ export default function Elite() {
             </tbody>
           </table>
         </div>
-        <p className="text-sm text-neutral-500 mt-6">
-          The awareness modal drives users to the revamped page. The revamped page drives nominations.
-          The rejection flow keeps rejected nominees contributing and re-nominating. Improving any one
-          stage without the others would have left the pipeline leaking somewhere else.
-        </p>
 
         <div className="mt-8 pt-6 border-t border-neutral-100">
           <Label>Visual Language Across the Funnel</Label>
           <p className="text-sm text-neutral-600">
-            Each stage also received a considered visual treatment to maintain a consistent emotional
-            tone across the journey. The awareness modal uses a red envelope motif to frame the
-            moment as a personal invitation rather than a notification. The revamped landing page
-            opens with a full-bleed hero to immediately immerse the user in the energy of the Elite
-            community. The rejection flow introduces a loading animation followed by an intentionally
-            incomplete circle — almost closed, with a small visible gap — to communicate proximity
-            rather than failure. Together these visuals tell a continuous story: you are seen,
-            you are welcome, and you are close.
+            Visuals were carefully chosen for each step: a red envelope for invitation, a hero image
+            immersing users in Elite energy, and a nearly-complete circle on rejection to signal
+            progress, not failure. The journey tells a consistent story: you&apos;re welcome,
+            you&apos;re close.
           </p>
         </div>
       </Card>
 
       <SectionDivider id="divider-outcome" />
 
-      <h2 id="outcome">06 — Outcome &amp; Impact</h2>
+      <h2 id="outcome">04 — Outcomes &amp; Reflections</h2>
       <ol>
         <li>
-          <strong>Elite page revamp</strong> launched April 2024, ahead of May awareness campaigns,
-          targeting a 2% lift in nominations.
+          <strong>Elite page revamp (April 2024):</strong> projected 2% lift in nominations.
         </li>
         <li>
-          <strong>Awareness modal</strong> reaching ~880K eligible contributors per year, with
-          projected 1K–5.8K incremental new Elites annually.
+          <strong>Awareness modal:</strong> reaches ~880K contributors, up to 5.8K new Elites per year.
         </li>
         <li>
-          <strong>Auto-rejection flow</strong> projected at 65K incremental reviews per year by
-          converting rejection moments into specific, actionable re-engagement nudges.
+          <strong>Rejection redesign:</strong> projects 65K more reviews per year.
         </li>
       </ol>
 
-      <SectionDivider id="divider-reflections" />
-
-      <h2 id="reflections">Reflections</h2>
       <ol>
         <li>
-          <strong>Treating symptoms separately would have missed the point.</strong> Each piece of
-          work looked like a standalone task. The design thinking was recognizing they were all
-          symptoms of the same broken pipeline and making sure the solutions reinforced each other.
+          <strong>Real change meant fixing the whole pipeline, not just pieces.</strong> Each piece
+          looked like a standalone task. The design thinking was recognizing they were all symptoms
+          of the same broken pipeline.
         </li>
         <li>
-          <strong>The rejection flow was the highest-leverage work.</strong> With 80% of nominations
-          rejected, the most impactful fix wasn&apos;t more top-of-funnel volume; it was stopping
-          the bottom from hemorrhaging. One well-designed rejection screen changes the entire
-          emotional arc of the experience.
+          <strong>The rejection experience was the highest-leverage fix.</strong> Turning a dead end
+          into an actionable next step reshapes the entire journey.
         </li>
         <li>
-          <strong>Copy is load-bearing.</strong> The Elite program deliberately withholds specific
-          eligibility criteria. Designing within that constraint meant writing copy that felt
-          informative and motivating without being explicit. The loading screen, the rejection
-          messages, the &ldquo;how to join&rdquo; section; all required language decisions that carried as
-          much design intent as the layouts themselves.
+          <strong>Copy mattered as much as layout.</strong> Every word in the loading, rejection,
+          and eligibility messaging had to inform and motivate, all without stating clear criteria.
         </li>
       </ol>
     </CaseStudyLayout>
