@@ -1,4 +1,5 @@
 import CaseStudyLayout from "@/components/CaseStudyLayout";
+import Image from "next/image";
 
 export const metadata = {
   title: "Elite Ecosystem — Jing Guo",
@@ -92,7 +93,10 @@ export default function Elite() {
 
       <Card>
         <Label>Discovery</Label>
-        <p className="text-sm text-neutral-600">Awareness depended on manual outreach; most valuable reviewers never heard of Elite.</p>
+        <p className="text-sm text-neutral-600 mb-6">Awareness depended on manual outreach; most valuable reviewers never heard of Elite.</p>
+        <figure className="not-prose mx-auto" style={{ width: "70%" }}>
+          <Image src="/images/Elite Ecosystem/SQ-Elite-page-entrypoint.png" alt="Elite page entry point" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+        </figure>
       </Card>
 
       <Card>
