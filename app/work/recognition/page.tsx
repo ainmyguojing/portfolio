@@ -247,27 +247,36 @@ export default function Recognition() {
 
         <Label>Explored &amp; Rejected</Label>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 mt-2">
-          {[
-            {
-              direction: "Next to the username",
-              reason: "Too crowded, especially for Elite users who already have an Elite badge. Recognition risked reading as a sub-category of Elite rather than its own credential.",
-            },
-            {
-              direction: "Combined with existing user passport stats",
-              reason: "Cognitively overloaded. Mixed formats (numeric stats alongside badge names) felt inconsistent, and users couldn't parse why some people had different stat combinations.",
-            },
-            {
-              direction: "Recognition name only, no review count",
-              reason: "Stripped the signal of meaning. Nothing differentiated a user who just earned a recognition from one with 30 reviews in that category, which is the whole point of the credential.",
-            },
-          ].map(({ direction, reason }) => (
-            <div key={direction} className="rounded-xl border border-neutral-200 p-5">
-              <p className="text-sm font-semibold text-neutral-700 mb-2">
-                <span className="text-neutral-400 mr-1.5">✕</span>{direction}
-              </p>
-              <p className="text-sm text-neutral-500">{reason}</p>
-            </div>
-          ))}
+          <div className="rounded-xl border border-neutral-200 p-5 flex flex-col">
+            <p className="text-sm font-semibold text-neutral-700 mb-2">
+              <span className="text-neutral-400 mr-1.5">✕</span>Next to the username
+            </p>
+            <p className="text-sm text-neutral-500 mb-4">Too crowded, especially for Elite users who already have an Elite badge. Recognition risked reading as a sub-category of Elite rather than its own credential.</p>
+            <figure className="not-prose mt-auto">
+              <Image src="/images/Recognition/bizpage-discarded-design-1-1.png" alt="Recognition next to username" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <figcaption className="text-xs text-neutral-400 text-center mt-2">Recognition next to user name</figcaption>
+            </figure>
+          </div>
+          <div className="rounded-xl border border-neutral-200 p-5 flex flex-col">
+            <p className="text-sm font-semibold text-neutral-700 mb-2">
+              <span className="text-neutral-400 mr-1.5">✕</span>Combined with existing user passport stats
+            </p>
+            <p className="text-sm text-neutral-500 mb-4">Cognitively overloaded. Mixed formats (numeric stats alongside badge names) felt inconsistent, and users couldn&apos;t parse why some people had different stat combinations.</p>
+            <figure className="not-prose mt-auto">
+              <Image src="/images/Recognition/bizpage-discarded-design-1-2.png" alt="Recognition next to user stats" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <figcaption className="text-xs text-neutral-400 text-center mt-2">Recognition next to user stats</figcaption>
+            </figure>
+          </div>
+          <div className="rounded-xl border border-neutral-200 p-5 flex flex-col">
+            <p className="text-sm font-semibold text-neutral-700 mb-2">
+              <span className="text-neutral-400 mr-1.5">✕</span>Recognition name only, no review count
+            </p>
+            <p className="text-sm text-neutral-500 mb-4">Stripped the signal of meaning. Nothing differentiated a user who just earned a recognition from one with 30 reviews in that category, which is the whole point of the credential.</p>
+            <figure className="not-prose mt-auto">
+              <Image src="/images/Recognition/bizpage-discarded-design-1-3.png" alt="Recognition name only replacing user stats" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <figcaption className="text-xs text-neutral-400 text-center mt-2">Recogntion name only replacing user stats</figcaption>
+            </figure>
+          </div>
         </div>
 
         <Label>Final Approach</Label>
