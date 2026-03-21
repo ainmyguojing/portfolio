@@ -130,7 +130,7 @@ export default function CommunityQA() {
         defining the vision, validating the user need, and then scaling the system.
       </p>
 
-      <ImageWithCaption src="/images/stage-diagram.png" alt="Main product stages diagram" caption="Main product stages" />
+      <ImageWithCaption src="/images/Community Q&A/stage-diagram.png" alt="Main product stages diagram" caption="Main product stages" />
 
       <Card id="evolution-stage1">
         <h3 className="text-base font-semibold text-neutral-900 mb-1">Stage 1: Vision Work</h3>
@@ -161,7 +161,7 @@ export default function CommunityQA() {
         <p className="text-sm text-neutral-600 mb-6">
           This phase established a shared direction for the product: Q&amp;A as a complementary layer. It should extend search and reviews rather than competing with them.
         </p>
-        <ImageWithCaption src="/images/vision-diagram.png" alt="User roles and key touchpoints" caption="User roles and key touchpoints" />
+        <ImageWithCaption src="/images/Community Q&A/vision-diagram.png" alt="User roles and key touchpoints" caption="User roles and key touchpoints" />
         <Label>Which user flows to focus on?</Label>
         <p className="text-sm text-neutral-600 mb-6">
           A key goal of the vision work was to surface the gaps between what Yelp currently offered and what users actually needed. The asking journey illustrates this most clearly. It&apos;s where unmet intent is most visible. I focused on two asking flows in the vision: search and AI chat. Here I&apos;ll use search as the example, since it represents the highest volume entry point for unanswered questions.
@@ -169,14 +169,14 @@ export default function CommunityQA() {
         <div className="not-prose flex flex-col gap-4" style={{ width: "80%", margin: "0 auto" }}>
           {[
             [
-              { src: "/images/vision-mock-1-1b.png", caption: "Step 1: Simple search" },
-              { src: "/images/vision-mock-1-2b.png", caption: "Step 2: Long sentence search" },
-              { src: "/images/vision-mock-1-3b.png", caption: "Step 3: Prompt to post the search as a question" },
+              { src: "/images/Community Q&A/vision-mock-1-1b.png", caption: "Step 1: Simple search" },
+              { src: "/images/Community Q&A/vision-mock-1-2b.png", caption: "Step 2: Long sentence search" },
+              { src: "/images/Community Q&A/vision-mock-1-3b.png", caption: "Step 3: Prompt to post the search as a question" },
             ],
             [
-              { src: "/images/vision-mock-1-4b.png", caption: "Step 4: Show user similar Q&As" },
-              { src: "/images/vision-mock-1-5b.png", caption: "Step 5: Notify user for new answer" },
-              { src: "/images/vision-mock-1-6b.png", caption: "Step 6: Lead user to business page" },
+              { src: "/images/Community Q&A/vision-mock-1-4b.png", caption: "Step 4: Show user similar Q&As" },
+              { src: "/images/Community Q&A/vision-mock-1-5b.png", caption: "Step 5: Notify user for new answer" },
+              { src: "/images/Community Q&A/vision-mock-1-6b.png", caption: "Step 6: Lead user to business page" },
             ],
           ].map((row, i) => (
             <div key={i} className="grid grid-cols-3 gap-3">
@@ -218,12 +218,12 @@ export default function CommunityQA() {
           left={<>
             <p className="text-sm font-semibold text-neutral-700 mb-1">Question asking</p>
             <p className="text-xs text-neutral-400 mb-4">Prompt user to ask questions on SERP</p>
-            <Image src="/images/pmf-asking-mock.png" alt="Question asking mock" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <Image src="/images/Community Q&A/pmf-asking-mock.png" alt="Question asking mock" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
           </>}
           right={<>
             <p className="text-sm font-semibold text-neutral-700 mb-1">Question answering</p>
             <p className="text-xs text-neutral-400 mb-4">Solicit answers on Home and Post Review Screen</p>
-            <Image src="/images/pmf-answering-mock.png" alt="Question answering mock" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <Image src="/images/Community Q&A/pmf-answering-mock.png" alt="Question answering mock" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
           </>}
         />
         <Label>Design Outcome</Label>
@@ -304,12 +304,12 @@ export default function CommunityQA() {
         ]} />
         <div className="not-prose flex items-center justify-center gap-4 mb-6" style={{ width: "60%", margin: "0 auto 1.5rem" }}>
           <figure className="flex-1">
-            <Image src="/images/initiative-1-mocks-1-1.png" alt="Original design" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <Image src="/images/Community Q&A/initiative-1-mocks-1-1.png" alt="Original design" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             <figcaption className="text-xs text-neutral-400 text-center mt-2">Original design</figcaption>
           </figure>
-          <Image src="/images/arrow.svg" alt="arrow" width={24} height={24} className="w-6 shrink-0" />
+          <Image src="/images/Community Q&A/arrow.svg" alt="arrow" width={24} height={24} className="w-6 shrink-0" />
           <figure className="flex-1">
-            <Image src="/images/initiative-1-mocks-1-2.png" alt="Final design" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <Image src="/images/Community Q&A/initiative-1-mocks-1-2.png" alt="Final design" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             <figcaption className="text-xs text-neutral-400 text-center mt-2">Final design</figcaption>
           </figure>
         </div>
@@ -348,9 +348,9 @@ export default function CommunityQA() {
         <div className="not-prose flex items-center justify-center gap-3 mb-6">
           <div className="flex gap-3 items-end" style={{ flex: 3 }}>
             {[
-              { src: "/images/initiative-2-mocks-2-1.png", caption: "Home entry point" },
-              { src: "/images/initiative-2-mocks-2-2.png", caption: "Yelp Assistant entry point" },
-              { src: "/images/initiative-2-mocks-2-3.png", caption: "Business page entry point" },
+              { src: "/images/Community Q&A/initiative-2-mocks-2-1.png", caption: "Home entry point" },
+              { src: "/images/Community Q&A/initiative-2-mocks-2-2.png", caption: "Yelp Assistant entry point" },
+              { src: "/images/Community Q&A/initiative-2-mocks-2-3.png", caption: "Business page entry point" },
             ].map(({ src, caption }) => (
               <figure key={src} className="flex-1">
                 <Image src={src} alt={caption} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
@@ -358,9 +358,9 @@ export default function CommunityQA() {
               </figure>
             ))}
           </div>
-          <Image src="/images/arrow.svg" alt="arrow" width={24} height={24} className="w-6 shrink-0" />
+          <Image src="/images/Community Q&A/arrow.svg" alt="arrow" width={24} height={24} className="w-6 shrink-0" />
           <figure style={{ flex: "1.15" }}>
-            <Image src="/images/initiative-2-mocks-2-4.png" alt="Geo based question hub" width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <Image src="/images/Community Q&A/initiative-2-mocks-2-4.png" alt="Geo based question hub" width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             <figcaption className="text-xs text-neutral-400 text-center mt-2">Geo based question hub</figcaption>
           </figure>
         </div>
@@ -402,9 +402,9 @@ export default function CommunityQA() {
         ]} />
         <div className="not-prose grid grid-cols-3 gap-3 mb-6">
           {[
-            { src: "/images/initiative-3-mocks-3-1.png", caption: "Before typing a reply" },
-            { src: "/images/initiative-3-mocks-3-2.png", caption: "Search and tag a business" },
-            { src: "/images/initiative-3-mocks-3-3.png", caption: "Answer with businesses" },
+            { src: "/images/Community Q&A/initiative-3-mocks-3-1.png", caption: "Before typing a reply" },
+            { src: "/images/Community Q&A/initiative-3-mocks-3-2.png", caption: "Search and tag a business" },
+            { src: "/images/Community Q&A/initiative-3-mocks-3-3.png", caption: "Answer with businesses" },
           ].map(({ src, caption }) => (
             <figure key={src}>
               <Image src={src} alt={caption} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
@@ -415,9 +415,9 @@ export default function CommunityQA() {
         <Label>Key Interaction Decisions</Label>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 mt-2">
           {[
-            { q: "Should users be able to change location while asking?", detail: "Removed manual location editing. Location is inferred automatically.", img: "/images/initiative-3-mocks-3-4.png", caption: "Before: manual location selection added unnecessary steps" },
-            { q: "What is the right interaction for business tagging?", detail: "Used inline tagging to keep the flow focused and avoid breaking the user's train of thought.", img: "/images/initiative-3-mocks-3-5.png", caption: "Attachment style tagging: clunky to use and hard to maintain" },
-            { q: "When should business chips appear?", detail: "Show business chips only before the user has tagged a business, only needed as a starting point.", img: "/images/initiative-3-mocks-3-6.png", caption: "The suggested business shown as chips will be carried over in the default list after tapping @" },
+            { q: "Should users be able to change location while asking?", detail: "Removed manual location editing. Location is inferred automatically.", img: "/images/Community Q&A/initiative-3-mocks-3-4.png", caption: "Before: manual location selection added unnecessary steps" },
+            { q: "What is the right interaction for business tagging?", detail: "Used inline tagging to keep the flow focused and avoid breaking the user's train of thought.", img: "/images/Community Q&A/initiative-3-mocks-3-5.png", caption: "Attachment style tagging: clunky to use and hard to maintain" },
+            { q: "When should business chips appear?", detail: "Show business chips only before the user has tagged a business, only needed as a starting point.", img: "/images/Community Q&A/initiative-3-mocks-3-6.png", caption: "The suggested business shown as chips will be carried over in the default list after tapping @" },
           ].map(({ q, detail, img, caption }) => (
             <div key={q} className="rounded-xl border border-neutral-200 p-5">
               <p className="text-sm font-semibold text-neutral-700 mb-2">{q}</p>
@@ -452,11 +452,11 @@ export default function CommunityQA() {
             ]} />
             <div className="not-prose flex gap-2">
               <figure className="w-1/2">
-                <Image src="/images/initiative-4-mocks-4-1.png" alt="Current state - reaction only" width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+                <Image src="/images/Community Q&A/initiative-4-mocks-4-1.png" alt="Current state - reaction only" width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
                 <figcaption className="text-xs text-neutral-400 text-center mt-2">🚫 Current state · Reaction only</figcaption>
               </figure>
               <figure className="w-1/2">
-                <Image src="/images/initiative-4-mocks-4-2.png" alt="Future state - reaction and reply" width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+                <Image src="/images/Community Q&A/initiative-4-mocks-4-2.png" alt="Future state - reaction and reply" width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
                 <figcaption className="text-xs text-neutral-400 text-center mt-2">✅ Future state · Reaction + Reply</figcaption>
               </figure>
             </div>
@@ -470,11 +470,11 @@ export default function CommunityQA() {
             ]} />
             <div className="not-prose flex gap-2">
               <figure className="w-1/2">
-                <Image src="/images/initiative-4-mocks-4-3.png" alt="Current state - reaction only" width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+                <Image src="/images/Community Q&A/initiative-4-mocks-4-3.png" alt="Current state - reaction only" width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
                 <figcaption className="text-xs text-neutral-400 text-center mt-2">✅ Current state · Reaction only</figcaption>
               </figure>
               <figure className="w-1/2">
-                <Image src="/images/initiative-4-mocks-4-4.png" alt="Future state - reaction and reply" width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+                <Image src="/images/Community Q&A/initiative-4-mocks-4-4.png" alt="Future state - reaction and reply" width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
                 <figcaption className="text-xs text-neutral-400 text-center mt-2">🚫 Future state · Reaction + Reply</figcaption>
               </figure>
             </div>
