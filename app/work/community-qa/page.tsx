@@ -87,10 +87,10 @@ export default function CommunityQA() {
   return (
     <CaseStudyLayout
       title="Community Q&A"
-      subtitle="When review volume plateaus, a new contribution type becomes critical. I led the design of Community Q&A, a complementary contribution model that grew to 10% of Yelp's review volume in three years."
+      subtitle="When review volume plateaus, a new contribution type becomes critical. I led the design of Community Q&A, a complementary contribution model that drives lightweight user-generated content for sustainable content growth."
       role="Lead Designer (Sole)"
       team="1 PM · 6 Engineers · 1 Data Scientist"
-      year="2023–2026"
+      year="2024–2026"
       tags={["0→1 Product", "Community", "Contribution Systems", "Scale"]}
       sections={SECTIONS}
     >

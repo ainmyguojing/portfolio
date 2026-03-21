@@ -28,14 +28,6 @@ function Label({ children }: { children: React.ReactNode }) {
   );
 }
 
-function TwoCol({ left, right }: { left: React.ReactNode; right: React.ReactNode }) {
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-      <div className="rounded-xl border border-neutral-200 p-5">{left}</div>
-      <div className="rounded-xl border border-neutral-200 p-5">{right}</div>
-    </div>
-  );
-}
 
 function BulletList({ items, className }: { items: string[]; className?: string }) {
   return (
@@ -70,34 +62,29 @@ export default function Recognition() {
   return (
     <CaseStudyLayout
       title="Recognition & Motivation System"
-      subtitle="Yelp's recognition system started as a hypothesis and proved itself in an experiment. My work was the next chapter: taking a feature that existed only in a single fleeting moment and giving it a permanent, meaningful presence across the app."
+      subtitle="The expert recognition system began as a simple hypothesis: could recognitions nudge reviewers to contribute more? My focus was on the next phase: transforming in-the-moment badges into a permanent, meaningful presence within the app."
       role="Lead Designer (Surfacing in App)"
-      team="1 PM · Engineers · 1 PMM"
-      year="2023–2026"
+      team="1 PM · 3 Engineers · 1 PMM"
+      year="2023–2024"
       tags={["Contributor Retention", "Motivation Systems", "Mobile"]}
       sections={SECTIONS}
     >
       <p>
-        This case study covers two connected phases: the MVP experiment and surfacing recognitions
-        permanently in the app. I own the design for the second part.
+        This case study covers two connected phases: the initial MVP experiment, and my work surfacing
+        recognitions more permanently across the app.
       </p>
 
       <SectionDivider id="divider-foundation" />
 
       <h2 id="foundation">01 — Foundation: The MVP Experiment <span className="text-neutral-400 font-normal text-base">(not my work)</span></h2>
       <p>
-        This project starts with a hypothesis that recognitions could motivate reviewers to contribute
-        more. The MVP was trying to test out this hypothesis in late 2022.
+        The MVP aimed to validate whether recognitions could actually motivate more contributions.
+        After a user&apos;s 2nd review in a category (Tacos, for example), they&apos;d get a nudge:
+        &ldquo;one more for a badge.&rdquo; After the 3rd, a success screen and a badge — but this
+        disappeared immediately, with no lasting record.
       </p>
 
       <Card>
-        <Label>The Concept</Label>
-        <p className="text-sm text-neutral-700 mb-6">
-          Introduce a category expert recognition surfaced as an in-the-moment experience in the
-          post-review flow. After a user&apos;s 2nd review in a category (e.g. Tacos), they&apos;d
-          see a nudge: one more review and you earn recognition. After the 3rd, a success screen and
-          badge. The recognition lived only in that moment, with no permanent home yet.
-        </p>
 
         <Label>What the Experiment Proved</Label>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
@@ -115,35 +102,30 @@ export default function Recognition() {
       </Card>
 
       <p>
-        The experiment validated the hypothesis. Recognitions motivated contribution and improved
-        quality. But it also revealed a clear gap: the experience only existed in a single moment,
-        and then disappeared. There was no home for earned recognitions, no way to revisit them,
-        and readers couldn&apos;t benefit from them at all. That&apos;s where my work began.
+        The experiment confirmed that recognition worked: it drove more and better reviews. But it
+        also surfaced a glaring issue: badges only existed for a fleeting moment. Users couldn&apos;t
+        revisit them, and readers got no benefit.
       </p>
 
       <SectionDivider id="divider-problem" />
 
       <h2 id="problem">02 — My Work: The Design Problem</h2>
       <p>
-        The recognition system existed technically but had no presence in the product. Users earned
-        badges they couldn&apos;t find, and readers had no way to know if a reviewer was a category
-        expert. The surface-level problem was &ldquo;where does this live?&rdquo; but the real
-        design challenge was harder:
-      </p>
-      <p>
-        <strong>How do you make a credibility signal feel earned, not gamed, and valuable to two
-        completely different audiences at once?</strong>
+        Technically, the recognition system existed. But without a home in the app, contributors
+        couldn&apos;t revisit their achievements, and readers couldn&apos;t tell who was an expert.
+        The core challenge: how do you make a credibility signal feel earned and valuable for both
+        contributors and readers?
       </p>
 
       <div className="not-prose grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
         {[
           {
             audience: "For contributors",
-            need: "Recognitions need to feel like genuine acknowledgment: a reflection of real expertise, not a hollow badge for showing up.",
+            need: "Recognitions must feel like real acknowledgment — a reflection of real expertise, not a hollow badge for showing up.",
           },
           {
             audience: "For readers",
-            need: "Recognitions need to communicate trustworthiness at a glance, without adding noise to an already information-dense surface.",
+            need: "Recognitions must signal trust quickly, without adding noise to an already information-dense surface.",
           },
         ].map(({ audience, need }) => (
           <div key={audience} className="rounded-xl border border-neutral-200 p-5">
@@ -153,16 +135,15 @@ export default function Recognition() {
         ))}
       </div>
       <p>
-        Every design decision throughout this project was filtered through that dual-audience tension.
+        Every design decision balanced these two needs.
       </p>
 
       <SectionDivider id="divider-sequencing" />
 
       <h2 id="sequencing">03 — Sequencing as a Design Strategy</h2>
       <p>
-        Before any screens, the most important decision was <strong>what to build first and why</strong>.
-        I proposed a phased sequence rooted in a single principle: each milestone only becomes
-        credible once the previous one is in place.
+        The first critical move wasn&apos;t just UI: it was choosing what to build, when. I proposed
+        a phased rollout built on a single idea: every step must build credibility for the next.
       </p>
 
       <Card>
@@ -204,8 +185,8 @@ export default function Recognition() {
         </div>
       </Card>
       <p>
-        This wasn&apos;t just a product roadmap; it was a <strong>design constraint</strong>. The
-        sequence ensured that every new surface had a coherent foundation to build on.
+        This sequence wasn&apos;t just project management: it was fundamental design logic for
+        coherence and credibility.
       </p>
 
       <SectionDivider id="divider-decisions" />
@@ -220,9 +201,8 @@ export default function Recognition() {
         <Label>M1 · Contributor Surface</Label>
         <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">MeTab: Where Do Recognitions Belong?</h3>
         <p className="text-sm text-neutral-500 mb-6">
-          The existing Achievements section was cluttered, buried at the bottom of MeTab, and had low
-          engagement. The design constraint: don&apos;t restructure the whole MeTab. Make the
-          smallest change that creates the biggest signal lift.
+          Existing Achievements were buried and cluttered. I aimed for minimal disruption with
+          maximum visibility.
         </p>
 
         <Label>Explored &amp; Rejected</Label>
@@ -248,32 +228,16 @@ export default function Recognition() {
 
         <Label>Final Approach</Label>
         <BulletList className="mb-6" items={[
-          "Add \"Recognitions\" as a named entry point in Achievements, directly below Yelp Elite",
-          "Rename legacy \"Badges\" to \"Check-in Badges\": a small copy change that clearly separates review-based from check-in-based achievements",
-          "Remove Dukedoms (outdated legacy) and Compliments (duplicate of Impact section)",
-          "Move Achievements section up in the MeTab hierarchy, below Impact rather than buried at the bottom",
+          "Added \"Recognitions\" directly below Yelp Elite in Achievements",
+          "Moved Achievements higher in MeTab for better discoverability",
         ]} />
-
-        <Label>One Hard Call: The Achieved Date</Label>
-        <p className="text-sm text-neutral-600">
-          For backfilled recognitions, I chose to display the date of the <em>latest</em> qualifying
-          review, not the earliest. Showing a date from 2005 would make the recognition feel like a
-          relic, not a credential. The most recent date preserves the sense of ongoing, relevant expertise.
-        </p>
       </Card>
 
       <Card id="decision-bizpage">
         <Label>M3 · Reader Surface</Label>
         <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">Biz Page: What Does a Recognition Look Like in Context?</h3>
         <p className="text-sm text-neutral-500 mb-6">
-          This was the highest-stakes design surface. Readers encounter recognitions without any prior
-          education. The signal has to be legible in under 2 seconds or it fails.
-        </p>
-
-        <Label>Design Principle</Label>
-        <p className="text-sm text-neutral-600 mb-6">
-          A credibility signal only works if the reader can understand it at a glance. Every direction
-          was evaluated against that test.
+          This was high-stakes: readers needed instant clarity.
         </p>
 
         <Label>Explored &amp; Rejected</Label>
@@ -319,44 +283,16 @@ export default function Recognition() {
         <Label>System Design</Label>
         <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">Expiration: Re-engagement, Not Punishment</h3>
         <p className="text-sm text-neutral-500 mb-6">
-          Recognitions expire if a user stops reviewing in that category for over a year.
-          This was a conceptually difficult design problem: how do you communicate something being
-          removed without it feeling punitive?
+          Recognitions expire if users stop reviewing in a category for a year. The tricky part:
+          make this feel motivating, not punitive.
         </p>
-
-        <TwoCol
-          left={
-            <>
-              <Label>The Framing Problem</Label>
-              <p className="text-sm text-neutral-600">
-                &ldquo;Your recognition expired&rdquo; feels like a penalty. The system is technically
-                the same either way, but how contributors experience it depends entirely on the framing.
-              </p>
-            </>
-          }
-          right={
-            <>
-              <Label>The Design Reframe</Label>
-              <p className="text-sm text-neutral-600">
-                Expiration isn&apos;t about taking a badge away. It&apos;s about keeping the signal
-                honest for readers. Contributors still see all earned badges. Expired badges simply
-                stop showing publicly next to reviews.
-              </p>
-            </>
-          }
-        />
 
         <Label>How It Works</Label>
         <BulletList className="mb-4" items={[
-          "Contributors: can always see earned recognitions in their profile, regardless of expiration",
-          "Readers: only see recognitions from users who have reviewed in that category within the past year",
-          "Re-engagement mechanic: write one more review in the category to reactivate, an invitation rather than a penalty",
+          "Instead of \"your recognition expired,\" the message is \"keep your recognition active\"",
+          "Contributors always see their earned recognitions; only readers lose the view if a recognizer goes dormant",
+          "Writing just one more review reactivates the badge, framed as an invitation, not a penalty",
         ]} />
-        <p className="text-sm text-neutral-500 mt-2">
-          The interface nudges use &ldquo;keep your recognition active&rdquo; language, never
-          &ldquo;your recognition expired.&rdquo; Sometimes the most important design work isn&apos;t
-          the UI; it&apos;s the framing.
-        </p>
       </Card>
 
       <SectionDivider id="divider-outcome" />
@@ -390,6 +326,7 @@ export default function Recognition() {
         The proof of concept existed, but the design work of making it coherent, permanent, and
         trustworthy was still entirely ahead.
       </p>
+
       <ol>
         <li>
           <strong>Sequencing is a design decision, not just a roadmap.</strong> The order of
