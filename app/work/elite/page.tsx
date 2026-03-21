@@ -249,6 +249,25 @@ export default function Elite() {
           instant rejection wasn&apos;t just unhelpful; it hurt motivation.
         </p>
 
+        <div className="not-prose grid grid-cols-4 gap-3 mb-6">
+          <figure className="flex flex-col">
+            <Image src="/images/Elite Ecosystem/Nomation-1.png" alt="Step 1 - Choose who to nominate" width={800} height={600} className="w-full rounded-lg mt-auto" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Step 1 - Choose who to nominate</figcaption>
+          </figure>
+          <figure className="flex flex-col">
+            <Image src="/images/Elite Ecosystem/Nomation-2.png" alt="Step 2 - Confirm location to nominate" width={800} height={600} className="w-full rounded-lg mt-auto" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Step 2 - Confirm location to nominate</figcaption>
+          </figure>
+          <figure className="flex flex-col">
+            <Image src="/images/Elite Ecosystem/Nomation-3.gif" alt="Step 3 - Additional loading screen" width={800} height={600} className="w-full rounded-lg mt-auto" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Step 3 - Additional loading screen</figcaption>
+          </figure>
+          <figure className="flex flex-col">
+            <Image src="/images/Elite Ecosystem/Nomation-4.gif" alt="Step 4 - Result screen" width={800} height={600} className="w-full rounded-lg mt-auto" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Step 4 - Result screen</figcaption>
+          </figure>
+        </div>
+
         <Label>Design: Loading and Rejection Screens</Label>
         <p className="text-sm text-neutral-600 mb-6">
           Nominations now display a loading state (&ldquo;Analyzing your profile...&rdquo;) to show
