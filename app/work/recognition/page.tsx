@@ -79,9 +79,9 @@ export default function Recognition() {
       <h2 id="foundation">01 — Foundation: The MVP Experiment <span className="text-neutral-400 font-normal text-base">(not my work)</span></h2>
       <p>
         The MVP aimed to validate whether recognitions could actually motivate more contributions.
-        After a user&apos;s 2nd review in a category (Tacos, for example), they&apos;d get a nudge:
-        &ldquo;one more for a badge.&rdquo; After the 3rd, a success screen and a badge — but this
-        disappeared immediately, with no lasting record.
+        After a user&apos;s 2nd review in a category (Tacos, for example), they&apos;d get a nudge
+        to write one more review to earn a badge. After the 3rd, a success screen and a badge, but
+        this disappeared immediately, with no lasting record.
       </p>
 
       <Card>
@@ -121,7 +121,7 @@ export default function Recognition() {
         {[
           {
             audience: "For contributors",
-            need: "Recognitions must feel like real acknowledgment — a reflection of real expertise, not a hollow badge for showing up.",
+            need: "Recognitions must feel like real acknowledgment: a reflection of real expertise, not a hollow badge for showing up.",
           },
           {
             audience: "For readers",
@@ -135,15 +135,16 @@ export default function Recognition() {
         ))}
       </div>
       <p>
-        Every design decision balanced these two needs.
+        Every design decision throughout this project was filtered through that dual-audience tension.
       </p>
 
       <SectionDivider id="divider-sequencing" />
 
       <h2 id="sequencing">03 — Sequencing as a Design Strategy</h2>
       <p>
-        The first critical move wasn&apos;t just UI: it was choosing what to build, when. I proposed
-        a phased rollout built on a single idea: every step must build credibility for the next.
+        The first critical move wasn&apos;t just UI: it was choosing when to build what. Design
+        participated in finalizing the phased rollout around one single idea: every step must build
+        credibility for the next.
       </p>
 
       <Card>
