@@ -128,7 +128,7 @@ export default function Elite() {
         <Label>Awareness</Label>
         <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">Right People, Right Moment</h3>
         <p className="text-sm text-neutral-500 mb-6">
-          Interest wasn&apos;t lacking — visibility was. The challenge was surfacing Elite at the
+          Interest wasn&apos;t lacking; visibility was. The challenge was surfacing Elite at the
           right time, without interruptive tactics.
         </p>
 
