@@ -90,27 +90,20 @@ export default function Elite() {
         only one wouldn&apos;t fix the funnel.
       </p>
 
-      <div className="not-prose grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
-        {[
-          {
-            stage: "Discovery",
-            problem: "Awareness depended on manual outreach; most valuable reviewers never heard of Elite.",
-          },
-          {
-            stage: "Consideration",
-            problem: "The Elite landing page was text-heavy and didn't convert; it lacked clarity and appeal.",
-          },
-          {
-            stage: "Conversion",
-            problem: "80%+ of nominations were auto-rejected, with generic feedback and no next step.",
-          },
-        ].map(({ stage, problem }) => (
-          <div key={stage} className="rounded-xl border border-neutral-200 p-5">
-            <Label>{stage}</Label>
-            <p className="text-sm text-neutral-600">{problem}</p>
-          </div>
-        ))}
-      </div>
+      <Card>
+        <Label>Discovery</Label>
+        <p className="text-sm text-neutral-600">Awareness depended on manual outreach; most valuable reviewers never heard of Elite.</p>
+      </Card>
+
+      <Card>
+        <Label>Consideration</Label>
+        <p className="text-sm text-neutral-600">The Elite landing page was text-heavy and didn&apos;t convert; it lacked clarity and appeal.</p>
+      </Card>
+
+      <Card>
+        <Label>Conversion</Label>
+        <p className="text-sm text-neutral-600">80%+ of nominations were auto-rejected, with generic feedback and no next step.</p>
+      </Card>
       <p>
         I approached every design choice with the full user journey in mind, aiming for a seamless
         experience rather than just isolated improvements.
