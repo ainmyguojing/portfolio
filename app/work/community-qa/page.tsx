@@ -195,8 +195,13 @@ export default function CommunityQA() {
         <h3 className="text-base font-semibold text-neutral-900 mb-1">Stage 2: Pilot / PMF Test</h3>
         <p className="text-sm text-neutral-500 mb-6">Validate whether Q&amp;A felt natural within Yelp without forcing the behavior.</p>
         <p className="text-sm text-neutral-700 mb-5">
-          With a direction set, the next question was: would people actually use this? The pilot was
-          designed to test whether users would ask and answer questions organically.
+          With a direction set, the next question was: would people actually use this? Each milestone
+          was structured as a hypothesis test that only justified the next stage if it proved out.
+          M1 seeded questions from Elites to test if asking behavior existed at all (it did: 2.17% CTR,
+          above the 2% benchmark for other SERP components). M2 used LLM-generated questions to test
+          answering behavior without needing organic question volume first: ~1,000 answers in 20 days,
+          with 40% of answerers giving more than one answer. Only once both sides of the exchange
+          proved out did we invest in the full live Q&amp;A system.
         </p>
         <Label>Pilot Focus</Label>
         <TwoCol
