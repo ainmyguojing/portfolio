@@ -102,12 +102,12 @@ export default function Recognition() {
         </div>
 
         <Label>MVP Design</Label>
-        <div className="grid grid-cols-2 gap-4 mt-2">
+        <div className="grid grid-cols-2 gap-4 mt-2" style={{ width: "70%" }}>
           <figure className="not-prose">
             <Image src="/images/Recognition/Earning-recogntion-1.png" alt="MVP earning recognition screen 1" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
           </figure>
           <figure className="not-prose">
-            <Image src="/images/Recognition/Me-tab-discarded-design-1-2.png" alt="MVP earning recognition screen 2" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <Image src="/images/Recognition/Earning-recogntion-2.png" alt="MVP earning recognition screen 2" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
           </figure>
         </div>
       </Card>
