@@ -132,19 +132,27 @@ export default function Elite() {
           right time, without interruptive tactics.
         </p>
 
-        <Label>Design: Post-Review Modal</Label>
-        <p className="text-sm text-neutral-600 mb-6">
-          A modal appears to eligible contributors immediately after submitting a review, right when
-          users feel accomplished and open to next steps. The modal simply introduces Elite and links
-          to the landing page, intentionally avoiding a pushy call-to-action at this early stage.
-        </p>
-
         <Label>Eligibility Criteria</Label>
         <BulletList className="mb-6" items={[
           "2+ reviews in last 30 days",
           "6+ lifetime reviews",
           "Not already Elite, ineligible, or recently nominated",
         ]} />
+
+        <Label>Touch point: Post-Review Modal</Label>
+        <p className="text-sm text-neutral-600 mb-6">
+          A modal appears to eligible contributors immediately after submitting a review, right when
+          users feel accomplished and open to next steps. The modal simply introduces Elite and links
+          to the landing page, intentionally avoiding a pushy call-to-action at this early stage.
+        </p>
+
+        <Label>Key Design Decision</Label>
+        <p className="text-sm text-neutral-600 mb-6">
+          The copy was intentionally crafted to celebrate the user&apos;s recent achievements,
+          specifically the number and quality of reviews they&apos;ve contributed. This approach
+          anchors the entire experience in their tangible accomplishments, ensuring the message
+          feels genuine and meaningful, rather than vague or empty.
+        </p>
 
         <Label>Impact</Label>
         <p className="text-sm text-neutral-600">
