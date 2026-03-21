@@ -105,7 +105,7 @@ export default function Elite() {
           },
         ].map(({ stage, problem }) => (
           <div key={stage} className="rounded-xl border border-neutral-200 p-5">
-            <p className="text-xs text-neutral-400 mb-2 uppercase tracking-widest">{stage}</p>
+            <Label>{stage}</Label>
             <p className="text-sm text-neutral-600">{problem}</p>
           </div>
         ))}
