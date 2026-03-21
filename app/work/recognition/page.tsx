@@ -300,11 +300,15 @@ export default function Recognition() {
           the reviewer&apos;s category-specific review list, closing the loop for readers who want
           to verify.
         </p>
-        <BulletList items={[
+        <BulletList className="mb-6" items={[
           "One piece of information, clearly formatted with no competing elements",
           "Review count provides the depth signal that makes the recognition credible",
           "Tap-through to the review list lets skeptical readers verify for themselves",
         ]} />
+        <figure className="not-prose mx-auto" style={{ width: "70%" }}>
+          <Image src="/images/Recognition/bizpage-final-design.png" alt="Biz page final design" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          <figcaption className="text-xs text-neutral-400 text-center mt-2">Final design - surface recogntion to readers</figcaption>
+        </figure>
       </Card>
 
       <Card id="decision-expiration">
