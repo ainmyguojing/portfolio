@@ -153,7 +153,7 @@ export default function Elite() {
 
       <Card>
         <Label>Conversion</Label>
-        <p className="text-sm text-neutral-600 mb-6">80%+ of nominations were auto-rejected, with generic feedback and no next step.</p>
+        <p className="text-sm text-neutral-600 mb-6">80%+ of nominations were auto-rejected, with generic feedback and no next step. The rejection was delivered via a plain system feedback modal with just text, which created several problems: it felt less like a real decision and more like a system error, left users unsure if their nomination had even gone through, and made it hard to understand the outcome at a glance. The instant, text-heavy message also signaled that the nomination hadn&apos;t been thoughtfully reviewed, further undermining user trust.</p>
         <figure className="not-prose mx-auto" style={{ width: "60%" }}>
           <Image src="/images/Elite Ecosystem/SQ_nomination flow.png" alt="Nomination flow" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
         </figure>
