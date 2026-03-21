@@ -111,22 +111,42 @@ export default function Elite() {
         <p className="text-sm text-neutral-600 mb-6">The Elite landing page was text-heavy and didn&apos;t convert; it lacked clarity and appeal.</p>
         <div className="not-prose grid grid-cols-5 gap-3">
           <div className="flex flex-col gap-3">
-            <Image src="/images/Elite Ecosystem/SQ-Elite-page-hero.png" alt="Elite page hero" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <Image src="/images/Elite Ecosystem/SQ-Elite-page-video.png" alt="Elite page video" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figure>
+              <Image src="/images/Elite Ecosystem/SQ-Elite-page-hero.png" alt="Hero image" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <figcaption className="text-xs text-neutral-400 text-center mt-2">Section 1 - Hero Image</figcaption>
+            </figure>
+            <figure>
+              <Image src="/images/Elite Ecosystem/SQ-Elite-page-video.png" alt="Video" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <figcaption className="text-xs text-neutral-400 text-center mt-2">Section 2 - Video</figcaption>
+            </figure>
           </div>
-          <div>
-            <Image src="/images/Elite Ecosystem/SQ-Elite-page-value-prop.png" alt="Elite page value prop" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-          </div>
-          <div>
-            <Image src="/images/Elite Ecosystem/SQ-Elite-page-how-to-apply.png" alt="Elite page how to apply" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          <figure>
+            <Image src="/images/Elite Ecosystem/SQ-Elite-page-value-prop.png" alt="Why becoming an Elite" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Section 3 - Why becoming an Elite</figcaption>
+          </figure>
+          <figure>
+            <Image src="/images/Elite Ecosystem/SQ-Elite-page-how-to-apply.png" alt="How to join" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Section 4 - How to join</figcaption>
+          </figure>
+          <div className="flex flex-col gap-3">
+            <figure>
+              <Image src="/images/Elite Ecosystem/SQ-Elite-page-community-voice.png" alt="Elites stories" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <figcaption className="text-xs text-neutral-400 text-center mt-2">Section 5 - Elites stories</figcaption>
+            </figure>
+            <figure>
+              <Image src="/images/Elite Ecosystem/SQ-Elite-page-eligibility.png" alt="Eligibility" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <figcaption className="text-xs text-neutral-400 text-center mt-2">Section 6 - Eligibility</figcaption>
+            </figure>
           </div>
           <div className="flex flex-col gap-3">
-            <Image src="/images/Elite Ecosystem/SQ-Elite-page-community-voice.png" alt="Elite page community voice" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <Image src="/images/Elite Ecosystem/SQ-Elite-page-eligibility.png" alt="Elite page eligibility" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-          </div>
-          <div className="flex flex-col gap-3">
-            <Image src="/images/Elite Ecosystem/SQ-Elite-page-cm.png" alt="Elite page CM" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <Image src="/images/Elite Ecosystem/SQ-Elite-page-nomination-card.png" alt="Elite page nomination card" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figure>
+              <Image src="/images/Elite Ecosystem/SQ-Elite-page-cm.png" alt="Word from Community Manager" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <figcaption className="text-xs text-neutral-400 text-center mt-2">Section 7 - Word from Community Manager</figcaption>
+            </figure>
+            <figure>
+              <Image src="/images/Elite Ecosystem/SQ-Elite-page-nomination-card.png" alt="Nomination card" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <figcaption className="text-xs text-neutral-400 text-center mt-2">Section 8 - Nomination card</figcaption>
+            </figure>
           </div>
         </div>
       </Card>
