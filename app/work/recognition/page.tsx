@@ -1,4 +1,5 @@
 import CaseStudyLayout from "@/components/CaseStudyLayout";
+import Image from "next/image";
 
 export const metadata = {
   title: "Recognition & Motivation System — Jing Guo",
@@ -208,23 +209,20 @@ export default function Recognition() {
 
         <Label>Explored &amp; Rejected</Label>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 mt-2">
-          {[
-            {
-              direction: "Recognitions inside the Impact section",
-              reason: "Conflated two distinct concepts. Users understood Impact as metrics (reaction counts, view counts), not milestones or achievements. Mixing them created confusion about what the recognition was measuring.",
-            },
-            {
-              direction: "Expandable / collapsed Achievements block",
-              reason: "Added interaction cost without adding delight. The problem was findability, not space. A collapsed pattern would have made recognitions harder to discover, not easier.",
-            },
-          ].map(({ direction, reason }) => (
-            <div key={direction} className="rounded-xl border border-neutral-200 p-5">
-              <p className="text-sm font-semibold text-neutral-700 mb-2">
-                <span className="text-neutral-400 mr-1.5">✕</span>{direction}
-              </p>
-              <p className="text-sm text-neutral-500">{reason}</p>
-            </div>
-          ))}
+          <div className="rounded-xl border border-neutral-200 p-5">
+            <p className="text-sm font-semibold text-neutral-700 mb-2">
+              <span className="text-neutral-400 mr-1.5">✕</span>Recognitions inside the Impact section
+            </p>
+            <p className="text-sm text-neutral-500 mb-4">Conflated two distinct concepts. Users understood Impact as metrics (reaction counts, view counts), not milestones or achievements. Mixing them created confusion about what the recognition was measuring.</p>
+            <Image src="/images/Recognition/Me-tab-discarded-design-1-1.png" alt="Recognitions inside Impact section" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          </div>
+          <div className="rounded-xl border border-neutral-200 p-5">
+            <p className="text-sm font-semibold text-neutral-700 mb-2">
+              <span className="text-neutral-400 mr-1.5">✕</span>Expandable / collapsed Achievements block
+            </p>
+            <p className="text-sm text-neutral-500 mb-4">Added interaction cost without adding delight. The problem was findability, not space. A collapsed pattern would have made recognitions harder to discover, not easier.</p>
+            <Image src="/images/Recognition/Me-tab-discarded-design-1-2.png" alt="Expandable collapsed Achievements block" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          </div>
         </div>
 
         <Label>Final Approach</Label>
