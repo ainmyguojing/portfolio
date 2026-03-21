@@ -88,7 +88,7 @@ export default function Recognition() {
       <Card>
 
         <Label>What the Experiment Proved</Label>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2 mb-8">
           {[
             { stat: "+5.5–7.8%", detail: "lift in reviews written vs. status quo (~20–29K additional reviews/month at 100%)" },
             { stat: "20%", detail: "of nudged users actually earned a badge, far exceeding push CTR benchmarks of 2–8%" },
@@ -99,6 +99,16 @@ export default function Recognition() {
               <p className="text-sm text-neutral-500">{detail}</p>
             </div>
           ))}
+        </div>
+
+        <Label>MVP Design</Label>
+        <div className="grid grid-cols-2 gap-4 mt-2">
+          <figure className="not-prose">
+            <Image src="/images/Recognition/Earning-recogntion-1.png" alt="MVP earning recognition screen 1" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          </figure>
+          <figure className="not-prose">
+            <Image src="/images/Recognition/Me-tab-discarded-design-1-2.png" alt="MVP earning recognition screen 2" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          </figure>
         </div>
       </Card>
 
