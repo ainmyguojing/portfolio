@@ -61,7 +61,8 @@ const SECTIONS = [
     ],
   },
   { id: "system", title: "The Funnel as Design System", divider: "divider-system" },
-  { id: "outcome", title: "Outcomes & Reflections", divider: "divider-outcome" },
+  { id: "outcome", title: "Outcomes", divider: "divider-outcome" },
+  { id: "reflections", title: "Reflections", divider: "divider-reflections" },
 ];
 
 export default function Elite() {
@@ -295,7 +296,7 @@ export default function Elite() {
 
       <SectionDivider id="divider-outcome" />
 
-      <h2 id="outcome">04 — Outcomes &amp; Reflections</h2>
+      <h2 id="outcome">04 — Outcomes</h2>
       <ol>
         <li>
           <strong>Elite page revamp (April 2024):</strong> projected 2% lift in nominations.
@@ -308,6 +309,9 @@ export default function Elite() {
         </li>
       </ol>
 
+      <SectionDivider id="divider-reflections" />
+
+      <h2 id="reflections">05 — Reflections</h2>
       <ol>
         <li>
           <strong>Real change meant fixing the whole pipeline, not just pieces.</strong> Each piece
