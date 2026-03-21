@@ -108,7 +108,27 @@ export default function Elite() {
 
       <Card>
         <Label>Consideration</Label>
-        <p className="text-sm text-neutral-600">The Elite landing page was text-heavy and didn&apos;t convert; it lacked clarity and appeal.</p>
+        <p className="text-sm text-neutral-600 mb-6">The Elite landing page was text-heavy and didn&apos;t convert; it lacked clarity and appeal.</p>
+        <div className="not-prose grid grid-cols-5 gap-3">
+          <div className="flex flex-col gap-3">
+            <Image src="/images/Elite Ecosystem/SQ-Elite-page-hero.png" alt="Elite page hero" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <Image src="/images/Elite Ecosystem/SQ-Elite-page-video.png" alt="Elite page video" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          </div>
+          <div>
+            <Image src="/images/Elite Ecosystem/SQ-Elite-page-value-prop.png" alt="Elite page value prop" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          </div>
+          <div>
+            <Image src="/images/Elite Ecosystem/SQ-Elite-page-how-to-apply.png" alt="Elite page how to apply" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          </div>
+          <div className="flex flex-col gap-3">
+            <Image src="/images/Elite Ecosystem/SQ-Elite-page-community-voice.png" alt="Elite page community voice" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <Image src="/images/Elite Ecosystem/SQ-Elite-page-eligibility.png" alt="Elite page eligibility" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          </div>
+          <div className="flex flex-col gap-3">
+            <Image src="/images/Elite Ecosystem/SQ-Elite-page-cm.png" alt="Elite page CM" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <Image src="/images/Elite Ecosystem/SQ-Elite-page-nomination-card.png" alt="Elite page nomination card" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          </div>
+        </div>
       </Card>
 
       <Card>
@@ -193,30 +213,9 @@ export default function Elite() {
         </p>
 
         <Label>Results Target</Label>
-        <p className="text-sm text-neutral-600 mb-6">
+        <p className="text-sm text-neutral-600">
           A 2% bump in nominations: 175 more Elites and about 3,500 extra reviews each month.
         </p>
-
-        <div className="not-prose grid grid-cols-5 gap-3">
-          <div className="flex flex-col gap-3">
-            <Image src="/images/Elite Ecosystem/SQ-Elite-page-hero.png" alt="Elite page hero" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <Image src="/images/Elite Ecosystem/SQ-Elite-page-video.png" alt="Elite page video" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-          </div>
-          <div>
-            <Image src="/images/Elite Ecosystem/SQ-Elite-page-value-prop.png" alt="Elite page value prop" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-          </div>
-          <div>
-            <Image src="/images/Elite Ecosystem/SQ-Elite-page-how-to-apply.png" alt="Elite page how to apply" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-          </div>
-          <div className="flex flex-col gap-3">
-            <Image src="/images/Elite Ecosystem/SQ-Elite-page-community-voice.png" alt="Elite page community voice" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <Image src="/images/Elite Ecosystem/SQ-Elite-page-eligibility.png" alt="Elite page eligibility" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-          </div>
-          <div className="flex flex-col gap-3">
-            <Image src="/images/Elite Ecosystem/SQ-Elite-page-cm.png" alt="Elite page CM" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <Image src="/images/Elite Ecosystem/SQ-Elite-page-nomination-card.png" alt="Elite page nomination card" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-          </div>
-        </div>
       </Card>
 
       <Card id="conversion">
