@@ -108,7 +108,7 @@ export default function Elite() {
 
       <Card>
         <Label>Consideration</Label>
-        <p className="text-sm text-neutral-600 mb-6">The Elite landing page was text-heavy and didn&apos;t convert; it lacked clarity and appeal.</p>
+        <p className="text-sm text-neutral-600 mb-6">The Elite landing page was text-heavy and didn&apos;t convert; it lacked clarity and appeal. Several sections repeated the same information: &ldquo;how to join&rdquo; and &ldquo;eligibility&rdquo; covered the same ground but were split into two, causing confusion. The hero section and video weren&apos;t visually engaging or meaningful, missing the opportunity to inspire users. The call-to-action (CTA) was inconsistent and easy to miss, never standing out enough to drive action.</p>
         <div className="not-prose grid grid-cols-5 gap-3">
           <div className="flex flex-col gap-3">
             <figure>
