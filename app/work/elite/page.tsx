@@ -153,7 +153,10 @@ export default function Elite() {
 
       <Card>
         <Label>Conversion</Label>
-        <p className="text-sm text-neutral-600">80%+ of nominations were auto-rejected, with generic feedback and no next step.</p>
+        <p className="text-sm text-neutral-600 mb-6">80%+ of nominations were auto-rejected, with generic feedback and no next step.</p>
+        <figure className="not-prose mx-auto" style={{ width: "70%" }}>
+          <Image src="/images/Elite Ecosystem/SQ_nomination flow.png" alt="Nomination flow" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+        </figure>
       </Card>
       <p>
         I approached every design choice with the full user journey in mind, aiming for a seamless
