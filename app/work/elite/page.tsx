@@ -94,9 +94,16 @@ export default function Elite() {
       <Card>
         <Label>Discovery</Label>
         <p className="text-sm text-neutral-600 mb-6">Awareness depended on manual outreach; most valuable reviewers never heard of Elite.</p>
-        <figure className="not-prose mx-auto" style={{ width: "70%" }}>
-          <Image src="/images/Elite Ecosystem/SQ-Elite-page-entrypoint.png" alt="Elite page entry point" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-        </figure>
+        <div className="not-prose grid grid-cols-2 gap-4 mx-auto" style={{ width: "70%" }}>
+          <figure>
+            <Image src="/images/Elite Ecosystem/SQ-Elite-page-entrypoint.png" alt="Hidden entry point on Me Tab" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Hidden entry point on Me Tab</figcaption>
+          </figure>
+          <figure>
+            <Image src="/images/Elite Ecosystem/SQ-Elite-page-entrypoint-badge.png" alt="Contextless Elite badge" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Contextless Elite badge</figcaption>
+          </figure>
+        </div>
       </Card>
 
       <Card>
