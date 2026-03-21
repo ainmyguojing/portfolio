@@ -124,8 +124,9 @@ export default function Elite() {
       </p>
 
       <Card id="awareness">
-        <Label>2.1 — Awareness: Right People, Right Moment</Label>
-        <p className="text-sm text-neutral-700 mb-6">
+        <Label>Awareness</Label>
+        <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">Right People, Right Moment</h3>
+        <p className="text-sm text-neutral-500 mb-6">
           Interest wasn&apos;t lacking — visibility was. The challenge was surfacing Elite at the
           right time, without interruptive tactics.
         </p>
@@ -152,8 +153,9 @@ export default function Elite() {
       </Card>
 
       <Card id="consideration">
-        <Label>2.2 — Consideration: A Page That Converts</Label>
-        <p className="text-sm text-neutral-700 mb-6">
+        <Label>Consideration</Label>
+        <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">A Page That Converts</h3>
+        <p className="text-sm text-neutral-500 mb-6">
           Curious but uncommitted users hit a wall with the old landing page: it was wordy, dated,
           and hard to act on. Without new assets, I focused on three principles.
         </p>
@@ -184,8 +186,9 @@ export default function Elite() {
       </Card>
 
       <Card id="conversion">
-        <Label>2.3 — Conversion: Turning Rejection into Re-engagement</Label>
-        <p className="text-sm text-neutral-700 mb-6">
+        <Label>Conversion</Label>
+        <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">Turning Rejection into Re-engagement</h3>
+        <p className="text-sm text-neutral-500 mb-6">
           Fixing the funnel top wasn&apos;t enough. Rejection was the biggest drop-off. Generic,
           instant rejection wasn&apos;t just unhelpful; it hurt motivation.
         </p>
