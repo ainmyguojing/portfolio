@@ -106,17 +106,13 @@ export default function DesignSystem() {
         every element and template was consistent, usable, and on-brand.
       </p>
       <Card>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {[
-            { label: "Consistent", detail: "Same patterns across all surfaces and products." },
-            { label: "Compatible", detail: "Works with the existing tech stack and workflows." },
-            { label: "Flexible", detail: "Extensible and adaptable for future product needs." },
-          ].map(({ label, detail }) => (
-            <div key={label} className="rounded-xl border border-neutral-200 p-5">
-              <p className="text-sm font-semibold text-neutral-700 mb-2">{label}</p>
-              <p className="text-sm text-neutral-500">{detail}</p>
-            </div>
-          ))}
+        <div className="flex flex-col gap-8">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/Design%20System/03-principle-consistent.svg" alt="Consistent principle" className="w-full" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/Design%20System/03-principle-compatible.svg" alt="Compatible principle" className="w-full" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/Design%20System/03-principle-flexible.svg" alt="Flexible principle" className="w-full" />
         </div>
       </Card>
 
