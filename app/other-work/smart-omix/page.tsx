@@ -99,7 +99,7 @@ export default function SmartOmix() {
         <Label>1. Platform for Complexity and Scale</Label>
         <p className="text-sm font-semibold text-neutral-700 mb-1 mt-2">Problem</p>
         <p className="text-sm text-neutral-600 mb-4">Researchers&apos; needs ranged widely: some simple studies could be managed by a single person, while complex studies often required whole teams. Each member with distinct roles, responsibilities, and goals. We needed a flexible structure that could accommodate both ends of this spectrum and everything in between.</p>
-        <div className="flex flex-col gap-8 mb-6 mx-auto w-full sm:w-3/4">
+        <div className="flex flex-col gap-8 mb-6 mx-auto w-full sm:w-[90%]">
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/images/Smart%20Omix/01-problem-taget-user-types.svg" alt="Target user types" className="w-full" />
@@ -117,7 +117,7 @@ export default function SmartOmix() {
           "Organized studies in \"organizations\" with layered permissions, making access and roles scalable.",
           "Built modular components for each phase: simple for new users, flexible for complex teams.",
         ]} />
-        <div className="flex flex-col gap-8 mt-6 mx-auto w-full sm:w-3/4">
+        <div className="flex flex-col gap-8 mt-6 mx-auto w-full sm:w-[90%]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -140,7 +140,7 @@ export default function SmartOmix() {
           "Built a flexible state machine to switch easily between phases",
           "Clarified allowed actions at each stage to minimize confusion",
         ]} />
-        <div className="flex flex-col gap-8 mt-6 mx-auto w-full sm:w-3/4">
+        <div className="flex flex-col gap-8 mt-6 mx-auto w-full sm:w-[90%]">
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/images/Smart%20Omix/02-solution-state-machine.svg" alt="State machine diagram" className="w-full img-bordered" />
@@ -155,6 +155,12 @@ export default function SmartOmix() {
         <Label>3. Supporting New, Data-Rich Research</Label>
         <p className="text-sm font-semibold text-neutral-700 mb-1 mt-2">Problem</p>
         <p className="text-sm text-neutral-600 mb-4">Switching to digital introduced new data types and uncertainty.</p>
+        <div className="flex flex-col gap-8 mb-6 mx-auto w-full sm:w-[90%]">
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/Smart%20Omix/03-problems-novel-study.svg" alt="Novel study data types" className="w-full" />
+          </figure>
+        </div>
         <p className="text-sm font-semibold text-neutral-700 mb-1">Solution</p>
         <BulletList items={[
           "Designed the platform to educate and encourage use of novel data through customizable settings",
