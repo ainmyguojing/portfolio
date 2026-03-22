@@ -105,7 +105,7 @@ export default function Home() {
           <p className="text-xl text-neutral-900 leading-relaxed max-w-xl flex items-center gap-2 flex-wrap">
             Lead Product Designer at
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/Yelp%20Logo/Other.svg" alt="Yelp" style={{ height: "1.44em", marginLeft: "12px", position: "relative", top: "-2px" }} className="inline-block align-middle" />
+            <img src="/images/Yelp%20Logo/Other.svg" alt="Yelp" style={{ height: "1.44em", marginLeft: "8px", position: "relative", top: "-2px" }} className="inline-block align-middle" />
           </p>
           <p className="text-xl text-neutral-900 leading-relaxed max-w-xl mt-3">
             Bringing strategic, systems-level thinking, identifying hidden opportunities, and designing scalable solutions. Building impactful products for the AI era by leveraging deep expertise in user-generated content.
