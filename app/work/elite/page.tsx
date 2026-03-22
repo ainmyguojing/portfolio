@@ -242,24 +242,27 @@ export default function Elite() {
 
         <div className="not-prose flex flex-col gap-8 mb-6">
           <div className="grid grid-cols-3 gap-6">
-            {[1,2,3].map((n) => (
+            {[
+              { n: 1, title: "Hero section" },
+              { n: 2, title: "Elite's value to Yelp" },
+              { n: 3, title: "Marketing video" },
+            ].map(({ n, title }) => (
               <div key={n} className="flex flex-col gap-3">
-                <div>
-                  <p className="text-sm font-semibold text-neutral-700 mb-2">title</p>
-                  <p className="text-sm text-neutral-500">pragraph</p>
-                </div>
-                <Image src={`/images/Elite Ecosystem/elite-page-section-${n}.png`} alt={`Elite page section ${n}`} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+                <p className="text-sm font-semibold text-neutral-700">{title}</p>
+                <Image src={`/images/Elite Ecosystem/elite-page-section-${n}.png`} alt={title} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
               </div>
             ))}
           </div>
           <div className="grid grid-cols-4 gap-6">
-            {[4,5,6,7].map((n) => (
+            {[
+              { n: 4, title: "Benefits of being Elites" },
+              { n: 5, title: "How to join" },
+              { n: 6, title: "" },
+              { n: 7, title: "" },
+            ].map(({ n, title }) => (
               <div key={n} className="flex flex-col gap-3">
-                <div>
-                  <p className="text-sm font-semibold text-neutral-700 mb-2">title</p>
-                  <p className="text-sm text-neutral-500">pragraph</p>
-                </div>
-                <Image src={`/images/Elite Ecosystem/elite-page-section-${n}.png`} alt={`Elite page section ${n}`} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+                {title && <p className="text-sm font-semibold text-neutral-700">{title}</p>}
+                <Image src={`/images/Elite Ecosystem/elite-page-section-${n}.png`} alt={title || `Section ${n}`} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
               </div>
             ))}
           </div>
