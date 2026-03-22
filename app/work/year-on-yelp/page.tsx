@@ -29,6 +29,19 @@ function Label({ children }: { children: React.ReactNode }) {
 }
 
 
+function BulletList({ items, className }: { items: string[]; className?: string }) {
+  return (
+    <ul className={`space-y-1.5 ${className ?? ""}`}>
+      {items.map((item) => (
+        <li key={item} className="flex gap-2 text-sm text-neutral-600">
+          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 const SECTIONS = [
   { id: "what", title: "What Year on Yelp Is", divider: "divider-what" },
   { id: "role", title: "My Role: Design as Creative Direction", divider: "divider-role" },
@@ -90,10 +103,13 @@ export default function YearOnYelp() {
 
       <Card>
         <Label>Theme Criteria</Label>
-        <p className="text-sm text-neutral-600 mb-4">
-          We evaluated each by uniqueness, relevancy, clarity, execution feasibility, and
-          personalization.
-        </p>
+        <BulletList className="mb-6" items={[
+          "Uniqueness",
+          "Relevancy",
+          "Clarity",
+          "Execution feasibility",
+          "Personalization",
+        ]} />
 
         <Label>Constellation vs. Memory Jar</Label>
         <p className="text-sm text-neutral-600 mb-4">
