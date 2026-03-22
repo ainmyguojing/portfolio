@@ -11,6 +11,7 @@ export default function Xiggit() {
       team="Academic Project"
       year="2021"
       tags={["Mobile", "Fintech", "Onboarding", "UX Research"]}
+      currentHref="/other-work/xiggit"
     >
       <h2>Goal</h2>
       <p>

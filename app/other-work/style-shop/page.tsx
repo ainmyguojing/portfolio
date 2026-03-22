@@ -11,6 +11,7 @@ export default function StyleShop() {
       team="Academic Project"
       year="2021"
       tags={["eCommerce", "Web", "UX Research"]}
+      currentHref="/other-work/style-shop"
     >
       <h2>Background</h2>
       <p>

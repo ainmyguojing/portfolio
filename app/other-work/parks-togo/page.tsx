@@ -11,6 +11,7 @@ export default function ParksTogo() {
       team="Academic Project"
       year="2021"
       tags={["Mobile", "Consumer", "Maps", "UX Research"]}
+      currentHref="/other-work/parks-togo"
     >
       <h2>Background</h2>
       <p>
