@@ -274,7 +274,7 @@ export default function Elite() {
         </p>
 
         <Label>Design Solutions</Label>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+        <div className="flex flex-col gap-4 mb-6">
           <div className="rounded-xl border border-neutral-200 p-5">
             <p className="text-sm font-semibold text-neutral-700 mb-2">1. Small Fix, Big Win</p>
             <p className="text-sm text-neutral-500">Adding the ability for users to confirm or correct their primary location removed an entire category of preventable rejections caused by outdated location data. This simple tweak significantly improved nomination accuracy and reduced user frustration.</p>
