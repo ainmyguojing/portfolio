@@ -243,27 +243,27 @@ export default function Elite() {
         <div className="not-prose flex flex-col gap-8 mb-6">
           <div className="grid grid-cols-3 gap-6">
             {[
-              { n: 1, title: "Hero section" },
-              { n: 2, title: "Elite's value to Yelp" },
-              { n: 3, title: "Marketing video" },
-            ].map(({ n, title }) => (
-              <div key={n} className="flex flex-col gap-3">
-                <p className="text-sm font-semibold text-neutral-700">{title}</p>
-                <Image src={`/images/Elite Ecosystem/elite-page-section-${n}.png`} alt={title} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-              </div>
+              { n: 1, caption: "Hero section" },
+              { n: 2, caption: "Elite's value to Yelp" },
+              { n: 3, caption: "Marketing video" },
+            ].map(({ n, caption }) => (
+              <figure key={n} className="flex flex-col gap-2">
+                <Image src={`/images/Elite Ecosystem/elite-page-section-${n}.png`} alt={caption} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+                <figcaption className="text-xs text-neutral-400 text-center">{caption}</figcaption>
+              </figure>
             ))}
           </div>
           <div className="grid grid-cols-4 gap-6">
             {[
-              { n: 4, title: "Benefits of being Elites" },
-              { n: 5, title: "How to join" },
-              { n: 6, title: "Events and Elites stories" },
-              { n: 7, title: "Support from community managers" },
-            ].map(({ n, title }) => (
-              <div key={n} className="flex flex-col gap-3">
-                {title && <p className="text-sm font-semibold text-neutral-700">{title}</p>}
-                <Image src={`/images/Elite Ecosystem/elite-page-section-${n}.png`} alt={title || `Section ${n}`} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-              </div>
+              { n: 4, caption: "Benefits of being Elites" },
+              { n: 5, caption: "How to join" },
+              { n: 6, caption: "Events and Elites stories" },
+              { n: 7, caption: "Support from community managers" },
+            ].map(({ n, caption }) => (
+              <figure key={n} className="flex flex-col gap-2">
+                <Image src={`/images/Elite Ecosystem/elite-page-section-${n}.png`} alt={caption} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+                <figcaption className="text-xs text-neutral-400 text-center">{caption}</figcaption>
+              </figure>
             ))}
           </div>
         </div>
