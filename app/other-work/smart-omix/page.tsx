@@ -44,8 +44,7 @@ const SECTIONS = [
   { id: "context", title: "Context & Opportunity", divider: "divider-context" },
   { id: "responsibilities", title: "My Responsibilities", divider: "divider-responsibilities" },
   { id: "challenges", title: "Key Challenges & Strategic Solutions", divider: "divider-challenges" },
-  { id: "execution", title: "Execution & Learning", divider: "divider-execution" },
-  { id: "results", title: "Results", divider: "divider-results" },
+  { id: "execution", title: "Execution & Results", divider: "divider-execution" },
   { id: "reflections", title: "Reflections", divider: "divider-reflections" },
 ];
 
@@ -215,10 +214,14 @@ export default function SmartOmix() {
 
       <SectionDivider id="divider-execution" />
 
-      <h2 id="execution">04 — Execution &amp; Learning</h2>
+      <h2 id="execution">04 — Execution &amp; Results</h2>
       <Card>
         <Label>Execution Principles</Label>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+        <p className="text-sm text-neutral-600 mt-2 mb-4">
+          <strong className="text-neutral-700">Reflection:</strong> Strong early product architecture,
+          a cohesive vision, and disciplined synthesis of stakeholder input were key to scaling Smart Omix.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
             { label: "Designed for edge cases", detail: "Built flows for critical scenarios from the start" },
             { label: "Full-cycle ownership", detail: "Led usability testing and iteration, drove roadmap alignment" },
@@ -230,19 +233,14 @@ export default function SmartOmix() {
             </div>
           ))}
         </div>
-        <p className="text-sm text-neutral-600 mt-6">
-          <strong className="text-neutral-700">Reflection:</strong> Strong early product architecture,
-          a cohesive vision, and disciplined synthesis of stakeholder input were key to scaling Smart Omix.
-        </p>
+        <div className="mt-6 pt-6 border-t border-neutral-100">
+          <Label>Results</Label>
+          <p className="text-sm text-neutral-600 mt-2">
+            Smart Omix expanded access to clinical research, enabling greater complexity, rapid iteration,
+            and real engagement on a platform built for scale from day one.
+          </p>
+        </div>
       </Card>
-
-      <SectionDivider id="divider-results" />
-
-      <h2 id="results">05 — Results</h2>
-      <p>
-        Smart Omix expanded access to clinical research, enabling greater complexity, rapid iteration,
-        and real engagement on a platform built for scale from day one.
-      </p>
 
       <SectionDivider id="divider-reflections" />
 
