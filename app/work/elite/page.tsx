@@ -248,6 +248,11 @@ export default function Elite() {
           Fixing the funnel top wasn&apos;t enough. Rejection was the biggest drop-off.
         </p>
 
+        <Label>Key Challenge</Label>
+        <p className="text-sm text-neutral-600 mb-6">
+          Generic, instant rejection wasn&apos;t just unhelpful; it hurt motivation.
+        </p>
+
         <div className="not-prose grid grid-cols-4 gap-3 mb-6">
           <figure className="flex flex-col">
             <Image src="/images/Elite Ecosystem/Nomation-1.png" alt="Step 1 - Choose who to nominate" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
@@ -266,11 +271,6 @@ export default function Elite() {
             <figcaption className="text-xs text-neutral-400 text-center mt-2">Step 4 - Result screen</figcaption>
           </figure>
         </div>
-
-        <Label>Key Challenge</Label>
-        <p className="text-sm text-neutral-600 mb-6">
-          Generic, instant rejection wasn&apos;t just unhelpful; it hurt motivation.
-        </p>
 
         <Label>Design Solutions</Label>
         <div className="flex flex-col gap-4 mb-6">
