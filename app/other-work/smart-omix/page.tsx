@@ -76,6 +76,11 @@ export default function SmartOmix() {
         with V2.
       </p>
 
+      <div className="not-prose my-6">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/Smart%20Omix/cover-image.png" alt="Smart Omix cover" className="w-full rounded-xl" />
+      </div>
+
       <SectionDivider id="divider-responsibilities" />
 
       <h2 id="responsibilities">02 — My Responsibilities</h2>
