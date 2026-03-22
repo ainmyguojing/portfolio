@@ -253,25 +253,6 @@ export default function Elite() {
           Generic, instant rejection wasn&apos;t just unhelpful; it hurt motivation.
         </p>
 
-        <div className="not-prose grid grid-cols-4 gap-3 mb-6">
-          <figure className="flex flex-col">
-            <Image src="/images/Elite Ecosystem/Nomation-1.png" alt="Step 1 - Choose who to nominate" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <figcaption className="text-xs text-neutral-400 text-center mt-2">Step 1 - Choose who to nominate</figcaption>
-          </figure>
-          <figure className="flex flex-col">
-            <Image src="/images/Elite Ecosystem/Nomation-2.png" alt="Step 2 - Confirm location to nominate" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <figcaption className="text-xs text-neutral-400 text-center mt-2">Step 2 - Confirm location to nominate</figcaption>
-          </figure>
-          <figure className="flex flex-col">
-            <Image src="/images/Elite Ecosystem/Nomation-3.gif" alt="Step 3 - Additional loading screen" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <figcaption className="text-xs text-neutral-400 text-center mt-2">Step 3 - Additional loading screen</figcaption>
-          </figure>
-          <figure className="flex flex-col">
-            <Image src="/images/Elite Ecosystem/Nomation-4.gif" alt="Step 4 - Result screen" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <figcaption className="text-xs text-neutral-400 text-center mt-2">Step 4 - Result screen</figcaption>
-          </figure>
-        </div>
-
         <Label>Design Solutions</Label>
         <div className="flex flex-col gap-4 mb-6">
           <div className="rounded-xl border border-neutral-200 p-5 flex gap-6 items-start">
@@ -301,6 +282,25 @@ export default function Elite() {
               <Image src="/images/Elite Ecosystem/nomination-message.png" alt="Nomination result screen" width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             </div>
           </div>
+        </div>
+
+        <div className="not-prose grid grid-cols-4 gap-3 mb-6">
+          <figure className="flex flex-col">
+            <Image src="/images/Elite Ecosystem/Nomation-1.png" alt="Step 1 - Choose who to nominate" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Step 1 - Choose who to nominate</figcaption>
+          </figure>
+          <figure className="flex flex-col">
+            <Image src="/images/Elite Ecosystem/Nomation-2.png" alt="Step 2 - Confirm location to nominate" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Step 2 - Confirm location to nominate</figcaption>
+          </figure>
+          <figure className="flex flex-col">
+            <Image src="/images/Elite Ecosystem/Nomation-3.gif" alt="Step 3 - Additional loading screen" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Step 3 - Additional loading screen</figcaption>
+          </figure>
+          <figure className="flex flex-col">
+            <Image src="/images/Elite Ecosystem/Nomation-4.gif" alt="Step 4 - Result screen" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Step 4 - Result screen</figcaption>
+          </figure>
         </div>
 
         <Label>Impact</Label>
