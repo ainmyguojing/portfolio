@@ -92,7 +92,7 @@ export default function SmartOmix() {
       <Card>
         <Label>1. Platform for Complexity and Scale</Label>
         <p className="text-sm font-semibold text-neutral-700 mb-1 mt-2">Problem</p>
-        <p className="text-sm text-neutral-600 mb-4">Researchers&apos; needs spanned from simple to highly complex studies.</p>
+        <p className="text-sm text-neutral-600 mb-4">Researchers&apos; needs ranged widely: some simple studies could be managed by a single person, while complex studies often required whole teams. Each member with distinct roles, responsibilities, and goals. We needed a flexible structure that could accommodate both ends of this spectrum and everything in between.</p>
         <p className="text-sm font-semibold text-neutral-700 mb-1">Solution</p>
         <BulletList items={[
           "Introduced a phase-based navigation: Design, Launch, Manage, Analyze",
