@@ -243,9 +243,9 @@ export default function Elite() {
         <div className="not-prose flex flex-col gap-8 mb-6">
           <div className="grid grid-cols-3 gap-6">
             {[
-              { n: 1, caption: "Hero section" },
-              { n: 2, caption: "Elite's value to Yelp" },
-              { n: 3, caption: "Marketing video" },
+              { n: 1, caption: "Hero section - open image + statment" },
+              { n: 2, caption: "Section 2 - Elite's value to Yelp" },
+              { n: 3, caption: "Section 3 - Video highlighting the essence of being Elites" },
             ].map(({ n, caption }) => (
               <figure key={n} className="flex flex-col gap-2">
                 <Image src={`/images/Elite Ecosystem/elite-page-section-${n}.png`} alt={caption} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
@@ -255,10 +255,10 @@ export default function Elite() {
           </div>
           <div className="grid grid-cols-4 gap-6">
             {[
-              { n: 4, caption: "Benefits of being Elites" },
-              { n: 5, caption: "How to join" },
-              { n: 6, caption: "Events and Elites stories" },
-              { n: 7, caption: "Support from community managers" },
+              { n: 4, caption: "Section 4 - Benefits of being Elites" },
+              { n: 5, caption: "Section 5 - Eligibility & How to join" },
+              { n: 6, caption: "Section 6 - Elites events and Elites stories" },
+              { n: 7, caption: "Section 7 - Support from community managers" },
             ].map(({ n, caption }) => (
               <figure key={n} className="flex flex-col gap-2">
                 <Image src={`/images/Elite Ecosystem/elite-page-section-${n}.png`} alt={caption} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
