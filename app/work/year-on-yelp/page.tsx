@@ -162,6 +162,21 @@ export default function YearOnYelp() {
           most emotionally resonant beats.
         </p>
 
+        <div className="not-prose grid grid-cols-7 gap-3 mb-3">
+          {[1,2,3,4,5,6,7].map((n) => (
+            <figure key={n}>
+              <Image src={`/images/Year on Yelp/screen-${n}.png`} alt={`Screen ${n}`} width={400} height={700} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            </figure>
+          ))}
+        </div>
+        <div className="not-prose grid grid-cols-7 gap-3 mb-6">
+          {[8,9,10,11,12,13,14].map((n) => (
+            <figure key={n}>
+              <Image src={`/images/Year on Yelp/screen-${n}.png`} alt={`Screen ${n}`} width={400} height={700} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            </figure>
+          ))}
+        </div>
+
         <Label>Personalization at Scale</Label>
         <p className="text-sm text-neutral-600 mb-6">
           The most reviewed food category had 14 illustrated variations. Rather than custom
