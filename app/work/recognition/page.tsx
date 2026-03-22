@@ -11,7 +11,7 @@ function SectionDivider({ id }: { id?: string }) {
 
 function Card({ children, id }: { children: React.ReactNode; id?: string }) {
   return (
-    <div id={id} className="not-prose bg-white rounded-2xl border border-neutral-200 p-10 my-6">
+    <div id={id} className="not-prose bg-white rounded-2xl border border-neutral-200 p-5 sm:p-10 my-6">
       {children}
     </div>
   );
@@ -89,7 +89,7 @@ export default function Recognition() {
       <Card>
 
         <Label>MVP Design</Label>
-        <div className="grid grid-cols-2 gap-4 mt-2 mx-auto mb-8" style={{ width: "70%" }}>
+        <div className="grid grid-cols-2 gap-4 mt-2 mx-auto mb-8 w-full sm:w-[70%]">
           <figure className="not-prose">
             <Image src="/images/Recognition/Earning-recogntion-1.png" alt="MVP earning recognition screen 1" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
           </figure>
@@ -247,7 +247,7 @@ export default function Recognition() {
           "Added \"Recognitions\" directly below Yelp Elite in Achievements",
           "Moved Achievements higher in MeTab for better discoverability",
         ]} />
-        <figure className="not-prose mx-auto" style={{ width: "70%" }}>
+        <figure className="not-prose mx-auto w-full sm:w-[70%]">
           <Image src="/images/Recognition/Me-tab-final-design.png" alt="MeTab final design" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
           <figcaption className="text-xs text-neutral-400 text-center mt-2">Final design - placement of recognition on Me Tab</figcaption>
         </figure>
@@ -306,7 +306,7 @@ export default function Recognition() {
           "Review count provides the depth signal that makes the recognition credible",
           "Tap-through to the review list lets skeptical readers verify for themselves",
         ]} />
-        <figure className="not-prose mx-auto" style={{ width: "70%" }}>
+        <figure className="not-prose mx-auto w-full sm:w-[70%]">
           <Image src="/images/Recognition/bizpage-final-design.png" alt="Biz page final design" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
           <figcaption className="text-xs text-neutral-400 text-center mt-2">Final design - surface recogntion to readers</figcaption>
         </figure>

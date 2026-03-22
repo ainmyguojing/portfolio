@@ -11,7 +11,7 @@ function SectionDivider({ id }: { id?: string }) {
 
 function Card({ children, id }: { children: React.ReactNode; id?: string }) {
   return (
-    <div id={id} className="not-prose bg-white rounded-2xl border border-neutral-200 p-10 my-6">
+    <div id={id} className="not-prose bg-white rounded-2xl border border-neutral-200 p-5 sm:p-10 my-6">
       {children}
     </div>
   );
@@ -87,7 +87,7 @@ export default function Elite() {
       <Card>
         <Label>Discovery</Label>
         <p className="text-sm text-neutral-600 mb-6">Awareness depended on manual outreach; most valuable reviewers never heard of Elite. The Elite Squad page was deeply buried in the Me Tab, making organic discovery rare. Occasionally users would spot the Elite badge on another reviewer&apos;s profile, but the badge alone offered little context about the program, leaving most readers unsure what it meant or how to get involved.</p>
-        <div className="not-prose flex gap-4 mx-auto items-end" style={{ width: "70%" }}>
+        <div className="not-prose flex gap-4 mx-auto items-end w-full sm:w-[70%]">
           <figure className="flex-1">
             <Image src="/images/Elite Ecosystem/SQ-Elite-page-entrypoint.png" alt="Hidden entry point on Me Tab" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             <figcaption className="text-xs text-neutral-400 text-center mt-2">Hidden entry point on Me Tab</figcaption>
@@ -102,7 +102,7 @@ export default function Elite() {
       <Card>
         <Label>Consideration</Label>
         <p className="text-sm text-neutral-600 mb-6">The Elite landing page was text-heavy and didn&apos;t convert; it lacked clarity and appeal. Several sections repeated the same information: &ldquo;how to join&rdquo; and &ldquo;eligibility&rdquo; covered the same ground but were split into two, causing confusion. The hero section and video weren&apos;t visually engaging or meaningful, missing the opportunity to inspire users. The call-to-action (CTA) was inconsistent and easy to miss, never standing out enough to drive action.</p>
-        <div className="not-prose grid grid-cols-5 gap-3">
+        <div className="not-prose grid grid-cols-2 sm:grid-cols-5 gap-3">
           <div className="flex flex-col gap-3">
             <figure>
               <Image src="/images/Elite Ecosystem/SQ-Elite-page-hero.png" alt="Hero image" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
@@ -147,7 +147,7 @@ export default function Elite() {
       <Card>
         <Label>Conversion</Label>
         <p className="text-sm text-neutral-600 mb-6">80%+ of nominations were auto-rejected, with generic feedback and no next step. The rejection was delivered via a plain system feedback modal with just text, which created several problems: it felt less like a real decision and more like a system error, left users unsure if their nomination had even gone through, and made it hard to understand the outcome at a glance. The instant, text-heavy message also signaled that the nomination hadn&apos;t been thoughtfully reviewed, further undermining user trust.</p>
-        <figure className="not-prose mx-auto" style={{ width: "60%" }}>
+        <figure className="not-prose mx-auto w-full sm:w-[60%]">
           <Image src="/images/Elite Ecosystem/SQ_nomination flow.png" alt="Nomination flow" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
         </figure>
       </Card>
@@ -194,7 +194,7 @@ export default function Elite() {
           feels genuine and meaningful, rather than vague or empty.
         </p>
 
-        <div className="not-prose grid grid-cols-3 gap-3 mx-auto mb-6" style={{ width: "80%" }}>
+        <div className="not-prose grid grid-cols-1 sm:grid-cols-3 gap-3 mx-auto mb-6 w-full sm:w-4/5">
           <figure className="flex flex-col">
             <Image src="/images/Elite Ecosystem/Awareness-1.png" alt="Post review screen" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             <figcaption className="text-xs text-neutral-400 text-center mt-2">Post review screen</figcaption>
@@ -224,7 +224,7 @@ export default function Elite() {
           and hard to act on. Without new assets, I focused on three principles.
         </p>
 
-        <div className="not-prose mx-auto mb-6" style={{ width: "30%" }}>
+        <div className="not-prose mx-auto mb-6 w-full sm:w-[30%]">
           <Image src="/images/Elite Ecosystem/New-elite-page.gif" alt="New Elite page" width={800} height={1200} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
         </div>
 
@@ -235,7 +235,7 @@ export default function Elite() {
         ]} />
 
         <div className="not-prose flex flex-col gap-8 mb-6">
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
               { n: 1, caption: "Hero section - open image + statment" },
               { n: 2, caption: "Section 2 - Elite's value to Yelp" },
@@ -247,7 +247,7 @@ export default function Elite() {
               </figure>
             ))}
           </div>
-          <div className="grid grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             {[
               { n: 4, caption: "Section 4 - Benefits of being Elites" },
               { n: 5, caption: "Section 5 - Eligibility & How to join" },
@@ -287,7 +287,7 @@ export default function Elite() {
         </p>
 
         <Label>Design Solutions</Label>
-        <div className="not-prose grid grid-cols-4 gap-3 mb-6">
+        <div className="not-prose grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
           <figure className="flex flex-col">
             <Image src="/images/Elite Ecosystem/Nomation-1.png" alt="Step 1 - Choose who to nominate" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             <figcaption className="text-xs text-neutral-400 text-center mt-2">Step 1 - Choose who to nominate</figcaption>
@@ -306,30 +306,30 @@ export default function Elite() {
           </figure>
         </div>
         <div className="flex flex-col gap-4 mb-6">
-          <div className="rounded-xl border border-neutral-200 p-5 flex gap-6 items-start">
+          <div className="rounded-xl border border-neutral-200 p-5 flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
             <div className="flex-1">
               <p className="text-sm font-semibold text-neutral-700 mb-2">1. Small Fix, Big Win</p>
               <p className="text-sm text-neutral-500">Adding the ability for users to confirm or correct their primary location removed an entire category of preventable rejections caused by outdated location data. This simple tweak significantly improved nomination accuracy and reduced user frustration.</p>
             </div>
-            <div className="not-prose shrink-0 w-40">
+            <div className="not-prose w-full sm:w-40 sm:shrink-0">
               <Image src="/images/Elite Ecosystem/nomination-location-change.png" alt="Location confirmation screen" width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             </div>
           </div>
-          <div className="rounded-xl border border-neutral-200 p-5 flex gap-6 items-start">
+          <div className="rounded-xl border border-neutral-200 p-5 flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
             <div className="flex-1">
               <p className="text-sm font-semibold text-neutral-700 mb-2">2. Loading and Rejection Screens</p>
               <p className="text-sm text-neutral-500">Introducing a loading state (&ldquo;Analyzing your profile...&rdquo;) signaled that each nomination was being seriously reviewed, not instantly dismissed. If rejected, users received clear, specific reasons and actionable feedback tied directly to their eligibility gap, along with a contextual prompt to write another review. This approach ensured the process felt authentic, transparent, and constructive.</p>
             </div>
-            <div className="not-prose shrink-0 w-40">
+            <div className="not-prose w-full sm:w-40 sm:shrink-0">
               <Image src="/images/Elite Ecosystem/nomination-loading.gif" alt="Nomination loading screen" width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             </div>
           </div>
-          <div className="rounded-xl border border-neutral-200 p-5 flex gap-6 items-start">
+          <div className="rounded-xl border border-neutral-200 p-5 flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
             <div className="flex-1">
               <p className="text-sm font-semibold text-neutral-700 mb-2">3. A Narrative of Progress on the Result Screen</p>
               <p className="text-sm text-neutral-500">The result screen was thoughtfully structured: the top half conveyed the rejection message, providing a specific reason and clear guidance for what to do next. The bottom half used a contextualized, motivational prompt, seamlessly carrying the narrative forward and encouraging users to keep contributing and work towards Elite status.</p>
             </div>
-            <div className="not-prose shrink-0 w-40">
+            <div className="not-prose w-full sm:w-40 sm:shrink-0">
               <Image src="/images/Elite Ecosystem/nomination-message.png" alt="Nomination result screen" width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             </div>
           </div>

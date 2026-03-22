@@ -11,7 +11,7 @@ function SectionDivider({ id }: { id?: string }) {
 
 function Card({ children, id }: { children: React.ReactNode; id?: string }) {
   return (
-    <div id={id} className="not-prose bg-white rounded-2xl border border-neutral-200 p-10 my-6">
+    <div id={id} className="not-prose bg-white rounded-2xl border border-neutral-200 p-5 sm:p-10 my-6">
       {children}
     </div>
   );
@@ -160,7 +160,7 @@ export default function YearOnYelp() {
           foregrounds per module.
         </p>
 
-        <div className="not-prose mx-auto mb-6" style={{ width: "35%" }}>
+        <div className="not-prose mx-auto mb-6 w-full sm:w-[35%]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/Year on Yelp/visual-elements.png" alt="Visual elements" className="w-full rounded-lg" />
         </div>
@@ -172,7 +172,7 @@ export default function YearOnYelp() {
           module-specific details kept things fresh.
         </p>
 
-        <div className="not-prose grid grid-cols-3 gap-4">
+        <div className="not-prose grid grid-cols-1 sm:grid-cols-3 gap-4">
           <figure className="flex flex-col gap-2">
             <Image src="/images/Year on Yelp/opening-screen-animation.gif" alt="Opening screen animation" width={400} height={700} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             <figcaption className="text-xs text-neutral-400 text-center">Opening screen</figcaption>
@@ -192,7 +192,7 @@ export default function YearOnYelp() {
 
       <h2 id="experience">05 — Designing the Experience</h2>
 
-      <div className="not-prose mx-auto my-6" style={{ width: "35%" }}>
+      <div className="not-prose mx-auto my-6 w-full sm:w-[35%]">
         <video src="/images/Year on Yelp/complete-experience.mov" autoPlay loop muted playsInline className="w-full rounded-lg" />
       </div>
 
@@ -211,7 +211,7 @@ export default function YearOnYelp() {
           most emotionally resonant beats.
         </p>
 
-        <div className="not-prose grid grid-cols-7 gap-3 mb-3">
+        <div className="not-prose grid grid-cols-3 sm:grid-cols-7 gap-3 mb-3">
           {[
             { n: 1, caption: "Opening screen" },
             { n: 2, caption: "Reactions" },
@@ -227,7 +227,7 @@ export default function YearOnYelp() {
             </figure>
           ))}
         </div>
-        <div className="not-prose grid grid-cols-7 gap-3 mb-6">
+        <div className="not-prose grid grid-cols-3 sm:grid-cols-7 gap-3 mb-6">
           {[
             { n: 8, caption: "Top 3 photographed categories" },
             { n: 9, caption: "Most viewed review" },
@@ -251,12 +251,12 @@ export default function YearOnYelp() {
           each user&apos;s recap felt individualized and special.
         </p>
 
-        <figure className="not-prose mx-auto mb-6" style={{ width: "30%" }}>
+        <figure className="not-prose mx-auto mb-6 w-full sm:w-[30%]">
           <Image src="/images/Year on Yelp/category-14-general.png" alt="Generic screen - fork & knife visual" width={600} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
           <figcaption className="text-xs text-neutral-400 text-center mt-2">Generic screen - fork &amp; knife visual</figcaption>
         </figure>
 
-        <div className="not-prose grid grid-cols-6 gap-3 mb-4">
+        <div className="not-prose grid grid-cols-3 sm:grid-cols-6 gap-3 mb-4">
           {[
             { n: 1, name: "american", caption: "American food" },
             { n: 2, name: "breakfast", caption: "Breakfast & Brunch" },
@@ -272,7 +272,7 @@ export default function YearOnYelp() {
           ))}
         </div>
 
-        <div className="not-prose grid grid-cols-7 gap-3">
+        <div className="not-prose grid grid-cols-3 sm:grid-cols-7 gap-3">
           {[
             { n: 7, name: "cocktail", caption: "Cocktail Bar" },
             { n: 8, name: "italian", caption: "Italian food" },

@@ -20,7 +20,7 @@ function SectionDivider({ id }: { id?: string }) {
 
 function Card({ children, id }: { children: React.ReactNode; id?: string }) {
   return (
-    <div id={id} className="not-prose bg-white rounded-2xl border border-neutral-200 p-10 my-6">
+    <div id={id} className="not-prose bg-white rounded-2xl border border-neutral-200 p-5 sm:p-10 my-6">
       {children}
     </div>
   );
@@ -167,7 +167,7 @@ export default function CommunityQA() {
         <p className="text-sm text-neutral-600 mb-6">
           A key goal of the vision work was to surface the gaps between what Yelp currently offered and what users actually needed. The asking journey illustrates this most clearly. It&apos;s where unmet intent is most visible. I focused on two asking flows in the vision: search and AI chat. Here I&apos;ll use search as the example, since it represents the highest volume entry point for unanswered questions.
         </p>
-        <div className="not-prose flex flex-col gap-4" style={{ width: "80%", margin: "0 auto" }}>
+        <div className="not-prose flex flex-col gap-4 w-full sm:w-4/5 mx-auto">
           {[
             [
               { src: "/images/Community Q&A/vision-mock-1-1b.png", caption: "Step 1: Simple search" },
@@ -180,7 +180,7 @@ export default function CommunityQA() {
               { src: "/images/Community Q&A/vision-mock-1-6b.png", caption: "Step 6: Lead user to business page" },
             ],
           ].map((row, i) => (
-            <div key={i} className="grid grid-cols-3 gap-3">
+            <div key={i} className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {row.map(({ src, caption }) => (
                 <figure key={src}>
                   <Image src={src} alt={caption} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
@@ -303,7 +303,7 @@ export default function CommunityQA() {
           "Aligned the experience with how people think about search, so the transition felt natural",
           "Shifted the experience from passively browsing results to actively starting a conversation",
         ]} />
-        <div className="not-prose flex items-center justify-center gap-4 mb-6" style={{ width: "60%", margin: "0 auto 1.5rem" }}>
+        <div className="not-prose flex items-center justify-center gap-4 mb-6 w-full sm:w-3/5 mx-auto">
           <figure className="flex-1">
             <Image src="/images/Community Q&A/initiative-1-mocks-1-1.png" alt="Original design" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             <figcaption className="text-xs text-neutral-400 text-center mt-2">Original design</figcaption>
@@ -346,24 +346,26 @@ export default function CommunityQA() {
           "Added Q&A hub entry points across key surfaces: Home, Yelp Assistant, Business pages, and more",
           "Organized questions geo-based to surface locally relevant content",
         ]} />
-        <div className="not-prose flex items-center justify-center gap-3 mb-6">
-          <div className="flex gap-3 items-end" style={{ flex: 3 }}>
-            {[
-              { src: "/images/Community Q&A/initiative-2-mocks-2-1.png", caption: "Home entry point" },
-              { src: "/images/Community Q&A/initiative-2-mocks-2-2.png", caption: "Yelp Assistant entry point" },
-              { src: "/images/Community Q&A/initiative-2-mocks-2-3.png", caption: "Business page entry point" },
-            ].map(({ src, caption }) => (
-              <figure key={src} className="flex-1">
-                <Image src={src} alt={caption} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-                <figcaption className="text-xs text-neutral-400 text-center mt-2">{caption}</figcaption>
-              </figure>
-            ))}
+        <div className="not-prose mb-6">
+          <div className="grid grid-cols-2 sm:flex sm:items-center sm:justify-center gap-3">
+            <div className="col-span-2 flex gap-3 items-end sm:flex-none" style={{ flex: 3 }}>
+              {[
+                { src: "/images/Community Q&A/initiative-2-mocks-2-1.png", caption: "Home entry point" },
+                { src: "/images/Community Q&A/initiative-2-mocks-2-2.png", caption: "Yelp Assistant entry point" },
+                { src: "/images/Community Q&A/initiative-2-mocks-2-3.png", caption: "Business page entry point" },
+              ].map(({ src, caption }) => (
+                <figure key={src} className="flex-1">
+                  <Image src={src} alt={caption} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+                  <figcaption className="text-xs text-neutral-400 text-center mt-2">{caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+            <Image src="/images/Community Q&A/arrow.svg" alt="arrow" width={24} height={24} className="hidden sm:block w-6 shrink-0" />
+            <figure className="col-span-2 sm:col-auto sm:flex-none" style={{ flex: "1.15" }}>
+              <Image src="/images/Community Q&A/initiative-2-mocks-2-4.png" alt="Geo based question hub" width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <figcaption className="text-xs text-neutral-400 text-center mt-2">Geo based question hub</figcaption>
+            </figure>
           </div>
-          <Image src="/images/Community Q&A/arrow.svg" alt="arrow" width={24} height={24} className="w-6 shrink-0" />
-          <figure style={{ flex: "1.15" }}>
-            <Image src="/images/Community Q&A/initiative-2-mocks-2-4.png" alt="Geo based question hub" width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <figcaption className="text-xs text-neutral-400 text-center mt-2">Geo based question hub</figcaption>
-          </figure>
         </div>
         <Label>Impact</Label>
         <BulletList items={[
@@ -401,7 +403,7 @@ export default function CommunityQA() {
           "Inline clarification cues",
           "Structured composition flow with progressive guidance",
         ]} />
-        <div className="not-prose grid grid-cols-3 gap-3 mb-6">
+        <div className="not-prose grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
           {[
             { src: "/images/Community Q&A/initiative-3-mocks-3-1.png", caption: "Before typing a reply" },
             { src: "/images/Community Q&A/initiative-3-mocks-3-2.png", caption: "Search and tag a business" },

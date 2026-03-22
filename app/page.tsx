@@ -75,7 +75,7 @@ export default function Home() {
   const circleY = useTransform(scrollY, [0, 400], [0, -700]);
 
   return (
-    <div ref={containerRef} className="min-h-screen pt-14 overflow-x-hidden">
+    <div ref={containerRef} className="min-h-screen pt-14 overflow-x-hidden px-4 sm:px-0">
 
       {/* Yellow circle */}
       <motion.div
@@ -93,13 +93,13 @@ export default function Home() {
       />
 
       {/* Hero */}
-      <section className="relative z-10 max-w-[82vw] mx-auto pt-20 pb-14">
+      <section className="relative z-10 max-w-[82vw] mx-auto pt-12 sm:pt-20 pb-14">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
         >
-          <h1 className="text-7xl sm:text-8xl text-neutral-900 leading-none tracking-tight mb-6">
+          <h1 className="text-5xl sm:text-7xl lg:text-8xl text-neutral-900 leading-none tracking-tight mb-6">
             Hello,<br />I&apos;m Jing.
           </h1>
           <p className="text-xl text-neutral-900 leading-relaxed max-w-xl">

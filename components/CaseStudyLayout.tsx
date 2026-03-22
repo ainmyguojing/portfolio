@@ -261,7 +261,7 @@ export default function CaseStudyLayout({
       {sections && sections.length > 0 && <SideIndex sections={sections} />}
 
       {/* Hero */}
-      <section className="max-w-3xl mx-auto px-6 pt-16 pb-12">
+      <section className="max-w-3xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -294,7 +294,7 @@ export default function CaseStudyLayout({
           <p className="text-lg text-neutral-700 leading-relaxed mb-10">{subtitle}</p>
 
           {/* Meta row */}
-          <div className="grid grid-cols-3 gap-6 py-6 px-6 bg-white rounded-2xl border border-neutral-200">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 py-6 px-6 bg-white rounded-2xl border border-neutral-200">
             <div>
               <p className="text-xs text-neutral-400 uppercase tracking-widest mb-1">Role</p>
               <p className="text-sm text-neutral-700 font-medium">{role}</p>
@@ -313,7 +313,7 @@ export default function CaseStudyLayout({
 
       {/* Content */}
       <motion.section
-        className="max-w-3xl mx-auto px-6 pb-24"
+        className="max-w-3xl mx-auto px-4 sm:px-6 pb-24"
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, delay: 0.15, ease: [0.2, 0.8, 0.2, 1] }}
@@ -325,7 +325,7 @@ export default function CaseStudyLayout({
 
       {/* Footer with project carousel */}
       <footer style={{ background: "rgba(255,255,255,0.7)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }} className="border-t border-neutral-200/60 mt-0">
-        <div className="max-w-[82vw] mx-auto px-0 pt-10 pb-4">
+        <div className="max-w-[82vw] mx-auto px-4 sm:px-0 pt-10 pb-4">
           <div className="flex items-center gap-3 mb-5">
             <p className="section-label">More Projects</p>
             <div className="flex items-center gap-1 ml-2">
