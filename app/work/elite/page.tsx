@@ -274,17 +274,32 @@ export default function Elite() {
 
         <Label>Design Solutions</Label>
         <div className="flex flex-col gap-4 mb-6">
-          <div className="rounded-xl border border-neutral-200 p-5">
-            <p className="text-sm font-semibold text-neutral-700 mb-2">1. Small Fix, Big Win</p>
-            <p className="text-sm text-neutral-500">Adding the ability for users to confirm or correct their primary location removed an entire category of preventable rejections caused by outdated location data. This simple tweak significantly improved nomination accuracy and reduced user frustration.</p>
+          <div className="rounded-xl border border-neutral-200 p-5 flex gap-6 items-start">
+            <div className="flex-1">
+              <p className="text-sm font-semibold text-neutral-700 mb-2">1. Small Fix, Big Win</p>
+              <p className="text-sm text-neutral-500">Adding the ability for users to confirm or correct their primary location removed an entire category of preventable rejections caused by outdated location data. This simple tweak significantly improved nomination accuracy and reduced user frustration.</p>
+            </div>
+            <div className="not-prose shrink-0 w-40">
+              <Image src="/images/Elite Ecosystem/nomination-location-change.png" alt="Location confirmation screen" width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            </div>
           </div>
-          <div className="rounded-xl border border-neutral-200 p-5">
-            <p className="text-sm font-semibold text-neutral-700 mb-2">2. Loading and Rejection Screens</p>
-            <p className="text-sm text-neutral-500">Introducing a loading state (&ldquo;Analyzing your profile...&rdquo;) signaled that each nomination was being seriously reviewed, not instantly dismissed. If rejected, users received clear, specific reasons and actionable feedback tied directly to their eligibility gap, along with a contextual prompt to write another review. This approach ensured the process felt authentic, transparent, and constructive.</p>
+          <div className="rounded-xl border border-neutral-200 p-5 flex gap-6 items-start">
+            <div className="flex-1">
+              <p className="text-sm font-semibold text-neutral-700 mb-2">2. Loading and Rejection Screens</p>
+              <p className="text-sm text-neutral-500">Introducing a loading state (&ldquo;Analyzing your profile...&rdquo;) signaled that each nomination was being seriously reviewed, not instantly dismissed. If rejected, users received clear, specific reasons and actionable feedback tied directly to their eligibility gap, along with a contextual prompt to write another review. This approach ensured the process felt authentic, transparent, and constructive.</p>
+            </div>
+            <div className="not-prose shrink-0 w-40">
+              <Image src="/images/Elite Ecosystem/nomination-loading.gif" alt="Nomination loading screen" width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            </div>
           </div>
-          <div className="rounded-xl border border-neutral-200 p-5">
-            <p className="text-sm font-semibold text-neutral-700 mb-2">3. A Narrative of Progress on the Result Screen</p>
-            <p className="text-sm text-neutral-500">The result screen was thoughtfully structured: the top half conveyed the rejection message, providing a specific reason and clear guidance for what to do next. The bottom half used a contextualized, motivational prompt, seamlessly carrying the narrative forward and encouraging users to keep contributing and work towards Elite status.</p>
+          <div className="rounded-xl border border-neutral-200 p-5 flex gap-6 items-start">
+            <div className="flex-1">
+              <p className="text-sm font-semibold text-neutral-700 mb-2">3. A Narrative of Progress on the Result Screen</p>
+              <p className="text-sm text-neutral-500">The result screen was thoughtfully structured: the top half conveyed the rejection message, providing a specific reason and clear guidance for what to do next. The bottom half used a contextualized, motivational prompt, seamlessly carrying the narrative forward and encouraging users to keep contributing and work towards Elite status.</p>
+            </div>
+            <div className="not-prose shrink-0 w-40">
+              <Image src="/images/Elite Ecosystem/nomination-message.png" alt="Nomination result screen" width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            </div>
           </div>
         </div>
 
