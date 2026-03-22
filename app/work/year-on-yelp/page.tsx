@@ -169,9 +169,10 @@ export default function YearOnYelp() {
           each user&apos;s recap felt individualized and special.
         </p>
 
-        <div className="not-prose mx-auto mb-6" style={{ width: "30%" }}>
-          <Image src="/images/Year on Yelp/category-14-general.png" alt="Category 14 - General" width={600} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-        </div>
+        <figure className="not-prose mx-auto mb-6" style={{ width: "30%" }}>
+          <Image src="/images/Year on Yelp/category-14-general.png" alt="Generic screen - fork & knife visual" width={600} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          <figcaption className="text-xs text-neutral-400 text-center mt-2">Generic screen - fork &amp; knife visual</figcaption>
+        </figure>
 
         <div className="not-prose grid grid-cols-6 gap-3 mb-4">
           {[1,2,3,4,5,6].map((n) => (
