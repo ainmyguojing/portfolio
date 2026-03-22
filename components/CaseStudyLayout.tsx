@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface Subsection {
   id: string;
@@ -90,13 +90,15 @@ function scrollToDivider(dividerId: string | undefined, sectionId: string) {
 function SideIndex({ sections }: { sections: Section[] }) {
   const [activeId, setActiveId] = useState<string>(sections[0]?.id ?? "");
   const [visible, setVisible] = useState(true);
+  const sidebarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const checkVisibility = () => {
       const footer = document.querySelector("footer");
-      if (!footer) return;
+      if (!footer || !sidebarRef.current) return;
       const footerTop = footer.getBoundingClientRect().top;
-      setVisible(footerTop > window.innerHeight);
+      const sidebarBottom = sidebarRef.current.getBoundingClientRect().bottom;
+      setVisible(sidebarBottom < footerTop);
     };
     checkVisibility();
     window.addEventListener("scroll", checkVisibility, { passive: true });
@@ -148,7 +150,7 @@ function SideIndex({ sections }: { sections: Section[] }) {
   }, [allSubsections]);
 
   return (
-    <div className={`fixed left-8 top-1/2 -translate-y-1/2 flex-col gap-1 z-20 hidden xl:flex transition-opacity duration-300 ${visible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
+    <div ref={sidebarRef} className={`fixed left-8 top-1/2 -translate-y-1/2 flex-col gap-1 z-20 hidden xl:flex transition-opacity duration-300 ${visible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
       {sections.map((section) => {
         const isActive = activeId === section.id;
         return (
