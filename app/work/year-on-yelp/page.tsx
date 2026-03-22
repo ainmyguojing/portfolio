@@ -47,8 +47,8 @@ const SECTIONS = [
   { id: "what", title: "What Year on Yelp Is", divider: "divider-what" },
   { id: "role", title: "My Role: Design as Creative Direction", divider: "divider-role" },
   { id: "theme", title: "Finding the Theme", divider: "divider-theme" },
-  { id: "experience", title: "Designing the Experience", divider: "divider-experience" },
   { id: "visual", title: "Visual Direction", divider: "divider-visual" },
+  { id: "experience", title: "Designing the Experience", divider: "divider-experience" },
   { id: "outcome", title: "Outcome", divider: "divider-outcome" },
   { id: "reflections", title: "Reflections", divider: "divider-reflections" },
 ];
@@ -139,9 +139,37 @@ export default function YearOnYelp() {
         </p>
       </Card>
 
+      <SectionDivider id="divider-visual" />
+
+      <h2 id="visual">04 — Visual Direction</h2>
+      <p>
+        Once the theme was finalized, I provided a detailed creative brief to guide illustration
+        and animation.
+      </p>
+
+      <Card>
+        <Label>Tone</Label>
+        <p className="text-sm text-neutral-600 mb-6">
+          Bold, warm, and celebratory; standing out from everyday Yelp but grounded in the brand.
+        </p>
+
+        <Label>Visuals</Label>
+        <p className="text-sm text-neutral-600 mb-6">
+          Landscape backgrounds and constellation icons, with food shapes as star clusters; unique
+          foregrounds per module.
+        </p>
+
+        <Label>Animation</Label>
+        <p className="text-sm text-neutral-600">
+          Three modules (intro, top photo, top review) received Lottie treatment for peak emotional
+          impact. Visual coherence was achieved via tight color and motif constraints, while
+          module-specific details kept things fresh.
+        </p>
+      </Card>
+
       <SectionDivider id="divider-experience" />
 
-      <h2 id="experience">04 — Designing the Experience</h2>
+      <h2 id="experience">05 — Designing the Experience</h2>
 
       <div className="not-prose mx-auto my-6" style={{ width: "35%" }}>
         <video src="/images/Year on Yelp/complete-experience.mov" autoPlay loop muted playsInline className="w-full rounded-lg" />
@@ -239,34 +267,6 @@ export default function YearOnYelp() {
             </figure>
           ))}
         </div>
-      </Card>
-
-      <SectionDivider id="divider-visual" />
-
-      <h2 id="visual">05 — Visual Direction</h2>
-      <p>
-        Once the theme was finalized, I provided a detailed creative brief to guide illustration
-        and animation.
-      </p>
-
-      <Card>
-        <Label>Tone</Label>
-        <p className="text-sm text-neutral-600 mb-6">
-          Bold, warm, and celebratory; standing out from everyday Yelp but grounded in the brand.
-        </p>
-
-        <Label>Visuals</Label>
-        <p className="text-sm text-neutral-600 mb-6">
-          Landscape backgrounds and constellation icons, with food shapes as star clusters; unique
-          foregrounds per module.
-        </p>
-
-        <Label>Animation</Label>
-        <p className="text-sm text-neutral-600">
-          Three modules (intro, top photo, top review) received Lottie treatment for peak emotional
-          impact. Visual coherence was achieved via tight color and motif constraints, while
-          module-specific details kept things fresh.
-        </p>
       </Card>
 
       <SectionDivider id="divider-outcome" />
