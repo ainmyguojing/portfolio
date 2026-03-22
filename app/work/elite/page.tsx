@@ -268,11 +268,12 @@ export default function Elite() {
           </figure>
         </div>
 
+        <Label>Key Challenge</Label>
         <p className="text-sm text-neutral-600 mb-6">
-          Key Challenge: Generic, instant rejection wasn&apos;t just unhelpful; it hurt motivation.
+          Generic, instant rejection wasn&apos;t just unhelpful; it hurt motivation.
         </p>
 
-        <p className="text-sm font-semibold text-neutral-700 mb-4">Design solutions:</p>
+        <Label>Design Solutions</Label>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
           <div className="rounded-xl border border-neutral-200 p-5">
             <p className="text-sm font-semibold text-neutral-700 mb-2">1. Small Fix, Big Win</p>
