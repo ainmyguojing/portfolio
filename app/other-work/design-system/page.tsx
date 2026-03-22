@@ -83,19 +83,19 @@ export default function DesignSystem() {
       <h2 id="structure">02 — System Structure</h2>
       <p>The design system follows a pyramid structure:</p>
       <Card>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <ul className="space-y-1.5">
           {[
             { label: "Foundation", detail: "Establishes brand identity and ensures accessibility." },
             { label: "SaaS Functional Requirements", detail: "Accommodates complex, multi-layered product needs." },
             { label: "UI Elements", detail: "Responsive, interactive, with variants for every state." },
             { label: "Layout Templates", detail: "Guide how elements combine into components, modals, and pages." },
           ].map(({ label, detail }) => (
-            <div key={label} className="rounded-xl border border-neutral-200 p-5">
-              <p className="text-sm font-semibold text-neutral-700 mb-2">{label}</p>
-              <p className="text-sm text-neutral-500">{detail}</p>
-            </div>
+            <li key={label} className="flex gap-2 text-sm text-neutral-600">
+              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+              <span><strong className="text-neutral-700">{label}:</strong> {detail}</span>
+            </li>
           ))}
-        </div>
+        </ul>
       </Card>
 
       <SectionDivider id="divider-principles" />
