@@ -95,9 +95,9 @@ export default function SmartOmix() {
         <p className="text-sm text-neutral-600 mb-4">Researchers&apos; needs ranged widely: some simple studies could be managed by a single person, while complex studies often required whole teams. Each member with distinct roles, responsibilities, and goals. We needed a flexible structure that could accommodate both ends of this spectrum and everything in between.</p>
         <div className="flex flex-col gap-4 mb-6 mx-auto w-full sm:w-3/4">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/Smart Omix/01-problem-taget-user-types.svg" alt="Target user types" className="w-full" />
+          <img src="/images/Smart%20Omix/01-problem-taget-user-types.svg" alt="Target user types" className="w-full" />
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/Smart Omix/01-problem-task-at-phases.svg" alt="Tasks at phases" className="w-full" />
+          <img src="/images/Smart%20Omix/01-problem-task-at-phases.svg" alt="Tasks at phases" className="w-full" />
         </div>
         <p className="text-sm font-semibold text-neutral-700 mb-1">Solution</p>
         <BulletList items={[
@@ -107,8 +107,8 @@ export default function SmartOmix() {
         ]} />
         <div className="flex flex-col gap-4 mt-6 mx-auto w-full sm:w-3/4">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/Smart Omix/01-solution-homescreen.svg" alt="Solution homescreen" className="w-full" />
-          <video src="/images/Smart Omix/01-solution-organization.mp4" autoPlay loop muted playsInline className="w-full rounded-lg" />
+          <img src="/images/Smart%20Omix/01-solution-homescreen.svg" alt="Solution homescreen" className="w-full" />
+          <video src="/images/Smart%20Omix/01-solution-organization.mp4" autoPlay loop muted playsInline className="w-full rounded-lg" />
         </div>
       </Card>
 
