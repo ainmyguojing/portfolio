@@ -182,15 +182,20 @@ export default function SmartOmix() {
         <p className="text-sm font-semibold text-neutral-700 mb-1 mt-2">Problem</p>
         <p className="text-sm text-neutral-600 mb-4">Clinical research is inherently complex, but we wanted Smart Omix to be approachable for all researchers—regardless of their experience level. Our goal was to support both novices and experts by designing an intuitive, streamlined flow. We built in educational tools and context-sensitive guidance to help those who needed it, but ensured these resources were non-intrusive and wouldn&apos;t disrupt the workflow of experienced users.</p>
         <p className="text-sm font-semibold text-neutral-700 mb-1">Solution</p>
-        <ul className="space-y-1.5">
+        <ul className="space-y-6">
           {[
-            { bold: "Layered Informational UI", rest: ": Added an informational layer on top of the core UI, revealing helpful content and tips through context-sensitive triggers to support users when needed." },
-            { bold: "Step-by-Step Mini Tasks", rest: ": Broke complex study creation into mini tasks with stepped guidance at key moments, providing structure and direction while preventing users from getting overwhelmed." },
-            { bold: "Ghosting Future Actions", rest: ": Used ghosted previews of upcoming steps and options so users could stay focused on what's next, while building awareness of the overall process." },
-          ].map(({ bold, rest }) => (
-            <li key={bold} className="flex gap-2 text-sm text-neutral-600">
-              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
-              <span><strong className="text-neutral-700">{bold}</strong>{rest}</span>
+            { bold: "Layered Informational UI", rest: ": Added an informational layer on top of the core UI, revealing helpful content and tips through context-sensitive triggers to support users when needed.", video: "/images/Smart%20Omix/4-soluton-information-card.mp4" },
+            { bold: "Step-by-Step Mini Tasks", rest: ": Broke complex study creation into mini tasks with stepped guidance at key moments, providing structure and direction while preventing users from getting overwhelmed.", video: "/images/Smart%20Omix/04-soluton-create-ePRO.mp4" },
+            { bold: "Ghosting Future Actions", rest: ": Used ghosted previews of upcoming steps and options so users could stay focused on what's next, while building awareness of the overall process.", video: "/images/Smart%20Omix/04-soluton-ghosted content.mp4" },
+          ].map(({ bold, rest, video }) => (
+            <li key={bold} className="flex flex-col gap-3 text-sm text-neutral-600">
+              <div className="flex gap-2">
+                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+                <span><strong className="text-neutral-700">{bold}</strong>{rest}</span>
+              </div>
+              <div className="mx-auto w-full sm:w-[90%]">
+                <VideoPlayer src={video} className="w-full rounded-lg img-bordered" />
+              </div>
             </li>
           ))}
         </ul>
