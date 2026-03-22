@@ -108,7 +108,7 @@ export default function Home() {
             <img src="/images/Yelp%20Logo/Other.svg" alt="Yelp" style={{ height: "1.44em", marginLeft: "8px", position: "relative", top: "-2px" }} className="inline-block align-middle" />
           </p>
           <p className="text-xl text-neutral-900 leading-relaxed max-w-xl mt-3">
-            Bringing strategic, systems-level thinking, identifying hidden opportunities, and designing scalable solutions. Building impactful products for the AI era by leveraging deep expertise in user-generated content.
+            Bringing strategic, systems-level thinking, identifying hidden opportunities, and designing scalable solutions. Building impactful products for the AI era by leveraging deep expertise in user engagement, user retention, and community building.
           </p>
         </motion.div>
       </section>
