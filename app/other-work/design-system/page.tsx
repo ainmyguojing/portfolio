@@ -145,7 +145,7 @@ export default function DesignSystem() {
 
       <h2 id="implementation">05 — Implementation &amp; Handoff</h2>
       <p>
-        The design system served not just designers, but also engineers — evolving into an SDK for
+        The design system served not just designers, but also engineers, evolving into an SDK for
         easier implementation.
       </p>
       <Card>
@@ -165,7 +165,7 @@ export default function DesignSystem() {
 
       <h2 id="action">06 — Design System in Action</h2>
       <p>
-        Core elements included: Buttons, Dropdown Lists, Layout Templates, and Kanban Boards — for
+        Core elements included: Buttons, Dropdown Lists, Layout Templates, and Kanban Boards, for
         consistent UI across products.
       </p>
       <Card>
@@ -203,7 +203,7 @@ export default function DesignSystem() {
         <li>
           <strong>The Real Work Begins with Adoption:</strong> True stability and value emerge only
           after the system is put to use. Only then do gaps, missing variants, or compatibility issues
-          surface — and are resolved based on real feedback.
+          surface and are resolved based on real feedback.
         </li>
         <li>
           <strong>Right Workflow = Sustainable Growth:</strong> Streamlining edit and review processes
