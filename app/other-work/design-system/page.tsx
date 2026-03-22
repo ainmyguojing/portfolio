@@ -70,7 +70,7 @@ export default function DesignSystem() {
           <div className="rounded-xl border border-neutral-200 p-5 flex flex-col">
             <p className="text-sm font-semibold text-neutral-700 mb-2">Material UI</p>
             <p className="text-sm text-neutral-600 mb-4">Provided a comprehensive library of elements, variants, behaviors, and ready-to-use code.</p>
-            <div className="mt-auto" style={{ width: "36%" }}>
+            <div className="mt-auto" style={{ width: "43%" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/Design%20System/01-material-UI.svg" alt="Material UI" className="w-full" />
             </div>
