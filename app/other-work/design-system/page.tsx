@@ -112,11 +112,13 @@ export default function DesignSystem() {
         every element and template was consistent, usable, and on-brand.
       </p>
       <Card>
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/Design%20System/03-principle-consistent.svg" alt="Consistent principle" className="w-full" />
+          <div className="border-t border-neutral-200 my-8" />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/Design%20System/03-principle-compatible.svg" alt="Compatible principle" className="w-full" />
+          <div className="border-t border-neutral-200 my-8" />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/Design%20System/03-principle-flexible.svg" alt="Flexible principle" className="w-full" />
         </div>
