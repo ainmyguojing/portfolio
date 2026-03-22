@@ -257,8 +257,8 @@ export default function Elite() {
             {[
               { n: 4, title: "Benefits of being Elites" },
               { n: 5, title: "How to join" },
-              { n: 6, title: "" },
-              { n: 7, title: "" },
+              { n: 6, title: "Events and Elites stories" },
+              { n: 7, title: "Support from community managers" },
             ].map(({ n, title }) => (
               <div key={n} className="flex flex-col gap-3">
                 {title && <p className="text-sm font-semibold text-neutral-700">{title}</p>}
