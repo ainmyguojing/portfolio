@@ -201,6 +201,18 @@ export default function Elite() {
           feels genuine and meaningful, rather than vague or empty.
         </p>
 
+        <div className="not-prose grid grid-cols-3 gap-3 mx-auto mb-6" style={{ width: "80%" }}>
+          <figure className="flex flex-col">
+            <Image src="/images/Elite Ecosystem/Awareness-1.png" alt="Awareness screen 1" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          </figure>
+          <figure className="flex flex-col">
+            <Image src="/images/Elite Ecosystem/Awareness-2.png" alt="Awareness screen 2" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          </figure>
+          <figure className="flex flex-col">
+            <Image src="/images/Elite Ecosystem/Awareness-3.png" alt="Awareness screen 3" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          </figure>
+        </div>
+
         <Label>Impact</Label>
         <p className="text-sm text-neutral-600">
           ~880K eligible users per year, projecting 1K–5.8K incremental Elites and 10K–58K more
