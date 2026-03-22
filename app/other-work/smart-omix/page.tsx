@@ -105,6 +105,11 @@ export default function SmartOmix() {
           "Organized studies in \"organizations\" with layered permissions, making access and roles scalable.",
           "Built modular components for each phase: simple for new users, flexible for complex teams.",
         ]} />
+        <div className="flex flex-col gap-4 mt-6 mx-auto w-full sm:w-3/4">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/Smart Omix/01-solution-homescreen.svg" alt="Solution homescreen" className="w-full" />
+          <video src="/images/Smart Omix/01-solution-organization.mp4" autoPlay loop muted playsInline className="w-full rounded-lg" />
+        </div>
       </Card>
 
       <Card>
