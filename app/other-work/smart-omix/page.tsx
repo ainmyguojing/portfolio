@@ -172,7 +172,7 @@ export default function SmartOmix() {
         <div className="flex flex-col gap-8 mt-6 mx-auto w-full sm:w-[90%]">
           <figure>
             <VideoPlayer src="/images/Smart%20Omix/03-solution-novel-study.mp4" className="w-full rounded-lg img-bordered" />
-            <figcaption className="text-xs text-neutral-400 text-center mt-2">Educate researchers about novel data through example data and visualize the experience to research through the screens participants will see</figcaption>
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Allow researchers to study a data type in depth. Each data type will show Available Data Source, Data Sample, and Paricipant Screen</figcaption>
           </figure>
         </div>
       </Card>
