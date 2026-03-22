@@ -163,16 +163,34 @@ export default function YearOnYelp() {
         </p>
 
         <div className="not-prose grid grid-cols-7 gap-3 mb-3">
-          {[1,2,3,4,5,6,7].map((n) => (
-            <figure key={n}>
-              <Image src={`/images/Year on Yelp/screen-${n}.png`} alt={`Screen ${n}`} width={400} height={700} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          {[
+            { n: 1, caption: "Opening screen" },
+            { n: 2, caption: "Reactions" },
+            { n: 3, caption: "Photos shared" },
+            { n: 4, caption: "Recognitions earned" },
+            { n: 5, caption: "Service category reviewed" },
+            { n: 6, caption: "Most reviewed category" },
+            { n: 7, caption: "Beauty category reviewed" },
+          ].map(({ n, caption }) => (
+            <figure key={n} className="flex flex-col gap-2">
+              <Image src={`/images/Year on Yelp/screen-${n}.png`} alt={caption} width={400} height={700} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <figcaption className="text-xs text-neutral-400 text-center">{caption}</figcaption>
             </figure>
           ))}
         </div>
         <div className="not-prose grid grid-cols-7 gap-3 mb-6">
-          {[8,9,10,11,12,13,14].map((n) => (
-            <figure key={n}>
-              <Image src={`/images/Year on Yelp/screen-${n}.png`} alt={`Screen ${n}`} width={400} height={700} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          {[
+            { n: 8, caption: "Top 3 photographed categories" },
+            { n: 9, caption: "Most viewed review" },
+            { n: 10, caption: "Most viewed photo" },
+            { n: 11, caption: "Questions answered" },
+            { n: 12, caption: "Compliments given and received" },
+            { n: 13, caption: "Closing screen" },
+            { n: 14, caption: "Next review screen" },
+          ].map(({ n, caption }) => (
+            <figure key={n} className="flex flex-col gap-2">
+              <Image src={`/images/Year on Yelp/screen-${n}.png`} alt={caption} width={400} height={700} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <figcaption className="text-xs text-neutral-400 text-center">{caption}</figcaption>
             </figure>
           ))}
         </div>
