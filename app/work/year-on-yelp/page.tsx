@@ -161,7 +161,8 @@ export default function YearOnYelp() {
         </p>
 
         <div className="not-prose mx-auto mb-6" style={{ width: "20%" }}>
-          <Image src="/images/Year on Yelp/visual-elements.png" alt="Visual elements" width={600} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/Year on Yelp/visual-elements.png" alt="Visual elements" className="w-full rounded-lg" />
         </div>
 
         <Label>Animation</Label>
