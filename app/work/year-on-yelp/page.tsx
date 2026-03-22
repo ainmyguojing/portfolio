@@ -160,7 +160,7 @@ export default function YearOnYelp() {
           foregrounds per module.
         </p>
 
-        <div className="not-prose mx-auto mb-6" style={{ width: "20%" }}>
+        <div className="not-prose mx-auto mb-6" style={{ width: "35%" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/Year on Yelp/visual-elements.png" alt="Visual elements" className="w-full rounded-lg" />
         </div>
