@@ -52,7 +52,7 @@ export default function SmartOmix() {
   return (
     <CaseStudyLayout
       title="Smart Omix – End-to-End Digital Clinical Research"
-      subtitle="Enabling real-world, end-to-end digital clinical research for independent and institutional teams — from study design to participant engagement to data analysis."
+      subtitle="Enabling real-world, end-to-end digital clinical research for independent and institutional teams: from study design to participant engagement to data analysis."
       role="Product Designer (Sole)"
       team="Startup team"
       year="Sep 2021 – Jul 2022"
@@ -70,7 +70,7 @@ export default function SmartOmix() {
         end-to-end digital research for independent and institutional teams.
       </p>
       <p>
-        The platform has two sides — a researcher web app for designing studies, managing participants,
+        The platform has two sides: a researcher web app for designing studies, managing participants,
         and viewing data, and a participant mobile app for enrollment, data entry, and rewards. I joined
         as the sole designer in September 2021, leading up to the July 2022 launch, and continued
         with V2.
@@ -130,7 +130,7 @@ export default function SmartOmix() {
         <p className="text-sm font-semibold text-neutral-700 mb-1">Solution</p>
         <BulletList items={[
           "Added in-context info layers and step-by-step breakdowns to help users progress smoothly",
-          "Used ghosting for future actions — keeping users focused but aware of upcoming tasks",
+          "Used ghosting for future actions, keeping users focused but aware of upcoming tasks",
         ]} />
       </Card>
 
@@ -171,7 +171,7 @@ export default function SmartOmix() {
 
       <h2 id="results">05 — Results</h2>
       <p>
-        Smart Omix expanded access to clinical research — enabling greater complexity, rapid iteration,
+        Smart Omix expanded access to clinical research, enabling greater complexity, rapid iteration,
         and real engagement on a platform built for scale from day one.
       </p>
 
@@ -192,8 +192,8 @@ export default function SmartOmix() {
           synthesize and make the final call with confidence.
         </li>
         <li>
-          <strong>Prioritize consistency:</strong> Design consistency — across both broad concepts and
-          the smallest details — matters most, especially in complex or phased products.
+          <strong>Prioritize consistency:</strong> Design consistency across both broad concepts and
+          the smallest details matters most, especially in complex or phased products.
         </li>
       </ol>
     </CaseStudyLayout>
