@@ -96,7 +96,7 @@ function SideIndex({ sections }: { sections: Section[] }) {
       const footer = document.querySelector("footer");
       if (!footer) return;
       const footerTop = footer.getBoundingClientRect().top;
-      setVisible(footerTop > window.innerHeight - 20);
+      setVisible(footerTop > window.innerHeight);
     };
     checkVisibility();
     window.addEventListener("scroll", checkVisibility, { passive: true });
@@ -348,39 +348,43 @@ export default function CaseStudyLayout({
             </div>
           </div>
           <div id="project-carousel" className="flex gap-4 overflow-x-auto pb-6" style={{ scrollbarWidth: "none" }}>
-            {otherProjects.map((project, i) => (
-              <div key={project.href} className="flex items-stretch gap-4 shrink-0">
-                <Link href={project.href} className="group block w-[28.8rem]">
-                  <motion.div
-                    className="card h-full p-6 flex flex-col"
-                    whileHover={{ scale: 1.018, boxShadow: "0 2px 12px rgba(0,0,0,0.03)" }}
-                    transition={{ duration: 0.25, ease: [0.2, 0.8, 0.2, 1] }}
-                  >
-                    <div className="flex justify-between mb-4 gap-1.5">
-                      <span className="tag">{project.company}</span>
-                      <div className="flex gap-1.5">
-                        {project.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
+            {otherProjects.map((project, i) => {
+              const next = otherProjects[i + 1];
+              const showDivider = next && project.company !== next.company;
+              return (
+                <div key={project.href} className="flex items-stretch gap-4 shrink-0">
+                  <Link href={project.href} className="group block w-[28.8rem]">
+                    <motion.div
+                      className="card h-full p-6 flex flex-col"
+                      whileHover={{ scale: 1.018, boxShadow: "0 2px 12px rgba(0,0,0,0.03)" }}
+                      transition={{ duration: 0.25, ease: [0.2, 0.8, 0.2, 1] }}
+                    >
+                      <div className="flex justify-between mb-4 gap-1.5">
+                        <span className="tag">{project.company}</span>
+                        <div className="flex gap-1.5">
+                          {project.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
+                        </div>
                       </div>
-                    </div>
-                    <h2 className="text-base text-neutral-900 mb-2 leading-snug">
-                      <span className="title-highlight px-1.5">{project.title}</span>
-                    </h2>
-                    <p className="text-sm text-neutral-600 leading-relaxed flex-1 mb-5">
-                      {project.description}
-                    </p>
-                    <span className="cta-link-sm">
-                      View project
-                      <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </span>
-                  </motion.div>
-                </Link>
-                {project.dividerAfter && i < otherProjects.length - 1 && (
-                  <div className="w-px bg-neutral-200 self-stretch shrink-0" />
-                )}
-              </div>
-            ))}
+                      <h2 className="text-base text-neutral-900 mb-2 leading-snug">
+                        <span className="title-highlight px-1.5">{project.title}</span>
+                      </h2>
+                      <p className="text-sm text-neutral-600 leading-relaxed flex-1 mb-5">
+                        {project.description}
+                      </p>
+                      <span className="cta-link-sm">
+                        View project
+                        <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </span>
+                    </motion.div>
+                  </Link>
+                  {showDivider && (
+                    <div className="w-px bg-neutral-300 self-stretch shrink-0" />
+                  )}
+                </div>
+              );
+            })}
           </div>
           <div className="border-t border-neutral-200 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-neutral-600">
