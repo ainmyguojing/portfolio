@@ -143,6 +143,10 @@ export default function YearOnYelp() {
 
       <h2 id="experience">04 — Designing the Experience</h2>
 
+      <div className="not-prose mx-auto my-6" style={{ width: "35%" }}>
+        <video src="/images/Year on Yelp/complete-experience.mov" autoPlay loop muted playsInline className="w-full rounded-lg" />
+      </div>
+
       <Card>
         <Label>Format Shift: Scroll to Story</Label>
         <p className="text-sm text-neutral-600 mb-6">
