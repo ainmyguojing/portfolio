@@ -204,7 +204,7 @@ export default function SmartOmix() {
       <Card>
         <Label>5. Building Transparency and Trust</Label>
         <p className="text-sm font-semibold text-neutral-700 mb-1 mt-2">Problem</p>
-        <p className="text-sm text-neutral-600 mb-4">Digital can feel impersonal; we wanted researchers and participants connected.</p>
+        <p className="text-sm text-neutral-600 mb-4">Digital platforms can feel impersonal, so we focused on keeping researchers and participants connected. Traditionally, in-flight studies often behave like a black box: researchers have limited visibility and control once a study is underway. We wanted to change that by ensuring researchers could easily review progress and make necessary adjustments at any point, as well as reach out to participants if needed.</p>
         <p className="text-sm font-semibold text-neutral-700 mb-1">Solution</p>
         <BulletList items={[
           "Built in notifications and alerts so researchers could track progress and participant needs",
