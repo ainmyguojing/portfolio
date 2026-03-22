@@ -43,7 +43,16 @@ function BulletList({ items, className }: { items: string[]; className?: string 
 const SECTIONS = [
   { id: "context", title: "Context & Opportunity", divider: "divider-context" },
   { id: "responsibilities", title: "My Responsibilities", divider: "divider-responsibilities" },
-  { id: "challenges", title: "Key Challenges & Strategic Solutions", divider: "divider-challenges" },
+  {
+    id: "challenges", title: "Key Challenges & Strategic Solutions", divider: "divider-challenges",
+    subsections: [
+      { id: "challenge-1", title: "Platform for Complexity" },
+      { id: "challenge-2", title: "Nonlinear Life Cycles" },
+      { id: "challenge-3", title: "Data-Rich Research" },
+      { id: "challenge-4", title: "Accessibility" },
+      { id: "challenge-5", title: "Transparency & Trust" },
+    ],
+  },
   { id: "execution", title: "Execution & Results", divider: "divider-execution" },
   { id: "reflections", title: "Reflections", divider: "divider-reflections" },
 ];
@@ -94,7 +103,7 @@ export default function SmartOmix() {
 
       <h2 id="challenges">03 — Key Challenges &amp; Strategic Solutions</h2>
 
-      <Card>
+      <Card id="challenge-1">
         <Label>1. Platform for Complexity and Scale</Label>
         <p className="text-sm font-semibold text-neutral-700 mb-1 mt-2">Problem</p>
         <p className="text-sm text-neutral-600 mb-4">Researchers&apos; needs ranged widely: some simple studies could be managed by a single person, while complex studies often required whole teams. Each member with distinct roles, responsibilities, and goals. We needed a flexible structure that could accommodate both ends of this spectrum and everything in between.</p>
@@ -130,7 +139,7 @@ export default function SmartOmix() {
         </div>
       </Card>
 
-      <Card>
+      <Card id="challenge-2">
         <Label>2. Managing Nonlinear Study Life Cycles</Label>
         <p className="text-sm font-semibold text-neutral-700 mb-1 mt-2">Problem</p>
         <p className="text-sm text-neutral-600 mb-4">Studies rarely follow a straight line; phases often overlap. For example, while a study might be locked for IRB review or launched, researchers inevitably discover changes they need to make, even after locking. We needed a nuanced system that allowed users to lock and unlock studies as needed, while automatically managing all downstream workflow adjustments to keep everything in sync and error-free.</p>
@@ -152,7 +161,7 @@ export default function SmartOmix() {
         </div>
       </Card>
 
-      <Card>
+      <Card id="challenge-3">
         <Label>3. Supporting New, Data-Rich Research</Label>
         <p className="text-sm font-semibold text-neutral-700 mb-1 mt-2">Problem</p>
         <p className="text-sm text-neutral-600 mb-4">Switching to digital introduced new data types and uncertainty.</p>
@@ -176,7 +185,7 @@ export default function SmartOmix() {
         </div>
       </Card>
 
-      <Card>
+      <Card id="challenge-4">
         <Label>4. Accessibility, Despite Complexity</Label>
         <p className="text-sm font-semibold text-neutral-700 mb-1 mt-2">Problem</p>
         <p className="text-sm text-neutral-600 mb-4">Clinical research is inherently complex, but we wanted Smart Omix to be approachable for all researchers—regardless of their experience level. Our goal was to support both novices and experts by designing an intuitive, streamlined flow. We built in educational tools and context-sensitive guidance to help those who needed it, but ensured these resources were non-intrusive and wouldn&apos;t disrupt the workflow of experienced users.</p>
@@ -201,7 +210,7 @@ export default function SmartOmix() {
         </ul>
       </Card>
 
-      <Card>
+      <Card id="challenge-5">
         <Label>5. Building Transparency and Trust</Label>
         <p className="text-sm font-semibold text-neutral-700 mb-1 mt-2">Problem</p>
         <p className="text-sm text-neutral-600 mb-4">Digital platforms can feel impersonal, so we focused on keeping researchers and participants connected. Traditionally, in-flight studies often behave like a black box: researchers have limited visibility and control once a study is underway. We wanted to change that by ensuring researchers could easily review progress and make necessary adjustments at any point, as well as reach out to participants if needed.</p>
