@@ -168,6 +168,33 @@ export default function DesignSystem() {
         Core elements included: Buttons, Dropdown Lists, Layout Templates, and Kanban Boards — for
         consistent UI across products.
       </p>
+      <Card>
+        <div className="flex flex-col">
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/Design%20System/06-buttons.svg" alt="Buttons" className="w-full" />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Buttons</figcaption>
+          </figure>
+          <div className="border-t border-neutral-200 my-8" />
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/Design%20System/06-dropdown-list.svg" alt="Dropdown list items" className="w-full" />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Dropdown list items</figcaption>
+          </figure>
+          <div className="border-t border-neutral-200 my-8" />
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/Design%20System/06-dropdown-list-template.svg" alt="Dropdown list template" className="w-full" />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Dropdown list template</figcaption>
+          </figure>
+          <div className="border-t border-neutral-200 my-8" />
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/Design%20System/06-kanban-board.svg" alt="Kanban board" className="w-full" />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Kanban board</figcaption>
+          </figure>
+        </div>
+      </Card>
 
       <SectionDivider id="divider-reflections" />
 
