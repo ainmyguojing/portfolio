@@ -1,4 +1,5 @@
 import CaseStudyLayout from "@/components/CaseStudyLayout";
+import Image from "next/image";
 
 export const metadata = {
   title: "Year on Yelp — Jing Guo",
@@ -119,6 +120,17 @@ export default function YearOnYelp() {
           mapping to personalized visuals. We chose Constellation for its outward,
           contribution-centered narrative.
         </p>
+
+        <div className="not-prose grid grid-cols-2 gap-4 mb-6">
+          <figure className="flex flex-col gap-2">
+            <Image src="/images/Year on Yelp/Contellation-theme.png" alt="Concept visuals - Constellation" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center">Concept viusals - Contellation</figcaption>
+          </figure>
+          <figure className="flex flex-col gap-2">
+            <Image src="/images/Year on Yelp/Memory-jar-theme.png" alt="Concept visuals - Memory Jar" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center">Concept viusals - Memory Jar</figcaption>
+          </figure>
+        </div>
 
         <Label>The Core Message</Label>
         <p className="text-sm text-neutral-600 italic">
