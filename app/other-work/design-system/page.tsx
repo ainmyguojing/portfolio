@@ -83,6 +83,8 @@ export default function DesignSystem() {
       <h2 id="structure">02 — System Structure</h2>
       <p>The design system follows a pyramid structure:</p>
       <Card>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/Design%20System/02-funnel-diagram.svg" alt="System structure pyramid" className="w-full mb-6" />
         <ul className="space-y-1.5">
           {[
             { label: "Foundation", detail: "Establishes brand identity and ensures accessibility." },
