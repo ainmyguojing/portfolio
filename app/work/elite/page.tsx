@@ -29,14 +29,6 @@ function Label({ children }: { children: React.ReactNode }) {
   );
 }
 
-function TwoCol({ left, right }: { left: React.ReactNode; right: React.ReactNode }) {
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-      <div className="rounded-xl border border-neutral-200 p-5">{left}</div>
-      <div className="rounded-xl border border-neutral-200 p-5">{right}</div>
-    </div>
-  );
-}
 
 function BulletList({ items, className }: { items: string[]; className?: string }) {
   return (
@@ -248,22 +240,29 @@ export default function Elite() {
           ))}
         </div>
 
-        <div className="not-prose flex flex-col gap-6 mb-6">
-          {[[1,2],[3,4],[5,6],[7]].map((pair) => (
-            <div key={pair[0]} className="grid gap-6" style={{ gridTemplateColumns: `repeat(${pair.length}, 1fr)` }}>
-              {pair.map((n) => (
-                <div key={n} className="flex items-start gap-4">
-                  <div className="flex-1 text-left">
-                    <p className="text-sm font-semibold text-neutral-700 mb-2">title</p>
-                    <p className="text-sm text-neutral-500">pragraph</p>
-                  </div>
-                  <div className="shrink-0 w-32 flex justify-end">
-                    <Image src={`/images/Elite Ecosystem/elite-page-section-${n}.png`} alt={`Elite page section ${n}`} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-                  </div>
+        <div className="not-prose flex flex-col gap-8 mb-6">
+          <div className="grid grid-cols-3 gap-6">
+            {[1,2,3].map((n) => (
+              <div key={n} className="flex flex-col gap-3">
+                <div>
+                  <p className="text-sm font-semibold text-neutral-700 mb-2">title</p>
+                  <p className="text-sm text-neutral-500">pragraph</p>
                 </div>
-              ))}
-            </div>
-          ))}
+                <Image src={`/images/Elite Ecosystem/elite-page-section-${n}.png`} alt={`Elite page section ${n}`} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              </div>
+            ))}
+          </div>
+          <div className="grid grid-cols-4 gap-6">
+            {[4,5,6,7].map((n) => (
+              <div key={n} className="flex flex-col gap-3">
+                <div>
+                  <p className="text-sm font-semibold text-neutral-700 mb-2">title</p>
+                  <p className="text-sm text-neutral-500">pragraph</p>
+                </div>
+                <Image src={`/images/Elite Ecosystem/elite-page-section-${n}.png`} alt={`Elite page section ${n}`} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              </div>
+            ))}
+          </div>
         </div>
 
         <Label>Copy Choices</Label>
