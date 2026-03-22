@@ -175,25 +175,34 @@ export default function YearOnYelp() {
         </figure>
 
         <div className="not-prose grid grid-cols-6 gap-3 mb-4">
-          {[1,2,3,4,5,6].map((n) => (
-            <figure key={n}>
-              <Image src={`/images/Year on Yelp/category-${n}-${["american","breakfast","sandwich","seafood","burger","pizza"][n-1]}.png`} alt={`Category ${n}`} width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+          {[
+            { n: 1, name: "american", caption: "American food" },
+            { n: 2, name: "breakfast", caption: "Breakfast & Brunch" },
+            { n: 3, name: "sandwich", caption: "Sandwich" },
+            { n: 4, name: "seafood", caption: "Seafood" },
+            { n: 5, name: "burger", caption: "Burger" },
+            { n: 6, name: "pizza", caption: "Pizza" },
+          ].map(({ n, name, caption }) => (
+            <figure key={n} className="flex flex-col gap-2">
+              <Image src={`/images/Year on Yelp/category-${n}-${name}.png`} alt={caption} width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <figcaption className="text-xs text-neutral-400 text-center">{caption}</figcaption>
             </figure>
           ))}
         </div>
 
         <div className="not-prose grid grid-cols-7 gap-3">
           {[
-            { n: 7, name: "cocktail" },
-            { n: 8, name: "italian" },
-            { n: 9, name: "coffee" },
-            { n: 10, name: "mexican" },
-            { n: 11, name: "japanses" },
-            { n: 12, name: "salad" },
-            { n: 13, name: "dessert" },
-          ].map(({ n, name }) => (
-            <figure key={n}>
-              <Image src={`/images/Year on Yelp/category-${n}-${name}.png`} alt={`Category ${n}`} width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            { n: 7, name: "cocktail", caption: "Cocktail Bar" },
+            { n: 8, name: "italian", caption: "Italian food" },
+            { n: 9, name: "coffee", caption: "Coffee & Tea" },
+            { n: 10, name: "mexican", caption: "Mexican food" },
+            { n: 11, name: "japanses", caption: "Japanese food" },
+            { n: 12, name: "salad", caption: "Salad" },
+            { n: 13, name: "dessert", caption: "Dessert" },
+          ].map(({ n, name, caption }) => (
+            <figure key={n} className="flex flex-col gap-2">
+              <Image src={`/images/Year on Yelp/category-${n}-${name}.png`} alt={caption} width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <figcaption className="text-xs text-neutral-400 text-center">{caption}</figcaption>
             </figure>
           ))}
         </div>
