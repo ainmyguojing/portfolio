@@ -98,7 +98,7 @@ function SideIndex({ sections }: { sections: Section[] }) {
       if (!footer || !sidebarRef.current) return;
       const footerTop = footer.getBoundingClientRect().top;
       const sidebarBottom = sidebarRef.current.getBoundingClientRect().bottom;
-      setVisible(sidebarBottom < footerTop);
+      setVisible(sidebarBottom + 20 < footerTop);
     };
     checkVisibility();
     window.addEventListener("scroll", checkVisibility, { passive: true });
