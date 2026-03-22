@@ -230,8 +230,7 @@ export default function SmartOmix() {
       <Card>
         <Label>Execution Principles</Label>
         <p className="text-sm text-neutral-600 mt-2 mb-4">
-          <strong className="text-neutral-700">Reflection:</strong> Strong early product architecture,
-          a cohesive vision, and disciplined synthesis of stakeholder input were key to scaling Smart Omix.
+          Strong early product architecture, a cohesive vision, and disciplined synthesis of stakeholder input were key to scaling Smart Omix.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
