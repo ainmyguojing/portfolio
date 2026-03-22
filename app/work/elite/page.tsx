@@ -203,13 +203,16 @@ export default function Elite() {
 
         <div className="not-prose grid grid-cols-3 gap-3 mx-auto mb-6" style={{ width: "80%" }}>
           <figure className="flex flex-col">
-            <Image src="/images/Elite Ecosystem/Awareness-1.png" alt="Awareness screen 1" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <Image src="/images/Elite Ecosystem/Awareness-1.png" alt="Post review screen" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Post review screen</figcaption>
           </figure>
           <figure className="flex flex-col">
-            <Image src="/images/Elite Ecosystem/Awareness-2.png" alt="Awareness screen 2" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <Image src="/images/Elite Ecosystem/Awareness-2.png" alt="Elite program modal" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Elite program modal</figcaption>
           </figure>
           <figure className="flex flex-col">
-            <Image src="/images/Elite Ecosystem/Awareness-3.png" alt="Awareness screen 3" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <Image src="/images/Elite Ecosystem/Awareness-3.png" alt="Elite program page" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Elite program page</figcaption>
           </figure>
         </div>
 
