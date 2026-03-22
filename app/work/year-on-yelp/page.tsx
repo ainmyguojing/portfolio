@@ -159,6 +159,10 @@ export default function YearOnYelp() {
           foregrounds per module.
         </p>
 
+        <div className="not-prose mb-6">
+          <Image src="/images/Year on Yelp/visual-elements.png" alt="Visual elements" width={1200} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+        </div>
+
         <Label>Animation</Label>
         <p className="text-sm text-neutral-600 mb-6">
           Three modules (intro, top photo, top review) received Lottie treatment for peak emotional
