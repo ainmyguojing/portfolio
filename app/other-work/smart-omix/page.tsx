@@ -99,10 +99,16 @@ export default function SmartOmix() {
         <p className="text-sm font-semibold text-neutral-700 mb-1 mt-2">Problem</p>
         <p className="text-sm text-neutral-600 mb-4">Researchers&apos; needs ranged widely: some simple studies could be managed by a single person, while complex studies often required whole teams. Each member with distinct roles, responsibilities, and goals. We needed a flexible structure that could accommodate both ends of this spectrum and everything in between.</p>
         <div className="flex flex-col gap-4 mb-6 mx-auto w-full sm:w-3/4">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/Smart%20Omix/01-problem-taget-user-types.svg" alt="Target user types" className="w-full" />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/Smart%20Omix/01-problem-task-at-phases.svg" alt="Tasks at phases" className="w-full" />
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/Smart%20Omix/01-problem-taget-user-types.svg" alt="Target user types" className="w-full" />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Simgle study - individual researcher vs. Complex study - a research team</figcaption>
+          </figure>
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/Smart%20Omix/01-problem-task-at-phases.svg" alt="Tasks at phases" className="w-full" />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Researcher roles required for each study phase and their tasks</figcaption>
+          </figure>
         </div>
         <p className="text-sm font-semibold text-neutral-700 mb-1">Solution</p>
         <BulletList items={[
