@@ -67,17 +67,21 @@ export default function DesignSystem() {
       <p>A robust system starts with two pillars:</p>
       <Card>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="rounded-xl border border-neutral-200 p-5">
+          <div className="rounded-xl border border-neutral-200 p-5 flex flex-col">
             <p className="text-sm font-semibold text-neutral-700 mb-2">Material UI</p>
             <p className="text-sm text-neutral-600 mb-4">Provided a comprehensive library of elements, variants, behaviors, and ready-to-use code.</p>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/Design%20System/01-material-UI.svg" alt="Material UI" className="w-full" />
+            <div className="mt-auto" style={{ width: "20%" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/Design%20System/01-material-UI.svg" alt="Material UI" className="w-full" />
+            </div>
           </div>
-          <div className="rounded-xl border border-neutral-200 p-5">
+          <div className="rounded-xl border border-neutral-200 p-5 flex flex-col">
             <p className="text-sm font-semibold text-neutral-700 mb-2">Branding</p>
             <p className="text-sm text-neutral-600 mb-4">Adapted Material UI to reflect our company&apos;s unique voice through style, font, and color so every product feels truly ours.</p>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/Design%20System/01-sharecare.svg" alt="Sharecare branding" className="w-full" />
+            <div className="mt-auto" style={{ width: "20%" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/Design%20System/01-sharecare.svg" alt="Sharecare branding" className="w-full" />
+            </div>
           </div>
         </div>
       </Card>
