@@ -301,37 +301,49 @@ export default function CaseStudyLayout({
         </div>
       </motion.section>
 
-      {/* Other projects carousel */}
-      <section className="max-w-[82vw] mx-auto pb-24 space-y-4">
-        <p className="section-label mb-5">More Projects</p>
-        <div className="flex gap-4 overflow-x-auto pb-2 -mx-2 px-2">
-          {otherProjects.map((project) => (
-            <Link key={project.href} href={project.href} className="group block shrink-0 w-72">
-              <motion.div
-                className="card h-full p-6 flex flex-col"
-                whileHover={{ scale: 1.018, boxShadow: "0 2px 12px rgba(0,0,0,0.03)" }}
-                transition={{ duration: 0.25, ease: [0.2, 0.8, 0.2, 1] }}
-              >
-                <div className="flex justify-end mb-4 gap-1.5">
-                  {project.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
-                </div>
-                <h2 className="text-base text-neutral-900 mb-2 leading-snug">
-                  <span className="title-highlight px-1.5">{project.title}</span>
-                </h2>
-                <p className="text-sm text-neutral-600 leading-relaxed flex-1 mb-5">
-                  {project.description}
-                </p>
-                <span className="cta-link-sm">
-                  View project
-                  <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </span>
-              </motion.div>
-            </Link>
-          ))}
+      {/* Footer with project carousel */}
+      <footer style={{ background: "rgba(255,255,255,0.7)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }} className="border-t border-neutral-200/60 mt-0">
+        <div className="max-w-[82vw] mx-auto px-0 pt-10 pb-4">
+          <p className="section-label mb-5">More Projects</p>
+          <div className="flex gap-4 overflow-x-auto pb-6">
+            {otherProjects.map((project) => (
+              <Link key={project.href} href={project.href} className="group block shrink-0 w-[36rem]">
+                <motion.div
+                  className="card h-full p-6 flex flex-col"
+                  whileHover={{ scale: 1.018, boxShadow: "0 2px 12px rgba(0,0,0,0.03)" }}
+                  transition={{ duration: 0.25, ease: [0.2, 0.8, 0.2, 1] }}
+                >
+                  <div className="flex justify-end mb-4 gap-1.5">
+                    {project.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
+                  </div>
+                  <h2 className="text-base text-neutral-900 mb-2 leading-snug">
+                    <span className="title-highlight px-1.5">{project.title}</span>
+                  </h2>
+                  <p className="text-sm text-neutral-600 leading-relaxed flex-1 mb-5">
+                    {project.description}
+                  </p>
+                  <span className="cta-link-sm">
+                    View project
+                    <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </span>
+                </motion.div>
+              </Link>
+            ))}
+          </div>
+          <div className="border-t border-neutral-200 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-neutral-600">
+              Interested in my work?{" "}
+              <span className="text-neutral-900 font-medium">Let&apos;s get connected.</span>
+            </p>
+            <div className="flex items-center gap-5">
+              <a href="mailto:jingguo1908@gmail.com" className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-200">Email</a>
+              <a href="https://linkedin.com/in/jingguodesign" target="_blank" rel="noopener noreferrer" className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-200">LinkedIn</a>
+            </div>
+          </div>
         </div>
-      </section>
+      </footer>
     </div>
   );
 }

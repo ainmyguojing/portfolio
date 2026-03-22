@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Footer from "@/components/Footer";
 
 export default function About() {
   return (
@@ -79,6 +80,7 @@ export default function About() {
           </div>
         </motion.div>
       </section>
+      <Footer />
     </div>
   );
 }

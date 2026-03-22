@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Jing Guo — Product Designer",
@@ -19,7 +18,6 @@ export default function RootLayout({
       <body className="text-neutral-900 antialiased" style={{ background: "#EDEDED" }}>
         <Nav />
         <main>{children}</main>
-        <Footer />
       </body>
     </html>
   );

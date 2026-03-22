@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { useRef } from "react";
+import Footer from "@/components/Footer";
 
 const HOVER = { scale: 1.012, boxShadow: "0 2px 12px rgba(0,0,0,0.03)" };
 const HOVER_SM = { scale: 1.018, boxShadow: "0 2px 12px rgba(0,0,0,0.03)" };
@@ -210,6 +211,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
