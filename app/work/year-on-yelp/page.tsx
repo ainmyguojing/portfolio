@@ -159,8 +159,8 @@ export default function YearOnYelp() {
           foregrounds per module.
         </p>
 
-        <div className="not-prose mb-6">
-          <Image src="/images/Year on Yelp/visual-elements.png" alt="Visual elements" width={1200} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+        <div className="not-prose mx-auto mb-6" style={{ width: "20%" }}>
+          <Image src="/images/Year on Yelp/visual-elements.png" alt="Visual elements" width={600} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
         </div>
 
         <Label>Animation</Label>
