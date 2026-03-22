@@ -165,8 +165,9 @@ export default function SmartOmix() {
         </div>
         <p className="text-sm font-semibold text-neutral-700 mb-1">Solution</p>
         <BulletList items={[
-          "Designed the platform to educate and encourage use of novel data through customizable settings",
-          "Used layered information architecture to surface details on demand",
+          "Designed the platform to educate and encourage adoption of novel data through customizable study settings",
+          "Used a layered information architecture: summarizing at a high level, with details available on demand",
+          "Enabled researchers to preview the participant interface, so they could visualize what participants would see and better tailor the study design",
         ]} />
         <div className="flex flex-col gap-8 mt-6 mx-auto w-full sm:w-[90%]">
           <figure>
