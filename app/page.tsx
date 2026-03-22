@@ -180,7 +180,7 @@ export default function Home() {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          Projects in doc.ai
+          Selected Work · Doc.ai
         </motion.p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {docAiProjects.map((project, i) => (
