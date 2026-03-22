@@ -43,7 +43,7 @@ export default function YearOnYelp() {
   return (
     <CaseStudyLayout
       title="Year on Yelp"
-      subtitle="An annual personalized recap celebrating contributors' impact. Beyond designing, I set the creative direction, facilitated theme selection, and coordinated illustrators, animators, and copywriters—delivering a cohesive experience across 14 modules."
+      subtitle="An annual personalized recap celebrating contributors' impact. Beyond designing, I set the creative direction, facilitated theme selection, and coordinated illustrators, animators, and copywriters, delivering a cohesive experience across 14 modules."
       role="Lead Designer & Design PM"
       team="1 PM · 1 PMM · 1 Animator · 1 Illustrator · 1 Copywriter · Engineers"
       year="2023"
@@ -52,7 +52,7 @@ export default function YearOnYelp() {
     >
       <p>
         This project required proactive design leadership. With no clear initial brief, I defined
-        the creative vision that shaped every asset—visual, copy, and animation—downstream.
+        the creative vision that shaped every asset: visual, copy, and animation.
       </p>
 
       <SectionDivider id="divider-what" />
@@ -60,7 +60,7 @@ export default function YearOnYelp() {
       <h2 id="what">01 — What Year on Yelp Is</h2>
       <p>
         A yearly, personalized story delivered to Yelp contributors: card-by-card highlights of
-        their impact—how many people their reviews helped, categories covered, top photos, reactions,
+        their impact: how many people their reviews helped, categories covered, top photos, reactions,
         and recognitions. It blends data visualization, celebration, and motivation to keep
         contributing.
       </p>
@@ -69,7 +69,7 @@ export default function YearOnYelp() {
 
       <h2 id="role">02 — My Role: Design as Creative Direction</h2>
       <p>
-        I didn&apos;t just execute—I wrote the brief. This meant running workshops with product,
+        I didn&apos;t just execute; I wrote the brief. This meant running workshops with product,
         design, content, and engineering to brainstorm themes, setting evaluation criteria, and
         coordinating creative deliverables across six months. My primary job was to create clarity
         and direction for a cross-disciplinary team of 10+ people.
@@ -99,7 +99,7 @@ export default function YearOnYelp() {
         <p className="text-sm text-neutral-600 mb-4">
           Both finalists were strong. Memory Jar resonated emotionally and supported
           photo-collages, but focused more on personal nostalgia. Constellation drew on
-          Yelp&apos;s brand and the idea of guiding others—keeping the focus on impact and easily
+          Yelp&apos;s brand and the idea of guiding others, keeping the focus on impact and easily
           mapping to personalized visuals. We chose Constellation for its outward,
           contribution-centered narrative.
         </p>
@@ -118,7 +118,7 @@ export default function YearOnYelp() {
       <Card>
         <Label>Format Shift: Scroll to Story</Label>
         <p className="text-sm text-neutral-600 mb-6">
-          2023 replaced long vertical scrolls with a horizontal, card-by-card format—evoking
+          2023 replaced long vertical scrolls with a horizontal, card-by-card format, evoking
           social stories and creating anticipation. This structure makes each moment feel distinct,
           and lays a reusable foundation for future recaps.
         </p>
@@ -149,7 +149,7 @@ export default function YearOnYelp() {
       <Card>
         <Label>Tone</Label>
         <p className="text-sm text-neutral-600 mb-6">
-          Bold, warm, and celebratory—standing out from everyday Yelp but grounded in the brand.
+          Bold, warm, and celebratory; standing out from everyday Yelp but grounded in the brand.
         </p>
 
         <Label>Visuals</Label>
@@ -194,7 +194,7 @@ export default function YearOnYelp() {
         </li>
         <li>
           <strong>Leading cross-functional output meant designing the brief as thoughtfully as the
-          visuals</strong>—clarity here determined quality downstream.
+          visuals</strong>; clarity here determined quality downstream.
         </li>
         <li>
           <strong>Personalization at scale is achieved by building the system</strong>, not
