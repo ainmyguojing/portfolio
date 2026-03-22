@@ -149,7 +149,8 @@ export default function SmartOmix() {
 
       <h2 id="execution">04 — Execution &amp; Learning</h2>
       <Card>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <Label>Execution Principles</Label>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
           {[
             { label: "Designed for edge cases", detail: "Built flows for critical scenarios from the start" },
             { label: "Full-cycle ownership", detail: "Led usability testing and iteration, drove roadmap alignment" },
