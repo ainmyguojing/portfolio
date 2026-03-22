@@ -1,4 +1,5 @@
 import CaseStudyLayout from "@/components/CaseStudyLayout";
+import Image from "next/image";
 
 export const metadata = { title: "Smart Omix — Jing Guo" };
 
@@ -93,6 +94,10 @@ export default function SmartOmix() {
         <Label>1. Platform for Complexity and Scale</Label>
         <p className="text-sm font-semibold text-neutral-700 mb-1 mt-2">Problem</p>
         <p className="text-sm text-neutral-600 mb-4">Researchers&apos; needs ranged widely: some simple studies could be managed by a single person, while complex studies often required whole teams. Each member with distinct roles, responsibilities, and goals. We needed a flexible structure that could accommodate both ends of this spectrum and everything in between.</p>
+        <div className="flex flex-col gap-4 mb-6 mx-auto w-full sm:w-3/4">
+          <Image src="/images/Smart Omix/01-problem-taget-user-types.svg" alt="Target user types" width={1200} height={600} className="w-full" />
+          <Image src="/images/Smart Omix/01-problem-task-at-phases.svg" alt="Tasks at phases" width={1200} height={600} className="w-full" />
+        </div>
         <p className="text-sm font-semibold text-neutral-700 mb-1">Solution</p>
         <BulletList items={[
           "Introduced a phase-based navigation: Design, Launch, Manage, Analyze",
