@@ -46,11 +46,11 @@ const SECTIONS = [
   {
     id: "challenges", title: "Key Challenges & Strategic Solutions", divider: "divider-challenges",
     subsections: [
-      { id: "challenge-1", title: "Platform for Complexity" },
-      { id: "challenge-2", title: "Nonlinear Life Cycles" },
-      { id: "challenge-3", title: "Data-Rich Research" },
-      { id: "challenge-4", title: "Accessibility" },
-      { id: "challenge-5", title: "Transparency & Trust" },
+      { id: "challenge-1", title: "1. Platform for Complexity" },
+      { id: "challenge-2", title: "2. Nonlinear Life Cycles" },
+      { id: "challenge-3", title: "3. Data-Rich Research" },
+      { id: "challenge-4", title: "4. Accessibility" },
+      { id: "challenge-5", title: "5. Transparency & Trust" },
     ],
   },
   { id: "execution", title: "Execution & Results", divider: "divider-execution" },
