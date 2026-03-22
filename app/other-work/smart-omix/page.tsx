@@ -166,6 +166,11 @@ export default function SmartOmix() {
           "Designed the platform to educate and encourage use of novel data through customizable settings",
           "Used layered information architecture to surface details on demand",
         ]} />
+        <div className="flex flex-col gap-8 mt-6 mx-auto w-full sm:w-[90%]">
+          <figure>
+            <VideoPlayer src="/images/Smart%20Omix/03-solution-novel-study.mp4" className="w-full rounded-lg img-bordered" />
+          </figure>
+        </div>
       </Card>
 
       <Card>
