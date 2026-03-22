@@ -84,7 +84,7 @@ export default function YearOnYelp() {
         story.
       </p>
       <p>
-        We brainstormed keywords like connection, journey, and playfulness, which led to four theme
+        We brainstormed keywords like <strong>connection</strong>, <strong>journey</strong>, and <strong>playfulness</strong>, which led to four theme
         options: Constellation, Memory Jar, Food Passport, and Pinball.
       </p>
 
