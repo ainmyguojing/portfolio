@@ -69,6 +69,7 @@ export default function Recognition() {
       year="2023–2024"
       tags={["Contributor Retention", "Motivation Systems", "Mobile"]}
       sections={SECTIONS}
+      currentHref="/work/recognition"
     >
       <p>
         This case study covers two connected phases: the initial MVP experiment, and my work surfacing

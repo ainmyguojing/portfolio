@@ -16,6 +16,45 @@ interface Section {
   subsections?: Subsection[];
 }
 
+const ALL_PROJECTS = [
+  {
+    title: "Community Q&A",
+    description: "Designed and scaled a 0→1 community-driven contribution model across multiple product surfaces at Yelp. Q&A volume reached 10% of Yelp's review volume by Q1 2026.",
+    tags: ["0→1", "Community", "Scale"],
+    href: "/work/community-qa",
+  },
+  {
+    title: "Recognition & Motivation System",
+    description: "Reward and feedback systems that form contribution and engagement behaviors — closing the loop between action and identity.",
+    tags: ["Engagement", "Systems"],
+    href: "/work/recognition",
+  },
+  {
+    title: "Elite Ecosystem Experiences",
+    description: "Awareness campaigns, nomination flows, and ecosystem experiences reinforcing belonging and long-term retention.",
+    tags: ["Community", "Campaigns"],
+    href: "/work/elite",
+  },
+  {
+    title: "Year on Yelp",
+    description: "Reflection-driven experiences that reinforce user identity through personalized annual summaries.",
+    tags: ["Identity", "Engagement"],
+    href: "/work/year-on-yelp",
+  },
+  {
+    title: "Smart Omix",
+    description: "End-to-end product design for a decentralized clinical research platform — from user stories and flows to a scalable interface supporting researchers and participants.",
+    tags: ["SaaS", "B2B", "Healthcare"],
+    href: "/other-work/smart-omix",
+  },
+  {
+    title: "Design System",
+    description: "Built a design system on top of Material UI, establishing brand consistency, component governance, and engineer-ready documentation using Storybook and Chromatic.",
+    tags: ["Design System", "Material UI"],
+    href: "/other-work/design-system",
+  },
+];
+
 interface CaseStudyLayoutProps {
   title: string;
   subtitle: string;
@@ -24,6 +63,7 @@ interface CaseStudyLayoutProps {
   year: string;
   tags: string[];
   sections?: Section[];
+  currentHref?: string;
   children: React.ReactNode;
 }
 
@@ -190,8 +230,10 @@ export default function CaseStudyLayout({
   year,
   tags,
   sections,
+  currentHref,
   children,
 }: CaseStudyLayoutProps) {
+  const otherProjects = ALL_PROJECTS.filter((p) => p.href !== currentHref);
   return (
     <div className="min-h-screen pt-14">
       {sections && sections.length > 0 && <SideIndex sections={sections} />}
@@ -258,6 +300,38 @@ export default function CaseStudyLayout({
           {children}
         </div>
       </motion.section>
+
+      {/* Other projects carousel */}
+      <section className="max-w-[82vw] mx-auto pb-24 space-y-4">
+        <p className="section-label mb-5">More Projects</p>
+        <div className="flex gap-4 overflow-x-auto pb-2 -mx-2 px-2">
+          {otherProjects.map((project) => (
+            <Link key={project.href} href={project.href} className="group block shrink-0 w-72">
+              <motion.div
+                className="card h-full p-6 flex flex-col"
+                whileHover={{ scale: 1.018, boxShadow: "0 2px 12px rgba(0,0,0,0.03)" }}
+                transition={{ duration: 0.25, ease: [0.2, 0.8, 0.2, 1] }}
+              >
+                <div className="flex justify-end mb-4 gap-1.5">
+                  {project.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
+                </div>
+                <h2 className="text-base text-neutral-900 mb-2 leading-snug">
+                  <span className="title-highlight px-1.5">{project.title}</span>
+                </h2>
+                <p className="text-sm text-neutral-600 leading-relaxed flex-1 mb-5">
+                  {project.description}
+                </p>
+                <span className="cta-link-sm">
+                  View project
+                  <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </motion.div>
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

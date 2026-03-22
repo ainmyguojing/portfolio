@@ -11,6 +11,7 @@ export default function DesignSystem() {
       team="Product Design Team"
       year="2022–2023"
       tags={["Design System", "Material UI", "Storybook"]}
+      currentHref="/other-work/design-system"
     >
       <h2>Overview</h2>
       <p>

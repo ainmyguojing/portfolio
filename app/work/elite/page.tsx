@@ -68,6 +68,7 @@ export default function Elite() {
       year="2024–2026"
       tags={["Ecosystem Design", "Community", "Contributor Retention", "Growth"]}
       sections={SECTIONS}
+      currentHref="/work/elite"
     >
       <p>
         Elite contributors anchor our community with more reviews and higher engagement. This work

@@ -63,6 +63,7 @@ export default function YearOnYelp() {
       year="2023"
       tags={["Campaign Design", "Cross-functional", "Visual Systems", "Contributor Retention"]}
       sections={SECTIONS}
+      currentHref="/work/year-on-yelp"
     >
       <p>
         This project required proactive design leadership. With no clear initial brief, I defined

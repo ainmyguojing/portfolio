@@ -11,6 +11,7 @@ export default function SmartOmix() {
       team="Startup team"
       year="Sep 2021 – Jul 2022"
       tags={["SaaS", "B2B", "Healthcare", "Web App"]}
+      currentHref="/other-work/smart-omix"
     >
       <h2>Context</h2>
       <p>

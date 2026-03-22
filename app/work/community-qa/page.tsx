@@ -93,6 +93,7 @@ export default function CommunityQA() {
       year="2024–2026"
       tags={["0→1 Product", "Community", "Contribution Systems", "Scale"]}
       sections={SECTIONS}
+      currentHref="/work/community-qa"
     >
       <p>
         I led design end-to-end as the sole designer on this project, working with a PM, 6 engineers,
