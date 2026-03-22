@@ -227,18 +227,11 @@ export default function Elite() {
           <Image src="/images/Elite Ecosystem/New-elite-page.gif" alt="New Elite page" width={800} height={1200} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-          {[
-            { principle: "Engaging", detail: "Added bold visuals; reduced text." },
-            { principle: "Clear Narrative", detail: "Eight sections, each with a focused purpose: from community value to events to support." },
-            { principle: "Convenient", detail: "Persistent sticky CTA for seamless nomination; one tap from anywhere on the page." },
-          ].map(({ principle, detail }) => (
-            <div key={principle} className="rounded-xl border border-neutral-200 p-5">
-              <p className="text-sm font-semibold text-neutral-700 mb-2">{principle}</p>
-              <p className="text-sm text-neutral-500">{detail}</p>
-            </div>
-          ))}
-        </div>
+        <BulletList className="mb-6" items={[
+          "Engaging: Added bold visuals; reduced text.",
+          "Clear Narrative: Eight sections, each with a focused purpose: from community value to events to support.",
+          "Convenient: Persistent sticky CTA for seamless nomination; one tap from anywhere on the page.",
+        ]} />
 
         <div className="not-prose flex flex-col gap-8 mb-6">
           <div className="grid grid-cols-3 gap-6">
