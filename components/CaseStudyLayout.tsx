@@ -22,36 +22,43 @@ const ALL_PROJECTS = [
     description: "Designed and scaled a 0→1 community-driven contribution model across multiple product surfaces at Yelp. Q&A volume reached 10% of Yelp's review volume by Q1 2026.",
     tags: ["0→1", "Community", "Scale"],
     href: "/work/community-qa",
+    company: "Yelp",
   },
   {
     title: "Recognition & Motivation System",
     description: "Reward and feedback systems that form contribution and engagement behaviors — closing the loop between action and identity.",
     tags: ["Engagement", "Systems"],
     href: "/work/recognition",
+    company: "Yelp",
   },
   {
     title: "Elite Ecosystem Experiences",
     description: "Awareness campaigns, nomination flows, and ecosystem experiences reinforcing belonging and long-term retention.",
     tags: ["Community", "Campaigns"],
     href: "/work/elite",
+    company: "Yelp",
   },
   {
     title: "Year on Yelp",
     description: "Reflection-driven experiences that reinforce user identity through personalized annual summaries.",
     tags: ["Identity", "Engagement"],
     href: "/work/year-on-yelp",
+    company: "Yelp",
+    dividerAfter: true,
   },
   {
     title: "Smart Omix",
     description: "End-to-end product design for a decentralized clinical research platform — from user stories and flows to a scalable interface supporting researchers and participants.",
     tags: ["SaaS", "B2B", "Healthcare"],
     href: "/other-work/smart-omix",
+    company: "Doc.ai",
   },
   {
     title: "Design System",
     description: "Built a design system on top of Material UI, establishing brand consistency, component governance, and engineer-ready documentation using Storybook and Chromatic.",
     tags: ["Design System", "Material UI"],
     href: "/other-work/design-system",
+    company: "Doc.ai",
   },
 ];
 
@@ -82,6 +89,19 @@ function scrollToDivider(dividerId: string | undefined, sectionId: string) {
 
 function SideIndex({ sections }: { sections: Section[] }) {
   const [activeId, setActiveId] = useState<string>(sections[0]?.id ?? "");
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const checkVisibility = () => {
+      const footer = document.querySelector("footer");
+      if (!footer) return;
+      const footerTop = footer.getBoundingClientRect().top;
+      setVisible(footerTop > window.innerHeight - 20);
+    };
+    checkVisibility();
+    window.addEventListener("scroll", checkVisibility, { passive: true });
+    return () => window.removeEventListener("scroll", checkVisibility);
+  }, []);
 
   useEffect(() => {
     const getActive = () => {
@@ -128,7 +148,7 @@ function SideIndex({ sections }: { sections: Section[] }) {
   }, [allSubsections]);
 
   return (
-    <div className="fixed left-8 top-1/2 -translate-y-1/2 flex-col gap-1 z-20 hidden xl:flex">
+    <div className={`fixed left-8 top-1/2 -translate-y-1/2 flex-col gap-1 z-20 hidden xl:flex transition-opacity duration-300 ${visible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
       {sections.map((section) => {
         const isActive = activeId === section.id;
         return (
@@ -304,32 +324,62 @@ export default function CaseStudyLayout({
       {/* Footer with project carousel */}
       <footer style={{ background: "rgba(255,255,255,0.7)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }} className="border-t border-neutral-200/60 mt-0">
         <div className="max-w-[82vw] mx-auto px-0 pt-10 pb-4">
-          <p className="section-label mb-5">More Projects</p>
-          <div className="flex gap-4 overflow-x-auto pb-6">
-            {otherProjects.map((project) => (
-              <Link key={project.href} href={project.href} className="group block shrink-0 w-[36rem]">
-                <motion.div
-                  className="card h-full p-6 flex flex-col"
-                  whileHover={{ scale: 1.018, boxShadow: "0 2px 12px rgba(0,0,0,0.03)" }}
-                  transition={{ duration: 0.25, ease: [0.2, 0.8, 0.2, 1] }}
-                >
-                  <div className="flex justify-end mb-4 gap-1.5">
-                    {project.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
-                  </div>
-                  <h2 className="text-base text-neutral-900 mb-2 leading-snug">
-                    <span className="title-highlight px-1.5">{project.title}</span>
-                  </h2>
-                  <p className="text-sm text-neutral-600 leading-relaxed flex-1 mb-5">
-                    {project.description}
-                  </p>
-                  <span className="cta-link-sm">
-                    View project
-                    <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </span>
-                </motion.div>
-              </Link>
+          <div className="flex items-center gap-3 mb-5">
+            <p className="section-label">More Projects</p>
+            <div className="flex items-center gap-1 ml-2">
+              <button
+                onClick={() => {
+                  const el = document.getElementById("project-carousel");
+                  if (el) el.scrollBy({ left: -320, behavior: "smooth" });
+                }}
+                className="w-7 h-7 flex items-center justify-center rounded-full border border-neutral-200 text-neutral-500 hover:text-neutral-900 hover:border-neutral-400 transition-colors duration-200"
+              >
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
+              </button>
+              <button
+                onClick={() => {
+                  const el = document.getElementById("project-carousel");
+                  if (el) el.scrollBy({ left: 320, behavior: "smooth" });
+                }}
+                className="w-7 h-7 flex items-center justify-center rounded-full border border-neutral-200 text-neutral-500 hover:text-neutral-900 hover:border-neutral-400 transition-colors duration-200"
+              >
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </button>
+            </div>
+          </div>
+          <div id="project-carousel" className="flex gap-4 overflow-x-auto pb-6" style={{ scrollbarWidth: "none" }}>
+            {otherProjects.map((project, i) => (
+              <div key={project.href} className="flex items-stretch gap-4 shrink-0">
+                <Link href={project.href} className="group block w-[28.8rem]">
+                  <motion.div
+                    className="card h-full p-6 flex flex-col"
+                    whileHover={{ scale: 1.018, boxShadow: "0 2px 12px rgba(0,0,0,0.03)" }}
+                    transition={{ duration: 0.25, ease: [0.2, 0.8, 0.2, 1] }}
+                  >
+                    <div className="flex justify-between mb-4 gap-1.5">
+                      <span className="tag">{project.company}</span>
+                      <div className="flex gap-1.5">
+                        {project.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
+                      </div>
+                    </div>
+                    <h2 className="text-base text-neutral-900 mb-2 leading-snug">
+                      <span className="title-highlight px-1.5">{project.title}</span>
+                    </h2>
+                    <p className="text-sm text-neutral-600 leading-relaxed flex-1 mb-5">
+                      {project.description}
+                    </p>
+                    <span className="cta-link-sm">
+                      View project
+                      <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </span>
+                  </motion.div>
+                </Link>
+                {project.dividerAfter && i < otherProjects.length - 1 && (
+                  <div className="w-px bg-neutral-200 self-stretch shrink-0" />
+                )}
+              </div>
             ))}
           </div>
           <div className="border-t border-neutral-200 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
