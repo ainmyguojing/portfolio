@@ -160,11 +160,26 @@ export default function YearOnYelp() {
         </p>
 
         <Label>Animation</Label>
-        <p className="text-sm text-neutral-600">
+        <p className="text-sm text-neutral-600 mb-6">
           Three modules (intro, top photo, top review) received Lottie treatment for peak emotional
           impact. Visual coherence was achieved via tight color and motif constraints, while
           module-specific details kept things fresh.
         </p>
+
+        <div className="not-prose grid grid-cols-3 gap-4">
+          <figure className="flex flex-col gap-2">
+            <Image src="/images/Year on Yelp/opening-screen-animation.gif" alt="Opening screen animation" width={400} height={700} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center">Opening screen</figcaption>
+          </figure>
+          <figure className="flex flex-col gap-2">
+            <Image src="/images/Year on Yelp/most-reviewed-category-animation.gif" alt="Most reviewed category animation" width={400} height={700} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center">Most reviewed category</figcaption>
+          </figure>
+          <figure className="flex flex-col gap-2">
+            <Image src="/images/Year on Yelp/closing-screen-animation.gif" alt="Closing screen animation" width={400} height={700} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-400 text-center">Closing screen</figcaption>
+          </figure>
+        </div>
       </Card>
 
       <SectionDivider id="divider-experience" />
