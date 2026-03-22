@@ -248,6 +248,14 @@ export default function Elite() {
           ))}
         </div>
 
+        <div className="not-prose grid grid-cols-7 gap-3 mb-6">
+          {[1,2,3,4,5,6,7].map((n) => (
+            <figure key={n} className="flex flex-col">
+              <Image src={`/images/Elite Ecosystem/elite-page-section-${n}.png`} alt={`Elite page section ${n}`} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            </figure>
+          ))}
+        </div>
+
         <Label>Copy Choices</Label>
         <p className="text-sm text-neutral-600 mb-6">
           The &ldquo;how to join&rdquo; section stayed non-specific by design. Legal and community
