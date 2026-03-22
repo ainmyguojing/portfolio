@@ -134,6 +134,8 @@ export default function DesignSystem() {
         system which needs to interact with real application cases and evolve constantly to fit the
         organization&apos;s needs.
       </p>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/images/Design%20System/04-design-workflow.svg" alt="Design workflow" className="w-full my-6" />
 
       <SectionDivider id="divider-implementation" />
 
@@ -143,11 +145,17 @@ export default function DesignSystem() {
         easier implementation.
       </p>
       <Card>
+        <div className="mx-auto w-full sm:w-[40%] mb-6">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/Design%20System/05-tools.svg" alt="Tools" className="w-full" />
+        </div>
         <BulletList items={[
           "Used tools like Chromatic and Storybook for reviewing style and interactions.",
           "Maintained strict version control to track changes and support smooth handoffs.",
         ]} />
       </Card>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/images/Design%20System/05-implementation-workflow.svg" alt="Implementation workflow" className="w-full my-6" />
 
       <SectionDivider id="divider-action" />
 
