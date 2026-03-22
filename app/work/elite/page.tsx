@@ -268,42 +268,25 @@ export default function Elite() {
           </figure>
         </div>
 
-        <Label>Design: Loading and Rejection Screens</Label>
         <p className="text-sm text-neutral-600 mb-6">
-          Nominations now display a loading state (&ldquo;Analyzing your profile...&rdquo;) to show
-          serious review. On rejection, users see clear, specific reasons and actionable feedback
-          for improvement, each mapped to the actual eligibility roadblock, plus a nudge to write
-          another review. The outcome feels credible and constructive.
+          Key Challenge: Generic, instant rejection wasn&apos;t just unhelpful; it hurt motivation.
         </p>
 
-        <TwoCol
-          left={
-            <>
-              <Label>Rejection Page: Top Half</Label>
-              <p className="text-sm text-neutral-600">
-                Specific reason for rejection and exactly what to do about it. Each of the five
-                rejection reasons has its own copy. Specific feedback makes the rejection credible
-                and actionable.
-              </p>
-            </>
-          }
-          right={
-            <>
-              <Label>Rejection Page: Bottom Half</Label>
-              <p className="text-sm text-neutral-600">
-                A YNRA section nudging the user toward their next review. The rejection screen
-                becomes a contribution prompt. The user leaves with something to do, not just a
-                door closed in their face.
-              </p>
-            </>
-          }
-        />
-
-        <Label>Small Fix, Big Win: Location Confirmation</Label>
-        <p className="text-sm text-neutral-600 mb-6">
-          Letting users confirm or correct their primary location eliminated many false rejections
-          from stale location data.
-        </p>
+        <p className="text-sm font-semibold text-neutral-700 mb-4">Design solutions:</p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+          <div className="rounded-xl border border-neutral-200 p-5">
+            <p className="text-sm font-semibold text-neutral-700 mb-2">1. Small Fix, Big Win</p>
+            <p className="text-sm text-neutral-500">Adding the ability for users to confirm or correct their primary location removed an entire category of preventable rejections caused by outdated location data. This simple tweak significantly improved nomination accuracy and reduced user frustration.</p>
+          </div>
+          <div className="rounded-xl border border-neutral-200 p-5">
+            <p className="text-sm font-semibold text-neutral-700 mb-2">2. Loading and Rejection Screens</p>
+            <p className="text-sm text-neutral-500">Introducing a loading state (&ldquo;Analyzing your profile...&rdquo;) signaled that each nomination was being seriously reviewed, not instantly dismissed. If rejected, users received clear, specific reasons and actionable feedback tied directly to their eligibility gap, along with a contextual prompt to write another review. This approach ensured the process felt authentic, transparent, and constructive.</p>
+          </div>
+          <div className="rounded-xl border border-neutral-200 p-5">
+            <p className="text-sm font-semibold text-neutral-700 mb-2">3. A Narrative of Progress on the Result Screen</p>
+            <p className="text-sm text-neutral-500">The result screen was thoughtfully structured: the top half conveyed the rejection message, providing a specific reason and clear guidance for what to do next. The bottom half used a contextualized, motivational prompt, seamlessly carrying the narrative forward and encouraging users to keep contributing and work towards Elite status.</p>
+          </div>
+        </div>
 
         <Label>Impact</Label>
         <p className="text-sm text-neutral-600">
