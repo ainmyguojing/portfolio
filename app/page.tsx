@@ -102,9 +102,13 @@ export default function Home() {
           <h1 className="text-5xl sm:text-7xl lg:text-8xl text-neutral-900 leading-none tracking-tight mb-6">
             Hello,<br />I&apos;m Jing.
           </h1>
-          <p className="text-xl text-neutral-900 leading-relaxed max-w-xl">
-            Lead Product Designer at <span className="font-medium">Yelp</span>, focused on user
-            contribution, engagement, and community ecosystems at scale.
+          <p className="text-xl text-neutral-900 leading-relaxed max-w-xl flex items-center gap-2 flex-wrap">
+            Lead Product Designer at
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/Yelp%20Logo/Other.svg" alt="Yelp" style={{ height: "1.2em" }} className="inline-block align-middle" />
+          </p>
+          <p className="text-xl text-neutral-900 leading-relaxed max-w-xl mt-3">
+            Bringing strategic, systems-level thinking, identifying hidden opportunities, and designing scalable solutions. Building impactful products for the AI era by leveraging deep expertise in user-generated content.
           </p>
         </motion.div>
       </section>
