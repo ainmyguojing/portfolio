@@ -100,9 +100,9 @@ export default function SmartOmix() {
         </div>
         <p className="text-sm font-semibold text-neutral-700 mb-1">Solution</p>
         <BulletList items={[
-          "Introduced a phase-based navigation: Design, Launch, Manage, Analyze",
-          "Organized studies by \"organizations\" with granular, role-based access",
-          "Ensured components in each phase were independent but easy to cross-reference, balancing simplicity for novices and flexibility for experts",
+          "I designed a phase-based navigation: Design, Launch, Manage, Analyze, mirroring research stages.",
+          "Organized studies in \"organizations\" with layered permissions, making access and roles scalable.",
+          "Built modular components for each phase: simple for new users, flexible for complex teams.",
         ]} />
       </Card>
 
