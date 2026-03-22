@@ -231,6 +231,10 @@ export default function Elite() {
           and hard to act on. Without new assets, I focused on three principles.
         </p>
 
+        <div className="not-prose mx-auto mb-6" style={{ width: "30%" }}>
+          <Image src="/images/Elite Ecosystem/New-elite-page.gif" alt="New Elite page" width={800} height={1200} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
           {[
             { principle: "Engaging", detail: "Added bold visuals; reduced text." },
