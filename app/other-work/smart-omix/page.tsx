@@ -182,11 +182,18 @@ export default function SmartOmix() {
         <p className="text-sm font-semibold text-neutral-700 mb-1 mt-2">Problem</p>
         <p className="text-sm text-neutral-600 mb-4">Clinical research is inherently complex, but we wanted Smart Omix to be approachable for all researchers—regardless of their experience level. Our goal was to support both novices and experts by designing an intuitive, streamlined flow. We built in educational tools and context-sensitive guidance to help those who needed it, but ensured these resources were non-intrusive and wouldn&apos;t disrupt the workflow of experienced users.</p>
         <p className="text-sm font-semibold text-neutral-700 mb-1">Solution</p>
-        <BulletList items={[
-          "Layered Informational UI: Added an informational layer on top of the core UI, revealing helpful content and tips through context-sensitive triggers to support users when needed.",
-          "Step-by-Step Mini Tasks: Broke complex study creation into mini tasks with stepped guidance at key moments, providing structure and direction while preventing users from getting overwhelmed.",
-          "Ghosting Future Actions: Used ghosted previews of upcoming steps and options so users could stay focused on what's next, while building awareness of the overall process.",
-        ]} />
+        <ul className="space-y-1.5">
+          {[
+            { bold: "Layered Informational UI", rest: ": Added an informational layer on top of the core UI, revealing helpful content and tips through context-sensitive triggers to support users when needed." },
+            { bold: "Step-by-Step Mini Tasks", rest: ": Broke complex study creation into mini tasks with stepped guidance at key moments, providing structure and direction while preventing users from getting overwhelmed." },
+            { bold: "Ghosting Future Actions", rest: ": Used ghosted previews of upcoming steps and options so users could stay focused on what's next, while building awareness of the overall process." },
+          ].map(({ bold, rest }) => (
+            <li key={bold} className="flex gap-2 text-sm text-neutral-600">
+              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+              <span><strong className="text-neutral-700">{bold}</strong>{rest}</span>
+            </li>
+          ))}
+        </ul>
       </Card>
 
       <Card>
