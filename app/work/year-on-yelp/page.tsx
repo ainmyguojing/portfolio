@@ -163,11 +163,39 @@ export default function YearOnYelp() {
         </p>
 
         <Label>Personalization at Scale</Label>
-        <p className="text-sm text-neutral-600">
+        <p className="text-sm text-neutral-600 mb-6">
           The most reviewed food category had 14 illustrated variations. Rather than custom
           crafting for each user, design work focused on building a highly flexible system, so
           each user&apos;s recap felt individualized and special.
         </p>
+
+        <div className="not-prose mx-auto mb-6" style={{ width: "30%" }}>
+          <Image src="/images/Year on Yelp/category-14-general.png" alt="Category 14 - General" width={600} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+        </div>
+
+        <div className="not-prose grid grid-cols-6 gap-3 mb-4">
+          {[1,2,3,4,5,6].map((n) => (
+            <figure key={n}>
+              <Image src={`/images/Year on Yelp/category-${n}-${["american","breakfast","sandwich","seafood","burger","pizza"][n-1]}.png`} alt={`Category ${n}`} width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            </figure>
+          ))}
+        </div>
+
+        <div className="not-prose grid grid-cols-7 gap-3">
+          {[
+            { n: 7, name: "cocktail" },
+            { n: 8, name: "italian" },
+            { n: 9, name: "coffee" },
+            { n: 10, name: "mexican" },
+            { n: 11, name: "japanses" },
+            { n: 12, name: "salad" },
+            { n: 13, name: "dessert" },
+          ].map(({ n, name }) => (
+            <figure key={n}>
+              <Image src={`/images/Year on Yelp/category-${n}-${name}.png`} alt={`Category ${n}`} width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            </figure>
+          ))}
+        </div>
       </Card>
 
       <SectionDivider id="divider-visual" />
