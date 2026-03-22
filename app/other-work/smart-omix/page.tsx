@@ -118,8 +118,15 @@ export default function SmartOmix() {
         ]} />
         <div className="flex flex-col gap-4 mt-6 mx-auto w-full sm:w-3/4">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/Smart%20Omix/01-solution-homescreen.svg" alt="Solution homescreen" className="w-full img-bordered" />
-          <video src="/images/Smart%20Omix/01-solution-organization.mp4" autoPlay loop muted playsInline className="w-full rounded-lg img-bordered" />
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/Smart%20Omix/01-solution-homescreen.svg" alt="Solution homescreen" className="w-full img-bordered" />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">4 stages at the study level</figcaption>
+          </figure>
+          <figure>
+            <video src="/images/Smart%20Omix/01-solution-organization.mp4" autoPlay loop muted playsInline className="w-full rounded-lg img-bordered" />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Manage organizations and role access</figcaption>
+          </figure>
         </div>
       </Card>
 
