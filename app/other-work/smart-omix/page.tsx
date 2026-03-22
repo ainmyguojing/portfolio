@@ -1,4 +1,5 @@
 import CaseStudyLayout from "@/components/CaseStudyLayout";
+import VideoPlayer from "@/components/VideoPlayer";
 
 export const metadata = { title: "Smart Omix — Jing Guo" };
 
@@ -124,7 +125,7 @@ export default function SmartOmix() {
             <figcaption className="text-xs text-neutral-400 text-center mt-2">4 stages at the study level</figcaption>
           </figure>
           <figure>
-            <video src="/images/Smart%20Omix/01-solution-organization.mp4" autoPlay loop muted playsInline className="w-full rounded-lg img-bordered" />
+            <VideoPlayer src="/images/Smart%20Omix/01-solution-organization.mp4" className="w-full rounded-lg img-bordered" />
             <figcaption className="text-xs text-neutral-400 text-center mt-2">Manage organizations and role access</figcaption>
           </figure>
         </div>
@@ -139,6 +140,15 @@ export default function SmartOmix() {
           "Built a flexible state machine to switch easily between phases",
           "Clarified allowed actions at each stage to minimize confusion",
         ]} />
+        <div className="flex flex-col gap-8 mt-6 mx-auto w-full sm:w-3/4">
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/Smart%20Omix/02-solution-state-machine.svg" alt="State machine diagram" className="w-full img-bordered" />
+          </figure>
+          <figure>
+            <VideoPlayer src="/images/Smart%20Omix/02-solution-state-machine-video.mp4" className="w-full rounded-lg img-bordered" />
+          </figure>
+        </div>
       </Card>
 
       <Card>
