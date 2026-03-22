@@ -133,7 +133,7 @@ export default function SmartOmix() {
       <Card>
         <Label>2. Managing Nonlinear Study Life Cycles</Label>
         <p className="text-sm font-semibold text-neutral-700 mb-1 mt-2">Problem</p>
-        <p className="text-sm text-neutral-600 mb-4">Studies rarely follow a straight line; phases overlap.</p>
+        <p className="text-sm text-neutral-600 mb-4">Studies rarely follow a straight line; phases often overlap. For example, while a study might be locked for IRB review or launched, researchers inevitably discover changes they need to make, even after locking. We needed a nuanced system that allowed users to lock and unlock studies as needed, while automatically managing all downstream workflow adjustments to keep everything in sync and error-free.</p>
         <p className="text-sm font-semibold text-neutral-700 mb-1">Solution</p>
         <BulletList items={[
           "Built a flexible state machine to switch easily between phases",
