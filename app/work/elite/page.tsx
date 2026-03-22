@@ -245,8 +245,7 @@ export default function Elite() {
         <Label>Conversion</Label>
         <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">Turning Rejection into Re-engagement</h3>
         <p className="text-sm text-neutral-500 mb-6">
-          Fixing the funnel top wasn&apos;t enough. Rejection was the biggest drop-off. Generic,
-          instant rejection wasn&apos;t just unhelpful; it hurt motivation.
+          Fixing the funnel top wasn&apos;t enough. Rejection was the biggest drop-off.
         </p>
 
         <div className="not-prose grid grid-cols-4 gap-3 mb-6">
