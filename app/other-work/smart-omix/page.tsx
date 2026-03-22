@@ -206,10 +206,22 @@ export default function SmartOmix() {
         <p className="text-sm font-semibold text-neutral-700 mb-1 mt-2">Problem</p>
         <p className="text-sm text-neutral-600 mb-4">Digital platforms can feel impersonal, so we focused on keeping researchers and participants connected. Traditionally, in-flight studies often behave like a black box: researchers have limited visibility and control once a study is underway. We wanted to change that by ensuring researchers could easily review progress and make necessary adjustments at any point, as well as reach out to participants if needed.</p>
         <p className="text-sm font-semibold text-neutral-700 mb-1">Solution</p>
-        <BulletList items={[
-          "Built in notifications and alerts so researchers could track progress and participant needs",
-          "Created dashboards for actionable insight across participant groups",
-        ]} />
+        <ul className="space-y-6">
+          {[
+            { text: "Built in notifications and alerts so researchers could track progress and participant needs", video: "/images/Smart%20Omix/05-solution-participants-status.mp4" },
+            { text: "Created dashboards for actionable insight across participant groups", video: "/images/Smart%20Omix/05-solution-data-dashboard.mp4" },
+          ].map(({ text, video }) => (
+            <li key={text} className="flex flex-col gap-3 text-sm text-neutral-600">
+              <div className="flex gap-2">
+                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+                <span>{text}</span>
+              </div>
+              <div className="mx-auto w-full sm:w-[90%]">
+                <VideoPlayer src={video} className="w-full rounded-lg img-bordered" />
+              </div>
+            </li>
+          ))}
+        </ul>
       </Card>
 
       <SectionDivider id="divider-execution" />
