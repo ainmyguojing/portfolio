@@ -144,9 +144,11 @@ export default function SmartOmix() {
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/images/Smart%20Omix/02-solution-state-machine.svg" alt="State machine diagram" className="w-full img-bordered" />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">State machine diagram - study transition between different states</figcaption>
           </figure>
           <figure>
             <VideoPlayer src="/images/Smart%20Omix/02-solution-state-machine-video.mp4" className="w-full rounded-lg img-bordered" />
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Lauch a study in multiple steps, lock and unlock a study as needed</figcaption>
           </figure>
         </div>
       </Card>
