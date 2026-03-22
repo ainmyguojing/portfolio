@@ -217,17 +217,18 @@ export default function SmartOmix() {
         <p className="text-sm font-semibold text-neutral-700 mb-1">Solution</p>
         <ul className="space-y-6">
           {[
-            { text: "Built in notifications and alerts so researchers could track progress and participant needs", video: "/images/Smart%20Omix/05-solution-participants-status.mp4" },
-            { text: "Created dashboards for actionable insight across participant groups", video: "/images/Smart%20Omix/05-solution-data-dashboard.mp4" },
-          ].map(({ text, video }) => (
+            { text: "Built in notifications and alerts so researchers could track progress and participant needs", video: "/images/Smart%20Omix/05-solution-participants-status.mp4", caption: "Notify researchers of the participants needing attention" },
+            { text: "Created dashboards for actionable insight across participant groups", video: "/images/Smart%20Omix/05-solution-data-dashboard.mp4", caption: "Dashboards allow researchers to view study data from various angles" },
+          ].map(({ text, video, caption }) => (
             <li key={text} className="flex flex-col gap-3 text-sm text-neutral-600">
               <div className="flex gap-2">
                 <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
                 <span>{text}</span>
               </div>
-              <div className="mx-auto w-full sm:w-[90%]">
+              <figure className="mx-auto w-full sm:w-[90%]">
                 <VideoPlayer src={video} className="w-full rounded-lg img-bordered" />
-              </div>
+                <figcaption className="text-xs text-neutral-400 text-center mt-2">{caption}</figcaption>
+              </figure>
             </li>
           ))}
         </ul>
