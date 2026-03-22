@@ -74,6 +74,11 @@ img {
     z-index: -1;
   }
 
+  /* Bordered image */
+  .img-bordered {
+    @apply border border-neutral-200 rounded-lg;
+  }
+
   /* "View case study / View project" CTA link */
   .cta-link {
     @apply inline-flex items-center gap-1.5 text-sm font-medium text-neutral-500 group-hover:text-neutral-900 transition-colors duration-200;
