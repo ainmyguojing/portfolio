@@ -37,9 +37,9 @@ export default function About() {
 
           <div className="mt-12 pt-10 border-t border-neutral-100">
             <h2 className="font-display text-sm font-bold uppercase tracking-widest text-neutral-400 mb-6">
-              What I work with
+              What I bring
             </h2>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 gap-3">
               {[
                 "Strategic planning & problem framing",
                 "Storytelling & effective communication",
