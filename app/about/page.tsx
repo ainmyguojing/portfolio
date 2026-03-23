@@ -22,10 +22,10 @@ export default function About() {
               <span className="text-neutral-900 font-medium">Yelp</span>.
             </p>
             <p>
-              I&apos;m driven by a vision for what&apos;s next—always scanning the horizon for emerging user needs and trends, then shaping those insights into clear, actionable plans. I love turning ambiguity into opportunity: when the path isn&apos;t obvious, I bring strong product thinking and a structured approach to evaluate options and set direction, ensuring every design choice ladders up to something bigger.
+              I&apos;m driven by a vision for what&apos;s next, always scanning the horizon for emerging user needs and trends, then shaping those insights into clear, actionable plans. I love turning ambiguity into opportunity: when the path isn&apos;t obvious, I bring strong product thinking and a structured approach to evaluate options and set direction, ensuring every design choice ladders up to something bigger.
             </p>
             <p>
-              Working with AI has only sharpened my sense of how design can shape—not just serve—future experiences. I believe tools should amplify our best thinking, not dictate it; I&apos;m quick to learn and adapt, always seeking out new technologies that support my core tasks instead of leading them.
+              Working with AI has only sharpened my sense of how design can shape, not just serve, future experiences. I believe tools should amplify our best thinking, not dictate it; I&apos;m quick to learn and adapt, always seeking out new technologies that support my core tasks instead of leading them.
             </p>
             <p>
               At the core of how I work is how I connect with people. Whether brainstorming with a team, responding to feedback, or mapping out a shared goal, I care deeply about building trust and communicating clearly and thoughtfully. Great products, after all, are built through collaboration and respect.
