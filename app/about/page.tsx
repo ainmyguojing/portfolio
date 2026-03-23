@@ -39,11 +39,14 @@ export default function About() {
             <h2 className="font-display text-sm font-bold uppercase tracking-widest text-neutral-400 mb-6">
               What I work with
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div className="grid grid-cols-3 gap-3">
               {[
-                "Figma", "Framer", "Webflow",
-                "Design Systems", "UX Research", "Prototyping",
-                "Material UI", "Storybook", "Interaction Design",
+                "Strategic planning & problem framing",
+                "Storytelling & effective communication",
+                "Data-driven decision making",
+                "User research & empathy",
+                "Workshop facilitation & leadership",
+                "Cross-functional collaboration & stakeholder management",
               ].map((skill) => (
                 <span
                   key={skill}
