@@ -18,22 +18,20 @@ export default function About() {
 
           <div className="space-y-6 text-neutral-600 leading-relaxed text-base">
             <p>
-              I&apos;m Jing Guo, a Lead Product Designer at{" "}
-              <span className="text-neutral-900 font-medium">Yelp</span>, where I focus on
-              user contribution, engagement, and community ecosystems at scale. I care about
-              designing systems that turn passive users into active contributors — from 0→1
-              products to scaled, living ecosystems.
+              I&apos;m Jing Guo, Lead Product Designer at{" "}
+              <span className="text-neutral-900 font-medium">Yelp</span>.
             </p>
             <p>
-              Before Yelp, I worked in SaaS — designing complex B2B products in healthcare
-              and enterprise software. That experience gave me a deep appreciation for
-              information architecture, state management, and designing for users with
-              radically different levels of expertise.
+              I&apos;m driven by a vision for what&apos;s next—always scanning the horizon for emerging user needs and trends, then shaping those insights into clear, actionable plans. I love turning ambiguity into opportunity: when the path isn&apos;t obvious, I bring strong product thinking and a structured approach to evaluate options and set direction, ensuring every design choice ladders up to something bigger.
             </p>
             <p>
-              I think of design as a balance between restraint and expression. The best
-              interfaces feel inevitable — like they couldn&apos;t have been built any other way.
-              Getting there usually requires throwing away the first three ideas.
+              Working with AI has only sharpened my sense of how design can shape—not just serve—future experiences. I believe tools should amplify our best thinking, not dictate it; I&apos;m quick to learn and adapt, always seeking out new technologies that support my core tasks instead of leading them.
+            </p>
+            <p>
+              At the core of how I work is how I connect with people. Whether brainstorming with a team, responding to feedback, or mapping out a shared goal, I care deeply about building trust and communicating clearly and thoughtfully. Great products, after all, are built through collaboration and respect.
+            </p>
+            <p>
+              Ultimately, I design for impact: seeing possibilities where others see uncertainty, bringing ideas to life at scale, and building communities and products that truly thrive in this new era.
             </p>
           </div>
 
