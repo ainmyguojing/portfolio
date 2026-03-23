@@ -46,7 +46,7 @@ export default function About() {
                 "Data-driven decision making",
                 "User research & empathy",
                 "Workshop facilitation & leadership",
-                "Cross-functional collaboration & stakeholder management",
+                "Stakeholder management",
               ].map((skill) => (
                 <span
                   key={skill}
