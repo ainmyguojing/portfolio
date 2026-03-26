@@ -23,7 +23,7 @@ export default function About() {
             <div className="space-y-8">
               {/* Yelp */}
               <div className="flex gap-5">
-                <div className="relative flex-shrink-0 w-3.5 h-3.5 rounded-full bg-neutral-900 mt-1" />
+                <div className="relative flex-shrink-0 w-3.5 h-3.5 rounded-full bg-accent mt-1" />
                 <div>
                   <div className="flex items-baseline gap-2 mb-1">
                     <span className="text-sm font-semibold text-neutral-900">Yelp</span>
