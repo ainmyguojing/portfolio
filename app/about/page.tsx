@@ -16,11 +16,51 @@ export default function About() {
             About.
           </h1>
 
+          {/* Timeline */}
+          <div className="relative mb-10">
+            {/* Vertical line */}
+            <div className="absolute left-[7px] top-2 bottom-2 w-px bg-neutral-200" />
+            <div className="space-y-8">
+              {/* Yelp */}
+              <div className="flex gap-5">
+                <div className="relative flex-shrink-0 w-3.5 h-3.5 rounded-full bg-neutral-900 mt-1" />
+                <div>
+                  <div className="flex items-baseline gap-2 mb-1">
+                    <span className="text-sm font-semibold text-neutral-900">Yelp</span>
+                    <span className="text-xs text-neutral-400">Sep 2022 – present</span>
+                  </div>
+                  <p className="text-sm font-medium text-neutral-700 mb-1">Lead Product Designer, Consumer Contribution</p>
+                  <p className="text-sm text-neutral-500 leading-relaxed">Designing for user contribution, engagement, and contributor retention at scale. Projects include Community Q&A (0→1), reactions, comments, and Year on Yelp. My focus is turning passive users into active contributors — building the systems and moments that make people want to give back to the community.</p>
+                </div>
+              </div>
+              {/* Doc.ai */}
+              <div className="flex gap-5">
+                <div className="relative flex-shrink-0 w-3.5 h-3.5 rounded-full bg-neutral-300 mt-1" />
+                <div>
+                  <div className="flex items-baseline gap-2 mb-1">
+                    <span className="text-sm font-semibold text-neutral-900">Doc.ai</span>
+                    <span className="text-xs text-neutral-400">Oct 2021 – Sep 2022</span>
+                  </div>
+                  <p className="text-sm font-medium text-neutral-700 mb-1">Product Designer, SaaS</p>
+                  <p className="text-sm text-neutral-500 leading-relaxed">Sole designer on Smart Omix, a 0→1 SaaS platform for end-to-end digital clinical research. Led the full design lifecycle from user stories and architecture to launch. Also initiated and maintained the design system and SaaS design guide used across all web products.</p>
+                </div>
+              </div>
+              {/* Harvard */}
+              <div className="flex gap-5">
+                <div className="relative flex-shrink-0 w-3.5 h-3.5 rounded-full bg-neutral-300 mt-1" />
+                <div>
+                  <div className="flex items-baseline gap-2 mb-1">
+                    <span className="text-sm font-semibold text-neutral-900">Harvard University</span>
+                    <span className="text-xs text-neutral-400">Graduate School of Design</span>
+                  </div>
+                  <p className="text-sm font-medium text-neutral-700 mb-1">Master in Design</p>
+                  <p className="text-sm text-neutral-500 leading-relaxed">Graduated with distinction. Work recognized through multiple awards and featured in exhibitions across various venues.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="space-y-6 text-neutral-600 leading-relaxed text-base">
-            <p>
-              I&apos;m Jing Guo, Lead Product Designer at{" "}
-              <span className="text-neutral-900 font-medium">Yelp</span>.
-            </p>
             <p>
               I&apos;m driven by a vision for what&apos;s next, always scanning the horizon for emerging user needs and trends, then shaping those insights into clear, actionable plans. I love turning ambiguity into opportunity: when the path isn&apos;t obvious, I bring strong product thinking and a structured approach to evaluate options and set direction, ensuring every design choice ladders up to something bigger.
             </p>
@@ -45,8 +85,8 @@ export default function About() {
                 "Storytelling & effective communication",
                 "Data-driven decision making",
                 "User research & empathy",
-                "Workshop facilitation & leadership",
-                "Stakeholder management",
+                "0→1 product design",
+                "Design systems",
               ].map((skill) => (
                 <span
                   key={skill}
