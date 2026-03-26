@@ -5,8 +5,8 @@ import Link from "next/link";
 import { useRef } from "react";
 import Footer from "@/components/Footer";
 
-const HOVER = { scale: 1.012, boxShadow: "0 2px 12px rgba(0,0,0,0.03)" };
-const HOVER_SM = { scale: 1.018, boxShadow: "0 2px 12px rgba(0,0,0,0.03)" };
+const HOVER = { scale: 1.012, boxShadow: "0 8px 32px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)" };
+const HOVER_SM = { scale: 1.018, boxShadow: "0 8px 24px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)" };
 const HOVER_TRANSITION = { duration: 0.25, ease: [0.2, 0.8, 0.2, 1] as const };
 
 const featured = {
@@ -87,6 +87,7 @@ export default function Home() {
           translateX: "calc(-38% + 300px)",
           translateY: circleY,
           marginTop: "-320px",
+          filter: "blur(1px)",
         }}
         animate={{ scale: [1, 1.07, 1] }}
         transition={{ scale: { duration: 5, repeat: Infinity, ease: "easeInOut" } }}
@@ -94,14 +95,31 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative z-10 max-w-[82vw] mx-auto pt-12 sm:pt-20 pb-14">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
-        >
-          <h1 className="text-5xl sm:text-7xl lg:text-8xl text-neutral-900 leading-none tracking-tight mb-6">
+        <div className="overflow-hidden mb-1">
+          <motion.p
+            className="text-xs font-medium tracking-[0.25em] uppercase text-neutral-400 mb-5"
+            initial={{ y: 24, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
+          >
+            Portfolio · 2025
+          </motion.p>
+        </div>
+        <div className="overflow-hidden">
+          <motion.h1
+            className="text-5xl sm:text-7xl lg:text-8xl text-neutral-900 leading-none tracking-tight mb-6"
+            initial={{ y: 60, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          >
             Hello,<br />I&apos;m Jing.
-          </h1>
+          </motion.h1>
+        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.25, ease: [0.2, 0.8, 0.2, 1] }}
+        >
           <p className="text-xl text-neutral-900 leading-relaxed max-w-xl flex items-center gap-2 flex-wrap">
             Lead Product Designer at
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -133,8 +151,11 @@ export default function Home() {
         >
           <Link href={featured.href} className="group block">
             <motion.div className="card p-10" whileHover={HOVER} transition={HOVER_TRANSITION}>
-              <div className="flex justify-end mb-6 gap-2">
-                {featured.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
+              <div className="flex items-start justify-between mb-6">
+                <span className="text-xs font-medium tracking-[0.2em] uppercase text-neutral-300">01</span>
+                <div className="flex gap-2">
+                  {featured.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
+                </div>
               </div>
               <h2 className="text-3xl tracking-tight mb-3 leading-tight">
                 <span className="title-highlight px-2">{featured.title}</span>
@@ -159,8 +180,11 @@ export default function Home() {
             >
               <Link href={project.href} className="group block h-full">
                 <motion.div className="card h-full p-6 flex flex-col" whileHover={HOVER_SM} transition={HOVER_TRANSITION}>
-                  <div className="flex justify-end mb-4 gap-1.5">
-                    {project.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
+                  <div className="flex items-start justify-between mb-4">
+                    <span className="text-xs font-medium tracking-[0.2em] uppercase text-neutral-300">0{i + 2}</span>
+                    <div className="flex gap-1.5">
+                      {project.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
+                    </div>
                   </div>
                   <h2 className="text-base text-neutral-900 mb-2 leading-snug">
                     <span className="title-highlight px-1.5">{project.title}</span>
