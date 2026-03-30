@@ -15,6 +15,7 @@ const featured = {
     "Designed and scaled a 0→1 community-driven contribution model across multiple product surfaces at Yelp. Q&A volume reached 10% of Yelp's review volume by Q1 2026.",
   tags: ["0→1", "Community", "Scale"],
   href: "/work/community-qa",
+  cover: "/images/CQA-cover-image.svg",
 };
 
 const projects = [
@@ -24,6 +25,7 @@ const projects = [
       "Reward and feedback systems that form contribution and engagement behaviors — closing the loop between action and identity.",
     tags: ["Engagement", "Systems"],
     href: "/work/recognition",
+    cover: "/images/Recogntion-cover-image.svg",
   },
   {
     title: "Elite Ecosystem Experiences",
@@ -31,6 +33,7 @@ const projects = [
       "Awareness campaigns, nomination flows, and ecosystem experiences reinforcing belonging and long-term retention.",
     tags: ["Community", "Campaigns"],
     href: "/work/elite",
+    cover: "/images/Elite-cover-image.svg",
   },
   {
     title: "Year on Yelp",
@@ -38,6 +41,7 @@ const projects = [
       "Reflection-driven experiences that reinforce user identity through personalized annual summaries.",
     tags: ["Identity", "Engagement"],
     href: "/work/year-on-yelp",
+    cover: "/images/YOY-cover-image.svg",
   },
 ];
 
@@ -163,6 +167,8 @@ export default function Home() {
               <p className="text-base text-neutral-600 leading-relaxed mb-8 max-w-2xl">
                 {featured.description}
               </p>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={featured.cover} alt={featured.title} className="w-full rounded-xl mb-8 object-cover" />
               <span className="cta-link">View case study <ArrowIcon /></span>
             </motion.div>
           </Link>
@@ -192,6 +198,8 @@ export default function Home() {
                   <p className="text-sm text-neutral-600 leading-relaxed flex-1 mb-5">
                     {project.description}
                   </p>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={project.cover} alt={project.title} className="w-full rounded-lg mb-5 object-cover" />
                   <span className="cta-link-sm">View case study <ArrowIcon size="sm" /></span>
                 </motion.div>
               </Link>
