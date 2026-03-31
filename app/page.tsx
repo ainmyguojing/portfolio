@@ -161,8 +161,8 @@ export default function Home() {
                   {featured.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
                 </div>
               </div>
-              <div className="grid grid-cols-4 gap-8 mb-8">
-                <div className="col-span-1 flex flex-col justify-center">
+              <div className="flex flex-wrap items-start gap-8 mb-8">
+                <div className="flex-1 min-w-[160px]">
                   <h2 className="text-3xl tracking-tight mb-3 leading-tight">
                     <span className="title-highlight px-2">{featured.title}</span>
                   </h2>
@@ -171,7 +171,7 @@ export default function Home() {
                   </p>
                 </div>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={featured.cover} alt={featured.title} className="col-span-3 w-full rounded-xl object-cover" />
+                <img src={featured.cover} alt={featured.title} className="rounded-xl object-cover" style={{ width: "60%" }} />
               </div>
               <span className="cta-link">View case study <ArrowIcon /></span>
             </motion.div>
