@@ -245,7 +245,7 @@ export default function Home() {
                     {project.description}
                   </p>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={project.cover} alt={project.title} className="w-full rounded-xl object-cover mb-6" />
+                  <img src={project.cover} alt={project.title} className="rounded-xl object-cover mb-6 mx-auto" style={{ width: "80%" }} />
                   <span className="cta-link">View project <ArrowIcon /></span>
                 </motion.div>
               </Link>
