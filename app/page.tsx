@@ -93,7 +93,7 @@ export default function Home() {
           translateX: "calc(-38% + 300px)",
           translateY: circleY,
           marginTop: "-320px",
-          filter: "blur(1px)",
+          filter: "blur(20px)",
         }}
         animate={{ scale: [1, 1.07, 1] }}
         transition={{ scale: { duration: 5, repeat: Infinity, ease: "easeInOut" } }}
