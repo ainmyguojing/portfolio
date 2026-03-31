@@ -196,7 +196,7 @@ export default function Home() {
                       {project.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
                     </div>
                   </div>
-                  <h2 className="text-base text-neutral-900 mb-2 leading-snug">
+                  <h2 className="text-xl text-neutral-900 mb-2 leading-snug">
                     <span className="title-highlight px-1.5">{project.title}</span>
                   </h2>
                   <p className="text-sm text-neutral-600 leading-relaxed flex-1 mb-5">
