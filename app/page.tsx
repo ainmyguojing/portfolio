@@ -88,7 +88,7 @@ export default function Home() {
         className="pointer-events-none select-none fixed z-0 rounded-full"
         style={{
           width: "66vw", height: "66vw",
-          background: "var(--accent)",
+          background: "radial-gradient(circle, white 0%, var(--accent) 100%)",
           top: 0, left: 0,
           translateX: "calc(-38% + 300px)",
           translateY: circleY,
