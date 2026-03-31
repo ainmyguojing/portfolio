@@ -53,6 +53,7 @@ const docAiProjects = [
       "End-to-end product design for a decentralized clinical research platform — from user stories and flows to a scalable interface supporting researchers and participants.",
     tags: ["SaaS", "B2B", "Healthcare"],
     href: "/other-work/smart-omix",
+    cover: "/images/Smart-omix.png",
   },
   {
     title: "Design System",
@@ -61,6 +62,7 @@ const docAiProjects = [
       "Built a design system on top of Material UI, establishing brand consistency, component governance, and engineer-ready documentation using Storybook and Chromatic.",
     tags: ["Design System", "Material UI"],
     href: "/other-work/design-system",
+    cover: "/images/Design-system.svg",
   },
 ];
 
@@ -239,9 +241,11 @@ export default function Home() {
                   <h2 className="text-2xl text-neutral-900 mb-3 leading-snug">
                     <span className="title-highlight px-2">{project.title}</span>
                   </h2>
-                  <p className="text-base text-neutral-600 leading-relaxed flex-1 mb-6">
+                  <p className="text-base text-neutral-600 leading-relaxed mb-6">
                     {project.description}
                   </p>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={project.cover} alt={project.title} className="w-full rounded-xl object-cover mb-6" />
                   <span className="cta-link">View project <ArrowIcon /></span>
                 </motion.div>
               </Link>
