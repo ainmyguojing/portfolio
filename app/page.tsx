@@ -106,7 +106,7 @@ export default function Home() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
           >
-            Portfolio · 2025
+            Portfolio · 2026
           </motion.p>
         </div>
         <div className="overflow-hidden">
@@ -155,8 +155,7 @@ export default function Home() {
         >
           <Link href={featured.href} className="group block">
             <motion.div className="card p-10" whileHover={HOVER} transition={HOVER_TRANSITION}>
-              <div className="flex items-start justify-between mb-6">
-                <span className="text-xs font-medium tracking-[0.2em] uppercase text-neutral-300">01</span>
+              <div className="flex items-start justify-end mb-6">
                 <div className="flex gap-2">
                   {featured.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
                 </div>
@@ -190,8 +189,7 @@ export default function Home() {
             >
               <Link href={project.href} className="group block h-full">
                 <motion.div className="card h-full p-6 flex flex-col" whileHover={HOVER_SM} transition={HOVER_TRANSITION}>
-                  <div className="flex items-start justify-between mb-4">
-                    <span className="text-xs font-medium tracking-[0.2em] uppercase text-neutral-300">0{i + 2}</span>
+                  <div className="flex items-start justify-end mb-4">
                     <div className="flex gap-1.5">
                       {project.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
                     </div>
