@@ -78,13 +78,14 @@ function ArrowIcon({ size = "md" }: { size?: "md" | "sm" }) {
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
-  const circleY = useTransform(scrollY, [0, 400], [0, -700]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const circleY = useTransform(scrollY, [0, 400], [0, -700]); // kept for yellow circle restore
 
   return (
     <div ref={containerRef} className="min-h-screen pt-14 overflow-x-hidden px-4 sm:px-0">
 
-      {/* Yellow circle */}
-      <motion.div
+      {/* Yellow circle — hidden for comparison */}
+      {/* <motion.div
         className="pointer-events-none select-none fixed z-0 rounded-full"
         style={{
           width: "66vw", height: "66vw",
@@ -97,6 +98,23 @@ export default function Home() {
         }}
         animate={{ scale: [1, 1.07, 1] }}
         transition={{ scale: { duration: 5, repeat: Infinity, ease: "easeInOut" } }}
+      /> */}
+
+      {/* Animation replacement */}
+      <video
+        src="/images/Screen%20Recording%202026-03-31%20at%204.41.20%20PM.mov"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="pointer-events-none select-none fixed z-0"
+        style={{
+          width: "66vw",
+          top: 0, left: 0,
+          transform: "translateX(calc(-38% + 300px))",
+          marginTop: "-320px",
+          opacity: 0.9,
+        }}
       />
 
       {/* Hero */}
