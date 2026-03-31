@@ -102,7 +102,7 @@ export default function Home() {
 
       {/* Animation replacement */}
       <video
-        src="/images/Screen%20Recording%202026-03-31%20at%204.41.20%20PM.mov"
+        src="/images/home-animation.mp4"
         autoPlay
         loop
         muted
