@@ -122,7 +122,7 @@ export default function TriangleMesh() {
       lastTime = ts;
 
       // smooth global fade when on card
-      const targetAlpha = onCardRef.current ? 0.08 : 1;
+      const targetAlpha = onCardRef.current ? 0.25 : 1;
       globalAlpha = lerp(globalAlpha, targetAlpha, 1 - Math.pow(0.01, dt));
 
       mouse.x = lerp(mouse.x, target.x, 1 - Math.pow(0.04, dt));
