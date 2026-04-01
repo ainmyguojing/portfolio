@@ -94,7 +94,7 @@ export default function Home() {
           translateY: circleY,
           marginTop: "-320px",
         }}
-        animate={{ scale: [1, 1.35, 1], filter: ["blur(0px)", "blur(30px)", "blur(0px)"] }}
+        animate={{ scale: [1, 1.35, 1], filter: ["blur(10px)", "blur(30px)", "blur(10px)"] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
 
