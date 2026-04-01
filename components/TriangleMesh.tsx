@@ -98,6 +98,7 @@ const DOT_THRESHOLD = 100;
 export default function TriangleMesh() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [cursorPos, setCursorPos] = useState({ x: -200, y: -200 });
+  const onCardRef = useRef(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -114,10 +115,15 @@ export default function TriangleMesh() {
     const target = { x: W / 2, y: H / 2 };
     let frameId: number;
     let lastTime = 0;
+    let globalAlpha = 1; // smoothly lerped between 1 (default) and 0.08 (on card)
 
     function draw(ts: number) {
       const dt = Math.min((ts - lastTime) / 1000, 0.05);
       lastTime = ts;
+
+      // smooth global fade when on card
+      const targetAlpha = onCardRef.current ? 0.08 : 1;
+      globalAlpha = lerp(globalAlpha, targetAlpha, 1 - Math.pow(0.01, dt));
 
       mouse.x = lerp(mouse.x, target.x, 1 - Math.pow(0.04, dt));
       mouse.y = lerp(mouse.y, target.y, 1 - Math.pow(0.04, dt));
@@ -136,6 +142,8 @@ export default function TriangleMesh() {
       const tris = delaunay(pts);
 
       ctx.clearRect(0, 0, W, H);
+      ctx.save();
+      ctx.globalAlpha = globalAlpha;
 
       for (const t of tris) {
         const ax = pts[t.i].x, ay = pts[t.i].y;
@@ -177,6 +185,7 @@ export default function TriangleMesh() {
         ctx.fill();
       }
 
+      ctx.restore();
       frameId = requestAnimationFrame(draw);
     }
 
@@ -194,7 +203,8 @@ export default function TriangleMesh() {
       target.x = e.clientX;
       target.y = e.clientY;
       setCursorPos({ x: e.clientX, y: e.clientY });
-
+      const el = document.elementFromPoint(e.clientX, e.clientY);
+      onCardRef.current = !!(el?.closest('.card'));
     };
 
     window.addEventListener("mousemove", onMove);
