@@ -165,7 +165,7 @@ export default function TriangleMesh() {
         ctx.fillStyle = `rgba(255,255,5,${prox})`;
         ctx.fill();
 
-        ctx.strokeStyle = `rgba(255,255,255,${lerp(0, 0.2, prox)})`;
+        ctx.strokeStyle = `rgba(23,23,23,${lerp(0, 0.12, prox)})`;
         ctx.lineWidth   = lerp(0.3, 0.8, prox);
         ctx.stroke();
       }
