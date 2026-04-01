@@ -98,7 +98,6 @@ const DOT_THRESHOLD = 100;
 export default function TriangleMesh() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [cursorPos, setCursorPos] = useState({ x: -200, y: -200 });
-  const [onClickable, setOnClickable] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -196,9 +195,6 @@ export default function TriangleMesh() {
       target.y = e.clientY;
       setCursorPos({ x: e.clientX, y: e.clientY });
 
-      const el = document.elementFromPoint(e.clientX, e.clientY);
-      const clickable = !!(el?.closest('a, button, [role="button"], input, select, textarea, label'));
-      setOnClickable(clickable);
     };
 
     window.addEventListener("mousemove", onMove);
@@ -228,24 +224,12 @@ export default function TriangleMesh() {
           transition: "transform 0.12s ease",
         }}
       >
-        {onClickable ? (
-          // Small yellow triangle pointing right
-          <svg
-            width="12" height="12"
-            viewBox="0 0 10 10"
-            style={{ display: "block", filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.18))" }}
-          >
-            <polygon points="0,0 10,5 0,10" fill="#FFFF05" />
-          </svg>
-        ) : (
-          // Default small dot
-          <div style={{
-            width: 7, height: 7,
-            borderRadius: "50%",
-            background: "#171717",
-            opacity: 0.7,
-          }} />
-        )}
+        <div style={{
+          width: 7, height: 7,
+          borderRadius: "50%",
+          background: "#171717",
+          opacity: 0.7,
+        }} />
       </div>
     </>
   );
