@@ -88,15 +88,14 @@ export default function Home() {
         className="pointer-events-none select-none fixed z-0 rounded-full"
         style={{
           width: "66vw", height: "66vw",
-          background: "radial-gradient(circle, white 0%, var(--accent) 100%)",
+          background: "radial-gradient(circle, white 0%, var(--accent) 72%, var(--accent) 100%)",
           top: 0, left: 0,
           translateX: "calc(-38% + 300px)",
           translateY: circleY,
           marginTop: "-320px",
-          filter: "blur(20px)",
         }}
-        animate={{ scale: [1, 1.07, 1] }}
-        transition={{ scale: { duration: 5, repeat: Infinity, ease: "easeInOut" } }}
+        animate={{ scale: [1, 1.07, 1], filter: ["blur(0px)", "blur(20px)", "blur(0px)"] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       />
 
       {/* Hero */}
