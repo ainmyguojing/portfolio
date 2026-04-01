@@ -93,7 +93,6 @@ function easeOut(t: number) { return 1 - Math.pow(1 - t, 3); }
 const BASE_SPACING = 95;
 const ATTRACT_R    = 260;
 const ATTRACT_STR  = 0.58;
-const DOT_THRESHOLD = 100;
 
 export default function TriangleMesh() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -169,20 +168,6 @@ export default function TriangleMesh() {
         ctx.strokeStyle = `rgba(23,23,23,${lerp(0, 0.2, prox)})`;
         ctx.lineWidth   = lerp(0.3, 0.8, prox);
         ctx.stroke();
-      }
-
-      // single closest dot
-      let closestDist = Infinity, closestPt: Pt | null = null;
-      for (const p of pts) {
-        const d = Math.hypot(p.x - mouse.x, p.y - mouse.y);
-        if (d < closestDist) { closestDist = d; closestPt = p; }
-      }
-      if (closestPt && closestDist < DOT_THRESHOLD) {
-        const fade = Math.max(0, 1 - closestDist / DOT_THRESHOLD);
-        ctx.beginPath();
-        ctx.arc(closestPt.x, closestPt.y, 2.5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(23,23,23,${fade * 0.8})`;
-        ctx.fill();
       }
 
       ctx.restore();
