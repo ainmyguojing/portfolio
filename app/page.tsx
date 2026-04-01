@@ -87,8 +87,8 @@ export default function Home() {
       <motion.div
         className="pointer-events-none select-none fixed z-0 rounded-full"
         style={{
-          width: "66vw", height: "66vw",
-          background: "radial-gradient(circle, white 0%, var(--accent) 72%, var(--accent) 100%)",
+          width: "59.4vw", height: "59.4vw",
+          background: "radial-gradient(circle, white 0%, var(--accent) 88%, var(--accent) 100%)",
           top: 0, left: 0,
           translateX: "calc(-38% + 300px)",
           translateY: circleY,
