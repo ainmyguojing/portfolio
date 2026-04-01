@@ -85,8 +85,8 @@ export default function Home() {
     <div ref={containerRef} className="min-h-screen pt-14 overflow-x-hidden px-4 sm:px-0" style={{ cursor: "none" }}>
       <TriangleMesh />
 
-      {/* Yellow circle */}
-      <motion.div
+      {/* Yellow circle — set SHOW_CIRCLE=true to restore */}
+      {false && <motion.div
         className="pointer-events-none select-none fixed z-0 rounded-full"
         style={{
           width: "59.4vw", height: "59.4vw",
@@ -98,7 +98,7 @@ export default function Home() {
         }}
         animate={{ scale: [1, 1.35, 1], filter: ["blur(10px)", "blur(30px)", "blur(10px)"] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />
+      />}
 
       {/* Hero */}
       <section className="relative z-10 max-w-[82vw] mx-auto pt-12 sm:pt-20 pb-14">
