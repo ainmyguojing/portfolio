@@ -62,10 +62,14 @@ img {
 @layer components {
   /* Card shell */
   .card {
-    background: var(--card-bg);
+    background: rgba(255,255,255,0.3);
     border: 1px solid var(--card-border);
     @apply rounded-2xl;
     box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.03);
+    transition: background 0.25s ease;
+  }
+  .card:hover {
+    background: rgba(255,255,255,1);
   }
 
   /* Tag pill */
