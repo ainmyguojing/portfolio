@@ -69,7 +69,7 @@ img {
     transition: background 0.25s ease;
   }
   .card:hover {
-    background: rgba(255,255,255,1);
+    background: rgba(255,255,255,0.9);
   }
 
   /* Tag pill */
