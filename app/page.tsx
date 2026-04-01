@@ -94,8 +94,8 @@ export default function Home() {
           translateY: circleY,
           marginTop: "-320px",
         }}
-        animate={{ scale: [1, 1.07, 1], filter: ["blur(0px)", "blur(20px)", "blur(0px)"] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        animate={{ scale: [1, 1.35, 1], filter: ["blur(0px)", "blur(30px)", "blur(0px)"] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
 
       {/* Hero */}
