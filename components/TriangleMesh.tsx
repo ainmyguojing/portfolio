@@ -111,8 +111,8 @@ export default function TriangleMesh() {
     canvas.height = H;
 
     let basePoints = generateBasePoints(W, H, BASE_SPACING);
-    let mouse    = { x: W / 2, y: H / 2 };
-    let target   = { x: W / 2, y: H / 2 };
+    const mouse  = { x: W / 2, y: H / 2 };
+    const target = { x: W / 2, y: H / 2 };
     let frameId: number;
     let lastTime = 0;
 
