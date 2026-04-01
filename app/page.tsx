@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { useRef } from "react";
 import Footer from "@/components/Footer";
+import TriangleMesh from "@/components/TriangleMesh";
 
 const HOVER = { scale: 1.012, boxShadow: "0 8px 32px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)" };
 const HOVER_SM = { scale: 1.018, boxShadow: "0 8px 24px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)" };
@@ -81,7 +82,8 @@ export default function Home() {
   const circleY = useTransform(scrollY, [0, 400], [0, -700]);
 
   return (
-    <div ref={containerRef} className="min-h-screen pt-14 overflow-x-hidden px-4 sm:px-0">
+    <div ref={containerRef} className="min-h-screen pt-14 overflow-x-hidden px-4 sm:px-0" style={{ cursor: "none" }}>
+      <TriangleMesh />
 
       {/* Yellow circle */}
       <motion.div
