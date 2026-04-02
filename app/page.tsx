@@ -133,7 +133,7 @@ export default function Home() {
             <img src="/images/Yelp%20Logo/Other.svg" alt="Yelp" style={{ height: "1.44em", marginLeft: "8px", position: "relative", top: "-2px" }} className="inline-block align-middle" />
           </p>
           <p className="text-xl text-neutral-900 leading-relaxed max-w-xl mt-3">
-            Bringing strategic, systems-level thinking, identifying hidden opportunities, and designing scalable solutions. Building impactful products for the AI era by leveraging deep expertise in user engagement, user retention, and community building.
+            I love diving into big picture thinking, spotting those hidden gems of opportunity, and crafting solutions that really last. I&apos;m passionate about building out new ideas, drawing on my know-how in getting users engaged, keeping them coming back, and growing vibrant communities along the way.
           </p>
         </motion.div>
       </section>
