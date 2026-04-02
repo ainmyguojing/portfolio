@@ -139,7 +139,7 @@ export default function Home() {
       </section>
 
       {/* Projects */}
-      <section className="relative z-10 max-w-[82vw] mx-auto pb-24 space-y-4">
+      <section className="relative z-10 max-w-[82vw] mx-auto pb-24 flex flex-col">
         <motion.p
           className="section-label mb-5"
           initial={{ opacity: 0 }}
@@ -181,7 +181,7 @@ export default function Home() {
         </motion.div>
 
         {/* Small cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
           {projects.map((project, i) => (
             <motion.div
               key={project.href}
