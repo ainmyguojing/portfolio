@@ -20,9 +20,13 @@ export default function About() {
               href="/Jing-Guo-Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-neutral-400 hover:text-neutral-900 transition-colors duration-200"
+              className="relative inline-block text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-200"
             >
-              View my resume ↗
+              <span
+                className="absolute left-0 right-0 bottom-0 rounded-sm"
+                style={{ height: "33%", background: "var(--accent)", zIndex: 0 }}
+              />
+              <span className="relative" style={{ zIndex: 1 }}>View my resume ↗</span>
             </a>
           </div>
 
