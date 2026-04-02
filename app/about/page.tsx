@@ -44,7 +44,7 @@ export default function About() {
                     <span className="text-xs text-neutral-400">Sep 2022 – present</span>
                   </div>
                   <p className="text-sm font-medium text-neutral-700 mb-1">Lead Product Designer, Consumer Contribution</p>
-                  <p className="text-sm text-neutral-500 leading-relaxed">Designing for user contribution, engagement, and contributor retention at scale. Projects include Community Q&A (0→1), reactions, comments, and Year on Yelp. My focus is turning passive users into active contributors — building the systems and moments that make people want to give back to the community.</p>
+                  <p className="text-sm text-neutral-500 leading-relaxed">Designing for user contribution, engagement, and contributor retention at scale. Projects include Community Q&A (0→1), reactions, comments, and Year on Yelp. My focus is turning passive users into active contributors, building the systems and moments that make people want to give back to the community.</p>
                 </div>
               </div>
               {/* Doc.ai */}
