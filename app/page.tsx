@@ -115,10 +115,10 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* "I'm Jing." — mask reveal, slides down, starts after Hello */}
-        <div style={{ overflow: "hidden", paddingBottom: "0.15em" }} className="mb-6">
+        {/* "I'm Jing." — mask reveal, slides up, starts after Hello */}
+        <div style={{ overflow: "hidden", paddingBottom: "0.25em" }} className="mb-6">
           <motion.div
-            initial={{ y: "-110%" }}
+            initial={{ y: "110%" }}
             animate={{ y: 0 }}
             transition={{ duration: 1.2, ease: [0, 0, 0.2, 1], delay: 1.1 }}
           >
