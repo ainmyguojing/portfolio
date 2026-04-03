@@ -102,40 +102,49 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative z-10 max-w-[82vw] mx-auto pt-12 sm:pt-20 pb-14">
-        <div className="overflow-hidden mb-1">
-          <motion.p
-            className="text-xs font-medium tracking-[0.25em] uppercase text-neutral-400 mb-5"
-            initial={{ y: 24, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
+        {/* "Hello," — mask reveal */}
+        <div style={{ overflow: "hidden" }}>
+          <motion.div
+            initial={{ y: "110%" }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0 }}
           >
-            Portfolio · 2026
-          </motion.p>
+            <h1 className="text-5xl sm:text-7xl lg:text-8xl text-neutral-900 leading-none tracking-tight">
+              Hello,
+            </h1>
+          </motion.div>
         </div>
-        <div className="overflow-hidden">
-          <motion.h1
-            className="text-5xl sm:text-7xl lg:text-8xl text-neutral-900 leading-none tracking-tight mb-6"
-            initial={{ y: 60, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+
+        {/* "I'm Jing." — mask reveal, starts after Hello */}
+        <div style={{ overflow: "hidden" }} className="mb-6">
+          <motion.div
+            initial={{ y: "110%" }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.55 }}
           >
-            Hello,<br />I&apos;m Jing.
-          </motion.h1>
+            <h1 className="text-5xl sm:text-7xl lg:text-8xl text-neutral-900 leading-none tracking-tight">
+              I&apos;m Jing.
+            </h1>
+          </motion.div>
         </div>
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.25, ease: [0.2, 0.8, 0.2, 1] }}
-        >
-          <p className="text-xl text-neutral-900 leading-relaxed max-w-xl flex items-center gap-2 flex-wrap">
-            Lead Product Designer at
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/Yelp%20Logo/Other.svg" alt="Yelp" style={{ height: "1.44em", marginLeft: "8px", position: "relative", top: "-2px" }} className="inline-block align-middle" />
-          </p>
-          <p className="text-xl text-neutral-900 leading-relaxed max-w-xl mt-3">
-            I love diving into big picture thinking, spotting those hidden gems of opportunity, and crafting solutions that really last. I&apos;m passionate about building out new ideas, drawing on my know-how in getting users engaged, keeping them coming back, and growing vibrant communities along the way.
-          </p>
-        </motion.div>
+
+        {/* Bio — slides up after title */}
+        <div style={{ overflow: "hidden" }}>
+          <motion.div
+            initial={{ y: "110%" }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 1.2 }}
+          >
+            <p className="text-xl text-neutral-900 leading-relaxed max-w-xl flex items-center gap-2 flex-wrap">
+              Lead Product Designer at
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/Yelp%20Logo/Other.svg" alt="Yelp" style={{ height: "1.44em", marginLeft: "8px", position: "relative", top: "-2px" }} className="inline-block align-middle" />
+            </p>
+            <p className="text-xl text-neutral-900 leading-relaxed max-w-xl mt-3">
+              I love diving into big picture thinking, spotting those hidden gems of opportunity, and crafting solutions that really last. I&apos;m passionate about building out new ideas, drawing on my know-how in getting users engaged, keeping them coming back, and growing vibrant communities along the way.
+            </p>
+          </motion.div>
+        </div>
       </section>
 
       {/* Projects */}
@@ -144,17 +153,16 @@ export default function Home() {
           className="section-label mb-5"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 1.9, duration: 0.4 }}
         >
           Selected Work · Yelp
         </motion.p>
 
         {/* Featured card */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 2.05, ease: [0.16, 1, 0.3, 1] }}
         >
           <Link href={featured.href} className="group block">
             <motion.div className="card p-10" whileHover={HOVER} transition={HOVER_TRANSITION}>
@@ -185,10 +193,9 @@ export default function Home() {
           {projects.map((project, i) => (
             <motion.div
               key={project.href}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45, delay: i * 0.07, ease: [0.2, 0.8, 0.2, 1] }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 2.3 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
               <Link href={project.href} className="group block h-full">
                 <motion.div className="card h-full p-6 flex flex-col" whileHover={HOVER_SM} transition={HOVER_TRANSITION}>
