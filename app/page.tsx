@@ -23,7 +23,7 @@ const projects = [
   {
     title: "Recognition & Motivation System",
     description:
-      "Reward and feedback systems that form contribution and engagement behaviors — closing the loop between action and identity.",
+      "Reward and feedback systems that form contribution and engagement behaviors, closing the loop between action and identity.",
     tags: ["Engagement", "Systems"],
     href: "/work/recognition",
     cover: "/images/Recogntion-cover-image.svg",
@@ -51,7 +51,7 @@ const docAiProjects = [
     title: "Smart Omix",
     category: "SaaS Web Design",
     description:
-      "End-to-end product design for a decentralized clinical research platform — from user stories and flows to a scalable interface supporting researchers and participants.",
+      "End-to-end product design for a decentralized clinical research platform, from user stories and flows to a scalable interface supporting researchers and participants.",
     tags: ["SaaS", "B2B", "Healthcare"],
     href: "/other-work/smart-omix",
     cover: "/images/Smart-omix.png",
