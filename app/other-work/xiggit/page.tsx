@@ -6,7 +6,7 @@ export default function Xiggit() {
   return (
     <CaseStudyLayout
       title="Xiggit"
-      subtitle="Redesigning onboarding for a fintech app targeting low-income users — building trust, reducing friction, and increasing enrollment."
+      subtitle="Redesigning onboarding for a fintech app targeting low-income users, building trust, reducing friction, and increasing enrollment."
       role="UX/UI Designer"
       team="Academic Project"
       year="2021"
@@ -50,9 +50,9 @@ export default function Xiggit() {
 
       <h2>Key Design Improvements</h2>
       <ul>
-        <li>Separate account creation from full signup — reduce upfront commitment</li>
+        <li>Separate account creation from full signup, reduce upfront commitment</li>
         <li>Add milestone pages for satisfaction and momentum</li>
-        <li>Allow feature reviews before bank linking — build value before asking for trust</li>
+        <li>Allow feature reviews before bank linking, build value before asking for trust</li>
         <li>Separate fee information for full visibility</li>
       </ul>
 
@@ -71,7 +71,7 @@ export default function Xiggit() {
 
       <h2>Reflections</h2>
       <ul>
-        <li>UI design is critical for financial apps — visual polish directly affects perceived trustworthiness.</li>
+        <li>UI design is critical for financial apps, visual polish directly affects perceived trustworthiness.</li>
         <li>Cross-functional communication is essential for understanding technical and legal boundaries.</li>
       </ul>
     </CaseStudyLayout>

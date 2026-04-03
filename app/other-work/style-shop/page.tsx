@@ -6,7 +6,7 @@ export default function StyleShop() {
   return (
     <CaseStudyLayout
       title="Style Shop"
-      subtitle="UX redesign for a home decor eCommerce platform — enabling budget-conscious customers to browse curated looks, customize items, and track costs in one flow."
+      subtitle="UX redesign for a home decor eCommerce platform, enabling budget-conscious customers to browse curated looks, customize items, and track costs in one flow."
       role="UX/UI Designer"
       team="Academic Project"
       year="2021"
@@ -31,7 +31,7 @@ export default function StyleShop() {
       <h2>Business Objectives</h2>
       <ul>
         <li>Actively guide users from inspiration through purchase completion</li>
-        <li>Enable customization — adding, deleting, replacing items within looks</li>
+        <li>Enable customization, adding, deleting, replacing items within looks</li>
         <li>Boost conversion rates among budget-conscious segments</li>
       </ul>
 
@@ -44,17 +44,17 @@ export default function StyleShop() {
       </p>
       <p>
         Two storyboard sets resonated strongest in validation. Visual design principles: <strong>calm,
-        neutral, clean</strong> — balancing comfortable home-furnishing associations with contemporary
+        neutral, clean</strong>, balancing comfortable home-furnishing associations with contemporary
         sophistication.
       </p>
 
       <h2>Five Key Flows Prototyped</h2>
       <ul>
-        <li><strong>Flow A</strong> — Room type selection</li>
-        <li><strong>Flow B</strong> — Style look browsing</li>
-        <li><strong>Flow C</strong> — Item deletion mechanics</li>
-        <li><strong>Flow D</strong> — Item replacement mechanics</li>
-        <li><strong>Flow E</strong> — Shopping cart and checkout</li>
+        <li><strong>Flow A</strong>: Room type selection</li>
+        <li><strong>Flow B</strong>: Style look browsing</li>
+        <li><strong>Flow C</strong>: Item deletion mechanics</li>
+        <li><strong>Flow D</strong>: Item replacement mechanics</li>
+        <li><strong>Flow E</strong>: Shopping cart and checkout</li>
       </ul>
 
       <h2>Usability Testing Insights</h2>
@@ -68,7 +68,7 @@ export default function StyleShop() {
       <h2>Reflections</h2>
       <p>
         Platform type determines the potential strength and limits of design approaches. Web-based
-        access constrained us to traditional techniques rather than immersive VR — a constraint that
+        access constrained us to traditional techniques rather than immersive VR, a constraint that
         shaped every interaction pattern. Product improvement follows phasing; this iteration
         prioritized minimum-viable-item purchasing over item-addition features.
       </p>

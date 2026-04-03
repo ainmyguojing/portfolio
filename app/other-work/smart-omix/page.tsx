@@ -188,7 +188,7 @@ export default function SmartOmix() {
       <Card id="challenge-4">
         <Label>4. Accessibility, Despite Complexity</Label>
         <p className="text-sm font-semibold text-neutral-700 mb-1 mt-2">Problem</p>
-        <p className="text-sm text-neutral-600 mb-4">Clinical research is inherently complex, but we wanted Smart Omix to be approachable for all researchers—regardless of their experience level. Our goal was to support both novices and experts by designing an intuitive, streamlined flow. We built in educational tools and context-sensitive guidance to help those who needed it, but ensured these resources were non-intrusive and wouldn&apos;t disrupt the workflow of experienced users.</p>
+        <p className="text-sm text-neutral-600 mb-4">Clinical research is inherently complex, but we wanted Smart Omix to be approachable for all researchers, regardless of their experience level. Our goal was to support both novices and experts by designing an intuitive, streamlined flow. We built in educational tools and context-sensitive guidance to help those who needed it, but ensured these resources were non-intrusive and wouldn&apos;t disrupt the workflow of experienced users.</p>
         <p className="text-sm font-semibold text-neutral-700 mb-1">Solution</p>
         <ul className="space-y-6">
           {[

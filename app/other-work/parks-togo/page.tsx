@@ -64,7 +64,7 @@ export default function ParksTogo() {
 
       <h2>Reflections</h2>
       <ul>
-        <li>Simplicity is harder than it looks — every feature added complexity that had to be justified.</li>
+        <li>Simplicity is harder than it looks, every feature added complexity that had to be justified.</li>
         <li>User testing is more reliable than designer judgment, especially for navigation patterns.</li>
         <li>Focus on core target user flows rather than trying to accommodate all approaches simultaneously.</li>
       </ul>

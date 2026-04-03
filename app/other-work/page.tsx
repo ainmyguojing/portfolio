@@ -12,7 +12,7 @@ const featured = [
     title: "Smart Omix",
     category: "SaaS Web Design",
     description:
-      "End-to-end product design for a decentralized clinical research platform — from user stories and flows to a scalable interface supporting researchers and participants.",
+      "End-to-end product design for a decentralized clinical research platform, from user stories and flows to a scalable interface supporting researchers and participants.",
     tags: ["SaaS", "B2B", "Healthcare"],
     href: "/other-work/smart-omix",
   },
@@ -39,7 +39,7 @@ const others = [
     title: "Xiggit",
     category: "Consumer Mobile App",
     description:
-      "Redesigned onboarding for a fintech app targeting low-income users — building trust, reducing friction, and increasing enrollment.",
+      "Redesigned onboarding for a fintech app targeting low-income users, building trust, reducing friction, and increasing enrollment.",
     tags: ["Mobile", "Fintech", "Onboarding"],
     href: "/other-work/xiggit",
   },
@@ -47,7 +47,7 @@ const others = [
     title: "Style Shop",
     category: "eCommerce Web App",
     description:
-      "UX redesign for a home decor eCommerce platform — enabling budget-conscious customers to browse curated looks and track costs.",
+      "UX redesign for a home decor eCommerce platform, enabling budget-conscious customers to browse curated looks and track costs.",
     tags: ["eCommerce", "Web", "UX Research"],
     href: "/other-work/style-shop",
   },
@@ -68,7 +68,7 @@ export default function OtherWork() {
             Other Work.
           </h1>
           <p className="text-lg text-neutral-600 max-w-xl leading-relaxed">
-            Projects spanning SaaS, mobile apps, design systems, and eCommerce — earlier work that
+            Projects spanning SaaS, mobile apps, design systems, and eCommerce. Earlier work that
             shaped how I think about product design.
           </p>
         </motion.div>
