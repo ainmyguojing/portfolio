@@ -141,7 +141,7 @@ export default function Home() {
               <img src="/images/Yelp%20Logo/Other.svg" alt="Yelp" style={{ height: "1.44em", marginLeft: "8px", position: "relative", top: "-2px" }} className="inline-block align-middle" />
             </p>
             <p className="text-xl text-neutral-900 leading-relaxed max-w-xl mt-3">
-              I love diving into big picture thinking, spotting those hidden gems of opportunity, and crafting solutions that really last. I&apos;m passionate about building out new ideas, drawing on my know-how in getting users engaged, keeping them coming back, and growing vibrant communities along the way.
+              I enjoy diving into ambiguous problem spaces, breaking down complex challenges, and pinpointing key areas with multiple cross-functional intersections that can unlock further downstream opportunities. I&apos;m passionate about developing new ideas and leveraging my experience to engage users, foster repeat participation, and help grow vibrant communities.
             </p>
           </motion.div>
         </div>
