@@ -102,12 +102,12 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative z-10 max-w-[82vw] mx-auto pt-12 sm:pt-20 pb-14">
-        {/* "Hello," — mask reveal */}
-        <div style={{ overflow: "hidden" }}>
+        {/* "Hello," — mask reveal, slides down from above */}
+        <div style={{ overflow: "hidden", paddingBottom: "0.1em" }}>
           <motion.div
-            initial={{ y: "110%" }}
+            initial={{ y: "-110%" }}
             animate={{ y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0 }}
+            transition={{ duration: 1.2, ease: [0, 0, 0.2, 1], delay: 0 }}
           >
             <h1 className="text-5xl sm:text-7xl lg:text-8xl text-neutral-900 leading-none tracking-tight">
               Hello,
@@ -115,12 +115,12 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* "I'm Jing." — mask reveal, starts after Hello */}
-        <div style={{ overflow: "hidden" }} className="mb-6">
+        {/* "I'm Jing." — mask reveal, slides down, starts after Hello */}
+        <div style={{ overflow: "hidden", paddingBottom: "0.15em" }} className="mb-6">
           <motion.div
-            initial={{ y: "110%" }}
+            initial={{ y: "-110%" }}
             animate={{ y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.55 }}
+            transition={{ duration: 1.2, ease: [0, 0, 0.2, 1], delay: 1.1 }}
           >
             <h1 className="text-5xl sm:text-7xl lg:text-8xl text-neutral-900 leading-none tracking-tight">
               I&apos;m Jing.
@@ -133,7 +133,7 @@ export default function Home() {
           <motion.div
             initial={{ y: "110%" }}
             animate={{ y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 1.2 }}
+            transition={{ duration: 1.2, ease: [0, 0, 0.2, 1], delay: 2.4 }}
           >
             <p className="text-xl text-neutral-900 leading-relaxed max-w-xl flex items-center gap-2 flex-wrap">
               Lead Product Designer at
@@ -153,7 +153,7 @@ export default function Home() {
           className="section-label mb-5"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.9, duration: 0.4 }}
+          transition={{ delay: 3.7, duration: 0.6 }}
         >
           Selected Work · Yelp
         </motion.p>
@@ -162,7 +162,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 2.05, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.8, delay: 3.9, ease: [0, 0, 0.2, 1] }}
         >
           <Link href={featured.href} className="group block">
             <motion.div className="card p-10" whileHover={HOVER} transition={HOVER_TRANSITION}>
@@ -195,7 +195,7 @@ export default function Home() {
               key={project.href}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 2.3 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.8, delay: 4.2 + i * 0.12, ease: [0, 0, 0.2, 1] }}
             >
               <Link href={project.href} className="group block h-full">
                 <motion.div className="card h-full p-6 flex flex-col" whileHover={HOVER_SM} transition={HOVER_TRANSITION}>
