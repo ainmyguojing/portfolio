@@ -1,1 +1,0 @@
-cd /Users/jingguo/Documents/yelp/portfolio-build && git add -A && git commit -m "Restore em dashes in titles and headings, clean body copy" && git push
