@@ -198,11 +198,7 @@ export default function CommunityQA() {
         <p className="text-sm text-neutral-700 mb-5">
           With a direction set, the next question was: would people actually use this? Each milestone
           was structured as a hypothesis test that only justified the next stage if it proved out.
-          M1 seeded questions from Elites to test if asking behavior existed at all (it did: 2.17% CTR,
-          above the 2% benchmark for other SERP components). M2 used LLM-generated questions to test
-          answering behavior without needing organic question volume first: ~1,000 answers in 20 days,
-          with 40% of answerers giving more than one answer. Only once both sides of the exchange
-          proved out did we invest in the full live Q&amp;A system.
+          Only once both sides of the exchange proved out did we invest in the full live Q&amp;A system.
         </p>
         <Label>Pilot Focus</Label>
         <TwoCol
