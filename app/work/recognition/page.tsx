@@ -2,7 +2,7 @@ import CaseStudyLayout from "@/components/CaseStudyLayout";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Recognition & Motivation System — Jing Guo",
+  title: "Recognition System — Jing Guo",
 };
 
 function SectionDivider({ id }: { id?: string }) {
@@ -62,7 +62,7 @@ const SECTIONS = [
 export default function Recognition() {
   return (
     <CaseStudyLayout
-      title="Recognition & Motivation System"
+      title="Recognition System"
       subtitle="The expert recognition system began as a simple hypothesis: could recognitions nudge reviewers to contribute more? My focus was on the next phase: transforming in-the-moment badges into a permanent, meaningful presence within the app."
       role="Lead Designer (Surfacing in App)"
       team="1 PM · 3 Engineers · 1 PMM"

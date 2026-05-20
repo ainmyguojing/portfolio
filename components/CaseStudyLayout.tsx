@@ -19,13 +19,13 @@ interface Section {
 const ALL_PROJECTS = [
   {
     title: "Community Q&A",
-    description: "Designed and scaled a 0→1 community-driven contribution model across multiple product surfaces at Yelp. Q&A volume reached 10% of Yelp's review volume by Q1 2026.",
+    description: "Designed and scaled a 0→1 community-driven contribution model across multiple product surfaces at Yelp.",
     tags: ["0→1", "Community", "Scale"],
     href: "/work/community-qa",
     company: "Yelp",
   },
   {
-    title: "Recognition & Motivation System",
+    title: "Recognition System",
     description: "Reward and feedback systems that form contribution and engagement behaviors — closing the loop between action and identity.",
     tags: ["Engagement", "Systems"],
     href: "/work/recognition",

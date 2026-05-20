@@ -496,7 +496,7 @@ export default function CommunityQA() {
       </p>
       <ol>
         <li>
-          Q&amp;A volume reached <strong>10% of Yelp&apos;s review volume</strong> by Q1 2026,
+          Q&amp;A grew into a significant new contribution channel,
           demonstrating that the community was willing to participate in a new way beyond writing reviews.
         </li>
         <li>

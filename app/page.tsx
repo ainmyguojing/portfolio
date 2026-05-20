@@ -1,40 +1,35 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { useRef } from "react";
-import Footer from "@/components/Footer";
-import TriangleMesh from "@/components/TriangleMesh";
+import { useState, useEffect, useRef, useCallback } from "react";
+import ChatAvatar from "@/components/ChatAvatar";
+import { TypingIndicator } from "@/components/ChatMessage";
 
-const HOVER = { scale: 1.012, boxShadow: "0 8px 32px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)" };
-const HOVER_SM = { scale: 1.018, boxShadow: "0 8px 24px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)" };
-const HOVER_TRANSITION = { duration: 0.25, ease: [0.2, 0.8, 0.2, 1] as const };
-
-const featured = {
-  title: "Community Q&A",
-  description:
-    "Designed and scaled a 0→1 community-driven contribution model across multiple product surfaces at Yelp. Q&A volume reached 10% of Yelp's review volume by Q1 2026.",
-  tags: ["0→1", "Community", "Scale"],
-  href: "/work/community-qa",
-  cover: "/images/CQA-cover-image.svg",
-};
-
-const projects = [
+const ALL_PROJECTS = [
   {
-    title: "Recognition & Motivation System",
+    title: "Community Q&A",
     description:
-      "Reward and feedback systems that form contribution and engagement behaviors, closing the loop between action and identity.",
+      "Designed and scaled a 0→1 community-driven contribution model across multiple product surfaces at Yelp.",
+    tags: ["0→1", "Community", "Scale"],
+    href: "/work/community-qa",
+    company: "Yelp",
+  },
+  {
+    title: "Recognition System",
+    description:
+      "Reward and feedback systems that form contribution and engagement behaviors.",
     tags: ["Engagement", "Systems"],
     href: "/work/recognition",
-    cover: "/images/Recogntion-cover-image.svg",
+    company: "Yelp",
   },
   {
     title: "Elite Ecosystem Experiences",
     description:
-      "Awareness campaigns, nomination flows, and ecosystem experiences reinforcing belonging and long-term retention.",
+      "Awareness campaigns, nomination flows, and ecosystem experiences reinforcing belonging.",
     tags: ["Community", "Campaigns"],
     href: "/work/elite",
-    cover: "/images/Elite-cover-image.svg",
+    company: "Yelp",
   },
   {
     title: "Year on Yelp",
@@ -42,226 +37,433 @@ const projects = [
       "Reflection-driven experiences that reinforce user identity through personalized annual summaries.",
     tags: ["Identity", "Engagement"],
     href: "/work/year-on-yelp",
-    cover: "/images/YOY-cover-image.svg",
+    company: "Yelp",
   },
-];
-
-const docAiProjects = [
   {
     title: "Smart Omix",
-    category: "SaaS Web Design",
     description:
-      "End-to-end product design for a decentralized clinical research platform, from user stories and flows to a scalable interface supporting researchers and participants.",
+      "End-to-end product design for a decentralized clinical research platform.",
     tags: ["SaaS", "B2B", "Healthcare"],
     href: "/other-work/smart-omix",
-    cover: "/images/Smart-omix.png",
+    company: "Doc.ai",
   },
   {
     title: "Design System",
-    category: "Design Systems",
     description:
-      "Built a design system on top of Material UI, establishing brand consistency, component governance, and engineer-ready documentation using Storybook and Chromatic.",
+      "Built a design system on top of Material UI with brand consistency and engineer-ready documentation.",
     tags: ["Design System", "Material UI"],
     href: "/other-work/design-system",
-    cover: "/images/Design-system.svg",
+    company: "Doc.ai",
   },
 ];
 
-function ArrowIcon({ size = "md" }: { size?: "md" | "sm" }) {
-  const cls = size === "sm" ? "w-3.5 h-3.5 group-hover:translate-x-0.5" : "w-4 h-4 group-hover:translate-x-1";
-  return (
-    <svg className={`${cls} transition-transform duration-200`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-    </svg>
-  );
+const INTRO_LINES = [
+  "Hi, I'm Jing - Lead Product Designer at Yelp.",
+  "I focus on a problem most platforms face: how do you get people to contribute, and keep contributing?",
+  "I design the systems that make that happen at scale.",
+];
+
+const SUGGESTION_PILLS = [
+  "Tell me more about you",
+  "What's your strength as a designer?",
+  "Show me your most impactful work",
+  "How do you approach a vague, complex problem?",
+];
+
+interface Message {
+  role: "user" | "assistant";
+  content: string;
+  suggestions?: string[];
+}
+
+function TypewriterText({ text, onComplete, speed = 30 }: { text: string; onComplete?: () => void; speed?: number }) {
+  const [displayed, setDisplayed] = useState("");
+  const indexRef = useRef(0);
+
+  useEffect(() => {
+    indexRef.current = 0;
+    setDisplayed("");
+    const interval = setInterval(() => {
+      indexRef.current += 1;
+      setDisplayed(text.slice(0, indexRef.current));
+      if (indexRef.current >= text.length) {
+        clearInterval(interval);
+        onComplete?.();
+      }
+    }, speed);
+    return () => clearInterval(interval);
+  }, [text, speed, onComplete]);
+
+  return <span>{displayed}</span>;
 }
 
 export default function Home() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollY } = useScroll();
-  const circleY = useTransform(scrollY, [0, 400], [0, -700]);
+  const [phase, setPhase] = useState(() => {
+    if (typeof window !== "undefined") {
+      const saved = sessionStorage.getItem("chat-phase");
+      return saved ? parseInt(saved, 10) : 0;
+    }
+    return 0;
+  });
+  const [inputValue, setInputValue] = useState("");
+  const [messages, setMessages] = useState<Message[]>(() => {
+    if (typeof window !== "undefined") {
+      const saved = sessionStorage.getItem("chat-messages");
+      return saved ? JSON.parse(saved) : [];
+    }
+    return [];
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [followUpSuggestions, setFollowUpSuggestions] = useState<string[]>(() => {
+    if (typeof window !== "undefined") {
+      const saved = sessionStorage.getItem("chat-suggestions");
+      return saved ? JSON.parse(saved) : [];
+    }
+    return [];
+  });
+  const chatEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    sessionStorage.setItem("chat-phase", String(phase));
+  }, [phase]);
+
+  useEffect(() => {
+    sessionStorage.setItem("chat-messages", JSON.stringify(messages));
+  }, [messages]);
+
+  useEffect(() => {
+    sessionStorage.setItem("chat-suggestions", JSON.stringify(followUpSuggestions));
+  }, [followUpSuggestions]);
+
+  useEffect(() => {
+    if (phase === 0) {
+      const timer = setTimeout(() => setPhase(1), 1200);
+      return () => clearTimeout(timer);
+    }
+  }, [phase]);
+
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [phase, messages, isLoading]);
+
+  const handleLine1Complete = useCallback(() => {
+    setTimeout(() => setPhase(2), 400);
+  }, []);
+
+  const handleLine2Complete = useCallback(() => {
+    setTimeout(() => setPhase(3), 400);
+  }, []);
+
+  const handleLine3Complete = useCallback(() => {
+    setTimeout(() => setPhase(4), 600);
+  }, []);
+
+  const sendMessage = async (text: string) => {
+    if (!text.trim() || isLoading) return;
+
+    const userMessage: Message = { role: "user", content: text.trim() };
+    const updatedMessages = [...messages, userMessage];
+    setMessages(updatedMessages);
+    setInputValue("");
+    setIsLoading(true);
+    setFollowUpSuggestions([]);
+
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: updatedMessages }),
+      });
+
+      const data = await res.json();
+
+      if (data.error) {
+        setMessages([...updatedMessages, { role: "assistant", content: "Sorry, I'm having trouble responding right now. Please try again!" }]);
+      } else {
+        setMessages([...updatedMessages, { role: "assistant", content: data.response }]);
+        if (data.suggestions && data.suggestions.length > 0) {
+          setFollowUpSuggestions(data.suggestions);
+        }
+      }
+    } catch {
+      setMessages([...updatedMessages, { role: "assistant", content: "Sorry, something went wrong. Please try again!" }]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    sendMessage(inputValue);
+  };
+
+  const handlePillClick = (pill: string) => {
+    sendMessage(pill);
+  };
 
   return (
-    <div ref={containerRef} className="min-h-screen pt-14 overflow-x-hidden px-4 sm:px-0" style={{ cursor: "none" }}>
-      <TriangleMesh />
+    <div className="min-h-screen pt-14 flex flex-col">
+      {/* Chat area */}
+      <div className="flex-1 overflow-y-auto px-4 sm:px-0">
+        <div className="max-w-[75vw] mx-auto py-10 sm:py-16">
+          {/* Avatar + messages container */}
+          <div className="flex items-start gap-4">
+            <ChatAvatar />
+            <div className="flex flex-col gap-0 flex-1 min-w-0">
+              {/* Typing indicator before any text */}
+              <AnimatePresence>
+                {phase === 0 && (
+                  <motion.div
+                    key="typing"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                  >
+                    <TypingIndicator />
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
-      {/* Yellow circle — set SHOW_CIRCLE=true to restore */}
-      {false && <motion.div
-        className="pointer-events-none select-none fixed z-0 rounded-full"
-        style={{
-          width: "59.4vw", height: "59.4vw",
-          background: "radial-gradient(circle, white 0%, var(--accent) 88%, var(--accent) 100%)",
-          top: 0, left: 0,
-          translateX: "calc(-38% + 300px)",
-          translateY: circleY,
-          marginTop: "-320px",
-        }}
-        animate={{ scale: [1, 1.35, 1], filter: ["blur(10px)", "blur(30px)", "blur(10px)"] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />}
-
-      {/* Hero */}
-      <section className="relative z-10 max-w-[82vw] mx-auto pt-12 sm:pt-20 pb-14">
-        {/* "Hello," — mask reveal, slides down from above */}
-        <div style={{ overflow: "hidden", paddingBottom: "0.1em" }}>
-          <motion.div
-            initial={{ y: "-110%" }}
-            animate={{ y: 0 }}
-            transition={{ duration: 1.2, ease: [0, 0, 0.2, 1], delay: 0 }}
-          >
-            <h1 className="text-5xl sm:text-7xl lg:text-8xl text-neutral-900 leading-none tracking-tight">
-              Hello,
-            </h1>
-          </motion.div>
-        </div>
-
-        {/* "I'm Jing." — mask reveal, slides up, starts after Hello */}
-        <div style={{ overflow: "hidden", paddingBottom: "0.25em" }} className="mb-6">
-          <motion.div
-            initial={{ y: "110%" }}
-            animate={{ y: 0 }}
-            transition={{ duration: 1.2, ease: [0, 0, 0.2, 1], delay: 1.1 }}
-          >
-            <h1 className="text-5xl sm:text-7xl lg:text-8xl text-neutral-900 leading-none tracking-tight">
-              I&apos;m Jing.
-            </h1>
-          </motion.div>
-        </div>
-
-        {/* Bio — slides up after title */}
-        <div style={{ overflow: "hidden" }}>
-          <motion.div
-            initial={{ y: "110%" }}
-            animate={{ y: 0 }}
-            transition={{ duration: 1.2, ease: [0, 0, 0.2, 1], delay: 2.4 }}
-          >
-            <p className="text-xl text-neutral-900 leading-relaxed max-w-xl flex items-center gap-2 flex-wrap">
-              Lead Product Designer at
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/Yelp%20Logo/Other.svg" alt="Yelp" style={{ height: "1.44em", marginLeft: "8px", position: "relative", top: "-2px" }} className="inline-block align-middle" />
-            </p>
-            <p className="text-xl text-neutral-900 leading-relaxed max-w-xl mt-3">
-              I enjoy diving into ambiguous problem spaces, breaking down complex challenges, and pinpointing key areas with multiple cross-functional intersections that can unlock further downstream opportunities. I&apos;m passionate about developing new ideas and leveraging my experience to engage users, foster repeat participation, and help grow vibrant communities.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Projects */}
-      <section className="relative z-10 max-w-[82vw] mx-auto pb-24 flex flex-col">
-        <motion.p
-          className="section-label mb-5"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 3.7, duration: 0.6 }}
-        >
-          Selected Work · Yelp
-        </motion.p>
-
-        {/* Featured card */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 3.9, ease: [0, 0, 0.2, 1] }}
-        >
-          <Link href={featured.href} className="group block">
-            <motion.div className="card p-10" whileHover={HOVER} transition={HOVER_TRANSITION}>
-              <div className="flex items-start justify-end mb-6">
-                <div className="flex gap-2">
-                  {featured.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
-                </div>
-              </div>
-              <div className="flex flex-wrap items-start gap-8 mb-8">
-                <div className="flex-1 min-w-[160px]">
-                  <h2 className="text-3xl tracking-tight mb-3 leading-tight">
-                    <span className="title-highlight px-2">{featured.title}</span>
-                  </h2>
-                  <p className="text-base text-neutral-600 leading-relaxed">
-                    {featured.description}
+              {/* Intro message bubble */}
+              {phase >= 1 && (
+                <motion.div
+                  className="bg-white border border-neutral-200 rounded-2xl px-4 py-3 max-w-[70%]"
+                  initial={{ opacity: 0, y: 4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <p className="text-sm leading-relaxed text-neutral-700">
+                    {phase === 1 ? (
+                      <TypewriterText text={INTRO_LINES[0]} onComplete={handleLine1Complete} />
+                    ) : (
+                      INTRO_LINES[0]
+                    )}
                   </p>
-                </div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={featured.cover} alt={featured.title} className="rounded-xl object-cover" style={{ width: "60%" }} />
-              </div>
-              <span className="cta-link">View case study <ArrowIcon /></span>
-            </motion.div>
-          </Link>
-        </motion.div>
+                  {phase >= 2 && (
+                    <p className="text-sm leading-relaxed text-neutral-700 mt-1">
+                      {phase === 2 ? (
+                        <TypewriterText text={INTRO_LINES[1]} onComplete={handleLine2Complete} />
+                      ) : (
+                        INTRO_LINES[1]
+                      )}
+                    </p>
+                  )}
+                  {phase >= 3 && (
+                    <p className="text-sm leading-relaxed text-neutral-700 mt-1">
+                      {phase === 3 ? (
+                        <TypewriterText text={INTRO_LINES[2]} onComplete={handleLine3Complete} />
+                      ) : (
+                        INTRO_LINES[2]
+                      )}
+                    </p>
+                  )}
+                </motion.div>
+              )}
 
-        {/* Small cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
-          {projects.map((project, i) => (
-            <motion.div
-              key={project.href}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 4.2 + i * 0.12, ease: [0, 0, 0.2, 1] }}
-            >
-              <Link href={project.href} className="group block h-full">
-                <motion.div className="card h-full p-6 flex flex-col" whileHover={HOVER_SM} transition={HOVER_TRANSITION}>
-                  <div className="flex items-start justify-end mb-4">
-                    <div className="flex gap-1.5">
-                      {project.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
+              {/* Project cards carousel */}
+              {phase >= 4 && (
+                <motion.div
+                  className="mt-4"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
+                  onAnimationComplete={() => setPhase(5)}
+                >
+                  <div className="relative overflow-hidden">
+                    {/* Left gradient + chevron */}
+                    <div id="carousel-left" className="absolute left-0 top-0 bottom-0 w-16 z-10 flex items-center justify-start pl-1 opacity-0 pointer-events-none transition-opacity duration-200" style={{ background: "linear-gradient(to right, #EDEDED 30%, transparent)" }}>
+                      <button
+                        onClick={() => {
+                          const el = document.getElementById("chat-carousel");
+                          if (el) el.scrollBy({ left: -272, behavior: "smooth" });
+                        }}
+                        className="w-7 h-7 flex items-center justify-center rounded-full bg-white border border-neutral-200 text-neutral-500 hover:text-[#2556F5] hover:border-[#2556F5]/40 transition-colors duration-200 pointer-events-auto shadow-sm"
+                      >
+                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                      </button>
+                    </div>
+                    {/* Right gradient + chevron */}
+                    <div id="carousel-right" className="absolute right-0 top-0 bottom-0 w-16 z-10 flex items-center justify-end pr-1 transition-opacity duration-200" style={{ background: "linear-gradient(to left, #EDEDED 30%, transparent)" }}>
+                      <button
+                        onClick={() => {
+                          const el = document.getElementById("chat-carousel");
+                          if (el) el.scrollBy({ left: 272, behavior: "smooth" });
+                        }}
+                        className="w-7 h-7 flex items-center justify-center rounded-full bg-white border border-neutral-200 text-neutral-500 hover:text-[#2556F5] hover:border-[#2556F5]/40 transition-colors duration-200 pointer-events-auto shadow-sm"
+                      >
+                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+                      </button>
+                    </div>
+                    <div
+                      id="chat-carousel"
+                      className="flex gap-3 overflow-x-auto pb-3 pt-1 -mx-1 px-1"
+                      style={{ scrollbarWidth: "none" }}
+                      onScroll={(e) => {
+                        const el = e.currentTarget;
+                        const leftEl = document.getElementById("carousel-left");
+                        const rightEl = document.getElementById("carousel-right");
+                        if (leftEl) {
+                          if (el.scrollLeft > 10) {
+                            leftEl.classList.remove("opacity-0", "pointer-events-none");
+                            leftEl.classList.add("opacity-100");
+                          } else {
+                            leftEl.classList.add("opacity-0", "pointer-events-none");
+                            leftEl.classList.remove("opacity-100");
+                          }
+                        }
+                        if (rightEl) {
+                          if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 10) {
+                            rightEl.classList.add("opacity-0", "pointer-events-none");
+                            rightEl.classList.remove("opacity-100");
+                          } else {
+                            rightEl.classList.remove("opacity-0", "pointer-events-none");
+                            rightEl.classList.add("opacity-100");
+                          }
+                        }
+                      }}
+                    >
+                    {ALL_PROJECTS.map((project) => (
+                      <Link key={project.href} href={project.href} className="group block shrink-0 w-64">
+                        <motion.div
+                          className="bg-white rounded-xl border border-neutral-200 p-4 h-full flex flex-col hover:border-[#2556F5]/30 transition-colors duration-200"
+                          whileHover={{ scale: 1.02, boxShadow: "0 4px 12px rgba(37,86,245,0.08)" }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <div className="flex gap-1.5 mb-2 flex-wrap">
+                            <span className="text-[10px] text-[#2556F5] bg-[#2556F5]/8 px-2 py-0.5 rounded-full font-medium">
+                              {project.company}
+                            </span>
+                            {project.tags.slice(0, 2).map((tag) => (
+                              <span key={tag} className="text-[10px] text-neutral-500 bg-neutral-100 px-2 py-0.5 rounded-full">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                          <h3 className="text-sm font-medium text-neutral-900 mb-1 leading-snug">
+                            {project.title}
+                          </h3>
+                          <p className="text-xs text-neutral-500 leading-relaxed flex-1">
+                            {project.description}
+                          </p>
+                          <span className="inline-flex items-center gap-1 text-xs font-medium text-[#2556F5] mt-3 group-hover:gap-1.5 transition-all duration-200">
+                            View case study
+                            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                          </span>
+                        </motion.div>
+                      </Link>
+                    ))}
                     </div>
                   </div>
-                  <h2 className="text-2xl text-neutral-900 mb-2 leading-snug">
-                    <span className="title-highlight px-1.5">{project.title}</span>
-                  </h2>
-                  <p className="text-sm text-neutral-600 leading-relaxed flex-1 mb-5">
-                    {project.description}
-                  </p>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={project.cover} alt={project.title} className="w-full rounded-lg mb-5 object-cover" />
-                  <span className="cta-link-sm">View case study <ArrowIcon size="sm" /></span>
                 </motion.div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+              )}
+            </div>
+          </div>
 
-      {/* Projects in doc.ai */}
-      <section className="relative z-10 max-w-[82vw] mx-auto pb-24 space-y-4">
-        <motion.p
-          className="section-label mb-5"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-        >
-          Selected Work · Doc.ai
-        </motion.p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {docAiProjects.map((project, i) => (
-            <motion.div
-              key={project.href}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45, delay: i * 0.07, ease: [0.2, 0.8, 0.2, 1] }}
-            >
-              <Link href={project.href} className="group block h-full">
-                <motion.div className="card h-full p-10 flex flex-col" whileHover={HOVER} transition={HOVER_TRANSITION}>
-                  <div className="flex justify-end mb-6 gap-1.5">
-                    {project.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
+          {/* Conversation messages */}
+          {messages.length > 0 && (
+            <div className="mt-8 space-y-6">
+              {messages.map((msg, i) => (
+                <motion.div
+                  key={i}
+                  className={`flex items-start gap-4 ${msg.role === "user" ? "justify-end" : ""}`}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {msg.role === "assistant" && <ChatAvatar />}
+                  <div
+                    className={`max-w-[70%] rounded-2xl px-4 py-3 ${
+                      msg.role === "user"
+                        ? "bg-[#2556F5] text-white"
+                        : "bg-white border border-neutral-200 text-neutral-700"
+                    }`}
+                  >
+                    <p
+                      className="text-sm leading-relaxed whitespace-pre-wrap"
+                      dangerouslySetInnerHTML={{
+                        __html: msg.role === "assistant"
+                          ? msg.content.replace(
+                              /\[([^\]]+)\]\(([^)]+)\)/g,
+                              '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-[#2556F5] underline hover:text-[#1a3fc2]">$1</a>'
+                            )
+                          : msg.content
+                      }}
+                    />
                   </div>
-                  <p className="section-label mb-2">{project.category}</p>
-                  <h2 className="text-2xl text-neutral-900 mb-3 leading-snug">
-                    <span className="title-highlight px-2">{project.title}</span>
-                  </h2>
-                  <p className="text-base text-neutral-600 leading-relaxed mb-6">
-                    {project.description}
-                  </p>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={project.cover} alt={project.title} className="rounded-xl object-cover mb-6 mx-auto" style={{ width: "80%" }} />
-                  <span className="cta-link">View project <ArrowIcon /></span>
                 </motion.div>
-              </Link>
-            </motion.div>
-          ))}
+              ))}
+
+              {/* Loading indicator */}
+              {isLoading && (
+                <motion.div
+                  className="flex items-start gap-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                >
+                  <ChatAvatar />
+                  <div className="bg-white border border-neutral-200 rounded-2xl px-4 py-3">
+                    <TypingIndicator />
+                  </div>
+                </motion.div>
+              )}
+            </div>
+          )}
+
+          <div ref={chatEndRef} />
         </div>
-      </section>
-      <Footer />
+      </div>
+
+      {/* Bottom input area */}
+      <AnimatePresence>
+        {phase >= 5 && (
+          <motion.div
+            className="sticky bottom-0 bg-gradient-to-t from-[#EDEDED] via-[#EDEDED] to-transparent pt-6 pb-[32px] px-4 sm:px-0"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: [0.2, 0.8, 0.2, 1] }}
+          >
+            <div className="max-w-[75vw] mx-auto">
+              {/* Suggestion pills — initial or follow-up */}
+              {(messages.length === 0 ? SUGGESTION_PILLS.length > 0 : followUpSuggestions.length > 0) && !isLoading && (
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {(messages.length === 0 ? SUGGESTION_PILLS : followUpSuggestions).map((pill) => (
+                    <button
+                      key={pill}
+                      onClick={() => handlePillClick(pill)}
+                      className="text-sm text-neutral-600 bg-white border border-neutral-200 rounded-full px-4 py-2 hover:border-[#2556F5]/40 hover:text-[#2556F5] transition-colors duration-200"
+                    >
+                      {pill}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* Input box */}
+              <form onSubmit={handleSubmit} className="flex items-center gap-3 bg-white rounded-xl border border-neutral-200 px-4 py-3 shadow-sm focus-within:border-[#2556F5]/40 transition-colors duration-200">
+                <input
+                  type="text"
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  placeholder="Ask anything to know me and my work."
+                  className="flex-1 bg-transparent outline-none text-sm text-neutral-900 placeholder:text-neutral-400"
+                  disabled={isLoading}
+                />
+                <button
+                  type="submit"
+                  disabled={!inputValue.trim() || isLoading}
+                  className="w-8 h-8 rounded-full bg-neutral-900 flex items-center justify-center hover:bg-[#2556F5] transition-colors duration-200 shrink-0 disabled:opacity-40 disabled:hover:bg-neutral-900"
+                >
+                  <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
