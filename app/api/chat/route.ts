@@ -123,9 +123,9 @@ export async function POST(req: NextRequest) {
     let text = rawText;
     let suggestions: string[] = [];
 
-    const suggestionsMatch = rawText.match(/\|\|\|SUGGESTIONS\|\|\|(.*?)\|\|\|END\|\|\|/s);
+    const suggestionsMatch = rawText.match(/\|\|\|SUGGESTIONS\|\|\|([\s\S]*?)\|\|\|END\|\|\|/);
     if (suggestionsMatch) {
-      text = rawText.replace(/\|\|\|SUGGESTIONS\|\|\|.*?\|\|\|END\|\|\|/s, "").trim();
+      text = rawText.replace(/\|\|\|SUGGESTIONS\|\|\|[\s\S]*?\|\|\|END\|\|\|/, "").trim();
       try {
         suggestions = JSON.parse(suggestionsMatch[1]);
       } catch {
