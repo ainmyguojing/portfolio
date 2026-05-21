@@ -110,10 +110,10 @@ With PMs, I partner as a strategic equal: I lead product investigations, write u
 Role: Lead Designer (Sole), 1 PM, 6 Engineers, 1 Data Scientist
 
 ### Summary
-When review volume plateaus, a new contribution type becomes critical. I led the design of Community Q&A, a complementary contribution model that drives lightweight user-generated content for sustainable content growth. I shaped the product strategy, conducted all research, and owned every design decision from early concept through launch across 7+ milestones and 2 mega-tests.
+I led the design of Community Q&A, a complementary contribution model that drives lightweight user-generated content for sustainable content growth. I shaped the product strategy, conducted all research, and owned every design decision from early concept through launch across 7+ milestones and 2 mega-tests.
 
 ### Context & Opportunity
-Yelp's contribution model had long centered on reviews, but reviews couldn't answer everything. People had questions that reviews couldn't easily address, and there was no way to ask or get answers from the community. At the same time, review volume was plateauing.
+Yelp's contribution model had long centered on reviews, but reviews couldn't answer everything. People had questions that reviews couldn't easily address, and there was no way to ask or get answers from the community.
 
 We explored whether a community-driven Q&A model could:
 - Open up new ways for people to contribute beyond writing reviews

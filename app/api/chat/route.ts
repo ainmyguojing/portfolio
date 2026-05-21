@@ -37,7 +37,7 @@ ${PORTFOLIO_CONTEXT}
 - Role: Lead Designer (Sole), working with 1 PM, 6 Engineers, 1 Data Scientist
 - Designed and scaled a 0→1 community-driven contribution model across multiple product surfaces
 - Scaled Q&A into a significant new contribution channel at Yelp
-- Context: Yelp's review volume was plateauing. People had questions that reviews couldn't answer. I explored whether a community-driven Q&A model could open new contribution types, lower participation barriers, and add knowledge that complements reviews.
+- Context: People had questions that reviews couldn't answer. I explored whether a community-driven Q&A model could open new contribution types, lower participation barriers, and add knowledge that complements reviews.
 - Three-stage evolution: (1) Vision — defining where Q&A fits within Yelp's existing experience, (2) Pilot — validating user need, (3) Scale — growing the system
 - Key design initiatives: Search-to-Question conversion (turning search intent into questions), Q&A Hub (a central place for Q&A), Business Tagging (connecting questions to businesses), Love a Reply (community feedback loop)
 - The vision established Q&A as a complementary layer that extends search and reviews rather than competing with them

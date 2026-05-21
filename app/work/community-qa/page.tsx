@@ -87,7 +87,7 @@ export default function CommunityQA() {
   return (
     <CaseStudyLayout
       title="Community Q&A"
-      subtitle="When review volume plateaus, a new contribution type becomes critical. I led the design of Community Q&A, a complementary contribution model that drives lightweight user-generated content for sustainable content growth."
+      subtitle="I led the design of Community Q&A, a complementary contribution model that drives lightweight user-generated content for sustainable content growth."
       role="Lead Designer (Sole)"
       team="1 PM · 6 Engineers · 1 Data Scientist"
       year="2024–2026"
@@ -108,7 +108,7 @@ export default function CommunityQA() {
         Yelp&apos;s contribution model had long centered on reviews, but reviews couldn&apos;t answer
         everything. People had questions that cannot be easily answered by reviews, and there was no
         easy way to ask or get answers from the community. At the same time, review volume was
-        plateauing, which made finding new ways for people to contribute more urgent.
+        which made finding new ways for people to contribute more urgent.
       </p>
       <p>We explored whether a community driven Q&amp;A model could:</p>
       <div className="not-prose grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
