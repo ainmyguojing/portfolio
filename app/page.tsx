@@ -329,12 +329,12 @@ export default function Home() {
                     {ALL_PROJECTS.map((project) => (
                       <Link key={project.href} href={project.href} className="group block shrink-0 w-64">
                         <motion.div
-                          className="bg-white rounded-xl border border-neutral-200 p-4 h-full flex flex-col hover:border-[#2556F5]/30 transition-colors duration-200"
-                          whileHover={{ scale: 1.02, boxShadow: "0 4px 12px rgba(37,86,245,0.08)" }}
+                          className="bg-white rounded-xl border border-neutral-200 p-4 h-full flex flex-col hover:border-neutral-300 hover:shadow-md transition-all duration-200"
+                          whileHover={{ scale: 1.02, boxShadow: "0 4px 16px rgba(0,0,0,0.08)" }}
                           transition={{ duration: 0.2 }}
                         >
-                          <div className="flex gap-1.5 mb-2 flex-wrap">
-                            <span className="text-[10px] text-[#2556F5] bg-[#2556F5]/8 px-2 py-0.5 rounded-full font-medium">
+                          <div className="flex gap-1.5 mb-2">
+                            <span className="text-[10px] text-neutral-700 font-semibold">
                               {project.company}
                             </span>
                             {project.tags.slice(0, 2).map((tag) => (
