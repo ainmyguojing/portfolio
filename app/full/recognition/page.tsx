@@ -101,9 +101,9 @@ export default function Recognition() {
         <Label>What the Experiment Proved</Label>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
           {[
-            { stat: "Volume", detail: "Meaningful lift in reviews written compared to status quo" },
-            { stat: "Engagement", detail: "Badge earn rates far exceeded typical engagement prompt benchmarks" },
-            { stat: "Quality", detail: "Badge-motivated reviews scored higher on quality; users wrote more carefully about topics they cared about" },
+            { stat: "+5.5–7.8%", detail: "lift in reviews written vs. status quo (~20–29K additional reviews/month at 100%)" },
+            { stat: "20%", detail: "of nudged users actually earned a badge, far exceeding push CTR benchmarks of 2–8%" },
+            { stat: "+6–8%", detail: "higher Yelp Sort score for badge-motivated reviews; users wrote more carefully about topics they cared about" },
           ].map(({ stat, detail }) => (
             <div key={stat} className="rounded-xl border border-neutral-100 bg-neutral-50 p-5">
               <p className="text-2xl font-semibold text-neutral-800 mb-1">{stat}</p>

@@ -62,7 +62,7 @@ export default function Elite() {
   return (
     <CaseStudyLayout
       title="Elite Ecosystem Experiences"
-      subtitle="Yelp Elite is our top contributor tier, but the path to get there was broken: few high-potential users knew it existed, the landing page underperformed, and most nominations were rejected without explanation. I led the redesign from awareness to conversion."
+      subtitle="Yelp Elite is our top contributor tier, but the path to get there was broken: few high-potential users knew it existed, the landing page underperformed, and 80% of nominations were rejected without explanation. I led the redesign from awareness to conversion."
       role="Lead Designer"
       team="Cross-functional team"
       year="2024–2026"
@@ -146,7 +146,7 @@ export default function Elite() {
 
       <Card>
         <Label>Conversion</Label>
-        <p className="text-sm text-neutral-600 mb-6">Most nominations were auto-rejected, with generic feedback and no next step. The rejection was delivered via a plain system feedback modal with just text, which created several problems: it felt less like a real decision and more like a system error, left users unsure if their nomination had even gone through, and made it hard to understand the outcome at a glance. The instant, text-heavy message also signaled that the nomination hadn&apos;t been thoughtfully reviewed, further undermining user trust.</p>
+        <p className="text-sm text-neutral-600 mb-6">80%+ of nominations were auto-rejected, with generic feedback and no next step. The rejection was delivered via a plain system feedback modal with just text, which created several problems: it felt less like a real decision and more like a system error, left users unsure if their nomination had even gone through, and made it hard to understand the outcome at a glance. The instant, text-heavy message also signaled that the nomination hadn&apos;t been thoughtfully reviewed, further undermining user trust.</p>
         <figure className="not-prose mx-auto w-full sm:w-[60%]">
           <Image src="/images/Elite Ecosystem/SQ_nomination flow.png" alt="Nomination flow" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
         </figure>
@@ -211,8 +211,8 @@ export default function Elite() {
 
         <Label>Impact</Label>
         <p className="text-sm text-neutral-600">
-          Reaches a large pool of eligible contributors annually, with meaningful projected lifts in
-          new Elite conversions and review volume.
+          ~880K eligible users per year, projecting 1K–5.8K incremental Elites and 10K–58K more
+          reviews annually.
         </p>
       </Card>
 
@@ -270,7 +270,7 @@ export default function Elite() {
 
         <Label>Results Target</Label>
         <p className="text-sm text-neutral-600">
-          Meaningful increase in nomination-to-conversion rate and incremental Elite members.
+          A 2% bump in nominations: 175 more Elites and about 3,500 extra reviews each month.
         </p>
       </Card>
 
@@ -337,8 +337,8 @@ export default function Elite() {
 
         <Label>Impact</Label>
         <p className="text-sm text-neutral-600">
-          Meaningfully improved valid nomination rate, driving incremental Elite conversions and
-          review volume.
+          Raising valid nominations from 20% to 25% = ~5K more Elites and 65K additional reviews
+          annually.
         </p>
       </Card>
 
@@ -403,13 +403,13 @@ export default function Elite() {
       <h2 id="outcome">04 — Outcomes</h2>
       <ol>
         <li>
-          <strong>Elite page revamp:</strong> Meaningful lift in nominations through improved conversion.
+          <strong>Elite page revamp (April 2024):</strong> projected 2% lift in nominations.
         </li>
         <li>
-          <strong>Awareness modal:</strong> Reaches a large pool of eligible contributors with projected growth in new Elites.
+          <strong>Awareness modal:</strong> reaches ~880K contributors, up to 5.8K new Elites per year.
         </li>
         <li>
-          <strong>Rejection redesign:</strong> Significant projected increase in review volume through re-engagement.
+          <strong>Rejection redesign:</strong> projects 65K more reviews per year.
         </li>
       </ol>
 
