@@ -204,8 +204,8 @@ export default function Home() {
   return (
     <div className="min-h-screen pt-14 flex flex-col">
       {/* Chat area */}
-      <div className="flex-1 overflow-y-auto px-4 sm:px-0">
-        <div className="max-w-[75vw] mx-auto py-10 sm:py-16">
+      <div className="flex-1 overflow-y-auto px-[10px] sm:px-0">
+        <div className="max-w-full sm:max-w-[75vw] mx-auto py-6 sm:py-16">
           {/* Avatar + messages container */}
           <div className="flex items-start gap-4">
             <ChatAvatar />
@@ -227,7 +227,7 @@ export default function Home() {
               {/* Intro message bubble */}
               {phase >= 1 && (
                 <motion.div
-                  className="bg-white border border-neutral-200 rounded-2xl px-4 py-3 max-w-[70%]"
+                  className="bg-white border border-neutral-200 rounded-2xl px-4 py-3 max-w-full sm:max-w-[70%]"
                   initial={{ opacity: 0, y: 4 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
@@ -270,8 +270,8 @@ export default function Home() {
                   onAnimationComplete={() => setPhase(5)}
                 >
                   <div className="relative overflow-hidden">
-                    {/* Left gradient + chevron */}
-                    <div id="carousel-left" className="absolute left-0 top-0 bottom-0 w-16 z-10 flex items-center justify-start pl-1 opacity-0 pointer-events-none transition-opacity duration-200" style={{ background: "linear-gradient(to right, #EDEDED 30%, transparent)" }}>
+                    {/* Left gradient + chevron — hidden on mobile */}
+                    <div id="carousel-left" className="hidden sm:flex absolute left-0 top-0 bottom-0 w-16 z-10 items-center justify-start pl-1 opacity-0 pointer-events-none transition-opacity duration-200" style={{ background: "linear-gradient(to right, #EDEDED 30%, transparent)" }}>
                       <button
                         onClick={() => {
                           const el = document.getElementById("chat-carousel");
@@ -282,8 +282,8 @@ export default function Home() {
                         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
                       </button>
                     </div>
-                    {/* Right gradient + chevron */}
-                    <div id="carousel-right" className="absolute right-0 top-0 bottom-0 w-16 z-10 flex items-center justify-end pr-1 transition-opacity duration-200" style={{ background: "linear-gradient(to left, #EDEDED 30%, transparent)" }}>
+                    {/* Right gradient + chevron — hidden on mobile */}
+                    <div id="carousel-right" className="hidden sm:flex absolute right-0 top-0 bottom-0 w-16 z-10 items-center justify-end pr-1 transition-opacity duration-200" style={{ background: "linear-gradient(to left, #EDEDED 30%, transparent)" }}>
                       <button
                         onClick={() => {
                           const el = document.getElementById("chat-carousel");
@@ -374,7 +374,7 @@ export default function Home() {
                 >
                   {msg.role === "assistant" && <ChatAvatar />}
                   <div
-                    className={`max-w-[70%] rounded-2xl px-4 py-3 ${
+                    className={`max-w-full sm:max-w-[70%] rounded-2xl px-4 py-3 ${
                       msg.role === "user"
                         ? "bg-[#2556F5] text-white"
                         : "bg-white border border-neutral-200 text-neutral-700"
@@ -419,20 +419,20 @@ export default function Home() {
       <AnimatePresence>
         {phase >= 5 && (
           <motion.div
-            className="sticky bottom-0 bg-gradient-to-t from-[#EDEDED] via-[#EDEDED] to-transparent pt-6 pb-[32px] px-4 sm:px-0"
+            className="sticky bottom-0 bg-gradient-to-t from-[#EDEDED] via-[#EDEDED]/95 to-transparent pt-10 sm:pt-6 pb-[32px] px-[10px] sm:px-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: [0.2, 0.8, 0.2, 1] }}
           >
-            <div className="max-w-[75vw] mx-auto">
-              {/* Suggestion pills — initial or follow-up */}
+            <div className="max-w-full sm:max-w-[75vw] mx-auto">
+              {/* Suggestion pills — horizontal scroll on mobile, wrap on desktop */}
               {(messages.length === 0 ? SUGGESTION_PILLS.length > 0 : followUpSuggestions.length > 0) && !isLoading && (
-                <div className="flex flex-wrap gap-2 mb-3">
+                <div className="flex sm:flex-wrap gap-2 mb-3 overflow-x-auto sm:overflow-x-visible" style={{ scrollbarWidth: "none" }}>
                   {(messages.length === 0 ? SUGGESTION_PILLS : followUpSuggestions).map((pill) => (
                     <button
                       key={pill}
                       onClick={() => handlePillClick(pill)}
-                      className="text-sm text-neutral-600 bg-white border border-neutral-200 rounded-full px-4 py-2 hover:border-[#2556F5]/40 hover:text-[#2556F5] transition-colors duration-200"
+                      className="text-sm text-neutral-600 bg-white border border-neutral-200 rounded-full px-4 py-2 hover:border-[#2556F5]/40 hover:text-[#2556F5] transition-colors duration-200 shrink-0 sm:shrink"
                     >
                       {pill}
                     </button>
