@@ -27,7 +27,7 @@ My approach to new projects follows a pattern: understand the system, define the
 
 1. **System mapping**: Before touching any UI, I map the ecosystem: who are the users, what motivates them, where does this feature sit in the broader product architecture, what adjacent systems will it affect?
 2. **Hypothesis-driven design**: Every project starts with a clear hypothesis (If we build X, then Y metric will move because Z behavior changes). This keeps scope honest and makes success measurable.
-3. **Breadth before depth**: I explore a wide range of directions quickly, documenting tradeoffs explicitly. Peers say my exploratory reviews are some of their favorites because they reveal the full range of thinking.
+3. **Breadth before depth**: I explore a wide range of directions quickly, documenting tradeoffs explicitly. My exploratory reviews reveal the full range of thinking before converging.
 4. **Converge with rationale**: I present a recommended direction backed by user research, data, competitive analysis, and design principles. I always come to review with a strong standpoint.
 5. **Stay through implementation**: I track eng progress proactively, catch issues before bug bash, and maintain quality through ship.
 
@@ -69,15 +69,15 @@ With PMs, I partner as a strategic equal: I lead product investigations, write u
 - AI as depth, not replacement: I believe every technology revolution pushes us closer to the essence of our field. AI doesn't replace design thinking — it strips away the mechanical work and forces us to engage with what actually matters: framing problems, making judgment calls, understanding humans. I lean into new technology without getting lost in it, always using it to go deeper rather than wider.
 
 
-## Peer Feedback & Reviews
+## What Others Have Said About My Work
 
-### From Manager (Anu, Director of Product Design, Q1-Q2 2026):
+### From a design director:
 "Congratulations for a great quarter Jing! You launched many exciting features and Community QA now finally seems to be coming together. I was particularly impressed by the tenacity you showed on the CQA SERP module, and your fast iterations. I'm always in awe of the breadth of explorations you do, while at the same time also thinking out of the box. You really showed that you're a versatile designer, who can explore both breadth and depth. And while doing it on time and ahead of engg & delivery schedule. I've also seen your advances in AI, from using Claude for Amanda's send off to using it for different CQA SERP explorations. I really value you as an important part of the team, the tenacity and flexibility you show."
 
-### From Manager (Q3-Q4 2024):
+### From a manager:
 "Jing you've shown tremendous growth and consistency, excelling in systems-level thinking, speed, and strategic problem-solving. Your ability to connect the dots between projects and identify patterns ensures your designs are thoughtful, effective, and aligned with user and business needs. Your collaborative, hustle, nimble & speedy nature, proactive engagement with stakeholders, and ability to deliver under tight deadlines makes you an invaluable team member."
 
-### From Peers:
+### From collaborators:
 - "What??? Jing is not a senior designer? I always just assumed she is. Honestly you give her any task, and she just does it singlehandedly with no handholding."
 - "Jing's superpower is her speed. She designs very deliberately and intentionally. I love her exploratory approach. If there's any merit in a direction she'll mock it up. She's great at designing for breadth before depth and somehow doesn't lose the detail in the final product."
 - "Many, many ideas, high quality of work, and lightning speed. The amount of ideas that Jing can produce in a short time is amazing (and without compromising on quality!)"
@@ -103,7 +103,7 @@ With PMs, I partner as a strategic equal: I lead product investigations, write u
 - Known for high-volume, high-quality output under tight deadlines
 
 
-## Case Study: Community Q&A (Flagship, 2024-2026)
+## Case Study: Community Q&A (2024-2026)
 
 Role: Lead Designer
 
@@ -367,7 +367,7 @@ Q: How do you collaborate with engineers?
 A: I check their progress ahead of schedule and figure out what they need before they ask. During bug bash, I track what was implemented vs. what was expected. I flag discrepancies early and seek alignment. On CQA WWW, I tracked implementation of many new features based on iOS design, identified issues, and made sure things shipped with expected quality. Engineers trust me because I'm hands-on and never throw work over the wall.
 
 Q: What makes you different from other designers?
-A: Three things: (1) Speed without sacrificing quality, peers consistently note the volume of high-quality ideas I produce in short timeframes. (2) Systems thinking, I don't design features in isolation but always connect them to the broader ecosystem. (3) I stay through implementation, I don't consider my work done at handoff. I also bring product thinking: I size opportunities, form hypotheses, and push back on scope with business rationale.
+A: Three things: (1) Speed without sacrificing quality - I consistently produce a high volume of ideas in short timeframes without cutting corners. (2) Systems thinking - I don't design features in isolation but always connect them to the broader ecosystem. (3) I stay through implementation - I don't consider my work done at handoff. I also bring product thinking: I size opportunities, form hypotheses, and push back on scope with business rationale.
 
 Q: What are you looking for next in your career?
 A: I want to lead design on a product that shapes how people interact with AI, where my systems thinking, speed, and ability to turn ambiguity into structure can have maximum impact. I'm drawn to 0-to-1 spaces where the design challenge isn't just "make it usable" but "define what it should be."
@@ -376,7 +376,7 @@ Q: How do you use data in your design process?
 A: Data informs every stage. I size opportunities before committing to projects to make sure the juice is worth the squeeze. I form hypotheses with measurable outcomes. I analyze experiment results to propose next iterations (e.g., CQA pilot data showed users were engaging with content but not converting, which led me to hypothesize a different layout would help). I use qualitative research (user interviews) alongside quantitative data to understand the "why" behind metrics.
 
 Q: Tell me about a time you had to push back on a decision.
-A: On the Recognition biz page design, I explored and rejected three approaches that stakeholders initially favored: next to username (too crowded), combined with stats (cognitive overload), and name-only (stripped meaning). Each time I presented clear rationale for why the alternative was better. I came to review with a strong standpoint, responded to feedback with evidence from user research, and ultimately landed on a design that served both audiences. Peers noted my confidence in standing behind decisions while staying open to feedback.
+A: On the Recognition biz page design, I explored and rejected three approaches that stakeholders initially favored: next to username (too crowded), combined with stats (cognitive overload), and name-only (stripped meaning). Each time I presented clear rationale for why the alternative was better. I came to review with a strong standpoint, responded to feedback with evidence from user research, and ultimately landed on a design that served both audiences.
 
 Q: How do you handle feedback or critique?
 A: I take feedback in stride and strive to improve. My manager has noted this as a key strength. I summarize-back what I've heard before acting ("Here's what I understand, is that correct?"). I incorporate feedback while maintaining directional conviction. I'm almost always the first to respond to async feedback requests from other designers. The key is distinguishing between "the direction is wrong" and "the execution needs polish."

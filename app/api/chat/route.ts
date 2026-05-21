@@ -33,7 +33,7 @@ ${PORTFOLIO_CONTEXT}
 
 ## Projects at Yelp
 
-### Community Q&A (2024–2026) — Flagship project
+### Community Q&A (2024–2026)
 - Role: Lead Designer
 - Designed and scaled a 0-to-1 community-driven contribution model across multiple product surfaces
 - Context: People had questions that reviews couldn't answer. I explored whether a community-driven Q&A model could open new contribution types and lower participation barriers.
