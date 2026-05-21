@@ -386,7 +386,7 @@ export default function Home() {
                         __html: msg.role === "assistant"
                           ? msg.content.replace(
                               /\[([^\]]+)\]\(([^)]+)\)/g,
-                              '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-[#2556F5] underline hover:text-[#1a3fc2]">$1</a>'
+                              '<a href="$2" class="text-[#2556F5] underline hover:text-[#1a3fc2]">$1</a>'
                             )
                           : msg.content
                       }}
