@@ -58,8 +58,9 @@ const ALL_PROJECTS = [
 ];
 
 const INTRO_LINES = [
-  "Hi, I'm Jing - Lead Product Designer at Yelp.",
-  "I focus on a problem most platforms face: how do you get people to contribute, and keep contributing?",
+  "Hi, I'm Jing - Product Designer at Yelp.",
+  "I focus on a problem most platforms face:",
+  "how do you get people to contribute, and keep contributing?",
   "I design the systems that make that happen at scale.",
 ];
 
@@ -155,11 +156,15 @@ export default function Home() {
   }, []);
 
   const handleLine2Complete = useCallback(() => {
-    setTimeout(() => setPhase(3), 400);
+    setTimeout(() => setPhase(3), 200);
   }, []);
 
   const handleLine3Complete = useCallback(() => {
-    setTimeout(() => setPhase(4), 600);
+    setTimeout(() => setPhase(4), 400);
+  }, []);
+
+  const handleLine4Complete = useCallback(() => {
+    setTimeout(() => setPhase(5), 600);
   }, []);
 
   const sendMessage = async (text: string) => {
@@ -253,11 +258,20 @@ export default function Home() {
                     </p>
                   )}
                   {phase >= 3 && (
-                    <p className="text-base leading-relaxed text-neutral-700 mt-1">
+                    <p className="text-base leading-relaxed text-neutral-700 mt-1 font-semibold">
                       {phase === 3 ? (
-                        <TypewriterText text={INTRO_LINES[2]} onComplete={handleLine3Complete} />
+                        <TypewriterText text={INTRO_LINES[2]} onComplete={handleLine3Complete} speed={50} />
                       ) : (
                         INTRO_LINES[2]
+                      )}
+                    </p>
+                  )}
+                  {phase >= 4 && (
+                    <p className="text-base leading-relaxed text-neutral-700 mt-1">
+                      {phase === 4 ? (
+                        <TypewriterText text={INTRO_LINES[3]} onComplete={handleLine4Complete} />
+                      ) : (
+                        INTRO_LINES[3]
                       )}
                     </p>
                   )}
@@ -265,13 +279,13 @@ export default function Home() {
               )}
 
               {/* Project cards carousel */}
-              {phase >= 4 && (
+              {phase >= 5 && (
                 <motion.div
                   className="mt-4"
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
-                  onAnimationComplete={() => setPhase(5)}
+                  onAnimationComplete={() => setPhase(6)}
                 >
                   <div className="relative overflow-hidden">
                     {/* Left gradient + chevron — hidden on mobile */}
@@ -421,7 +435,7 @@ export default function Home() {
 
       {/* Bottom input area */}
       <AnimatePresence>
-        {phase >= 5 && (
+        {phase >= 6 && (
           <motion.div
             className="sticky bottom-0 bg-gradient-to-t from-[#EDEDED] via-[#EDEDED] to-transparent pt-16 sm:pt-12 pb-[32px] px-[10px] sm:px-0"
             initial={{ opacity: 0, y: 20 }}
