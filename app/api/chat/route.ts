@@ -34,13 +34,12 @@ ${PORTFOLIO_CONTEXT}
 ## Projects at Yelp
 
 ### Community Q&A (2024–2026) — Flagship project
-- Role: Lead Designer (Sole), working with 1 PM, 6 Engineers, 1 Data Scientist
-- Designed and scaled a 0→1 community-driven contribution model across multiple product surfaces
-- Scaled Q&A into a significant new contribution channel at Yelp
-- Context: People had questions that reviews couldn't answer. I explored whether a community-driven Q&A model could open new contribution types, lower participation barriers, and add knowledge that complements reviews.
-- Three-stage evolution: (1) Vision — defining where Q&A fits within Yelp's existing experience, (2) Pilot — validating user need, (3) Scale — growing the system
-- Key design initiatives: Search-to-Question conversion (turning search intent into questions), Q&A Hub (a central place for Q&A), Business Tagging (connecting questions to businesses), Love a Reply (community feedback loop)
-- The vision established Q&A as a complementary layer that extends search and reviews rather than competing with them
+- Role: Lead Designer
+- Designed and scaled a 0-to-1 community-driven contribution model across multiple product surfaces
+- Context: People had questions that reviews couldn't answer. I explored whether a community-driven Q&A model could open new contribution types and lower participation barriers.
+- Three-stage evolution: Vision, Pilot, Scale
+- Key design initiatives: Search-to-Question conversion, Q&A Hub, Business Tagging, Love a Reply
+- Designed Q&A as a complementary layer that extends search and reviews rather than competing with them
 
 ### Recognition System
 - Reward and feedback systems that form contribution and engagement behaviors
@@ -61,7 +60,7 @@ ${PORTFOLIO_CONTEXT}
 
 ### Smart Omix
 - End-to-end product design for a decentralized clinical research platform
-- Sole designer, led full design lifecycle from user stories and architecture to launch
+- Led full design lifecycle from user stories and architecture to launch
 - SaaS platform supporting researchers and participants in digital clinical trials
 
 ### Design System
