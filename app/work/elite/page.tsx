@@ -64,7 +64,7 @@ export default function Elite() {
       title="Elite Ecosystem Experiences"
       subtitle="Yelp Elite is our top contributor tier, but the path to get there was broken: few high-potential users knew it existed, the landing page underperformed, and 80% of nominations were rejected without explanation. I led the redesign from awareness to conversion."
       role="Lead Designer"
-      team="1 PM · Engineers · Community Management · PMM"
+      team="Cross-functional team"
       year="2024–2026"
       tags={["Ecosystem Design", "Community", "Contributor Retention", "Growth"]}
       sections={SECTIONS}

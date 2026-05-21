@@ -59,7 +59,7 @@ export default function YearOnYelp() {
       title="Year on Yelp"
       subtitle="An annual personalized recap celebrating contributors' impact. Beyond designing, I set the creative direction, facilitated theme selection, and coordinated illustrators, animators, and copywriters, delivering a cohesive experience across 14 modules."
       role="Lead Designer & Design PM"
-      team="1 PM · 1 PMM · 1 Animator · 1 Illustrator · 1 Copywriter · Engineers"
+      team="Cross-functional creative team"
       year="2023"
       tags={["Campaign Design", "Cross-functional", "Visual Systems", "Contributor Retention"]}
       sections={SECTIONS}

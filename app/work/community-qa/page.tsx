@@ -88,17 +88,16 @@ export default function CommunityQA() {
     <CaseStudyLayout
       title="Community Q&A"
       subtitle="I led the design of Community Q&A, a complementary contribution model that drives lightweight user-generated content for sustainable content growth."
-      role="Lead Designer (Sole)"
-      team="1 PM · 6 Engineers · 1 Data Scientist"
+      role="Lead Designer"
+      team="Cross-functional team"
       year="2024–2026"
       tags={["0→1 Product", "Community", "Contribution Systems", "Scale"]}
       sections={SECTIONS}
       currentHref="/work/community-qa"
     >
       <p>
-        I led design end-to-end as the sole designer on this project, working with a PM, 6 engineers,
-        and a data scientist. I shaped the product strategy, conducted all research, and owned every
-        design decision from early concept through launch.
+        I led design end-to-end on this project. I shaped the product strategy, conducted all research,
+        and owned every design decision from early concept through launch.
       </p>
 
       <SectionDivider id="divider-context" />

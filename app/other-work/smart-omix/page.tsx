@@ -62,7 +62,7 @@ export default function SmartOmix() {
     <CaseStudyLayout
       title="Smart Omix – End-to-End Digital Clinical Research"
       subtitle="Enabling real-world, end-to-end digital clinical research for independent and institutional teams: from study design to participant engagement to data analysis."
-      role="Product Designer (Sole)"
+      role="Lead Product Designer"
       team="Startup team"
       year="Sep 2021 – Jul 2022"
       tags={["SaaS", "B2B", "Healthcare", "Web App"]}
@@ -81,8 +81,7 @@ export default function SmartOmix() {
       <p>
         The platform has two sides: a researcher web app for designing studies, managing participants,
         and viewing data, and a participant mobile app for enrollment, data entry, and rewards. I joined
-        as the sole designer in September 2021, leading up to the July 2022 launch, and continued
-        with V2.
+        in September 2021, leading up to the July 2022 launch, and continued with V2.
       </p>
 
       <div className="not-prose my-6">

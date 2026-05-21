@@ -65,7 +65,7 @@ export default function Recognition() {
       title="Recognition System"
       subtitle="The expert recognition system began as a simple hypothesis: could recognitions nudge reviewers to contribute more? My focus was on the next phase: transforming in-the-moment badges into a permanent, meaningful presence within the app."
       role="Lead Designer (Surfacing in App)"
-      team="1 PM · 3 Engineers · 1 PMM"
+      team="Cross-functional team"
       year="2023–2024"
       tags={["Contributor Retention", "Motivation Systems", "Mobile"]}
       sections={SECTIONS}
