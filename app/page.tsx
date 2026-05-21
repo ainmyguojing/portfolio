@@ -100,8 +100,12 @@ function TypewriterText({ text, onComplete, speed = 30 }: { text: string; onComp
 export default function Home() {
   const [phase, setPhase] = useState(() => {
     if (typeof window !== "undefined") {
-      const saved = sessionStorage.getItem("chat-phase");
-      return saved ? parseInt(saved, 10) : 0;
+      const savedMessages = sessionStorage.getItem("chat-messages");
+      const hasMessages = savedMessages && JSON.parse(savedMessages).length > 0;
+      if (hasMessages) {
+        const saved = sessionStorage.getItem("chat-phase");
+        return saved ? parseInt(saved, 10) : 0;
+      }
     }
     return 0;
   });
@@ -232,7 +236,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <p className="text-sm leading-relaxed text-neutral-700">
+                  <p className="text-base leading-relaxed text-neutral-700">
                     {phase === 1 ? (
                       <TypewriterText text={INTRO_LINES[0]} onComplete={handleLine1Complete} />
                     ) : (
@@ -240,7 +244,7 @@ export default function Home() {
                     )}
                   </p>
                   {phase >= 2 && (
-                    <p className="text-sm leading-relaxed text-neutral-700 mt-1">
+                    <p className="text-base leading-relaxed text-neutral-700 mt-1">
                       {phase === 2 ? (
                         <TypewriterText text={INTRO_LINES[1]} onComplete={handleLine2Complete} />
                       ) : (
@@ -249,7 +253,7 @@ export default function Home() {
                     </p>
                   )}
                   {phase >= 3 && (
-                    <p className="text-sm leading-relaxed text-neutral-700 mt-1">
+                    <p className="text-base leading-relaxed text-neutral-700 mt-1">
                       {phase === 3 ? (
                         <TypewriterText text={INTRO_LINES[2]} onComplete={handleLine3Complete} />
                       ) : (
@@ -381,7 +385,7 @@ export default function Home() {
                     }`}
                   >
                     <p
-                      className="text-sm leading-relaxed whitespace-pre-wrap"
+                      className="text-base leading-relaxed whitespace-pre-wrap"
                       dangerouslySetInnerHTML={{
                         __html: msg.role === "assistant"
                           ? msg.content.replace(
