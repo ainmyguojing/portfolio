@@ -423,7 +423,7 @@ export default function Home() {
       <AnimatePresence>
         {phase >= 5 && (
           <motion.div
-            className="sticky bottom-0 bg-gradient-to-t from-[#EDEDED] via-[#EDEDED]/95 to-transparent pt-10 sm:pt-6 pb-[32px] px-[10px] sm:px-0"
+            className="sticky bottom-0 bg-gradient-to-t from-[#EDEDED] via-[#EDEDED] to-transparent pt-16 sm:pt-12 pb-[32px] px-[10px] sm:px-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: [0.2, 0.8, 0.2, 1] }}
