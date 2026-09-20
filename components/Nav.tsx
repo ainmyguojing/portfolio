@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 
 export default function Nav() {
   const pathname = usePathname();
-  const isChatHome = pathname === "/";
-  const isTraditional = pathname === "/traditional";
+  const isHome = pathname === "/";
+  const isChat = pathname === "/chat";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-neutral-200/60" style={{ background: "rgba(255,255,255,0.7)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }}>
@@ -18,20 +18,20 @@ export default function Nav() {
           Jing Guo
         </Link>
         <div className="flex items-center gap-6">
-          {isChatHome && (
+          {isHome && (
             <Link
-              href="/traditional"
+              href="/chat"
               className="text-sm text-[#2556F5] hover:text-[#1a3fc2] transition-colors duration-200"
             >
-              Switch to traditional mode
+              Switch to conversational mode
             </Link>
           )}
-          {isTraditional && (
+          {isChat && (
             <Link
               href="/"
               className="text-sm text-[#2556F5] hover:text-[#1a3fc2] transition-colors duration-200"
             >
-              Switch to conversational mode
+              Switch to traditional mode
             </Link>
           )}
         </div>
