@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 
 export default function Nav() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
   const isChat = pathname === "/chat";
 
   return (
@@ -18,14 +17,6 @@ export default function Nav() {
           Jing Guo
         </Link>
         <div className="flex items-center gap-6">
-          {isHome && (
-            <Link
-              href="/chat"
-              className="text-sm text-[#2556F5] hover:text-[#1a3fc2] transition-colors duration-200"
-            >
-              Switch to conversational mode
-            </Link>
-          )}
           {isChat && (
             <Link
               href="/"
