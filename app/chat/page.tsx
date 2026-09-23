@@ -289,7 +289,7 @@ export default function Home() {
                 >
                   <div className="relative overflow-hidden">
                     {/* Left gradient + chevron — hidden on mobile */}
-                    <div id="carousel-left" className="hidden sm:flex absolute left-0 top-0 bottom-0 w-16 z-10 items-center justify-start pl-1 opacity-0 pointer-events-none transition-opacity duration-200" style={{ background: "linear-gradient(to right, #EDEDED 30%, transparent)" }}>
+                    <div id="carousel-left" className="hidden sm:flex absolute left-0 top-0 bottom-0 w-16 z-10 items-center justify-start pl-1 opacity-0 pointer-events-none transition-opacity duration-200" style={{ background: "linear-gradient(to right, #086C66 30%, transparent)" }}>
                       <button
                         onClick={() => {
                           const el = document.getElementById("chat-carousel");
@@ -301,7 +301,7 @@ export default function Home() {
                       </button>
                     </div>
                     {/* Right gradient + chevron — hidden on mobile */}
-                    <div id="carousel-right" className="hidden sm:flex absolute right-0 top-0 bottom-0 w-16 z-10 items-center justify-end pr-1 transition-opacity duration-200" style={{ background: "linear-gradient(to left, #EDEDED 30%, transparent)" }}>
+                    <div id="carousel-right" className="hidden sm:flex absolute right-0 top-0 bottom-0 w-16 z-10 items-center justify-end pr-1 transition-opacity duration-200" style={{ background: "linear-gradient(to left, #086C66 30%, transparent)" }}>
                       <button
                         onClick={() => {
                           const el = document.getElementById("chat-carousel");
@@ -363,7 +363,7 @@ export default function Home() {
                           <p className="text-xs text-neutral-500 leading-relaxed flex-1">
                             {project.description}
                           </p>
-                          <span className="inline-flex items-center gap-1 text-xs font-medium text-[#2556F5] mt-3 group-hover:gap-1.5 transition-all duration-200">
+                          <span className="inline-flex items-center gap-1 text-xs font-medium mt-3 group-hover:gap-1.5 transition-all duration-200" style={{ color: "rgba(255,255,255,0.5)" }}>
                             View case study
                             <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -437,7 +437,7 @@ export default function Home() {
       <AnimatePresence>
         {phase >= 6 && (
           <motion.div
-            className="sticky bottom-0 bg-gradient-to-t from-[#EDEDED] via-[#EDEDED] to-transparent pt-16 sm:pt-12 pb-[32px] px-[10px] sm:px-0"
+            className="sticky bottom-0 bg-gradient-to-t from-[#086C66] via-[#086C66] to-transparent pt-16 sm:pt-12 pb-[32px] px-[10px] sm:px-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: [0.2, 0.8, 0.2, 1] }}
@@ -459,19 +459,20 @@ export default function Home() {
               )}
 
               {/* Input box */}
-              <form onSubmit={handleSubmit} className="flex items-center gap-3 bg-white rounded-xl border border-neutral-200 px-4 py-3 shadow-sm focus-within:border-[#2556F5]/40 transition-colors duration-200">
+              <form onSubmit={handleSubmit} className="flex items-center gap-3 rounded-xl px-4 py-3 shadow-sm transition-colors duration-200" style={{ background: "#FFFFFF", border: "1px solid rgba(255,255,255,0.3)" }}>
                 <input
                   type="text"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Ask anything to know me and my work."
-                  className="flex-1 bg-transparent outline-none text-sm text-neutral-900 placeholder:text-neutral-400"
+                  className="flex-1 bg-transparent outline-none text-sm"
+                  style={{ color: "#171717" }}
                   disabled={isLoading}
                 />
                 <button
                   type="submit"
                   disabled={!inputValue.trim() || isLoading}
-                  className="w-8 h-8 rounded-full bg-neutral-900 flex items-center justify-center hover:bg-[#2556F5] transition-colors duration-200 shrink-0 disabled:opacity-40 disabled:hover:bg-neutral-900"
+                  className="w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-200 shrink-0 disabled:opacity-40" style={{ background: "#FF258E" }}
                 >
                   <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />

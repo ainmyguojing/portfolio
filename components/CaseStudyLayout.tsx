@@ -170,7 +170,7 @@ function SideIndex({ sections }: { sections: Section[] }) {
                   width: isActive ? 32 : 20,
                   height: isActive ? 2.5 : 2,
                   borderRadius: 2,
-                  background: isActive ? "#171717" : "#d4d4d4",
+                  background: isActive ? "#ffffff" : "rgba(255,255,255,0.3)",
                   transition: "width 0.25s ease, background 0.25s ease, height 0.25s ease",
                   flexShrink: 0,
                 }}
@@ -179,7 +179,7 @@ function SideIndex({ sections }: { sections: Section[] }) {
                 style={{
                   fontSize: 11,
                   fontWeight: isActive ? 600 : 400,
-                  color: isActive ? "#171717" : "#a3a3a3",
+                  color: isActive ? "#ffffff" : "rgba(255,255,255,0.4)",
                   letterSpacing: "0.03em",
                   lineHeight: 1,
                   transition: "color 0.25s ease",
@@ -214,7 +214,7 @@ function SideIndex({ sections }: { sections: Section[] }) {
                           width: isSubActive ? 16 : 10,
                           height: 2,
                           borderRadius: 2,
-                          background: isSubActive ? "#a3a3a3" : "#e5e5e5",
+                          background: isSubActive ? "rgba(255,255,255,0.6)" : "rgba(255,255,255,0.2)",
                           transition: "width 0.2s ease, background 0.2s ease",
                           flexShrink: 0,
                         }}
@@ -223,7 +223,7 @@ function SideIndex({ sections }: { sections: Section[] }) {
                         style={{
                           fontSize: 10,
                           fontWeight: isSubActive ? 500 : 400,
-                          color: isSubActive ? "#737373" : "#c4c4c4",
+                          color: isSubActive ? "rgba(255,255,255,0.6)" : "rgba(255,255,255,0.3)",
                           letterSpacing: "0.03em",
                           lineHeight: 1,
                           transition: "color 0.2s ease",
@@ -269,7 +269,7 @@ export default function CaseStudyLayout({
         >
           <Link
             href="/"
-            className="inline-flex items-center gap-1.5 text-sm text-neutral-400 hover:text-neutral-900 transition-colors duration-200 mb-8"
+            className="inline-flex items-center gap-1.5 text-sm hover:text-white transition-colors duration-200 mb-8" style={{ color: "rgba(255,255,255,0.5)" }}
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
@@ -288,24 +288,24 @@ export default function CaseStudyLayout({
             ))}
           </div>
 
-          <h1 className="text-4xl sm:text-5xl font-bold text-neutral-900 leading-tight tracking-tight mb-4">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight tracking-tight mb-4">
             {title}
           </h1>
-          <p className="text-lg text-neutral-700 leading-relaxed mb-10">{subtitle}</p>
+          <p className="text-lg leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.7)" }}>{subtitle}</p>
 
           {/* Meta row */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 py-6 px-6 bg-white rounded-2xl border border-neutral-200">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 py-6 px-6 rounded-2xl" style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}>
             <div>
-              <p className="text-xs text-neutral-400 uppercase tracking-widest mb-1">Role</p>
-              <p className="text-sm text-neutral-700 font-medium">{role}</p>
+              <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "rgba(255,255,255,0.5)" }}>Role</p>
+              <p className="text-sm text-white font-medium">{role}</p>
             </div>
             <div>
-              <p className="text-xs text-neutral-400 uppercase tracking-widest mb-1">Team</p>
-              <p className="text-sm text-neutral-700 font-medium">{team}</p>
+              <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "rgba(255,255,255,0.5)" }}>Team</p>
+              <p className="text-sm text-white font-medium">{team}</p>
             </div>
             <div>
-              <p className="text-xs text-neutral-400 uppercase tracking-widest mb-1">Year</p>
-              <p className="text-sm text-neutral-700 font-medium">{year}</p>
+              <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "rgba(255,255,255,0.5)" }}>Year</p>
+              <p className="text-sm text-white font-medium">{year}</p>
             </div>
           </div>
         </motion.div>
@@ -318,13 +318,13 @@ export default function CaseStudyLayout({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, delay: 0.15, ease: [0.2, 0.8, 0.2, 1] }}
       >
-        <div className="prose prose-neutral max-w-none prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3 prose-p:text-neutral-600 prose-p:leading-relaxed prose-li:text-neutral-600 prose-strong:text-neutral-900">
+        <div className="prose prose-invert max-w-none prose-headings:font-bold prose-headings:text-white prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3 prose-p:leading-relaxed prose-strong:text-white" style={{ "--tw-prose-body": "rgba(255,255,255,0.7)", "--tw-prose-bullets": "rgba(255,255,255,0.4)" } as React.CSSProperties}>
           {children}
         </div>
       </motion.section>
 
       {/* Footer with project carousel */}
-      <footer style={{ background: "rgba(255,255,255,0.7)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }} className="border-t border-neutral-200/60 mt-0">
+      <footer className="border-t mt-0" style={{ borderColor: "rgba(255,255,255,0.1)", background: "rgba(8,108,102,0.7)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }}>
         <div className="max-w-[82vw] mx-auto px-4 sm:px-0 pt-10 pb-4">
           <div className="flex items-center gap-3 mb-5">
             <p className="section-label">More Projects</p>
@@ -334,7 +334,7 @@ export default function CaseStudyLayout({
                   const el = document.getElementById("project-carousel");
                   if (el) el.scrollBy({ left: -320, behavior: "smooth" });
                 }}
-                className="w-7 h-7 flex items-center justify-center rounded-full border border-neutral-200 text-neutral-500 hover:text-neutral-900 hover:border-neutral-400 transition-colors duration-200"
+                className="w-7 h-7 flex items-center justify-center rounded-full border transition-colors duration-200" style={{ borderColor: "rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.5)" }}
               >
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
               </button>
@@ -343,13 +343,13 @@ export default function CaseStudyLayout({
                   const el = document.getElementById("project-carousel");
                   if (el) el.scrollBy({ left: 320, behavior: "smooth" });
                 }}
-                className="w-7 h-7 flex items-center justify-center rounded-full border border-neutral-200 text-neutral-500 hover:text-neutral-900 hover:border-neutral-400 transition-colors duration-200"
+                className="w-7 h-7 flex items-center justify-center rounded-full border transition-colors duration-200" style={{ borderColor: "rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.5)" }}
               >
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
               </button>
             </div>
           </div>
-          <div id="project-carousel" className="flex gap-4 overflow-x-auto pb-6" style={{ scrollbarWidth: "none" }}>
+          <div id="project-carousel" className="flex gap-4 overflow-x-auto py-4 -my-4 px-1" style={{ scrollbarWidth: "none" }}>
             {otherProjects.map((project, i) => {
               const next = otherProjects[i + 1];
               const showDivider = next && project.company !== next.company;
@@ -357,8 +357,15 @@ export default function CaseStudyLayout({
                 <div key={project.href} className="flex items-stretch gap-4 shrink-0">
                   <Link href={project.href} className="group block w-[28.8rem]">
                     <motion.div
-                      className="card h-full p-6 flex flex-col"
-                      whileHover={{ scale: 1.018, boxShadow: "0 2px 12px rgba(0,0,0,0.03)" }}
+                      className="h-full p-6 flex flex-col rounded-2xl"
+                      style={{
+                        background: "rgba(255,255,255,0.08)",
+                        border: "1px solid rgba(255,255,255,0.15)",
+                        backdropFilter: "blur(20px) saturate(150%)",
+                        WebkitBackdropFilter: "blur(20px) saturate(150%)",
+                        boxShadow: "inset 0 1px 0 rgba(255,255,255,0.1)",
+                      }}
+                      whileHover={{ scale: 1.018, background: "rgba(255,255,255,0.14)" }}
                       transition={{ duration: 0.25, ease: [0.2, 0.8, 0.2, 1] }}
                     >
                       <div className="flex justify-between mb-4 gap-1.5">
@@ -367,10 +374,10 @@ export default function CaseStudyLayout({
                           {project.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
                         </div>
                       </div>
-                      <h2 className="text-base text-neutral-900 mb-2 leading-snug">
+                      <h2 className="text-base text-white mb-2 leading-snug">
                         <span className="title-highlight px-1.5">{project.title}</span>
                       </h2>
-                      <p className="text-sm text-neutral-600 leading-relaxed flex-1 mb-5">
+                      <p className="text-sm leading-relaxed flex-1 mb-5" style={{ color: "rgba(255,255,255,0.6)" }}>
                         {project.description}
                       </p>
                       <span className="cta-link-sm">
@@ -382,20 +389,20 @@ export default function CaseStudyLayout({
                     </motion.div>
                   </Link>
                   {showDivider && (
-                    <div className="w-px bg-neutral-300 self-stretch shrink-0" />
+                    <div className="w-px self-stretch shrink-0" style={{ background: "rgba(255,255,255,0.15)" }} />
                   )}
                 </div>
               );
             })}
           </div>
-          <div className="border-t border-neutral-200 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-neutral-600">
+          <div className="border-t py-8 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderColor: "rgba(255,255,255,0.1)" }}>
+            <p className="text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>
               Interested in my work?{" "}
-              <span className="text-neutral-900 font-medium">Let&apos;s get connected.</span>
+              <span className="text-white font-medium">Let&apos;s get connected.</span>
             </p>
             <div className="flex items-center gap-5">
-              <a href="mailto:jingguo1908@gmail.com" className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-200">Email</a>
-              <a href="https://linkedin.com/in/jingguodesign" target="_blank" rel="noopener noreferrer" className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-200">LinkedIn</a>
+              <a href="mailto:jingguo1908@gmail.com" className="text-sm hover:text-white transition-colors duration-200" style={{ color: "rgba(255,255,255,0.6)" }}>Email</a>
+              <a href="https://linkedin.com/in/jingguodesign" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-white transition-colors duration-200" style={{ color: "rgba(255,255,255,0.6)" }}>LinkedIn</a>
             </div>
           </div>
         </div>

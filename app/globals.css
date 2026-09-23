@@ -11,11 +11,11 @@
 }
 
 :root {
-  --background: #EDEDED;
-  --foreground: #171717;
-  --accent: #FFFF05;
-  --card-bg: #FFFFFF;
-  --card-border: rgba(0,0,0,0.08);
+  --background: #086C66;
+  --foreground: #FFFFFF;
+  --accent: #FF258E;
+  --card-bg: rgba(255,255,255,0.08);
+  --card-border: rgba(255,255,255,0.12);
 }
 
 html {
@@ -56,33 +56,43 @@ img {
 
 ::selection {
   background: var(--accent);
-  color: #171717;
+  color: #FFFFFF;
 }
+
+/* Force dark-text utility classes to light on green background */
+.text-neutral-900 { color: #FFFFFF !important; }
+.text-neutral-800 { color: rgba(255,255,255,0.95) !important; }
+.text-neutral-700 { color: rgba(255,255,255,0.8) !important; }
+.text-neutral-600 { color: rgba(255,255,255,0.65) !important; }
+.text-neutral-500 { color: rgba(255,255,255,0.5) !important; }
+.text-neutral-400 { color: rgba(255,255,255,0.4) !important; }
+.text-black { color: #FFFFFF !important; }
+.bg-neutral-50, .bg-neutral-100 { background: rgba(255,255,255,0.06) !important; }
+.bg-white { background: rgba(255,255,255,0.08) !important; }
+.border-neutral-200, .border-neutral-100, .border-neutral-300 { border-color: rgba(255,255,255,0.15) !important; }
+.bg-neutral-300 { background: rgba(255,255,255,0.3) !important; }
 
 @layer components {
   /* Card shell */
   .card {
-    background: rgba(255,255,255,0.3);
-    border: 1px solid var(--card-border);
     @apply rounded-2xl;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.03);
-    transition: background 0.25s ease;
-  }
-  .card:hover {
-    background: rgba(255,255,255,0.9);
   }
 
   /* Tag pill */
   .tag {
-    @apply text-xs text-neutral-600 bg-neutral-100 px-2.5 py-1 rounded-full border border-neutral-200;
+    @apply text-xs px-2.5 py-1 rounded-full border;
+    color: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.15);
   }
 
   /* Section label e.g. "Selected Work · Yelp" */
   .section-label {
-    @apply text-xs font-medium tracking-widest uppercase text-neutral-500;
+    @apply text-xs font-medium tracking-widest uppercase;
+    color: rgba(255,255,255,0.5);
   }
 
-  /* Yellow highlight strip under title */
+  /* Title highlight (available for other pages) */
   .title-highlight {
     @apply relative inline-block;
     isolation: isolate;
@@ -97,15 +107,24 @@ img {
 
   /* Bordered image */
   .img-bordered {
-    @apply border border-neutral-200 rounded-lg;
+    @apply border rounded-lg;
+    border-color: rgba(255,255,255,0.15);
   }
 
   /* "View case study / View project" CTA link */
   .cta-link {
-    @apply inline-flex items-center gap-1.5 text-sm font-medium text-neutral-500 group-hover:text-neutral-900 transition-colors duration-200;
+    @apply inline-flex items-center gap-1.5 text-sm font-medium transition-colors duration-200;
+    color: rgba(255,255,255,0.5);
+  }
+  .cta-link:hover, .group:hover .cta-link {
+    color: #FFFFFF;
   }
   .cta-link-sm {
-    @apply inline-flex items-center gap-1 text-xs font-medium text-neutral-500 group-hover:text-neutral-900 transition-colors duration-200;
+    @apply inline-flex items-center gap-1 text-xs font-medium transition-colors duration-200;
+    color: rgba(255,255,255,0.5);
+  }
+  .cta-link-sm:hover, .group:hover .cta-link-sm {
+    color: #FFFFFF;
   }
 
   /* Chat bubble */

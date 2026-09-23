@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        accent: "#FFFF05",
+        accent: "#FF258E",
       },
       boxShadow: {
         "card-hover": "0 2px 12px rgba(0,0,0,0.03)",

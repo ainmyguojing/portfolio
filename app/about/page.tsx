@@ -43,8 +43,8 @@ export default function About() {
 
           {/* Timeline */}
           <div className="relative mb-10">
-            {/* Vertical line */}
-            <div className="absolute left-[7px] top-2 bottom-2 w-px bg-neutral-200" />
+            {/* Vertical line — stops at last dot */}
+            <div className="absolute left-[7px] top-2 w-px" style={{ background: "rgba(255,255,255,0.15)", height: "calc(100% - 4.5rem)" }} />
             <div className="space-y-8">
               {/* Yelp */}
               <div className="flex gap-5">

@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="text-neutral-900 antialiased" style={{ background: "#EDEDED" }}>
+      <body className="text-white antialiased" style={{ background: "#086C66" }}>
         <Nav />
         <main>{children}</main>
         <BackToChat />
