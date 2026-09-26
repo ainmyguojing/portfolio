@@ -2,12 +2,14 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useRef, useState } from "react";
 import Footer from "@/components/Footer";
 
 const featured = {
   title: "Community Q&A",
   description:
-    "Designed and scaled a 0→1 community driven contribution model across multiple product surfaces at Yelp.",
+    "Conceived, validated, and scaled a new community contribution model that expands UGC, keeps local content fresh, and supports SEO and AI-powered experiences.",
+  tags: ["Community Products", "Growth", "Conversational UX"],
   href: "/work/community-qa",
   cover: "/images/CQA-cover-image.svg",
 };
@@ -16,23 +18,26 @@ const projects = [
   {
     title: "Recognition & Motivation System",
     description:
-      "Designing various reward and feedback systems forming contribution and engagement behaviors.",
+      "Designed a connected system of feedback, recognition, and progress that encourages contributors to return and deepen their participation.",
+    tags: ["Engagement", "Retention", "Systems Design"],
     href: "/work/recognition",
     cover: "/images/Recogntion-cover-image.svg",
   },
   {
     title: "Elite Ecosystem Experiences",
     description:
-      "Designing awareness, campaigns, and nomination flows supporting status and community dynamics.",
+      "Improved the journey from awareness and nomination to status development, strengthening the funnel of growing Elite community.",
+    tags: ["Community", "Identity", "Lifecycle Design"],
     href: "/work/elite",
     cover: "/images/Elite-cover-image.svg",
   },
   {
     title: "Year on Yelp",
     description:
-      "Designing reflection-driven experiences reinforcing user identity and long-term engagement.",
+      "Created a personalized reflection experience that celebrates individual impact and reinforces long-term contributor identity.",
+    tags: ["Personalization", "Retention", "Identity"],
     href: "/work/year-on-yelp",
-    cover: "/images/YOY-cover-image.svg",
+    cover: "/images/Year%20on%20Yelp/Year%20on%20Yelp.png",
   },
 ];
 
@@ -41,7 +46,7 @@ const docAiProjects = [
     title: "Smart Omix",
     category: "SaaS Web Design",
     description:
-      "End-to-end product design for a decentralized clinical research platform, from user stories and flows to a scalable interface supporting researchers and participants.",
+      "Led end-to-end product design for a clinical-research SaaS platform, translating complex workflows into a cohesive web and mobile experience.",
     href: "/other-work/smart-omix",
     cover: "/images/Smart-omix.png",
   },
@@ -49,7 +54,7 @@ const docAiProjects = [
     title: "Design System",
     category: "Design Systems",
     description:
-      "Built a design system on top of Material UI, establishing brand consistency, component governance, and engineer-ready documentation using Storybook and Chromatic.",
+      "Built a Material UI-based design system with shared components, governance, and engineer-ready documentation for Doc.ai’s SaaS products.",
     href: "/other-work/design-system",
     cover: "/images/Design-system.svg",
   },
@@ -65,6 +70,8 @@ function ArrowIcon({ size = "md" }: { size?: "md" | "sm" }) {
 }
 
 export default function Home() {
+  const [videoH, setVideoH] = useState<number>(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
   return (
     <div className="min-h-screen pt-14 overflow-x-hidden px-4 sm:px-0">
       {/* ─── Hero ─── */}
@@ -74,22 +81,22 @@ export default function Home() {
           <div className="absolute pointer-events-none select-none" style={{ left: -60, top: -16 }}>
             {/* Upper half: flat bottom, dome up */}
             <div style={{
-              width: 540, height: 270,
-              borderRadius: "270px 270px 0 0",
+              width: 486, height: 243,
+              borderRadius: "243px 243px 0 0",
               background: "#FF258E",
             }} />
-            {/* Lower half: flat top, dome down — offset 140px right */}
+            {/* Lower half: flat top, dome down — offset right */}
             <div style={{
-              width: 540, height: 270,
-              borderRadius: "0 0 270px 270px",
+              width: 486, height: 243,
+              borderRadius: "0 0 243px 243px",
               background: "#FF258E",
-              marginLeft: 140,
+              marginLeft: 190,
               marginTop: 12,
             }} />
           </div>
 
           {/* Heading text */}
-          <div className="relative z-10 pt-8 sm:pt-12">
+          <div className="relative z-10 pt-2 sm:pt-4">
             <div style={{ overflow: "hidden", paddingBottom: "0.1em" }}>
               <motion.div
                 initial={{ y: "-110%" }}
@@ -107,24 +114,9 @@ export default function Home() {
                 animate={{ y: 0 }}
                 transition={{ duration: 1.2, ease: [0, 0, 0.2, 1], delay: 1.1 }}
               >
-                <div className="flex items-end gap-6">
-                  <h1 className="text-5xl sm:text-7xl lg:text-8xl leading-none tracking-tight text-white">
-                    I&apos;m Jing.
-                  </h1>
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 2.4 }}
-                    className="pb-1 sm:pb-2"
-                  >
-                    <Link href="/about" className="inline-flex items-center gap-1.5 text-lg text-white transition-all duration-200 whitespace-nowrap group/link">
-                      <span className="relative">
-                        <span className="absolute left-0 right-0 bottom-0 rounded-sm opacity-0 group-hover/link:opacity-100 transition-opacity duration-200" style={{ height: "2px", background: "#086C66" }} />
-                        Read more about me →
-                      </span>
-                    </Link>
-                  </motion.div>
-                </div>
+                <h1 className="text-5xl sm:text-7xl lg:text-8xl leading-none tracking-tight text-white">
+                  I&apos;m Jing.
+                </h1>
               </motion.div>
             </div>
           </div>
@@ -136,22 +128,77 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 2.6 }}
+          style={{ marginLeft: 180 }}
         >
-          <p className="text-xl text-white leading-relaxed max-w-xl flex items-center gap-2 flex-wrap" style={{ marginTop: 12 }}>
-            Lead Product Designer at
+          <p className="text-xl text-white leading-relaxed max-w-xl flex items-center gap-2 flex-wrap" style={{ marginTop: 32 }}>
+            I&apos;m a Lead Product Designer at
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/images/Yelp%20Logo/Other.svg" alt="Yelp" style={{ height: "1.44em", marginLeft: "8px", position: "relative", top: "-2px" }} className="inline-block align-middle" />
           </p>
-          <p className="text-xl leading-relaxed max-w-xl mt-3" style={{ color: "rgba(255,255,255,0.8)" }}>
-            Specializing in contributor ecosystems and UGC engagement. 4+ years designing for Yelp&apos;s consumer contribution systems: from new user activation to long-term contributor retention.
+          <p className="text-xl leading-relaxed max-w-xl mt-3 text-white">
+            Specializing in consumer products and community ecosystems.
+          </p>
+          <p className="text-xl leading-relaxed max-w-2xl mt-0.5 text-white">
+            I lead work from early strategy and validation through launch and growth.
+          </p>
+          <p className="text-xl leading-relaxed max-w-2xl mt-0.5 text-white">
+            I design experiences to turn participation into lasting engagement.
           </p>
         </motion.div>
+      </section>
+
+      {/* ─── View my work / About me ─── */}
+      <motion.section
+        className="relative z-10 max-w-[82vw] mx-auto pb-10 flex items-center gap-12"
+        style={{ paddingTop: 126 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 3.0 }}
+      >
+        <a href="#selected-work" className="group relative inline-flex items-center text-base font-medium text-white transition-colors duration-200" style={{ height: 40 }}>
+          <span
+            className="absolute left-0 top-0 bottom-0 transition-all duration-300 ease-out"
+            style={{ width: 20, borderRadius: "0 9999px 9999px 0", background: "#FF258E" }}
+            ref={(el) => {
+              if (!el) return;
+              const parent = el.parentElement!;
+              parent.onmouseenter = () => { el.style.width = `${parent.offsetWidth + 16}px`; el.style.borderRadius = "0 9999px 9999px 0"; };
+              parent.onmouseleave = () => { el.style.width = "20px"; };
+            }}
+          />
+          <span className="relative z-10 pl-7 pr-6">View my work ↓</span>
+        </a>
+        <Link href="/about" className="group relative inline-flex items-center text-base font-medium text-white transition-colors duration-200" style={{ height: 40 }}>
+          <span
+            className="absolute left-0 top-0 bottom-0 transition-all duration-300 ease-out"
+            style={{ width: 20, borderRadius: "0 9999px 9999px 0", background: "#FF258E" }}
+            ref={(el) => {
+              if (!el) return;
+              const parent = el.parentElement!;
+              parent.onmouseenter = () => { el.style.width = `${parent.offsetWidth + 16}px`; el.style.borderRadius = "0 9999px 9999px 0"; };
+              parent.onmouseleave = () => { el.style.width = "20px"; };
+            }}
+          />
+          <span className="relative z-10 pl-7 pr-6">About me →</span>
+        </Link>
+      </motion.section>
+
+      {/* ─── Selected Work · Yelp ─── */}
+      <section id="selected-work" className="relative z-10 max-w-[82vw] mx-auto pt-8">
+        <motion.p
+          className="section-label mb-5"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 3.2, duration: 0.6 }}
+        >
+          Selected Work · Yelp
+        </motion.p>
       </section>
 
       {/* ─── Featured — Community Q&A ─── */}
       {/* Pill IS the container — content can never overflow */}
       <motion.div
-        className="mx-auto mt-40 py-16 sm:py-20 px-8 sm:px-16 overflow-hidden"
+        className="mx-auto mt-6 py-16 sm:py-20 px-8 sm:px-16 overflow-hidden"
         style={{
           background: "#0C8F87",
           borderRadius: 9999,
@@ -173,11 +220,32 @@ export default function Home() {
                 <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
                   {featured.description}
                 </p>
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {featured.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
+                </div>
               </div>
               <span className="cta-link mt-6">View case study <ArrowIcon /></span>
             </div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={featured.cover} alt={featured.title} className="rounded-xl object-cover flex-1 min-w-0" style={{ marginRight: 40 }} />
+            <div className="flex-1 min-w-0 flex gap-1 items-start" style={{ marginRight: 40, height: 320, "--media-h": "320px" } as React.CSSProperties}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/Community%20Q%26A/Comp%201_2.gif"
+                alt="Community Q&A interaction"
+                style={{
+                  height: "100%",
+                  width: "auto",
+                  flexShrink: 0,
+                  clipPath: "inset(0.5% 2.5% 0.5% 2.5% round calc(var(--media-h) * 0.08))",
+                }}
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/Community%20Q%26A/CQA_desktop.png"
+                alt="Community Q&A desktop view"
+                className="rounded-xl object-contain"
+                style={{ height: "100%", width: "auto" }}
+              />
+            </div>
           </div>
         </Link>
       </motion.div>
@@ -204,9 +272,18 @@ export default function Home() {
                 >
                   {/* Image area — inside the arch top */}
                   <div className="px-6 pb-4" style={{ paddingTop: 64 }}>
-                    <div className="flex items-center justify-center" style={{ height: 280 }}>
+                    <div className="relative flex items-center justify-center" style={{ height: 280 }}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={project.cover} alt={project.title} className="rounded-xl object-cover" style={{ width: "90%", maxHeight: "100%" }} />
+                      <img src={project.cover} alt={project.title} className="rounded-xl object-contain" style={{ width: "90%", maxHeight: "100%" }} />
+                      {project.href === "/work/year-on-yelp" && (
+                        /* eslint-disable-next-line @next/next/no-img-element */
+                        <img
+                          src="/images/Year%20on%20Yelp/phone-screen.gif"
+                          alt=""
+                          className="absolute rounded-md"
+                          style={{ height: "78.5%", top: "11%", left: "50%", transform: "translateX(-50%)", clipPath: "inset(8px 0 0 0)" }}
+                        />
+                      )}
                     </div>
                   </div>
                   {/* Text area — inside the shape */}
@@ -217,6 +294,9 @@ export default function Home() {
                     <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.6)", minHeight: 60 }}>
                       {project.description}
                     </p>
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {project.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
+                    </div>
                     <span className="cta-link-sm">View case study <ArrowIcon size="sm" /></span>
                   </div>
                 </motion.div>
