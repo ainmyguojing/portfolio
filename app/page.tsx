@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 const featured = {
   title: "Community Q&A",
   description:
-    "Conceived, validated, and scaled a new community contribution model that expands UGC, keeps local content fresh, and supports SEO and AI-powered experiences.",
+    "Shaped the vision, designed, and scaled a new community contribution model that expands UGC, keeps local content fresh, and supports SEO and AI experiences.",
   tags: ["Community Products", "Growth", "Conversational UX"],
   href: "/work/community-qa",
   cover: "/images/CQA-cover-image.svg",

@@ -346,9 +346,9 @@ export default function CommunityQA() {
           seek out a new feature first.
         </p>
         <ImageRow images={[
-          { src: "/images/Community Q&A/User_intent_SERP.png", alt: "SERP asking surface", caption: "SERP: surface for question asking — users are looking for an answer" },
-          { src: "/images/Community Q&A/User_intent_MeTab.png", alt: "Me Tab answering surface", caption: "Me Tab: surface for collecting answers — make it feel like a task to do" },
-          { src: "/images/Community Q&A/User_intent_home.png", alt: "Home reading surface", caption: "Home: surface for reading — show curated threads to engage readers" },
+          { src: "/images/Community Q&A/User_intent_SERP.png", alt: "SERP asking surface", caption: "Search - asking surface: Turn unresolved search intent into a question" },
+          { src: "/images/Community Q&A/User_intent_MeTab.png", alt: "Me Tab answering surface", caption: "Me Tab - answering surface: Make relevant questions easy to answer" },
+          { src: "/images/Community Q&A/User_intent_home.png", alt: "Home reading surface", caption: "Home - reading surface: Highlight popular discussions for readers" },
         ]} />
       </Card>
 
@@ -372,9 +372,9 @@ export default function CommunityQA() {
           foundation that could grow beyond individual placements.
         </p>
         <ImageRow images={[
-          { src: "/images/Community Q&A/city_hub_1.png", alt: "City hub social interactions", caption: "A city hub support various of social interaction: like, follow, user stats, etc." },
-          { src: "/images/Community Q&A/city_hub_2.png", alt: "Light-weight participation", caption: "Modules encouraging light-weight community participation" },
-          { src: "/images/Community Q&A/city_hub_3.png", alt: "Curated content themes", caption: "Modules highlighting the curated content with various themes" },
+          { src: "/images/Community Q&A/city_hub_1.png", alt: "City hub social interactions", caption: "Support community interactions such as search, sort, reactions, and follows" },
+          { src: "/images/Community Q&A/city_hub_3.png", alt: "Curated content themes", caption: "Highlight curated local content across different themes" },
+          { src: "/images/Community Q&A/city_hub_2.png", alt: "Light-weight participation", caption: "Encourage lightweight community participation" },
         ]} />
       </Card>
 
@@ -401,9 +401,9 @@ export default function CommunityQA() {
           answers more actionable, and gave contributors a reason to return.
         </p>
         <ImageRow images={[
-          { src: "/images/Community Q&A/Bold serp design.gif", alt: "Search to question via LLM", caption: "Convert search to ready to post question through LLM" },
-          { src: "/images/Community Q&A/Comp 2.gif", alt: "Business suggestion and inline tagging", caption: "Businesses suggestion & inline tagging to streamline the answering flow" },
-          { src: "/images/Community Q&A/Reaction.png", alt: "Light-weight reactions", caption: "Enable light-weight reactions to engage reader and drive future sessions" },
+          { src: "/images/Community Q&A/Bold serp design.gif", alt: "Search to question via LLM", caption: "Asking: Turn a search into a ready-to-post question with AI assistance" },
+          { src: "/images/Community Q&A/Comp 2.gif", alt: "Business suggestion and inline tagging", caption: "Answering: Suggest and tag businesses within the answering flow" },
+          { src: "/images/Community Q&A/Reaction.png", alt: "Light-weight reactions", caption: "Reactions: Let readers respond while encouraging contributors to return" },
         ]} />
       </Card>
 
@@ -411,24 +411,11 @@ export default function CommunityQA() {
       <SectionDivider id="divider-ecosystem" />
       <h2 id="ecosystem">Designing the Ecosystem</h2>
 
-      <h3>Growth required coordination across Yelp</h3>
       <p>
-        Community Q&amp;A now spans search, Home, post-review, profile, web, mobile, email, push,
-        business pages, and Yelp Assistant. Scaling it required a shared interaction model that could
-        adapt to each surface without fragmenting the experience.
+        Community Q&amp;A now connects search, Home, contribution surfaces, profiles, notifications,
+        business pages, and Yelp Assistant. I established reusable patterns that helped these experiences
+        work as one system while giving partner teams a consistent foundation for expansion.
       </p>
-      <p>
-        As the sole designer, I established reusable patterns for question threads, composition,
-        business tagging, reactions, and Q&amp;A discovery. These patterns gave partner teams a
-        consistent foundation and expanded Yelp&apos;s design language to support user-to-user conversation.
-      </p>
-      <p>The content also creates value beyond the immediate exchange:</p>
-      <BulletList items={[
-        "Fresh local content supports SEO and discovery.",
-        "Human answers complement AI-generated guidance.",
-        "Q&A gives Yelp Assistant an off-ramp when community knowledge can answer a need better.",
-        "New contribution behavior activates people who have not written reviews.",
-      ]} />
 
       <figure className="not-prose my-6 mx-auto" style={{ width: "60%" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
