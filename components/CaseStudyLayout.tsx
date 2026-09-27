@@ -66,11 +66,13 @@ interface CaseStudyLayoutProps {
   title: string;
   subtitle: string;
   role: string;
+  scope?: string;
   team: string;
   year: string;
   tags: string[];
   sections?: Section[];
   currentHref?: string;
+  introContent?: React.ReactNode;
   children: React.ReactNode;
 }
 
@@ -248,11 +250,13 @@ export default function CaseStudyLayout({
   title,
   subtitle,
   role,
+  scope,
   team,
   year,
   tags,
   sections,
   currentHref,
+  introContent,
   children,
 }: CaseStudyLayoutProps) {
   const otherProjects = ALL_PROJECTS.filter((p) => p.href !== currentHref);
@@ -291,20 +295,28 @@ export default function CaseStudyLayout({
           <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight tracking-tight mb-4">
             {title}
           </h1>
-          <p className="text-lg leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.7)" }}>{subtitle}</p>
+          <p className="text-lg leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.7)" }}>{subtitle}</p>
+
+          {introContent && <div className="mb-10">{introContent}</div>}
 
           {/* Meta row */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 py-6 px-6 rounded-2xl" style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}>
+          <div className={`grid grid-cols-1 ${scope ? "sm:grid-cols-2" : "sm:grid-cols-3"} gap-4 sm:gap-6 py-6 px-6 rounded-2xl`} style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}>
             <div>
               <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "rgba(255,255,255,0.5)" }}>Role</p>
               <p className="text-sm text-white font-medium">{role}</p>
             </div>
+            {scope && (
+              <div>
+                <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "rgba(255,255,255,0.5)" }}>Scope</p>
+                <p className="text-sm text-white font-medium">{scope}</p>
+              </div>
+            )}
             <div>
               <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "rgba(255,255,255,0.5)" }}>Team</p>
               <p className="text-sm text-white font-medium">{team}</p>
             </div>
             <div>
-              <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "rgba(255,255,255,0.5)" }}>Year</p>
+              <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "rgba(255,255,255,0.5)" }}>Timeline</p>
               <p className="text-sm text-white font-medium">{year}</p>
             </div>
           </div>

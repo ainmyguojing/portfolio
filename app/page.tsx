@@ -90,7 +90,7 @@ export default function Home() {
               width: 486, height: 243,
               borderRadius: "0 0 243px 243px",
               background: "#FF258E",
-              marginLeft: 190,
+              marginLeft: 230,
               marginTop: 12,
             }} />
           </div>
@@ -128,7 +128,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 2.6 }}
-          style={{ marginLeft: 180 }}
+          style={{ marginLeft: 245 }}
         >
           <p className="text-xl text-white leading-relaxed max-w-xl flex items-center gap-2 flex-wrap" style={{ marginTop: 32 }}>
             I&apos;m a Lead Product Designer at
@@ -150,7 +150,7 @@ export default function Home() {
       {/* ─── View my work / About me ─── */}
       <motion.section
         className="relative z-10 max-w-[82vw] mx-auto pb-10 flex items-center gap-12"
-        style={{ paddingTop: 126 }}
+        style={{ paddingTop: 86 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 3.0 }}
