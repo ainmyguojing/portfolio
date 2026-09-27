@@ -1,6 +1,17 @@
 import CaseStudyLayout from "@/components/CaseStudyLayout";
 import Image from "next/image";
 
+const SHOW_VISUAL_HINTS = false;
+
+function VisualHint({ children }: { children: React.ReactNode }) {
+  if (!SHOW_VISUAL_HINTS) return null;
+  return (
+    <p className="text-xs italic my-4 py-2 px-3 rounded-lg" style={{ color: "#FF258E", background: "rgba(255,37,142,0.08)", border: "1px dashed rgba(255,37,142,0.3)" }}>
+      📷 {children}
+    </p>
+  );
+}
+
 export const metadata = {
   title: "Elite Ecosystem — Jing Guo",
 };
@@ -17,18 +28,13 @@ function Card({ children, id }: { children: React.ReactNode; id?: string }) {
   );
 }
 
-function Label({ children }: { children: React.ReactNode }) {
+function CardLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-xs font-semibold text-neutral-900 uppercase tracking-widest mb-2 relative inline-block">
-      <span
-        className="absolute left-0 right-0 bottom-0 rounded-sm"
-        style={{ height: "33%", background: "var(--accent)", zIndex: 0 }}
-      />
-      <span className="relative" style={{ zIndex: 1 }}>{children}</span>
+    <p className="text-xs font-medium tracking-widest uppercase mb-2" style={{ color: "#FF258E" }}>
+      {children}
     </p>
   );
 }
-
 
 function BulletList({ items, className }: { items: string[]; className?: string }) {
   return (
@@ -43,394 +49,432 @@ function BulletList({ items, className }: { items: string[]; className?: string 
   );
 }
 
+function FullWidthImage({ src, alt, caption }: { src: string; alt: string; caption: string }) {
+  return (
+    <figure className="not-prose my-6">
+      <Image src={src} alt={alt} width={1600} height={900} className="w-full rounded-xl" style={{ objectFit: "contain" }} />
+      <figcaption className="text-xs text-neutral-500 text-center mt-2">{caption}</figcaption>
+    </figure>
+  );
+}
+
 const SECTIONS = [
-  { id: "problem", title: "The System Problem", divider: "divider-problem" },
+  { id: "opportunity", title: "The Opportunity", divider: "divider-opportunity" },
   {
-    id: "solution", title: "The Solution: A Coherent Funnel", divider: "divider-solution",
+    id: "design-moves", title: "Three Design Moves", divider: "divider-design-moves",
     subsections: [
-      { id: "awareness", title: "Awareness: Right People, Right Moment" },
-      { id: "consideration", title: "Consideration: A Page That Converts" },
-      { id: "conversion", title: "Conversion: Turning Rejection into Re-engagement" },
+      { id: "move-value", title: "Make Elite Visible" },
+      { id: "move-awareness", title: "Introduce at the Right Moment" },
+      { id: "move-rejection", title: "Turn Rejection into Guidance" },
     ],
   },
-  { id: "system", title: "The Funnel as Design System", divider: "divider-system" },
-  { id: "outcome", title: "Outcomes", divider: "divider-outcome" },
-  { id: "reflections", title: "Reflections", divider: "divider-reflections" },
+  { id: "funnel", title: "One Connected Funnel", divider: "divider-funnel" },
+  { id: "impact", title: "Scale & Impact", divider: "divider-impact" },
+  { id: "future", title: "Longer-Term Direction", divider: "divider-future" },
+  { id: "reflection", title: "Reflection", divider: "divider-reflection" },
 ];
 
 export default function Elite() {
   return (
     <CaseStudyLayout
-      title="Elite Ecosystem Experiences"
-      subtitle="Yelp Elite is our top contributor tier, but the path to get there was broken: few high-potential users knew it existed, the landing page underperformed, and 80% of nominations were rejected without explanation. I led the redesign from awareness to conversion."
-      role="Lead Designer"
-      team="Cross-functional team"
+      title="The Elite Contributor Ecosystem"
+      subtitle="Expanding the path from first contribution to Yelp Elite"
+      role="Lead Product Designer"
+      scope="Contributor growth, awareness, web experience, nomination flows, and ecosystem strategy"
+      team="Contributions, Community, Content Design, Marketing, and Design Systems"
       year="2024–2026"
-      tags={["Ecosystem Design", "Community", "Contributor Retention", "Growth"]}
+      tags={["Community", "Identity", "Lifecycle Design"]}
       sections={SECTIONS}
       currentHref="/work/elite"
+      introContent={
+        <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
+          Yelp Elite is one of the company&apos;s most valuable contributor communities, but many
+          potential candidates did not know it existed or understand how to join. I led design across
+          key parts of the journey, introducing Elite to promising contributors, rebuilding its main
+          destination, and turning nomination rejection into useful guidance.
+        </p>
+      }
     >
-      <p>
-        Elite contributors anchor our community with more reviews and higher engagement. This work
-        was a system-level redesign: three interventions fixing distinct, connected stages of a
-        leaky pipeline.
-      </p>
-
-      <SectionDivider id="divider-problem" />
-
-      <h2 id="problem">01 — The System Problem</h2>
-      <p>
-        The Elite program lost candidates at every step. Each stage had unique issues, and patching
-        only one wouldn&apos;t fix the funnel.
-      </p>
-
-      <Card>
-        <Label>Discovery</Label>
-        <p className="text-sm text-neutral-600 mb-6">Awareness depended on manual outreach; most valuable reviewers never heard of Elite. The Elite Squad page was deeply buried in the Me Tab, making organic discovery rare. Occasionally users would spot the Elite badge on another reviewer&apos;s profile, but the badge alone offered little context about the program, leaving most readers unsure what it meant or how to get involved.</p>
-        <div className="not-prose flex gap-4 mx-auto items-end w-full sm:w-[70%]">
-          <figure className="flex-1">
-            <Image src="/images/Elite Ecosystem/SQ-Elite-page-entrypoint.png" alt="Hidden entry point on Me Tab" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <figcaption className="text-xs text-neutral-400 text-center mt-2">Hidden entry point on Me Tab</figcaption>
-          </figure>
-          <figure className="flex-1">
-            <Image src="/images/Elite Ecosystem/SQ-Elite-page-entrypoint-badge.png" alt="Contextless Elite badge" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <figcaption className="text-xs text-neutral-400 text-center mt-2">Contextless Elite badge</figcaption>
-          </figure>
-        </div>
-      </Card>
-
-      <Card>
-        <Label>Consideration</Label>
-        <p className="text-sm text-neutral-600 mb-6">The Elite landing page was text-heavy and didn&apos;t convert; it lacked clarity and appeal. Several sections repeated the same information: &ldquo;how to join&rdquo; and &ldquo;eligibility&rdquo; covered the same ground but were split into two, causing confusion. The hero section and video weren&apos;t visually engaging or meaningful, missing the opportunity to inspire users. The call-to-action (CTA) was inconsistent and easy to miss, never standing out enough to drive action.</p>
-        <div className="not-prose grid grid-cols-2 sm:grid-cols-5 gap-3">
-          <div className="flex flex-col gap-3">
-            <figure>
-              <Image src="/images/Elite Ecosystem/SQ-Elite-page-hero.png" alt="Hero image" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-              <figcaption className="text-xs text-neutral-400 text-center mt-2">Section 1 - Hero Image</figcaption>
-            </figure>
-            <figure>
-              <Image src="/images/Elite Ecosystem/SQ-Elite-page-video.png" alt="Video" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-              <figcaption className="text-xs text-neutral-400 text-center mt-2">Section 2 - Video</figcaption>
-            </figure>
+      {/* ──────────── Why the funnel matters ──────────── */}
+      <h3>Why the Funnel Matters</h3>
+      <div className="not-prose grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+        {[
+          { stat: "~7%", detail: "of contributors are Elites" },
+          { stat: "17%", detail: "of recommended reviews come from Elites, plus more than half of Yelp’s photos" },
+        ].map(({ stat, detail }) => (
+          <div key={stat} className="rounded-xl border border-neutral-100 bg-neutral-50 p-5">
+            <p className="text-lg font-semibold text-neutral-800 mb-1">{stat}</p>
+            <p className="text-sm text-neutral-500">{detail}</p>
           </div>
-          <figure>
-            <Image src="/images/Elite Ecosystem/SQ-Elite-page-value-prop.png" alt="Why becoming an Elite" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <figcaption className="text-xs text-neutral-400 text-center mt-2">Section 3 - Why becoming an Elite</figcaption>
-          </figure>
-          <figure>
-            <Image src="/images/Elite Ecosystem/SQ-Elite-page-how-to-apply.png" alt="How to join" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <figcaption className="text-xs text-neutral-400 text-center mt-2">Section 4 - How to join</figcaption>
-          </figure>
-          <div className="flex flex-col gap-3">
-            <figure>
-              <Image src="/images/Elite Ecosystem/SQ-Elite-page-community-voice.png" alt="Elites stories" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-              <figcaption className="text-xs text-neutral-400 text-center mt-2">Section 5 - Elites stories</figcaption>
-            </figure>
-            <figure>
-              <Image src="/images/Elite Ecosystem/SQ-Elite-page-eligibility.png" alt="Eligibility" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-              <figcaption className="text-xs text-neutral-400 text-center mt-2">Section 6 - Eligibility</figcaption>
-            </figure>
+        ))}
+      </div>
+      <div className="not-prose grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+        {[
+          { stat: "74%", detail: "of inactive weekly users had never heard of the Elite program" },
+          { stat: "80%+", detail: "of nominations received an automatic rejection" },
+        ].map(({ stat, detail }) => (
+          <div key={stat} className="rounded-xl border border-neutral-100 bg-neutral-50 p-5">
+            <p className="text-lg font-semibold text-neutral-800 mb-1">{stat}</p>
+            <p className="text-sm text-neutral-500">{detail}</p>
           </div>
-          <div className="flex flex-col gap-3">
-            <figure>
-              <Image src="/images/Elite Ecosystem/SQ-Elite-page-cm.png" alt="Word from Community Manager" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-              <figcaption className="text-xs text-neutral-400 text-center mt-2">Section 7 - Word from Community Manager</figcaption>
-            </figure>
-            <figure>
-              <Image src="/images/Elite Ecosystem/SQ-Elite-page-nomination-card.png" alt="Nomination card" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-              <figcaption className="text-xs text-neutral-400 text-center mt-2">Section 8 - Nomination card</figcaption>
-            </figure>
-          </div>
-        </div>
-      </Card>
+        ))}
+      </div>
 
-      <Card>
-        <Label>Conversion</Label>
-        <p className="text-sm text-neutral-600 mb-6">80%+ of nominations were auto-rejected, with generic feedback and no next step. The rejection was delivered via a plain system feedback modal with just text, which created several problems: it felt less like a real decision and more like a system error, left users unsure if their nomination had even gone through, and made it hard to understand the outcome at a glance. The instant, text-heavy message also signaled that the nomination hadn&apos;t been thoughtfully reviewed, further undermining user trust.</p>
-        <figure className="not-prose mx-auto w-full sm:w-[60%]">
-          <Image src="/images/Elite Ecosystem/SQ_nomination flow.png" alt="Nomination flow" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-        </figure>
-      </Card>
+      <figure className="not-prose my-6">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/Elite%20Ecosystem/Elite%20journey.svg" alt="Elite contributor journey" className="w-full" />
+      </figure>
+
+      {/* ══════════════ The Opportunity ══════════════ */}
+      <SectionDivider id="divider-opportunity" />
+      <h2 id="opportunity">The Opportunity</h2>
+
+      <h3>A valuable program that too few contributors could reach</h3>
       <p>
-        I approached every design choice with the full user journey in mind, aiming for a seamless
-        experience rather than just isolated improvements.
+        Elite members contribute far more than their population size would suggest. The program gives
+        Yelp a group of trusted local voices while giving contributors recognition, community, and
+        access to events.
+      </p>
+      <p>
+        The value became compelling once people understood or experienced it, but the path into the
+        program broke down at several stages.
+      </p>
+      <figure className="not-prose my-4">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/Elite%20Ecosystem/Leaking%20pipeline.svg" alt="Leaking pipeline: awareness, consideration, nomination" className="w-full" />
+      </figure>
+      <p className="mt-4">
+        These were connected leaks in the same contributor journey. Improving only the nomination form
+        would not help people who never discovered Elite. Increasing awareness would have limited value
+        if the destination failed to inspire or guide them.
+      </p>
+      <p>
+        I treated the work as an ecosystem and designed each intervention around the role it played in
+        moving a contributor forward.
       </p>
 
-      <SectionDivider id="divider-solution" />
+      <div className="not-prose grid grid-cols-1 sm:grid-cols-3 gap-6 my-6 mx-auto" style={{ width: "90%" }}>
+        {[
+          { src: "/images/Elite Ecosystem/Problem_1.png", alt: "Low awareness", caption: "Low awareness: hidden discovery path" },
+          { src: "/images/Elite Ecosystem/Problem_2.png", alt: "Poor consideration", caption: "Poor consideration: outdated Elite page" },
+          { src: "/images/Elite Ecosystem/Problem_3.png", alt: "Frictional nomination", caption: "Frictional nomination: not actionable dead end" },
+        ].map(({ src, alt, caption }) => (
+          <figure key={src} className="flex flex-col items-center">
+            <Image src={src} alt={alt} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-500 text-center mt-2 w-full">{caption}</figcaption>
+          </figure>
+        ))}
+      </div>
 
-      <h2 id="solution">02 — The Solution: A Coherent Funnel</h2>
-      <p>
-        Systemic issues required holistic fixes. This chapter breaks down the coordinated
-        interventions that repaired the pipeline, each working in concert.
-      </p>
+      {/* ══════════════ Three Design Moves ══════════════ */}
+      <SectionDivider id="divider-design-moves" />
+      <h2 id="design-moves">Three Design Moves Across the Journey</h2>
 
-      <Card id="awareness">
-        <Label>Awareness</Label>
-        <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">Right People, Right Moment</h3>
-        <p className="text-sm text-neutral-500 mb-6">
-          Interest wasn&apos;t lacking; visibility was. The challenge was surfacing Elite at the
-          right time, without interruptive tactics.
+      <Card id="move-value">
+        <CardLabel>Design Move 1</CardLabel>
+        <h3 className="text-base font-semibold text-neutral-800 mt-2 mb-1">Make the Value of Elite Visible</h3>
+        <p className="text-sm text-neutral-600 mb-4">
+          The Elite page served as the main destination for people arriving through profiles, campaigns,
+          Community Manager outreach, and Yelp navigation. Its content was text heavy and repetitive.
+          The experience explained the program without creating much desire to join it, and its calls to
+          action required unnecessary scrolling and an extra step.
         </p>
-
-        <Label>Eligibility Criteria</Label>
-        <BulletList className="mb-6" items={[
-          "2+ reviews in last 30 days",
-          "6+ lifetime reviews",
-          "Not already Elite, ineligible, or recently nominated",
+        <p className="text-sm text-neutral-600 mb-4">
+          I restructured the page around the questions a potential candidate needed answered:
+        </p>
+        <BulletList className="mb-4" items={[
+          "What Elite is?",
+          "Why it matters?",
+          "What members experience?",
+          "How to become a strong candidate?",
+          "Where to get help?",
         ]} />
-
-        <Label>Touch point: Post-Review Modal</Label>
+        <p className="text-sm text-neutral-600 mb-4">
+          The redesigned page used current community imagery and video to make the program tangible. It
+          separated the value of membership from the steps to join, highlighted events and local Community
+          Managers, and reduced repeated copy. On mobile, a persistent action kept nomination accessible
+          throughout the page. On web, contextual actions guided people to the nomination form.
+        </p>
         <p className="text-sm text-neutral-600 mb-6">
-          A modal appears to eligible contributors immediately after submitting a review, right when
-          users feel accomplished and open to next steps. The modal simply introduces Elite and links
-          to the landing page, intentionally avoiding a pushy call-to-action at this early stage.
+          The eligibility guidance required balance. The program could not publish a rigid checklist, and
+          part of its appeal came from human selection. I translated the criteria into useful behaviors
+          such as completing a real profile and sharing thoughtful local experiences without promising
+          that a specific action guaranteed acceptance.
+        </p>
+        <p className="text-sm font-medium text-neutral-800 mb-6">
+          Why it mattered: The page became a clearer expression of the community and a stronger bridge
+          from curiosity to nomination.
         </p>
 
-        <Label>Key Design Decision</Label>
-        <p className="text-sm text-neutral-600 mb-6">
-          The copy was intentionally crafted to celebrate the user&apos;s recent achievements,
-          specifically the number and quality of reviews they&apos;ve contributed. This approach
-          anchors the entire experience in their tangible accomplishments, ensuring the message
-          feels genuine and meaningful, rather than vague or empty.
-        </p>
-
-        <div className="not-prose grid grid-cols-1 sm:grid-cols-3 gap-3 mx-auto mb-6 w-full sm:w-4/5">
-          <figure className="flex flex-col">
-            <Image src="/images/Elite Ecosystem/Awareness-1.png" alt="Post review screen" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <figcaption className="text-xs text-neutral-400 text-center mt-2">Post review screen</figcaption>
-          </figure>
-          <figure className="flex flex-col">
-            <Image src="/images/Elite Ecosystem/Awareness-2.png" alt="Elite program modal" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <figcaption className="text-xs text-neutral-400 text-center mt-2">Elite program modal</figcaption>
-          </figure>
-          <figure className="flex flex-col">
-            <Image src="/images/Elite Ecosystem/Awareness-3.png" alt="Elite program page" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <figcaption className="text-xs text-neutral-400 text-center mt-2">Elite program page</figcaption>
-          </figure>
-        </div>
-
-        <Label>Impact</Label>
-        <p className="text-sm text-neutral-600">
-          ~880K eligible users per year, projecting 1K–5.8K incremental Elites and 10K–58K more
-          reviews annually.
-        </p>
-      </Card>
-
-      <Card id="consideration">
-        <Label>Consideration</Label>
-        <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">A Page That Converts</h3>
-        <p className="text-sm text-neutral-500 mb-6">
-          Curious but uncommitted users hit a wall with the old landing page: it was wordy, dated,
-          and hard to act on. Without new assets, I focused on three principles.
-        </p>
-
+        <VisualHint>Show: the original page structure, the revised narrative, mobile sticky action, and web nomination treatment.</VisualHint>
         <div className="not-prose mx-auto mb-6 w-full sm:w-[30%]">
           <Image src="/images/Elite Ecosystem/New-elite-page.gif" alt="New Elite page" width={800} height={1200} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
         </div>
-
-        <BulletList className="mb-6" items={[
-          "Engaging: Added bold visuals; reduced text.",
-          "Clear Narrative: Eight sections, each with a focused purpose: from community value to events to support.",
-          "Convenient: Persistent sticky CTA for seamless nomination; one tap from anywhere on the page.",
-        ]} />
-
-        <div className="not-prose flex flex-col gap-8 mb-6">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="not-prose rounded-2xl border border-neutral-200 p-5 sm:p-8 mb-6 mx-auto" style={{ width: "82.5%" }}>
+          <div className="flex flex-col gap-4">
+          {/* Row 1: 3 equal columns, same height */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
-              { n: 1, caption: "Hero section - open image + statment" },
-              { n: 2, caption: "Section 2 - Elite's value to Yelp" },
-              { n: 3, caption: "Section 3 - Video highlighting the essence of being Elites" },
+              { n: 1, caption: "Hero section — open image + statement" },
+              { n: 2, caption: "Elite’s value to Yelp" },
+              { n: 3, caption: "Video highlighting the essence of being Elites" },
             ].map(({ n, caption }) => (
-              <figure key={n} className="flex flex-col gap-2">
-                <Image src={`/images/Elite Ecosystem/elite-page-section-${n}.png`} alt={caption} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-                <figcaption className="text-xs text-neutral-400 text-center">{caption}</figcaption>
+              <figure key={n} className="flex flex-col">
+                <div className="overflow-hidden rounded-lg" style={{ aspectRatio: "3 / 4" }}>
+                  <Image src={`/images/Elite Ecosystem/elite-page-section-${n}.png`} alt={caption} width={400} height={800} className="w-full h-full rounded-lg" style={{ objectFit: "cover", objectPosition: "top" }} />
+                </div>
+                <figcaption className="text-xs text-neutral-500 text-center mt-2">{caption}</figcaption>
               </figure>
             ))}
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-            {[
-              { n: 4, caption: "Section 4 - Benefits of being Elites" },
-              { n: 5, caption: "Section 5 - Eligibility & How to join" },
-              { n: 6, caption: "Section 6 - Elites events and Elites stories" },
-              { n: 7, caption: "Section 7 - Support from community managers" },
-            ].map(({ n, caption }) => (
-              <figure key={n} className="flex flex-col gap-2">
-                <Image src={`/images/Elite Ecosystem/elite-page-section-${n}.png`} alt={caption} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-                <figcaption className="text-xs text-neutral-400 text-center">{caption}</figcaption>
+          {/* Row 2: 3 columns — col 1 stacks Benefits + CM, col 2 Eligibility, col 3 Events */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="flex flex-col gap-4">
+              <figure className="flex flex-col flex-1">
+                <div className="overflow-hidden rounded-lg flex-1">
+                  <Image src="/images/Elite Ecosystem/elite-page-section-4.png" alt="Benefits of being Elites" width={400} height={800} className="w-full h-full rounded-lg" style={{ objectFit: "cover", objectPosition: "top" }} />
+                </div>
+                <figcaption className="text-xs text-neutral-500 text-center mt-2">Benefits of being Elites</figcaption>
               </figure>
-            ))}
+              <figure className="flex flex-col flex-1">
+                <div className="overflow-hidden rounded-lg flex-1">
+                  <Image src="/images/Elite Ecosystem/elite-page-section-7.png" alt="Support from Community Managers" width={400} height={800} className="w-full h-full rounded-lg" style={{ objectFit: "cover", objectPosition: "top" }} />
+                </div>
+                <figcaption className="text-xs text-neutral-500 text-center mt-2">Support from Community Managers</figcaption>
+              </figure>
+            </div>
+            <figure className="flex flex-col">
+              <div className="overflow-hidden rounded-lg flex-1">
+                <Image src="/images/Elite Ecosystem/elite-page-section-5.png" alt="Eligibility & How to join" width={400} height={800} className="w-full h-full rounded-lg" style={{ objectFit: "cover", objectPosition: "top" }} />
+              </div>
+              <figcaption className="text-xs text-neutral-500 text-center mt-2">Eligibility & How to join</figcaption>
+            </figure>
+            <figure className="flex flex-col">
+              <div className="overflow-hidden rounded-lg flex-1">
+                <Image src="/images/Elite Ecosystem/elite-page-section-6.png" alt="Events and Elites stories" width={400} height={800} className="w-full h-full rounded-lg" style={{ objectFit: "cover", objectPosition: "top" }} />
+              </div>
+              <figcaption className="text-xs text-neutral-500 text-center mt-2">Events and Elites stories</figcaption>
+            </figure>
+          </div>
           </div>
         </div>
-
-        <Label>Copy Choices</Label>
-        <p className="text-sm text-neutral-600 mb-6">
-          The &ldquo;how to join&rdquo; section stayed non-specific by design. Legal and community
-          reasons require keeping eligibility mysterious, emphasizing effort and character over numbers.
-        </p>
-
-        <Label>Results Target</Label>
-        <p className="text-sm text-neutral-600">
-          A 2% bump in nominations: 175 more Elites and about 3,500 extra reviews each month.
-        </p>
       </Card>
 
-      <Card id="conversion">
-        <Label>Conversion</Label>
-        <h3 className="text-base font-semibold text-neutral-900 mt-2 mb-1">Turning Rejection into Re-engagement</h3>
-        <p className="text-sm text-neutral-500 mb-6">
-          Fixing the funnel top wasn&apos;t enough. Rejection was the biggest drop-off.
+      <Card id="move-awareness">
+        <CardLabel>Design Move 2</CardLabel>
+        <h3 className="text-base font-semibold text-neutral-800 mt-2 mb-1">Introduce Elite at a Moment of Contribution Intent</h3>
+        <p className="text-sm text-neutral-600 mb-4">
+          Even a better destination could not help people who had never heard of the program. Manual
+          outreach was valuable but difficult to scale, and broad promotion risked reaching people
+          before Elite felt relevant to them.
+        </p>
+        <p className="text-sm text-neutral-600 mb-4">
+          I designed an awareness moment for high-potential contributors immediately after they submitted
+          a review. Eligibility rules focused the experience on people who had demonstrated recent and
+          sustained contribution while excluding current Elites, ineligible accounts, and people recently
+          nominated.
+        </p>
+        <p className="text-sm text-neutral-600 mb-4">
+          The message acknowledged what the person had already contributed before introducing Elite. It
+          did not push them directly into nomination. Instead, it invited them to learn about the program
+          on the redesigned Elite page.
+        </p>
+        <p className="text-sm text-neutral-600 mb-4">This created a deliberate sequence:</p>
+        <BulletList className="mb-6" items={[
+          "Recognize recent contribution",
+          "Introduce an aspirational next step",
+          "Provide a place to understand the community before nominating",
+        ]} />
+        <p className="text-sm font-medium text-neutral-800 mb-6">
+          Why it mattered: The experience expanded the top of the funnel without turning Elite into a
+          generic promotion. It met promising contributors when the program was most relevant to what
+          they had just done.
         </p>
 
-        <Label>Key Challenge</Label>
-        <p className="text-sm text-neutral-600 mb-6">
-          Generic, instant rejection wasn&apos;t just unhelpful; it hurt motivation.
-        </p>
-
-        <Label>Design Solutions</Label>
-        <div className="not-prose grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-          <figure className="flex flex-col">
-            <Image src="/images/Elite Ecosystem/Nomation-1.png" alt="Step 1 - Choose who to nominate" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <figcaption className="text-xs text-neutral-400 text-center mt-2">Step 1 - Choose who to nominate</figcaption>
-          </figure>
-          <figure className="flex flex-col">
-            <Image src="/images/Elite Ecosystem/Nomation-2.png" alt="Step 2 - Confirm location to nominate" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <figcaption className="text-xs text-neutral-400 text-center mt-2">Step 2 - Confirm location to nominate</figcaption>
-          </figure>
-          <figure className="flex flex-col">
-            <Image src="/images/Elite Ecosystem/Nomation-3.gif" alt="Step 3 - Additional loading screen" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <figcaption className="text-xs text-neutral-400 text-center mt-2">Step 3 - Additional loading screen</figcaption>
-          </figure>
-          <figure className="flex flex-col">
-            <Image src="/images/Elite Ecosystem/Nomation-4.gif" alt="Step 4 - Result screen" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
-            <figcaption className="text-xs text-neutral-400 text-center mt-2">Step 4 - Result screen</figcaption>
-          </figure>
+        <VisualHint>Show: post-review context, targeted Elite introduction, and transition into the Elite page.</VisualHint>
+        <div className="not-prose grid grid-cols-1 sm:grid-cols-3 gap-6 mx-auto mb-6" style={{ width: "90%" }}>
+          {[
+            { src: "/images/Elite Ecosystem/Awareness-1.png", caption: "Post-review screen" },
+            { src: "/images/Elite Ecosystem/Awareness-2.png", caption: "Targeted Elite introduction" },
+            { src: "/images/Elite Ecosystem/Awareness-3.png", caption: "Transition to Elite page" },
+          ].map(({ src, caption }) => (
+            <figure key={src} className="flex flex-col items-center">
+              <Image src={src} alt={caption} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <figcaption className="text-xs text-neutral-500 text-center mt-2 w-full">{caption}</figcaption>
+            </figure>
+          ))}
         </div>
+      </Card>
+
+      <Card id="move-rejection">
+        <CardLabel>Design Move 3</CardLabel>
+        <h3 className="text-base font-semibold text-neutral-800 mt-2 mb-1">Turn Rejection Into Actionable Guidance</h3>
+        <p className="text-sm text-neutral-600 mb-6">
+          More than 80% of nominations were automatically rejected through a generic system message.
+          I redesigned the experience as a guided decision flow that explained the outcome and helped
+          people understand what to do next.
+        </p>
+
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+          {[
+            { src: "/images/Elite Ecosystem/Nomation-1.png", caption: "Choose who to nominate" },
+            { src: "/images/Elite Ecosystem/Nomation-2.png", caption: "Confirm location" },
+            { src: "/images/Elite Ecosystem/Nomation-3.gif", caption: "Processing state" },
+            { src: "/images/Elite Ecosystem/Nomation-4.gif", caption: "Result with guidance" },
+          ].map(({ src, caption }) => (
+            <figure key={src} className="flex flex-col">
+              <Image src={src} alt={caption} width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <figcaption className="text-xs text-neutral-500 text-center mt-2">{caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+
         <div className="flex flex-col gap-4 mb-6">
           <div className="rounded-xl border border-neutral-200 p-5 flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
             <div className="flex-1">
-              <p className="text-sm font-semibold text-neutral-700 mb-2">1. Small Fix, Big Win</p>
-              <p className="text-sm text-neutral-500">Adding the ability for users to confirm or correct their primary location removed an entire category of preventable rejections caused by outdated location data. This simple tweak significantly improved nomination accuracy and reduced user frustration.</p>
+              <p className="text-sm font-semibold text-neutral-800 mb-2">1. Confirm the right squad</p>
+              <p className="text-sm text-neutral-600">Candidates could confirm or correct their primary location before nominating. This reduced preventable mismatches caused by outdated profile information and helped route each nomination to the appropriate local squad.</p>
             </div>
             <div className="not-prose w-full sm:w-40 sm:shrink-0">
-              <Image src="/images/Elite Ecosystem/nomination-location-change.png" alt="Location confirmation screen" width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <Image src="/images/Elite Ecosystem/nomination-location-change.png" alt="Location confirmation" width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             </div>
           </div>
           <div className="rounded-xl border border-neutral-200 p-5 flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
             <div className="flex-1">
-              <p className="text-sm font-semibold text-neutral-700 mb-2">2. Loading and Rejection Screens</p>
-              <p className="text-sm text-neutral-500">Introducing a loading state (&ldquo;Analyzing your profile...&rdquo;) signaled that each nomination was being seriously reviewed, not instantly dismissed. If rejected, users received clear, specific reasons and actionable feedback tied directly to their eligibility gap, along with a contextual prompt to write another review. This approach ensured the process felt authentic, transparent, and constructive.</p>
+              <p className="text-sm font-semibold text-neutral-800 mb-2">2. Make the decision feel considered</p>
+              <p className="text-sm text-neutral-600">A short eligibility-check state showed that Yelp was reviewing the candidate&apos;s profile and contributions. The result then named the specific reason they were not yet eligible, replacing an error-like message with a clear decision.</p>
             </div>
             <div className="not-prose w-full sm:w-40 sm:shrink-0">
-              <Image src="/images/Elite Ecosystem/nomination-loading.gif" alt="Nomination loading screen" width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <Image src="/images/Elite Ecosystem/nomination-loading.gif" alt="Processing state" width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             </div>
           </div>
           <div className="rounded-xl border border-neutral-200 p-5 flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
             <div className="flex-1">
-              <p className="text-sm font-semibold text-neutral-700 mb-2">3. A Narrative of Progress on the Result Screen</p>
-              <p className="text-sm text-neutral-500">The result screen was thoughtfully structured: the top half conveyed the rejection message, providing a specific reason and clear guidance for what to do next. The bottom half used a contextualized, motivational prompt, seamlessly carrying the narrative forward and encouraging users to keep contributing and work towards Elite status.</p>
+              <p className="text-sm font-semibold text-neutral-800 mb-2">3. Turn rejection into progress</p>
+              <p className="text-sm text-neutral-600">The result paired the rejection reason with practical guidance. When more recent contributions could help, the page surfaced a relevant review prompt so motivated candidates had an immediate next step.</p>
             </div>
             <div className="not-prose w-full sm:w-40 sm:shrink-0">
-              <Image src="/images/Elite Ecosystem/nomination-message.png" alt="Nomination result screen" width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+              <Image src="/images/Elite Ecosystem/nomination-message.png" alt="Rejection with guidance" width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
             </div>
           </div>
         </div>
 
-        <Label>Impact</Label>
-        <p className="text-sm text-neutral-600">
-          Raising valid nominations from 20% to 25% = ~5K more Elites and 65K additional reviews
-          annually.
+        <p className="text-sm text-neutral-600 mb-6">
+          I also organized the rejection reasons and partnered with Marketing to keep guidance consistent
+          across the app and follow-up email. Marketing owned the email experience; I connected its message
+          to the product logic and language.
+        </p>
+        <p className="text-sm font-medium text-neutral-800">
+          Why it mattered: Rejection became part of the contributor journey rather than a dead end. The
+          design protected the program&apos;s quality bar while giving motivated people a clearer way to
+          improve and try again.
         </p>
       </Card>
 
-      <SectionDivider id="divider-system" />
+      {/* ══════════════ One Connected Funnel ══════════════ */}
+      <SectionDivider id="divider-funnel" />
+      <h2 id="funnel">Designing One Connected Funnel</h2>
 
-      <h2 id="system">03 — The Funnel as Design System</h2>
+      <h3>Each surface prepared people for the next step</h3>
+      <p>The three projects shared a common design logic:</p>
+      <BulletList items={[
+        "The awareness experience introduced Elite only after a person demonstrated contribution intent.",
+        "The Elite page built understanding and aspiration before asking for a nomination.",
+        "The nomination flow preserved motivation when someone was not yet ready.",
+      ]} />
+      <p className="mt-4">
+        Copy and interaction worked together across the journey. Awareness language reflected effort
+        already made. The Elite page explained the value of the community without promising membership.
+        Rejection messages named the gap while keeping progress possible.
+      </p>
       <p>
-        No single fix worked in isolation.
+        This consistency mattered because Elite combines aspiration with a selective, human-led process.
+        The experience needed to become clearer without reducing membership to a guaranteed checklist.
       </p>
 
-      <Card>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-neutral-100">
-                <th className="text-left font-semibold text-neutral-700 pb-3 pr-6 w-32">Funnel stage</th>
-                <th className="text-left font-semibold text-neutral-700 pb-3 pr-6">Problem</th>
-                <th className="text-left font-semibold text-neutral-700 pb-3">Design response</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-neutral-100">
-              {[
-                {
-                  stage: "Discovery",
-                  problem: "Unaware the program exists",
-                  response: "Modal for immediate, relevant awareness",
-                },
-                {
-                  stage: "Consideration",
-                  problem: "Landing page doesn't convert curious users",
-                  response: "Revamped landing page with sticky CTA",
-                },
-                {
-                  stage: "Conversion",
-                  problem: "Rejection kills momentum",
-                  response: "New rejection flow with feedback and motivation",
-                },
-              ].map(({ stage, problem, response }) => (
-                <tr key={stage}>
-                  <td className="py-3 pr-6 font-semibold text-neutral-500">{stage}</td>
-                  <td className="py-3 pr-6 text-neutral-700">{problem}</td>
-                  <td className="py-3 text-neutral-500">{response}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+      <div className="not-prose grid grid-cols-1 sm:grid-cols-3 gap-6 my-6 mx-auto" style={{ width: "90%" }}>
+        {[
+          { src: "/images/Elite Ecosystem/Awareness-2.png", alt: "Know Elite exists", caption: "Know the existence of Elite Community" },
+          { src: "/images/Elite Ecosystem/New-elite-page.gif", alt: "Understand Elite", caption: "Understand what is Elite Community" },
+          { src: "/images/Elite Ecosystem/Nomation-4.gif", alt: "Get guidance", caption: "Get guidance about how to become an Elite" },
+        ].map(({ src, alt, caption }) => (
+          <figure key={src} className="flex flex-col items-center">
+            <Image src={src} alt={alt} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
+            <figcaption className="text-xs text-neutral-500 text-center mt-2 w-full">{caption}</figcaption>
+          </figure>
+        ))}
+      </div>
 
-        <div className="mt-8 pt-6 border-t border-neutral-100">
-          <Label>Visual Language Across the Funnel</Label>
-          <p className="text-sm text-neutral-600">
-            Visuals were carefully chosen for each step: a red envelope for invitation, a hero image
-            immersing users in Elite energy, and a nearly-complete circle on rejection to signal
-            progress, not failure. The journey tells a consistent story: you&apos;re welcome,
-            you&apos;re close.
-          </p>
-        </div>
-      </Card>
+      {/* ══════════════ Scale & Impact ══════════════ */}
+      <SectionDivider id="divider-impact" />
+      <h2 id="impact">Scale and Expected Impact</h2>
 
-      <SectionDivider id="divider-outcome" />
+      <h3>The work targeted high-leverage points in contributor growth</h3>
+      <p>The projects addressed large opportunities within the Elite journey:</p>
+      <BulletList items={[
+        "The awareness experience could reach approximately 880K high-potential reviewers each year.",
+        "Modeling estimated that greater awareness could produce 1K–5.8K additional Elites annually.",
+        "The page redesign estimated that a 2% nomination increase could add about 175 Elites.",
+        "The nomination work estimated that increasing valid nominations from 20% to 25% could add approximately 5K Elites annually.",
+      ]} />
+      <p className="mt-4">
+        These figures represent opportunity sizing and projections, not measured product outcomes. They
+        helped the team prioritize the funnel and understand how improvements in awareness and nomination
+        quality could translate into more contribution.
+      </p>
+      <p>
+        The coordinated rejection experience also produced a measurable result beyond the app. A follow-up
+        email owned by Marketing used the shared rejection reasons and coaching approach. It increased
+        reviews per user by 46%, equivalent to approximately 3K additional reviews per month at full
+        rollout. I contributed to the copy, organized the rejection logic, and helped ensure that the
+        email and product communicated the same guidance.
+      </p>
 
-      <h2 id="outcome">04 — Outcomes</h2>
-      <ol>
-        <li>
-          <strong>Elite page revamp (April 2024):</strong> projected 2% lift in nominations.
-        </li>
-        <li>
-          <strong>Awareness modal:</strong> reaches ~880K contributors, up to 5.8K new Elites per year.
-        </li>
-        <li>
-          <strong>Rejection redesign:</strong> projects 65K more reviews per year.
-        </li>
-      </ol>
+      {/* ══════════════ Longer-Term Direction ══════════════ */}
+      <SectionDivider id="divider-future" />
+      <h2 id="future">The Longer-Term Direction</h2>
 
-      <SectionDivider id="divider-reflections" />
+      <h3>A visible progression path for aspiring contributors</h3>
+      <p>
+        The funnel work exposed a deeper limitation. Individual messages could introduce Elite or explain
+        a rejection, but contributors still lacked a persistent way to understand where they stood and
+        how their body of work was developing.
+      </p>
+      <p>The emerging strategy extends the journey from isolated touchpoints toward visible progression:</p>
+      <BulletList items={[
+        "Introduce Elite after a person’s first meaningful contributions",
+        "Show how reviews, photos, and other activity build a strong contributor profile",
+        "Provide ongoing guidance before nomination rather than only after rejection",
+        "Preserve human judgment while making progress easier to understand",
+      ]} />
+      <p className="mt-4">
+        This direction connects Elite to Yelp&apos;s broader contribution strategy. The goal is to help
+        more casual contributors develop into recognized local voices, while keeping membership grounded
+        in quality and community participation.
+      </p>
+      <VisualHint>Use one conceptual progression view. Clearly label shipped funnel improvements separately from the future contributor journey.</VisualHint>
 
-      <h2 id="reflections">Reflections</h2>
-      <ol>
-        <li>
-          <strong>Real change meant fixing the whole pipeline, not just pieces.</strong> Each piece
-          looked like a standalone task. The design thinking was recognizing they were all symptoms
-          of the same broken pipeline.
-        </li>
-        <li>
-          <strong>The rejection experience was the highest-leverage fix.</strong> Turning a dead end
-          into an actionable next step reshapes the entire journey.
-        </li>
-        <li>
-          <strong>Copy mattered as much as layout.</strong> Every word in the loading, rejection,
-          and eligibility messaging had to inform and motivate, all without stating clear criteria.
-        </li>
-      </ol>
+      {/* ══════════════ Reflection ══════════════ */}
+      <SectionDivider id="divider-reflection" />
+      <h2 id="reflection">Reflection</h2>
+
+      <h3>Ecosystem design required balancing growth with selectivity</h3>
+      <p>
+        The most important shift was recognizing that awareness, consideration, and rejection were not
+        separate interface problems. They shaped one person&apos;s understanding of Elite and their
+        willingness to keep contributing.
+      </p>
+      <p>
+        The work also required a careful balance. We wanted to make the path clearer without turning
+        Elite into a mechanical checklist or weakening the role of Community Managers. The strongest
+        designs gave people useful guidance while preserving the human judgment that makes the program
+        meaningful.
+      </p>
+      <p>
+        I also learned that rejection can remain a productive moment. People who nominate themselves
+        already have motivation. Clear reasons and a relevant next step can redirect that energy toward
+        stronger contributions instead of allowing it to disappear.
+      </p>
     </CaseStudyLayout>
   );
 }

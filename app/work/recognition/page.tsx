@@ -304,10 +304,10 @@ export default function Recognition() {
 
       <Card id="build-expiration">
         <CardLabel>System Design</CardLabel>
-        <h3 className="text-base font-semibold text-neutral-800 mt-2 mb-1">Keep the System Motivating Without Making It Punitive</h3>
+        <h3 className="text-base font-semibold text-neutral-800 mt-2 mb-1">Exploring How Recognition Stays Current</h3>
         <p className="text-sm text-neutral-600 mb-4">
-          Recognitions reflected recent activity and could become inactive when someone stopped reviewing
-          within a category. A blunt expiration message risked turning an achievement into a loss.
+          As part of the reader-facing work, I explored how Recognitions could reflect recent activity
+          without erasing what contributors had already earned.
         </p>
         <p className="text-sm text-neutral-600 mb-6">
           I reframed the experience around keeping a Recognition active. Contributors could still see
@@ -366,9 +366,9 @@ export default function Recognition() {
 
       <h3>From recognizing achievements to supporting consistency</h3>
       <p>
-        Recognition became one expression of a broader contributor reward strategy. I later joined the
-        cross-functional work to define how Yelp could move from disconnected reward features toward a
-        more coherent relationship with contributors.
+        Recognition became one expression of a broader contributor reward strategy. Product led the
+        broader reward strategy. I partnered with the PM by surfacing gaps in the contributor experience
+        and contributing design ideas for how the system could evolve.
       </p>
       <p>The emerging system distinguishes several jobs that a reward can perform:</p>
       <BulletList items={[
