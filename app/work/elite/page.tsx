@@ -36,12 +36,14 @@ function CardLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-function BulletList({ items, className }: { items: string[]; className?: string }) {
+function BulletList({ items, className, size = "sm" }: { items: string[]; className?: string; size?: "sm" | "base" }) {
+  const textClass = size === "base" ? "text-base" : "text-sm text-neutral-800";
+  const dotMt = size === "base" ? "mt-2" : "mt-1.5";
   return (
     <ul className={`space-y-1.5 ${className ?? ""}`}>
       {items.map((item) => (
-        <li key={item} className="flex gap-2 text-sm text-neutral-600">
-          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+        <li key={item} className={`flex gap-2 ${textClass}`}>
+          <span className={`${dotMt} w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0`} />
           {item}
         </li>
       ))}
@@ -143,17 +145,7 @@ export default function Elite() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/images/Elite%20Ecosystem/Leaking%20pipeline.svg" alt="Leaking pipeline: awareness, consideration, nomination" className="w-full" />
       </figure>
-      <p className="mt-4">
-        These were connected leaks in the same contributor journey. Improving only the nomination form
-        would not help people who never discovered Elite. Increasing awareness would have limited value
-        if the destination failed to inspire or guide them.
-      </p>
-      <p>
-        I treated the work as an ecosystem and designed each intervention around the role it played in
-        moving a contributor forward.
-      </p>
-
-      <div className="not-prose grid grid-cols-1 sm:grid-cols-3 gap-6 my-6 mx-auto" style={{ width: "90%" }}>
+      <div className="not-prose grid grid-cols-1 sm:grid-cols-3 gap-8 my-6 mx-auto" style={{ width: "90%" }}>
         {[
           { src: "/images/Elite Ecosystem/Problem_1.png", alt: "Low awareness", caption: "Low awareness: hidden discovery path" },
           { src: "/images/Elite Ecosystem/Problem_2.png", alt: "Poor consideration", caption: "Poor consideration: outdated Elite page" },
@@ -165,6 +157,15 @@ export default function Elite() {
           </figure>
         ))}
       </div>
+      <p>
+        These were connected leaks in the same contributor journey. Improving only the nomination form
+        would not help people who never discovered Elite. Increasing awareness would have limited value
+        if the destination failed to inspire or guide them.
+      </p>
+      <p>
+        I treated the work as an ecosystem and designed each intervention around the role it played in
+        moving a contributor forward.
+      </p>
 
       {/* ══════════════ Three Design Moves ══════════════ */}
       <SectionDivider id="divider-design-moves" />
@@ -173,13 +174,13 @@ export default function Elite() {
       <Card id="move-value">
         <CardLabel>Design Move 1</CardLabel>
         <h3 className="text-base font-semibold text-neutral-800 mt-2 mb-1">Make the Value of Elite Visible</h3>
-        <p className="text-sm text-neutral-600 mb-4">
+        <p className="text-sm text-neutral-800 mb-4">
           The Elite page served as the main destination for people arriving through profiles, campaigns,
           Community Manager outreach, and Yelp navigation. Its content was text heavy and repetitive.
           The experience explained the program without creating much desire to join it, and its calls to
           action required unnecessary scrolling and an extra step.
         </p>
-        <p className="text-sm text-neutral-600 mb-4">
+        <p className="text-sm text-neutral-800 mb-4">
           I restructured the page around the questions a potential candidate needed answered:
         </p>
         <BulletList className="mb-4" items={[
@@ -189,23 +190,14 @@ export default function Elite() {
           "How to become a strong candidate?",
           "Where to get help?",
         ]} />
-        <p className="text-sm text-neutral-600 mb-4">
-          The redesigned page used current community imagery and video to make the program tangible. It
-          separated the value of membership from the steps to join, highlighted events and local Community
-          Managers, and reduced repeated copy. On mobile, a persistent action kept nomination accessible
-          throughout the page. On web, contextual actions guided people to the nomination form.
-        </p>
-        <p className="text-sm text-neutral-600 mb-6">
-          The eligibility guidance required balance. The program could not publish a rigid checklist, and
-          part of its appeal came from human selection. I translated the criteria into useful behaviors
-          such as completing a real profile and sharing thoughtful local experiences without promising
-          that a specific action guaranteed acceptance.
-        </p>
-        <p className="text-sm font-medium text-neutral-800 mb-6">
-          Why it mattered: The page became a clearer expression of the community and a stronger bridge
-          from curiosity to nomination.
-        </p>
-
+        <h4 className="text-base font-semibold text-neutral-800 mt-4 mb-1">Design solution</h4>
+        <BulletList className="mb-6" items={[
+          "Update the imagery and video with fresh content to make this program feel current and tangible",
+          "Separated the value of membership from the steps to join",
+          "Highlighted events and local Community Managers",
+          "Reduced repeated copy",
+          "Made the Nomination button persistent and accessible",
+        ]} />
         <VisualHint>Show: the original page structure, the revised narrative, mobile sticky action, and web nomination treatment.</VisualHint>
         <div className="not-prose mx-auto mb-6 w-full sm:w-[30%]">
           <Image src="/images/Elite Ecosystem/New-elite-page.gif" alt="New Elite page" width={800} height={1200} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
@@ -258,39 +250,38 @@ export default function Elite() {
           </div>
           </div>
         </div>
+        <h4 className="text-base font-semibold text-neutral-800 mt-4 mb-1">Why it mattered</h4>
+        <p className="text-sm text-neutral-800">
+          The page became a clearer expression of the community and a stronger bridge
+          from curiosity to nomination.
+        </p>
       </Card>
 
       <Card id="move-awareness">
         <CardLabel>Design Move 2</CardLabel>
         <h3 className="text-base font-semibold text-neutral-800 mt-2 mb-1">Introduce Elite at a Moment of Contribution Intent</h3>
-        <p className="text-sm text-neutral-600 mb-4">
+        <p className="text-sm text-neutral-800 mb-4">
           Even a better destination could not help people who had never heard of the program. Manual
           outreach was valuable but difficult to scale, and broad promotion risked reaching people
           before Elite felt relevant to them.
         </p>
-        <p className="text-sm text-neutral-600 mb-4">
+        <p className="text-sm text-neutral-800 mb-4">
           I designed an awareness moment for high-potential contributors immediately after they submitted
           a review. Eligibility rules focused the experience on people who had demonstrated recent and
           sustained contribution while excluding current Elites, ineligible accounts, and people recently
           nominated.
         </p>
-        <p className="text-sm text-neutral-600 mb-4">
+        <p className="text-sm text-neutral-800 mb-4">
           The message acknowledged what the person had already contributed before introducing Elite. It
           did not push them directly into nomination. Instead, it invited them to learn about the program
           on the redesigned Elite page.
         </p>
-        <p className="text-sm text-neutral-600 mb-4">This created a deliberate sequence:</p>
+        <p className="text-sm text-neutral-800 mb-4">This created a deliberate sequence:</p>
         <BulletList className="mb-6" items={[
           "Recognize recent contribution",
           "Introduce an aspirational next step",
           "Provide a place to understand the community before nominating",
         ]} />
-        <p className="text-sm font-medium text-neutral-800 mb-6">
-          Why it mattered: The experience expanded the top of the funnel without turning Elite into a
-          generic promotion. It met promising contributors when the program was most relevant to what
-          they had just done.
-        </p>
-
         <VisualHint>Show: post-review context, targeted Elite introduction, and transition into the Elite page.</VisualHint>
         <div className="not-prose grid grid-cols-1 sm:grid-cols-3 gap-6 mx-auto mb-6" style={{ width: "90%" }}>
           {[
@@ -304,12 +295,18 @@ export default function Elite() {
             </figure>
           ))}
         </div>
+        <h4 className="text-base font-semibold text-neutral-800 mt-4 mb-1">Why it mattered</h4>
+        <p className="text-sm text-neutral-800">
+          The experience expanded the top of the funnel without turning Elite into a
+          generic promotion. It met promising contributors when the program was most relevant to what
+          they had just done.
+        </p>
       </Card>
 
       <Card id="move-rejection">
         <CardLabel>Design Move 3</CardLabel>
         <h3 className="text-base font-semibold text-neutral-800 mt-2 mb-1">Turn Rejection Into Actionable Guidance</h3>
-        <p className="text-sm text-neutral-600 mb-6">
+        <p className="text-sm text-neutral-800 mb-6">
           More than 80% of nominations were automatically rejected through a generic system message.
           I redesigned the experience as a guided decision flow that explained the outcome and helped
           people understand what to do next.
@@ -333,7 +330,7 @@ export default function Elite() {
           <div className="rounded-xl border border-neutral-200 p-5 flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
             <div className="flex-1">
               <p className="text-sm font-semibold text-neutral-800 mb-2">1. Confirm the right squad</p>
-              <p className="text-sm text-neutral-600">Candidates could confirm or correct their primary location before nominating. This reduced preventable mismatches caused by outdated profile information and helped route each nomination to the appropriate local squad.</p>
+              <p className="text-sm text-neutral-800">Candidates could confirm or correct their primary location before nominating. This reduced preventable mismatches caused by outdated profile information and helped route each nomination to the appropriate local squad.</p>
             </div>
             <div className="not-prose w-full sm:w-40 sm:shrink-0">
               <Image src="/images/Elite Ecosystem/nomination-location-change.png" alt="Location confirmation" width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
@@ -342,7 +339,7 @@ export default function Elite() {
           <div className="rounded-xl border border-neutral-200 p-5 flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
             <div className="flex-1">
               <p className="text-sm font-semibold text-neutral-800 mb-2">2. Make the decision feel considered</p>
-              <p className="text-sm text-neutral-600">A short eligibility-check state showed that Yelp was reviewing the candidate&apos;s profile and contributions. The result then named the specific reason they were not yet eligible, replacing an error-like message with a clear decision.</p>
+              <p className="text-sm text-neutral-800">A short eligibility-check state showed that Yelp was reviewing the candidate&apos;s profile and contributions. The result then named the specific reason they were not yet eligible, replacing an error-like message with a clear decision.</p>
             </div>
             <div className="not-prose w-full sm:w-40 sm:shrink-0">
               <Image src="/images/Elite Ecosystem/nomination-loading.gif" alt="Processing state" width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
@@ -351,7 +348,7 @@ export default function Elite() {
           <div className="rounded-xl border border-neutral-200 p-5 flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
             <div className="flex-1">
               <p className="text-sm font-semibold text-neutral-800 mb-2">3. Turn rejection into progress</p>
-              <p className="text-sm text-neutral-600">The result paired the rejection reason with practical guidance. When more recent contributions could help, the page surfaced a relevant review prompt so motivated candidates had an immediate next step.</p>
+              <p className="text-sm text-neutral-800">The result paired the rejection reason with practical guidance. When more recent contributions could help, the page surfaced a relevant review prompt so motivated candidates had an immediate next step.</p>
             </div>
             <div className="not-prose w-full sm:w-40 sm:shrink-0">
               <Image src="/images/Elite Ecosystem/nomination-message.png" alt="Rejection with guidance" width={400} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
@@ -359,13 +356,14 @@ export default function Elite() {
           </div>
         </div>
 
-        <p className="text-sm text-neutral-600 mb-6">
+        <p className="text-sm text-neutral-800 mb-6">
           I also organized the rejection reasons and partnered with Marketing to keep guidance consistent
           across the app and follow-up email. Marketing owned the email experience; I connected its message
           to the product logic and language.
         </p>
-        <p className="text-sm font-medium text-neutral-800">
-          Why it mattered: Rejection became part of the contributor journey rather than a dead end. The
+        <h4 className="text-base font-semibold text-neutral-800 mt-4 mb-1">Why it mattered</h4>
+        <p className="text-sm text-neutral-800">
+          Rejection became part of the contributor journey rather than a dead end. The
           design protected the program&apos;s quality bar while giving motivated people a clearer way to
           improve and try again.
         </p>
@@ -377,7 +375,7 @@ export default function Elite() {
 
       <h3>Each surface prepared people for the next step</h3>
       <p>The three projects shared a common design logic:</p>
-      <BulletList items={[
+      <BulletList size="base" items={[
         "The awareness experience introduced Elite only after a person demonstrated contribution intent.",
         "The Elite page built understanding and aspiration before asking for a nomination.",
         "The nomination flow preserved motivation when someone was not yet ready.",
@@ -411,7 +409,7 @@ export default function Elite() {
 
       <h3>The work targeted high-leverage points in contributor growth</h3>
       <p>The projects addressed large opportunities within the Elite journey:</p>
-      <BulletList items={[
+      <BulletList size="base" items={[
         "The awareness experience could reach approximately 880K high-potential reviewers each year.",
         "Modeling estimated that greater awareness could produce 1K–5.8K additional Elites annually.",
         "The page redesign estimated that a 2% nomination increase could add about 175 Elites.",
@@ -421,13 +419,6 @@ export default function Elite() {
         These figures represent opportunity sizing and projections, not measured product outcomes. They
         helped the team prioritize the funnel and understand how improvements in awareness and nomination
         quality could translate into more contribution.
-      </p>
-      <p>
-        The coordinated rejection experience also produced a measurable result beyond the app. A follow-up
-        email owned by Marketing used the shared rejection reasons and coaching approach. It increased
-        reviews per user by 46%, equivalent to approximately 3K additional reviews per month at full
-        rollout. I contributed to the copy, organized the rejection logic, and helped ensure that the
-        email and product communicated the same guidance.
       </p>
 
       {/* ══════════════ Longer-Term Direction ══════════════ */}
@@ -441,7 +432,7 @@ export default function Elite() {
         how their body of work was developing.
       </p>
       <p>The emerging strategy extends the journey from isolated touchpoints toward visible progression:</p>
-      <BulletList items={[
+      <BulletList size="base" items={[
         "Introduce Elite after a person’s first meaningful contributions",
         "Show how reviews, photos, and other activity build a strong contributor profile",
         "Provide ongoing guidance before nomination rather than only after rejection",

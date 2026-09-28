@@ -48,12 +48,14 @@ function CardLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-function BulletList({ items, className }: { items: string[]; className?: string }) {
+function BulletList({ items, className, size = "sm" }: { items: string[]; className?: string; size?: "sm" | "base" }) {
+  const textClass = size === "base" ? "text-base" : "text-sm text-neutral-800";
+  const dotMt = size === "base" ? "mt-2" : "mt-1.5";
   return (
     <ul className={`space-y-1.5 ${className ?? ""}`}>
       {items.map((item) => (
-        <li key={item} className="flex gap-2 text-sm text-neutral-800">
-          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+        <li key={item} className={`flex gap-2 ${textClass}`}>
+          <span className={`${dotMt} w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0`} />
           {item}
         </li>
       ))}
@@ -230,17 +232,6 @@ export default function CommunityQA() {
         that early idea into a vision deck showing how Q&amp;A could live within Yelp&apos;s existing
         ecosystem, support several teams, and grow sustainably rather than becoming an isolated feature.
       </p>
-      <p>
-        I socialized the vision with partner teams and worked with my PM to move it into an MVP.
-        From that point forward, I was the sole designer and owned the complete experience across
-        asking, answering, reading, feedback, discovery, and platform expansion.
-      </p>
-      <p>
-        Product and data partners led milestone strategy and success metrics. I helped identify
-        experience gaps and product opportunities, then worked with the team to generate ideas for
-        each stage. I stayed with the product after launch as the design challenge shifted from
-        proving demand to improving quality, distribution, and retention.
-      </p>
 
       <VisualHint>Vision deck excerpt or ecosystem diagram showing how Q&amp;A fits within Yelp&apos;s existing product ecosystem.</VisualHint>
       <FullWidthImage src="/images/Community%20Q%26A/vision-diagram.png" alt="Ecosystem integration diagram" caption="Diagram of how Community Q&A could be integrated into the Yelp ecosystem" />
@@ -251,7 +242,7 @@ export default function CommunityQA() {
 
       <h3>We earned the right to scale</h3>
       <p>
-        Instead of launching a complete Q&amp;A platform at once, the team tested the exchange in stages.
+        Instead of launching a complete Q&amp;A platform at once, the team tested the initiative in stages.
         I translated each stage into the product experience and used the results to identify the next
         design opportunities.
       </p>
@@ -259,51 +250,52 @@ export default function CommunityQA() {
       <VisualHint>Show these three stages as one horizontal story using three real product screens.</VisualHint>
       <figure className="not-prose my-6">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/Community%20Q%26A/stage%20diagram.svg" alt="Three stages of product evolution" className="w-full" />
-        <figcaption className="text-xs text-neutral-500 text-center mt-2">Three stages of product evolution</figcaption>
+        <img src="/images/Community%20Q%26A/stage%20diagram.svg" alt="Three stages of initiative validation phase" className="w-full" />
+        <figcaption className="text-xs text-neutral-500 text-center mt-2">Three stages of initiative validation phase</figcaption>
       </figure>
 
       <Card id="stage-ask">
         <CardLabel>Stage 1</CardLabel>
         <h3 className="text-base font-semibold text-neutral-800 mt-2 mb-1">Would people ask?</h3>
-        <p className="text-sm text-neutral-600 mb-4">
+        <p className="text-sm text-neutral-800 mb-4">
           We placed example questions and answers within search results, where unmet intent already appeared.
           The first test produced a question-asking rate above the team&apos;s assumption and made asking
           the second most common interaction with the module after scrolling.
-        </p>
-        <p className="text-sm font-medium text-neutral-800">
-          What I learned: Asking felt natural when it continued the user&apos;s search rather than starting a separate journey.
         </p>
         <PhoneImagePair images={[
           { src: "/images/Community Q&A/pmf-asking-mock_1.png", alt: "Carousel of Q&A pairs", caption: "Carousel of Q&A pairs relevant to the search (v1)" },
           { src: "/images/Community Q&A/pmf-asking-mock_2.png", alt: "Standalone question unit on SERP", caption: "Standalone question unit on SERP (v1)" },
         ]} />
+        <h4 className="text-base font-semibold text-neutral-800 mt-4 mb-1">What I learned</h4>
+        <p className="text-sm text-neutral-800">
+          Asking felt natural when it continued the user&apos;s search rather than starting a separate journey.
+        </p>
       </Card>
 
       <Card id="stage-answer">
         <CardLabel>Stage 2</CardLabel>
         <h3 className="text-base font-semibold text-neutral-800 mt-2 mb-1">Would people answer?</h3>
-        <p className="text-sm text-neutral-600 mb-4">
+        <p className="text-sm text-neutral-800 mb-4">
           We surfaced relevant questions on Home and after review submission. In an early test,
           about 500 people contributed roughly 1,000 answers in 20 days. More than half of the questions
           received an answer, and spam remained minimal.
-        </p>
-        <p className="text-sm font-medium text-neutral-800">
-          What I learned: Relevance and timing mattered more than introducing a large standalone destination.
         </p>
         <PhoneImagePair images={[
           { src: "/images/Community Q&A/pmf-answering-mock_1.png", alt: "Q&A carousel on Home", caption: "Q&A carousel on Home, prompt users to scroll and answer" },
           { src: "/images/Community Q&A/pmf-answering-mock_2.png", alt: "Questions on post review screen", caption: "Questions on post review screen, relevant to the review the user just wrote" },
         ]} />
+        <h4 className="text-base font-semibold text-neutral-800 mt-4 mb-1">What I learned</h4>
+        <p className="text-sm text-neutral-800">
+          Relevance and timing mattered more than introducing a large standalone destination.
+        </p>
       </Card>
 
       <Card id="stage-sustain">
         <CardLabel>Stage 3</CardLabel>
         <h3 className="text-base font-semibold text-neutral-800 mt-2 mb-1">Could the exchange sustain itself?</h3>
-        <p className="text-sm text-neutral-600 mb-4">
-          After validating both sides, we launched live asking and answering, expanded to more platforms
-          and channels, and added discovery, feedback, and recognition. Community Q&amp;A became a
-          connected ecosystem rather than a single feature.
+        <p className="text-sm text-neutral-800 mb-4">
+          After validating both sides, we launched live asking and answering, added moderation and
+          feedback mechanism. Community Q&amp;A became a connected ecosystem rather than a single feature.
         </p>
         <FullWidthImage src="/images/Community%20Q%26A/diagram_sustainable_system.png" alt="MVP flow diagram" caption="MVP asking and answering flow with notification and moderation system" />
       </Card>
@@ -317,94 +309,101 @@ export default function CommunityQA() {
         Community Q&amp;A introduced Yelp&apos;s first user-to-user conversational experience.
         The challenge extended beyond designing the asking and answering flows. We needed to meet
         people with the right invitation across Yelp, bring those paths into a shared neighborhood
-        destination, and make participation feel intuitive within the existing design system.
+        destination, and make participation feel intuitive within the existing Yelp ecosystem.
       </p>
       <p>
-        I designed the complete experience across distributed entry points, the neighborhood hub,
-        and the core contribution interactions. I also worked with partner teams to earn placement
-        on high-value surfaces such as Home and search results, where Q&amp;A had to demonstrate
-        enough value to justify limited space.
+        I designed the complete experience across distributed entry points, the neighborhood hub for
+        discovery, personal hub for content ownership and tracking, as well as various interactions to
+        reduce friction, improve user engagement, and streamline every single step along the journey.
+        I also worked with partner teams to earn placement on high-value surfaces such as Home and SERP,
+        where Q&amp;A had to demonstrate enough value to justify limited space.
       </p>
 
       <Card id="move-search">
         <CardLabel>Design Move 1</CardLabel>
         <h3 className="text-base font-semibold text-neutral-800 mt-2 mb-1">Match Each Surface to the User&apos;s Intent</h3>
-        <p className="text-sm text-neutral-600 mb-4">
+        <p className="text-sm text-neutral-800 mb-4">
           People arrived on Yelp with different levels of intent. Someone refining a search was ready
           to ask a specific question. A contributor visiting the Me Tab was more likely to answer.
           Someone browsing Home might prefer to read an interesting local discussion.
         </p>
-        <p className="text-sm text-neutral-600 mb-6">
+        <p className="text-sm text-neutral-800 mb-6">
           I designed Q&amp;A units around those differences instead of repeating the same module
-          everywhere. Search turns unresolved intent into a question. The Me Tab makes relevant
-          questions easy to answer. Home highlights popular discussions that invite people to read
-          before asking them to contribute.
+          everywhere.
         </p>
-        <p className="text-sm font-medium text-neutral-800 mb-6">
-          Why it mattered: Each surface gave Q&amp;A a role that matched the reason people were already
-          there. This helped the product reach askers, answerers, and readers without requiring them to
-          seek out a new feature first.
-        </p>
+        <BulletList className="mb-6" items={[
+          "Search turns unresolved intent into a question.",
+          "The Me Tab makes relevant questions easy to answer.",
+          "Home highlights popular discussions that invite people to read before asking them to contribute.",
+        ]} />
         <ImageRow images={[
           { src: "/images/Community Q&A/User_intent_SERP.png", alt: "SERP asking surface", caption: "Search - asking surface: Turn unresolved search intent into a question" },
           { src: "/images/Community Q&A/User_intent_MeTab.png", alt: "Me Tab answering surface", caption: "Me Tab - answering surface: Make relevant questions easy to answer" },
           { src: "/images/Community Q&A/User_intent_home.png", alt: "Home reading surface", caption: "Home - reading surface: Highlight popular discussions for readers" },
         ]} />
+        <h4 className="text-base font-semibold text-neutral-800 mt-4 mb-1">Why it mattered</h4>
+        <p className="text-sm text-neutral-800">
+          Each surface gave Q&amp;A a role that matched the reason people were already
+          there. This helped the product reach askers, answerers, and readers without requiring them to
+          seek out a new feature first.
+        </p>
       </Card>
 
       <Card id="move-answers">
         <CardLabel>Design Move 2</CardLabel>
         <h3 className="text-base font-semibold text-neutral-800 mt-2 mb-1">Bring the Exchange Together in a Neighborhood Hub</h3>
-        <p className="text-sm text-neutral-600 mb-4">
+        <p className="text-sm text-neutral-800 mb-4">
           Distributed entry points helped people discover Q&amp;A, but the experience also needed a
           clear home. Without one, questions and answers could feel like isolated modules scattered
           across Yelp.
         </p>
-        <p className="text-sm text-neutral-600 mb-6">
+        <p className="text-sm text-neutral-800 mb-6">
           I designed a dedicated neighborhood-level hub where people could ask questions, answer
           neighbors, browse discussions, and read curated local content. Entry points across Yelp led
           back to this shared destination, giving the exchange continuity and making the breadth of
           community activity visible.
-        </p>
-        <p className="text-sm font-medium text-neutral-800 mb-6">
-          Why it mattered: The hub turned separate contribution moments into a neighborhood resource.
-          It gave readers a reason to explore, contributors a place to return, and the product a
-          foundation that could grow beyond individual placements.
         </p>
         <ImageRow images={[
           { src: "/images/Community Q&A/city_hub_1.png", alt: "City hub social interactions", caption: "Support community interactions such as search, sort, reactions, and follows" },
           { src: "/images/Community Q&A/city_hub_3.png", alt: "Curated content themes", caption: "Highlight curated local content across different themes" },
           { src: "/images/Community Q&A/city_hub_2.png", alt: "Light-weight participation", caption: "Encourage lightweight community participation" },
         ]} />
+        <h4 className="text-base font-semibold text-neutral-800 mt-4 mb-1">Why it mattered</h4>
+        <p className="text-sm text-neutral-800">
+          The hub turned separate contribution moments into a neighborhood resource.
+          It gave readers a reason to explore, contributors a place to return, and the product a
+          foundation that could grow beyond individual placements.
+        </p>
       </Card>
 
       <Card id="move-feedback">
         <CardLabel>Design Move 3</CardLabel>
         <h3 className="text-base font-semibold text-neutral-800 mt-2 mb-1">Make Participation Easy and Useful</h3>
-        <p className="text-sm text-neutral-600 mb-4">
+        <p className="text-sm text-neutral-800 mb-4">
           The ecosystem depended on asking and answering interactions that felt natural inside
           Yelp&apos;s established product language.
         </p>
-        <p className="text-sm text-neutral-600 mb-4">
+        <p className="text-sm text-neutral-800 mb-4">
           For asking, I designed a flow that recognizes question-like searches and helps people turn
           them into complete questions without starting over. For answering, I introduced assisted
           business suggestions and inline tagging so contributors could add useful context and connect
           recommendations to Yelp business pages.
         </p>
-        <p className="text-sm text-neutral-600 mb-6">
+        <p className="text-sm text-neutral-800 mb-6">
           I later added lightweight reactions and notifications so contributors could see when their
           answers helped someone. These feedback mechanisms supported return participation without
           adding the complexity of a full social conversation model.
-        </p>
-        <p className="text-sm font-medium text-neutral-800 mb-6">
-          Why it mattered: The interaction patterns reduced the effort required to contribute, made
-          answers more actionable, and gave contributors a reason to return.
         </p>
         <ImageRow images={[
           { src: "/images/Community Q&A/Bold serp design.gif", alt: "Search to question via LLM", caption: "Asking: Turn a search into a ready-to-post question with AI assistance" },
           { src: "/images/Community Q&A/Comp 2.gif", alt: "Business suggestion and inline tagging", caption: "Answering: Suggest and tag businesses within the answering flow" },
           { src: "/images/Community Q&A/Reaction.png", alt: "Light-weight reactions", caption: "Reactions: Let readers respond while encouraging contributors to return" },
         ]} />
+        <h4 className="text-base font-semibold text-neutral-800 mt-4 mb-1">Why it mattered</h4>
+        <p className="text-sm text-neutral-800">
+          The interaction patterns reduced the effort required to contribute, made
+          answers more actionable, and gave contributors a reason to return.
+        </p>
       </Card>
 
       {/* ══════════════ Ecosystem ══════════════ */}
@@ -429,7 +428,7 @@ export default function CommunityQA() {
 
       <h3>A new contribution channel with durable participation</h3>
       <p>Community Q&amp;A grew into a meaningful part of Yelp&apos;s contribution strategy:</p>
-      <BulletList items={[
+      <BulletList size="base" items={[
         "Approximately 30K questions and more than 40K answers per month",
         "Nearly 7K new contributors activated monthly",
         "More than 8M monthly impressions from approximately 3M users",

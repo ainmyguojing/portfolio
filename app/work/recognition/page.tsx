@@ -1,7 +1,7 @@
 import CaseStudyLayout from "@/components/CaseStudyLayout";
 import Image from "next/image";
 
-const SHOW_VISUAL_HINTS = true;
+const SHOW_VISUAL_HINTS = false;
 
 function VisualHint({ children }: { children: React.ReactNode }) {
   if (!SHOW_VISUAL_HINTS) return null;
@@ -36,12 +36,14 @@ function CardLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-function BulletList({ items, className }: { items: string[]; className?: string }) {
+function BulletList({ items, className, size = "sm" }: { items: string[]; className?: string; size?: "sm" | "base" }) {
+  const textClass = size === "base" ? "text-base" : "text-sm text-neutral-800";
+  const dotMt = size === "base" ? "mt-2" : "mt-1.5";
   return (
     <ul className={`space-y-1.5 ${className ?? ""}`}>
       {items.map((item) => (
-        <li key={item} className="flex gap-2 text-sm text-neutral-600">
-          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+        <li key={item} className={`flex gap-2 ${textClass}`}>
+          <span className={`${dotMt} w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0`} />
           {item}
         </li>
       ))}
@@ -159,21 +161,18 @@ export default function Recognition() {
         writing multiple reviews in a category. The experiment showed that Recognition could motivate
         contribution:
       </p>
-      <BulletList items={[
+      <BulletList size="base" items={[
         "Review contribution increased approximately 6–8% compared with the control",
         "About 20% of people who received the Recognition message earned one",
         "Reviews written toward Recognition showed stronger quality signals",
       ]} />
       <p className="mt-4">
         The test proved the motivational value, but the experience ended after the reward moment.
-        Contributors could not return to their Recognitions, and readers never saw them in the context
-        of a review.
       </p>
-      <p>
-        I inherited the project at that point and led the next phase: turning a successful experiment
-        into a coherent, lasting product experience.
-      </p>
-
+      <BulletList size="base" className="my-2" items={[
+        "Contributors could not return to their Recognitions",
+        "Readers never saw them in the context of a review",
+      ]} />
       <div className="not-prose flex justify-center gap-4 my-6" style={{ height: "50vh" }}>
         <div className="flex flex-col items-center" style={{ width: "calc(50vh * (360 / 780) * 1.2)" }}>
           <Image src="/images/Recognition/Post-review-2:3.png" alt="Recognition potential after review" width={400} height={800} className="rounded-xl object-contain" style={{ height: "calc(100% - 4em)", width: "auto" }} />
@@ -184,6 +183,11 @@ export default function Recognition() {
           <p className="text-xs text-neutral-500 mt-2 text-center" style={{ minHeight: "3em" }}>Earn a Recognition, celebrate moment</p>
         </div>
       </div>
+
+      <p className="mt-4">
+        I inherited the project at that point and led the next phase: <strong>turning a successful experiment
+        into a coherent, lasting product experience.</strong>
+      </p>
 
       {/* ══════════════ The Design Challenge ══════════════ */}
       <SectionDivider id="divider-challenge" />
@@ -216,25 +220,21 @@ export default function Recognition() {
       <Card id="build-home">
         <CardLabel>Milestone 1</CardLabel>
         <h3 className="text-base font-semibold text-neutral-800 mt-2 mb-1">Give Achievements a Permanent Home</h3>
-        <p className="text-sm text-neutral-600 mb-4">
+        <p className="text-sm text-neutral-800 mb-4">
           The first milestone placed Recognition in Me Tab, where contributors manage their identity
           and activity on Yelp. The existing page already separated measurable impact, such as views
           and reactions, from achievements such as Elite status and legacy badges.
         </p>
-        <p className="text-sm text-neutral-600 mb-6">
+        <p className="text-sm text-neutral-800 mb-6">
           I explored placing Recognition inside the Impact section, but that blurred two different ideas.
           Impact described what happened because of a contribution. Recognition represented an achievement
           earned through a body of work.
         </p>
-        <p className="text-sm text-neutral-600 mb-6">
+        <p className="text-sm text-neutral-800 mb-6">
           I kept Recognition within Achievements, positioned it directly below Yelp Elite, and moved
           the section higher on the page for better discovery. The Recognition details experience showed
           when each achievement was earned, how many related reviews the contributor had written, and the
           reviews connected to it.
-        </p>
-        <p className="text-sm font-medium text-neutral-800 mb-6">
-          Why it mattered: Recognition became durable. Contributors could return to their achievements
-          and see how individual reviews accumulated into visible interests and experience.
         </p>
         <VisualHint>Show: rejected Impact placement, final Me Tab placement, Recognition details, and related review list.</VisualHint>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6 mt-2">
@@ -255,31 +255,31 @@ export default function Recognition() {
           <Image src="/images/Recognition/Me-tab-final-design.png" alt="Final Me Tab placement" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
           <figcaption className="text-xs text-neutral-500 text-center mt-2">Final design: Recognition placed within Achievements on Me Tab</figcaption>
         </figure>
+        <h4 className="text-base font-semibold text-neutral-800 mt-4 mb-1">Why it mattered</h4>
+        <p className="text-sm text-neutral-800">
+          Recognition became durable. Contributors could return to their achievements
+          and see how individual reviews accumulated into visible interests and experience.
+        </p>
       </Card>
 
       <Card id="build-reader">
         <CardLabel>Milestone 2</CardLabel>
         <h3 className="text-base font-semibold text-neutral-800 mt-2 mb-1">Make Recognition Useful in the Reading Experience</h3>
-        <p className="text-sm text-neutral-600 mb-4">
+        <p className="text-sm text-neutral-800 mb-4">
           Once contributors had a permanent home for Recognition, the next step was to show it where
           readers evaluate reviews.
         </p>
-        <p className="text-sm text-neutral-600 mb-4">
+        <p className="text-sm text-neutral-800 mb-4">
           The business-page user passport had limited space and already contained identity, status, and
           contribution information. I explored placing Recognition beside the username and combining it
           with the existing statistics. Both directions created too much competition and made the signal
           difficult to interpret.
         </p>
-        <p className="text-sm text-neutral-600 mb-6">
+        <p className="text-sm text-neutral-800 mb-6">
           The final design replaced the statistics row when a contributor had a Recognition relevant to
           that business. It showed the category and the number of reviews behind it. On web, readers
           could open the contributor&apos;s related reviews and evaluate the experience supporting the
           Recognition.
-        </p>
-        <p className="text-sm font-medium text-neutral-800 mb-6">
-          Why it mattered: The design connected acknowledgment with evidence. Recognition rewarded
-          contributors while giving readers a relevant signal at the moment they were deciding whether
-          to trust a review.
         </p>
         <VisualHint>Show: the three placement explorations, final user passport, and category-specific review destination.</VisualHint>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 mt-2">
@@ -300,23 +300,30 @@ export default function Recognition() {
           <Image src="/images/Recognition/bizpage-final-design.png" alt="Final biz page design" width={800} height={600} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
           <figcaption className="text-xs text-neutral-500 text-center mt-2">Final design: Recognition replaces stats row with category and review count</figcaption>
         </figure>
+        <h4 className="text-base font-semibold text-neutral-800 mt-4 mb-1">Why it mattered</h4>
+        <p className="text-sm text-neutral-800">
+          The design connected acknowledgment with evidence. Recognition rewarded
+          contributors while giving readers a relevant signal at the moment they were deciding whether
+          to trust a review.
+        </p>
       </Card>
 
       <Card id="build-expiration">
         <CardLabel>System Design</CardLabel>
         <h3 className="text-base font-semibold text-neutral-800 mt-2 mb-1">Exploring How Recognition Stays Current</h3>
-        <p className="text-sm text-neutral-600 mb-4">
+        <p className="text-sm text-neutral-800 mb-4">
           As part of the reader-facing work, I explored how Recognitions could reflect recent activity
           without erasing what contributors had already earned.
         </p>
-        <p className="text-sm text-neutral-600 mb-6">
+        <p className="text-sm text-neutral-800 mb-6">
           I reframed the experience around keeping a Recognition active. Contributors could still see
           what they had earned, while writing another relevant review restored its public visibility.
           This preserved the integrity of the reader-facing signal without erasing the contributor&apos;s
           history.
         </p>
-        <p className="text-sm font-medium text-neutral-800">
-          Why it mattered: The system could encourage renewed contribution while respecting work people
+        <h4 className="text-base font-semibold text-neutral-800 mt-4 mb-1">Why it mattered</h4>
+        <p className="text-sm text-neutral-800">
+          The system could encourage renewed contribution while respecting work people
           had already completed.
         </p>
         <div className="not-prose flex justify-center gap-4 my-6" style={{ height: "50vh" }}>
@@ -344,16 +351,10 @@ export default function Recognition() {
       <p>
         In a large global experiment, the business-page experience produced measurable results on iOS:
       </p>
-      <BulletList items={[
+      <BulletList size="base" items={[
         "Approximately 5K additional reviews per month at full rollout",
         "A 1.7% increase in sessions where users visited another contributor’s profile",
       ]} />
-      <p className="mt-4">
-        Web contribution remained flat, and the test did not provide enough evidence to determine
-        whether Recognition affected reactions. The profile-visit increase suggests that contextual
-        Recognition encouraged readers to learn more about contributors, though the experiment did not
-        directly measure their reasons for doing so.
-      </p>
       <p>
         The larger lesson was that rewards can create value for more than the person receiving them.
         When grounded in visible evidence, Recognition can support motivation, contributor identity,
@@ -371,11 +372,10 @@ export default function Recognition() {
         and contributing design ideas for how the system could evolve.
       </p>
       <p>The emerging system distinguishes several jobs that a reward can perform:</p>
-      <BulletList items={[
-        "Recognition explains why a contribution mattered",
-        "Reward gives something back in response",
-        "Status communicates what a body of work says about the contributor",
-        "Incentive helps shape the next meaningful action",
+      <BulletList size="base" items={[
+        "Acknowledgement gives something back in response",
+        "Status communicates what a body of work says about the contributor — Recognition",
+        "Incentive helps shape the next meaningful action — Streaks",
       ]} />
       <p className="mt-4">
         I now lead the design of <strong>Monthly Review Streaks</strong>, an ongoing initiative that
