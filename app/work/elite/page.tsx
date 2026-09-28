@@ -13,7 +13,7 @@ function VisualHint({ children }: { children: React.ReactNode }) {
 }
 
 export const metadata = {
-  title: "Elite Ecosystem — Jing Guo",
+  title: "Elite Contributor Ecosystem — Jing Guo",
 };
 
 function SectionDivider({ id }: { id?: string }) {

@@ -10,13 +10,13 @@ const ALL_PROJECTS = [
   {
     title: "Community Q&A",
     description:
-      "Designed and scaled a 0→1 community-driven contribution model across multiple product surfaces at Yelp.",
-    tags: ["0→1", "Community", "Scale"],
+      "Designed and scaled a new community contribution model across multiple Yelp surfaces.",
+    tags: ["Community", "Growth", "Scale"],
     href: "/work/community-qa",
     company: "Yelp",
   },
   {
-    title: "Recognition System",
+    title: "Recognition & Rewards",
     description:
       "Reward and feedback systems that form contribution and engagement behaviors.",
     tags: ["Engagement", "Systems"],
@@ -24,7 +24,7 @@ const ALL_PROJECTS = [
     company: "Yelp",
   },
   {
-    title: "Elite Ecosystem Experiences",
+    title: "Elite Contributor Ecosystem",
     description:
       "Awareness campaigns, nomination flows, and ecosystem experiences reinforcing belonging.",
     tags: ["Community", "Campaigns"],

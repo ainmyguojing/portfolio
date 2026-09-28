@@ -28,7 +28,7 @@ export default function About() {
               About.
             </h1>
             <a
-              href="/Jing-Guo-Resume.pdf"
+              href="/Jing%20Guo_Resume_p.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="relative inline-block text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-200"
@@ -41,63 +41,91 @@ export default function About() {
             </a>
           </div>
 
-          {/* Timeline */}
-          <div className="relative mb-10">
+          {/* Introduction */}
+          <div className="max-w-2xl space-y-5 text-neutral-800 leading-relaxed text-base mb-14">
+            <p>
+              I design consumer products that turn participation into lasting engagement.
+              At Yelp, I lead work across community, contribution, recognition, and
+              retention, from shaping early product visions to scaling experiences used
+              by millions of people.
+            </p>
+            <p>
+              My strongest work begins when the path is still forming. I make ambiguous
+              ideas tangible, show how they fit a broader ecosystem, and build alignment
+              across product, engineering, data, content, and partner teams. I care about
+              interaction details, but I measure design by whether the whole system becomes
+              clearer, more useful, and more valuable over time.
+            </p>
+            <p>
+              Before moving into digital product design, I trained at Harvard&apos;s
+              Graduate School of Design and worked on complex physical environments. That
+              background shaped how I think about systems, human behavior, and the many
+              stakeholders affected by a design decision.
+            </p>
+            <p>
+              I am also actively exploring how AI changes both products and the way design
+              teams work. My recent work connects community knowledge to AI-powered
+              experiences, and I lead practical AI-upskilling sessions for Yelp&apos;s
+              design organization.
+            </p>
+          </div>
+
+          {/* Experience timeline */}
+          <div className="relative mb-14">
             {/* Vertical line — stops at last dot */}
             <div className="absolute left-[7px] top-2 w-px" style={{ background: "rgba(255,255,255,0.15)", height: "calc(100% - 4.5rem)" }} />
             <div className="space-y-8">
               {/* Yelp */}
               <div className="flex gap-5">
                 <div className="relative flex-shrink-0 w-3.5 h-3.5 rounded-full bg-accent mt-1" />
-                <div>
+                <div className="max-w-2xl">
                   <div className="flex items-baseline gap-2 mb-1">
                     <span className="text-sm font-semibold text-neutral-900">Yelp</span>
-                    <span className="text-xs text-neutral-400">Sep 2022 – present</span>
+                    <span className="text-xs text-neutral-400">September 2022 – present</span>
                   </div>
-                  <p className="text-sm font-medium text-neutral-700 mb-1">Lead Product Designer, Consumer Contribution</p>
-                  <p className="text-sm text-neutral-500 leading-relaxed">Designing for user contribution, engagement, and contributor retention at scale. Projects include Community Q&A (0→1), reactions, comments, and Year on Yelp. My focus is turning passive users into active contributors, building the systems and moments that make people want to give back to the community.</p>
+                  <p className="text-sm font-medium text-neutral-800 mb-1">Lead Product Designer, Consumer Contribution</p>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    Promoted twice since joining as a Product Designer. I design community
+                    and engagement systems that help people begin contributing, understand
+                    their impact, and build lasting participation. My work includes
+                    Community Q&amp;A, Recognition &amp; Rewards, Yelp Elite, Year on Yelp,
+                    and contributor-retention systems.
+                  </p>
                 </div>
               </div>
               {/* Doc.ai */}
               <div className="flex gap-5">
                 <div className="relative flex-shrink-0 w-3.5 h-3.5 rounded-full bg-neutral-300 mt-1" />
-                <div>
+                <div className="max-w-2xl">
                   <div className="flex items-baseline gap-2 mb-1">
                     <span className="text-sm font-semibold text-neutral-900">Doc.ai</span>
-                    <span className="text-xs text-neutral-400">Oct 2021 – Sep 2022</span>
+                    <span className="text-xs text-neutral-400">September 2021 – October 2022</span>
                   </div>
-                  <p className="text-sm font-medium text-neutral-700 mb-1">Product Designer, SaaS</p>
-                  <p className="text-sm text-neutral-500 leading-relaxed">Sole designer on Smart Omix, a 0→1 SaaS platform for end-to-end digital clinical research. Led the full design lifecycle from user stories and architecture to launch. Also initiated and maintained the design system and SaaS design guide used across all web products.</p>
+                  <p className="text-sm font-medium text-neutral-800 mb-1">Product Designer, SaaS</p>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    Sole designer for Smart Omix, a clinical-research SaaS platform spanning
+                    complex researcher workflows and participant experiences. I also created
+                    a Material UI-based design system and SaaS product guide.
+                  </p>
                 </div>
               </div>
               {/* Harvard */}
               <div className="flex gap-5">
                 <div className="relative flex-shrink-0 w-3.5 h-3.5 rounded-full bg-neutral-300 mt-1" />
-                <div>
+                <div className="max-w-2xl">
                   <div className="flex items-baseline gap-2 mb-1">
                     <span className="text-sm font-semibold text-neutral-900">Harvard University</span>
                     <span className="text-xs text-neutral-400">Graduate School of Design</span>
                   </div>
-                  <p className="text-sm font-medium text-neutral-700 mb-1">Master in Design</p>
-                  <p className="text-sm text-neutral-500 leading-relaxed">Graduated with distinction. Work recognized through multiple awards and featured in exhibitions across various venues.</p>
+                  <p className="text-sm font-medium text-neutral-800 mb-1">Master in Design</p>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    Graduated with distinction. My earlier training in environmental and
+                    spatial design continues to inform my systems thinking and approach to
+                    human behavior.
+                  </p>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="space-y-6 text-neutral-600 leading-relaxed text-base">
-            <p>
-              I&apos;m driven by a vision for what&apos;s next, always scanning the horizon for emerging user needs and trends, then shaping those insights into clear, actionable plans. I love turning ambiguity into opportunity: when the path isn&apos;t obvious, I bring strong product thinking and a structured approach to evaluate options and set direction, ensuring every design choice ladders up to something bigger.
-            </p>
-            <p>
-              Working with AI has only sharpened my sense of how design can shape, not just serve, future experiences. I believe tools should amplify our best thinking, not dictate it; I&apos;m quick to learn and adapt, always seeking out new technologies that support my core tasks instead of leading them.
-            </p>
-            <p>
-              At the core of how I work is how I connect with people. Whether brainstorming with a team, responding to feedback, or mapping out a shared goal, I care deeply about building trust and communicating clearly and thoughtfully. Great products, after all, are built through collaboration and respect.
-            </p>
-            <p>
-              Ultimately, I design for impact: seeing possibilities where others see uncertainty, bringing ideas to life at scale, and building communities and products that truly thrive in this new era.
-            </p>
           </div>
 
           <div className="mt-12 pt-10 border-t border-neutral-100">
@@ -106,16 +134,16 @@ export default function About() {
             </h2>
             <div className="grid grid-cols-2 gap-3">
               {[
-                "Strategic planning & problem framing",
-                "Storytelling & effective communication",
-                "Data-driven decision making",
-                "User research & empathy",
-                "0→1 product design",
-                "Design systems",
+                "Product vision and problem framing",
+                "Consumer community and engagement",
+                "Systems and interaction design",
+                "Experimentation and data-informed decisions",
+                "Cross-functional influence",
+                "AI-enabled design workflows",
               ].map((skill) => (
                 <span
                   key={skill}
-                  className="text-sm text-neutral-600 bg-neutral-50 border border-neutral-100 px-3 py-2 rounded-xl"
+                  className="text-sm text-neutral-700 bg-neutral-50 border border-neutral-100 px-3 py-2 rounded-xl"
                 >
                   {skill}
                 </span>

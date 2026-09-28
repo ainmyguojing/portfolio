@@ -144,8 +144,8 @@ export default function CommunityQA() {
       title="Community Q&A"
       subtitle="Building a new way for Yelp's community to share local knowledge"
       role="Lead Product Designer"
-      scope="Product vision, experience strategy, full UX, and design system"
-      team="Contribution, Growth, Core X, Trust & Safety"
+      scope="Product vision, experience strategy, end-to-end product design, and design systems"
+      team="Contribution, Growth, Core Experience, Trust & Safety"
       year="2024–2026"
       tags={["Community Products", "Growth", "Conversational UX", "Strategy & Scale"]}
       sections={SECTIONS}

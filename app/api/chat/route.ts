@@ -28,7 +28,7 @@ ${PORTFOLIO_CONTEXT}
 - Storytelling & effective communication
 - Data-driven decision making
 - User research & empathy
-- 0→1 product design
+- End-to-end product design
 - Design systems
 
 ## Projects at Yelp

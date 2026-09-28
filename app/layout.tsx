@@ -4,7 +4,7 @@ import Nav from "@/components/Nav";
 import BackToChat from "@/components/BackToChat";
 
 export const metadata: Metadata = {
-  title: "Jing Guo — Product Designer",
+  title: "Jing Guo — Lead Product Designer",
   description:
     "Lead Product Designer at Yelp, focused on user contribution, engagement, and community ecosystems at scale.",
 };

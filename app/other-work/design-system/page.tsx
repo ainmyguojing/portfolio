@@ -54,9 +54,9 @@ export default function DesignSystem() {
     <CaseStudyLayout
       title="Design System for SaaS Web Products"
       subtitle="Created and actively maintained a design system to drive high consistency, best practices, and efficiency across SaaS web products."
-      role="Design System Lead"
+      role="Product Designer and Design System Lead"
       team="Product Design Team"
-      year="2022–2023"
+      year="2021–2022"
       tags={["Design System", "Material UI", "Storybook"]}
       sections={SECTIONS}
       currentHref="/other-work/design-system"

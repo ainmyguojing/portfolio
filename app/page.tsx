@@ -16,17 +16,17 @@ const featured = {
 
 const projects = [
   {
-    title: "Recognition & Motivation System",
+    title: "Recognition & Rewards",
     description:
-      "Designed a connected system of feedback, recognition, and progress that encourages contributors to return and deepen their participation.",
+      "Designed a connected system of recognition, feedback, and progress that encourages contributors to return and helps readers evaluate credibility.",
     tags: ["Engagement", "Retention", "Systems Design"],
     href: "/work/recognition",
     cover: "/images/Recogntion-cover-image.svg",
   },
   {
-    title: "Elite Ecosystem Experiences",
+    title: "Elite Contributor Ecosystem",
     description:
-      "Improved the journey from awareness and nomination to status development, strengthening the funnel of growing Elite community.",
+      "Improved the journey from awareness and nomination to contributor development, helping more promising contributors find a path toward Yelp Elite.",
     tags: ["Community", "Identity", "Lifecycle Design"],
     href: "/work/elite",
     cover: "/images/Elite-cover-image.svg",

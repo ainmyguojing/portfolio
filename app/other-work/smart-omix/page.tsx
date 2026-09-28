@@ -62,7 +62,7 @@ export default function SmartOmix() {
     <CaseStudyLayout
       title="Smart Omix – End-to-End Digital Clinical Research"
       subtitle="Enabling real-world, end-to-end digital clinical research for independent and institutional teams: from study design to participant engagement to data analysis."
-      role="Lead Product Designer"
+      role="Product Designer, sole designer for Smart Omix"
       team="Startup team"
       year="Sep 2021 – Jul 2022"
       tags={["SaaS", "B2B", "Healthcare", "Web App"]}
@@ -110,7 +110,7 @@ export default function SmartOmix() {
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/images/Smart%20Omix/01-problem-taget-user-types.svg" alt="Target user types" className="w-full" />
-            <figcaption className="text-xs text-neutral-400 text-center mt-2">Simgle study - individual researcher vs. Complex study - a research team</figcaption>
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Single study - individual researcher vs. Complex study - a research team</figcaption>
           </figure>
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -155,7 +155,7 @@ export default function SmartOmix() {
           </figure>
           <figure>
             <VideoPlayer src="/images/Smart%20Omix/02-solution-state-machine-video.mp4" className="w-full rounded-lg img-bordered" />
-            <figcaption className="text-xs text-neutral-400 text-center mt-2">Lauch a study in multiple steps, lock and unlock a study as needed</figcaption>
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Launch a study in multiple steps, lock and unlock a study as needed</figcaption>
           </figure>
         </div>
       </Card>
@@ -179,7 +179,7 @@ export default function SmartOmix() {
         <div className="flex flex-col gap-8 mt-6 mx-auto w-full sm:w-[90%]">
           <figure>
             <VideoPlayer src="/images/Smart%20Omix/03-solution-novel-study.mp4" className="w-full rounded-lg img-bordered" />
-            <figcaption className="text-xs text-neutral-400 text-center mt-2">Allow researchers to study a data type in depth. Each data type will show Available Data Source, Data Sample, and Paricipant Screen</figcaption>
+            <figcaption className="text-xs text-neutral-400 text-center mt-2">Allow researchers to study a data type in depth. Each data type will show Available Data Source, Data Sample, and Participant Screen</figcaption>
           </figure>
         </div>
       </Card>
@@ -193,7 +193,7 @@ export default function SmartOmix() {
           {[
             { bold: "Layered Informational UI", rest: ": Added an informational layer on top of the core UI, revealing helpful content and tips through context-sensitive triggers to support users when needed.", video: "/images/Smart%20Omix/4-soluton-information-card.mp4", caption: "Floating information window triggered by hover" },
             { bold: "Step-by-Step Mini Tasks", rest: ": Broke complex study creation into mini tasks with stepped guidance at key moments, providing structure and direction while preventing users from getting overwhelmed.", video: "/images/Smart%20Omix/04-soluton-create-ePRO.mp4", caption: "Steps of creating an ePRO" },
-            { bold: "Ghosting Future Actions", rest: ": Used ghosted previews of upcoming steps and options so users could stay focused on what's next, while building awareness of the overall process.", video: "/images/Smart%20Omix/04-soluton-ghosted content.mp4", caption: "Choose which content to ghoast based on which step user is at, to help them build expectation without being overwhelming" },
+            { bold: "Ghosting Future Actions", rest: ": Used ghosted previews of upcoming steps and options so users could stay focused on what's next, while building awareness of the overall process.", video: "/images/Smart%20Omix/04-soluton-ghosted content.mp4", caption: "Choose which content to ghost based on which step user is at, to help them build expectation without being overwhelming" },
           ].map(({ bold, rest, video, caption }) => (
             <li key={bold} className="flex flex-col gap-3 text-sm text-neutral-600">
               <div className="flex gap-2">
