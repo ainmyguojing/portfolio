@@ -36,13 +36,13 @@ function CardLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-function BulletList({ items, className, size = "sm" }: { items: string[]; className?: string; size?: "sm" | "base" }) {
+function BulletList({ items, className, size = "sm" }: { items: React.ReactNode[]; className?: string; size?: "sm" | "base" }) {
   const textClass = size === "base" ? "text-base" : "text-sm text-neutral-800";
   const dotMt = size === "base" ? "mt-2" : "mt-1.5";
   return (
     <ul className={`space-y-1.5 ${className ?? ""}`}>
-      {items.map((item) => (
-        <li key={item} className={`flex gap-2 ${textClass}`}>
+      {items.map((item, i) => (
+        <li key={i} className={`flex gap-2 ${textClass}`}>
           <span className={`${dotMt} w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0`} />
           {item}
         </li>
@@ -134,7 +134,7 @@ export default function YearOnYelp() {
       <p>
         Year on Yelp gave contributors an annual view of the people and businesses they helped through
         reviews, photos, and other activity. Research with previous recipients showed that people valued
-        personalized data, their most popular content, and the ability to revisit the year like a journal.
+        <strong>personalized data</strong>, their most popular content, and the ability to <strong>revisit the year like a journal</strong>.
       </p>
       <p>
         One participant explained why appreciation mattered:
@@ -167,8 +167,8 @@ export default function YearOnYelp() {
       <p>
         The team considered maintaining the existing experience, expanding the audience to
         non-contributors, or investing in a new contributor experience. With limited resources and
-        other contribution projects competing for capacity, we focused on current contributors and made
-        a one-time investment in a scalable story format.
+        other contribution projects competing for capacity, we <strong>focused on current contributors</strong> and made
+        <strong>a one-time investment in a scalable story format</strong>.
       </p>
       <p>The product goals were to:</p>
       <BulletList size="base" items={[
@@ -192,10 +192,10 @@ export default function YearOnYelp() {
 
       <h3>My responsibilities</h3>
       <BulletList size="base" items={[
-        "Frame the experience: Translate product goals and user insights into a story structure for the annual recap.",
-        "Lead theme development: Facilitate workshops, define evaluation criteria, and guide the team toward one creative direction.",
-        "Design the system: Establish the story interaction, module framework, qualification logic, and sharing experience.",
-        "Coordinate production: Create the creative brief and work with illustrators, animators, content designers, engineers, and marketing partners through delivery.",
+        <><strong>Frame the experience:</strong> Translate product goals and user insights into a story structure for the annual recap.</>,
+        <><strong>Lead theme development:</strong> Facilitate workshops, define evaluation criteria, and guide the team toward one creative direction.</>,
+        <><strong>Design the system:</strong> Establish the story interaction, module framework, qualification logic, and sharing experience.</>,
+        <><strong>Coordinate production:</strong> Create the creative brief and work with illustrators, animators, content designers, engineers, and marketing partners through delivery.</>,
       ]} />
       <p className="mt-4">
         I remained responsible for the coherence of the whole experience while specialists developed
@@ -215,10 +215,10 @@ export default function YearOnYelp() {
         </p>
         <h4 className="text-base font-semibold text-neutral-800 mt-4 mb-1">Design decisions</h4>
         <BulletList className="mb-6" items={[
-          "One moment per card: Give each achievement enough space to feel meaningful.",
-          "Simple story controls: Let people move forward, return to a previous card, or pause an animation using familiar tap gestures.",
-          "A deliberate emotional arc: Begin with overall impact, reveal personalized highlights, and end by returning to the people and businesses the contributor helped.",
-          "A clear ending: Stop autoplay on the closing celebration before offering an optional next-review screen.",
+          <><strong>One moment per card:</strong> Give each achievement enough space to feel meaningful.</>,
+          <><strong>Simple story controls:</strong> Let people move forward, return to a previous card, or pause an animation using familiar tap gestures.</>,
+          <><strong>A deliberate emotional arc:</strong> Begin with overall impact, reveal personalized highlights, and end by returning to the people and businesses the contributor helped.</>,
+          <><strong>A clear ending:</strong> Stop autoplay on the closing celebration before offering an optional next-review screen.</>,
         ]} />
 
         <div className="not-prose grid grid-cols-2 sm:grid-cols-4 gap-4 my-6">
@@ -278,10 +278,10 @@ export default function YearOnYelp() {
 
         <h4 className="text-base font-semibold text-neutral-800 mt-4 mb-1">Creative system</h4>
         <BulletList className="mb-6" items={[
-          "Shared visual world: Landscapes, stars, and constellation icons tied the modules together.",
-          "Personalized foregrounds: Reviews, photos, categories, and counts made each card specific to the contributor.",
-          "Selective animation: Reserve motion for the opening, closing, and other emotionally important moments.",
-          "Flexible templates: Support different content thresholds without making low-activity experiences feel broken.",
+          <><strong>Shared visual world:</strong> Landscapes, stars, and constellation icons tied the modules together.</>,
+          <><strong>Personalized foregrounds:</strong> Reviews, photos, categories, and counts made each card specific to the contributor.</>,
+          <><strong>Selective animation:</strong> Reserve motion for the opening, closing, and other emotionally important moments.</>,
+          <><strong>Flexible templates:</strong> Support different content thresholds without making low-activity experiences feel broken.</>,
         ]} />
 
         <div className="not-prose grid grid-cols-3 sm:grid-cols-7 gap-3 mb-3">
@@ -335,10 +335,10 @@ export default function YearOnYelp() {
 
         <h4 className="text-base font-semibold text-neutral-800 mt-4 mb-1">System decisions</h4>
         <BulletList className="mb-6" items={[
-          "Conditional modules: Show a card only when the contributor had enough meaningful data.",
-          "A complete minimum experience: Guarantee an introduction, at least one personalized highlight, a closing summary, and the optional contribution screen.",
-          "Reusable content patterns: Define consistent rules for counts, business names, photos, categories, and edge cases.",
-          "Category-specific variation: Create 14 illustrated versions of the most-reviewed food category while preserving one layout and interaction model.",
+          <><strong>Conditional modules:</strong> Show a card only when the contributor had enough meaningful data.</>,
+          <><strong>A complete minimum experience:</strong> Guarantee an introduction, at least one personalized highlight, a closing summary, and the optional contribution screen.</>,
+          <><strong>Reusable content patterns:</strong> Define consistent rules for counts, business names, photos, categories, and edge cases.</>,
+          <><strong>Category-specific variation:</strong> Create 14 illustrated versions of the most-reviewed food category while preserving one layout and interaction model.</>,
         ]} />
 
         <figure className="not-prose mx-auto mb-6 w-full sm:w-[30%]">
@@ -393,12 +393,12 @@ export default function YearOnYelp() {
 
       <h3>Celebration needed paths outward and forward</h3>
       <p>
-        Sharing served as the primary campaign action in 2023. People could share a static version of
+        <strong>Sharing</strong> served as the primary campaign action in 2023. People could share a static version of
         an individual card or copy a link to the complete experience. The system generated shareable
         assets that retained the Year on Yelp identity outside the product.
       </p>
       <p>
-        Contribution remained a secondary action. After the final celebration, people could choose to
+        <strong>Contribution</strong> remained a secondary action. After the final celebration, people could choose to
         continue to a bonus screen with relevant businesses to review. Separating this screen from the
         recap protected the emotional ending while still providing a useful next step.
       </p>
@@ -448,9 +448,9 @@ export default function YearOnYelp() {
 
       <h3>What the results showed</h3>
       <BulletList size="base" items={[
-        "The story format and sharing model created a reusable product foundation.",
-        "Personalization could support a large modular experience without custom design for every user.",
-        "A strong theme improved coherence inside the experience, but discovery messaging still needed to explain the value directly.",
+        <><strong>The story format and sharing model</strong> created a reusable product foundation.</>,
+        <><strong>Personalization at scale</strong> could support a large modular experience without custom design for every user.</>,
+        <><strong>Discovery messaging needed to stay direct:</strong> The theme improved coherence inside the experience, but entry points still needed to explain the value clearly.</>,
       ]} />
 
       {/* ══════════════ Reflection ══════════════ */}
@@ -459,10 +459,10 @@ export default function YearOnYelp() {
 
       <h3>What I learned</h3>
       <BulletList size="base" items={[
-        "Creative direction is a product-design responsibility. A clear theme and brief helped specialists make hundreds of detailed decisions without fragmenting the experience.",
-        "A system creates personalization at scale. Qualification rules, reusable templates, and visual variation mattered more than crafting one ideal path.",
-        "The experience and its invitation have different jobs. The product could use metaphor and emotion, while entry-point copy needed to state clearly what people would receive.",
-        "Annual campaigns must plan for repetition. A reusable foundation lowers production cost, but content and messaging still need enough freshness to give repeat recipients a reason to return.",
+        <><strong>Creative direction is a product-design responsibility.</strong> A clear theme and brief helped specialists make hundreds of detailed decisions without fragmenting the experience.</>,
+        <><strong>A system creates personalization at scale.</strong> Qualification rules, reusable templates, and visual variation mattered more than crafting one ideal path.</>,
+        <><strong>The experience and its invitation have different jobs.</strong> The product could use metaphor and emotion, while entry-point copy needed to state clearly what people would receive.</>,
+        <><strong>Annual campaigns must plan for repetition.</strong> A reusable foundation lowers production cost, but content and messaging still need enough freshness to give repeat recipients a reason to return.</>,
       ]} />
     </CaseStudyLayout>
   );

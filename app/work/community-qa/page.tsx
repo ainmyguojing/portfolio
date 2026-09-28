@@ -48,13 +48,13 @@ function CardLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-function BulletList({ items, className, size = "sm" }: { items: string[]; className?: string; size?: "sm" | "base" }) {
+function BulletList({ items, className, size = "sm" }: { items: React.ReactNode[]; className?: string; size?: "sm" | "base" }) {
   const textClass = size === "base" ? "text-base" : "text-sm text-neutral-800";
   const dotMt = size === "base" ? "mt-2" : "mt-1.5";
   return (
     <ul className={`space-y-1.5 ${className ?? ""}`}>
-      {items.map((item) => (
-        <li key={item} className={`flex gap-2 ${textClass}`}>
+      {items.map((item, idx) => (
+        <li key={idx} className={`flex gap-2 ${textClass}`}>
           <span className={`${dotMt} w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0`} />
           {item}
         </li>
@@ -222,15 +222,18 @@ export default function CommunityQA() {
         and could keep local content current.
       </p>
       <p>
-        The opportunity was to turn unanswered intent into a community exchange without making Q&amp;A
+        The opportunity was to <strong>turn unanswered intent into a community exchange</strong> without making Q&amp;A
         feel detached from the rest of Yelp.
       </p>
 
       <h3>Turning an idea into a shared vision</h3>
       <p>
-        My group PM first introduced the Community Q&amp;A initiative in conversation. I translated
-        that early idea into a vision deck showing how Q&amp;A could live within Yelp&apos;s existing
+        My group PM first introduced the Community Q&amp;A initiative in conversation. I <strong>translated
+        that early idea into a vision deck</strong> showing how Q&amp;A could live within Yelp&apos;s existing
         ecosystem, support several teams, and grow sustainably rather than becoming an isolated feature.
+      </p>
+      <p>
+        As the sole designer, I owned the complete experience from MVP through launch and growth.
       </p>
 
       <VisualHint>Vision deck excerpt or ecosystem diagram showing how Q&amp;A fits within Yelp&apos;s existing product ecosystem.</VisualHint>
@@ -250,8 +253,8 @@ export default function CommunityQA() {
       <VisualHint>Show these three stages as one horizontal story using three real product screens.</VisualHint>
       <figure className="not-prose my-6">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/Community%20Q%26A/stage%20diagram.svg" alt="Three stages of initiative validation phase" className="w-full" />
-        <figcaption className="text-xs text-neutral-500 text-center mt-2">Three stages of initiative validation phase</figcaption>
+        <img src="/images/Community%20Q%26A/stage%20diagram.svg" alt="Three stages of validation" className="w-full" />
+        <figcaption className="text-xs text-neutral-500 text-center mt-2">Three stages of validation</figcaption>
       </figure>
 
       <Card id="stage-ask">
@@ -295,7 +298,7 @@ export default function CommunityQA() {
         <h3 className="text-base font-semibold text-neutral-800 mt-2 mb-1">Could the exchange sustain itself?</h3>
         <p className="text-sm text-neutral-800 mb-4">
           After validating both sides, we launched live asking and answering, added moderation and
-          feedback mechanism. Community Q&amp;A became a connected ecosystem rather than a single feature.
+          feedback mechanisms. Community Q&amp;A became a connected ecosystem rather than a single feature.
         </p>
         <FullWidthImage src="/images/Community%20Q%26A/diagram_sustainable_system.png" alt="MVP flow diagram" caption="MVP asking and answering flow with notification and moderation system" />
       </Card>
@@ -313,9 +316,8 @@ export default function CommunityQA() {
       </p>
       <p>
         I designed the complete experience across distributed entry points, the neighborhood hub for
-        discovery, personal hub for content ownership and tracking, as well as various interactions to
-        reduce friction, improve user engagement, and streamline every single step along the journey.
-        I also worked with partner teams to earn placement on high-value surfaces such as Home and SERP,
+        discovery, a personal hub for content ownership, and the interactions that reduced friction
+        throughout the journey. I also worked with partner teams to earn placement on high-value surfaces such as Home and SERP,
         where Q&amp;A had to demonstrate enough value to justify limited space.
       </p>
 
@@ -332,9 +334,9 @@ export default function CommunityQA() {
           everywhere.
         </p>
         <BulletList className="mb-6" items={[
-          "Search turns unresolved intent into a question.",
-          "The Me Tab makes relevant questions easy to answer.",
-          "Home highlights popular discussions that invite people to read before asking them to contribute.",
+          <><strong>Search</strong> turns unresolved intent into a question.</>,
+          <><strong>The Me Tab</strong> makes relevant questions easy to answer.</>,
+          <><strong>Home</strong> highlights popular discussions that invite people to read before asking them to contribute.</>,
         ]} />
         <ImageRow images={[
           { src: "/images/Community Q&A/User_intent_SERP.png", alt: "SERP asking surface", caption: "Search - asking surface: Turn unresolved search intent into a question" },
@@ -358,7 +360,7 @@ export default function CommunityQA() {
           across Yelp.
         </p>
         <p className="text-sm text-neutral-800 mb-6">
-          I designed a dedicated neighborhood-level hub where people could ask questions, answer
+          I designed <strong>a dedicated neighborhood-level hub</strong> where people could ask questions, answer
           neighbors, browse discussions, and read curated local content. Entry points across Yelp led
           back to this shared destination, giving the exchange continuity and making the breadth of
           community activity visible.
@@ -370,7 +372,7 @@ export default function CommunityQA() {
         ]} />
         <h4 className="text-base font-semibold text-neutral-800 mt-4 mb-1">Why it mattered</h4>
         <p className="text-sm text-neutral-800">
-          The hub turned separate contribution moments into a neighborhood resource.
+          The hub turned separate contribution moments into <strong>a neighborhood resource</strong>.
           It gave readers a reason to explore, contributors a place to return, and the product a
           foundation that could grow beyond individual placements.
         </p>
@@ -384,13 +386,13 @@ export default function CommunityQA() {
           Yelp&apos;s established product language.
         </p>
         <p className="text-sm text-neutral-800 mb-4">
-          For asking, I designed a flow that recognizes question-like searches and helps people turn
-          them into complete questions without starting over. For answering, I introduced assisted
+          <strong>For asking</strong>, I designed a flow that recognizes question-like searches and helps people turn
+          them into complete questions without starting over. <strong>For answering</strong>, I introduced assisted
           business suggestions and inline tagging so contributors could add useful context and connect
           recommendations to Yelp business pages.
         </p>
         <p className="text-sm text-neutral-800 mb-6">
-          I later added lightweight reactions and notifications so contributors could see when their
+          I later added <strong>lightweight reactions and notifications</strong> so contributors could see when their
           answers helped someone. These feedback mechanisms supported return participation without
           adding the complexity of a full social conversation model.
         </p>
@@ -412,7 +414,7 @@ export default function CommunityQA() {
 
       <p>
         Community Q&amp;A now connects search, Home, contribution surfaces, profiles, notifications,
-        business pages, and Yelp Assistant. I established reusable patterns that helped these experiences
+        business pages, and Yelp Assistant. I established <strong>reusable patterns</strong> that helped these experiences
         work as one system while giving partner teams a consistent foundation for expansion.
       </p>
 
@@ -445,18 +447,18 @@ export default function CommunityQA() {
       <SectionDivider id="divider-reflection" />
       <h2 id="reflection">Reflection</h2>
       <p>
-        The smallest pilots made the largest strategic decisions possible. Testing asking and answering
+        <strong>The smallest pilots made the largest strategic decisions possible.</strong> Testing asking and answering
         separately gave the team confidence to invest while showing where Q&amp;A belonged within
         Yelp&apos;s existing behavior.
       </p>
       <p>
-        The hardest design problem was integration. Q&amp;A needed prominent placement on Home and
+        <strong>The hardest design problem was integration.</strong> Q&amp;A needed prominent placement on Home and
         search results, but every surface had competing priorities and established patterns. Making
         the value visible and designing within Yelp&apos;s existing language helped the feature earn
         space without feeling attached from the outside.
       </p>
       <p>
-        Scale then changed the problem again. After launch, success depended less on adding entry
+        <strong>Scale then changed the problem again.</strong> After launch, success depended less on adding entry
         points and more on answer relevance, content quality, feedback, and contributor retention.
         Staying close to the product helped the design mature from a set of flows into an ecosystem.
       </p>

@@ -149,7 +149,7 @@ export default function Elite() {
         {[
           { src: "/images/Elite Ecosystem/Problem_1.png", alt: "Low awareness", caption: "Low awareness: hidden discovery path" },
           { src: "/images/Elite Ecosystem/Problem_2.png", alt: "Poor consideration", caption: "Poor consideration: outdated Elite page" },
-          { src: "/images/Elite Ecosystem/Problem_3.png", alt: "Frictional nomination", caption: "Frictional nomination: not actionable dead end" },
+          { src: "/images/Elite Ecosystem/Problem_3.png", alt: "Frictional nomination", caption: "Frictional nomination: an unactionable dead end" },
         ].map(({ src, alt, caption }) => (
           <figure key={src} className="flex flex-col items-center">
             <Image src={src} alt={alt} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
@@ -158,7 +158,7 @@ export default function Elite() {
         ))}
       </div>
       <p>
-        These were connected leaks in the same contributor journey. Improving only the nomination form
+        These were <strong>connected leaks in the same contributor journey</strong>. Improving only the nomination form
         would not help people who never discovered Elite. Increasing awareness would have limited value
         if the destination failed to inspire or guide them.
       </p>
@@ -184,20 +184,35 @@ export default function Elite() {
           I restructured the page around the questions a potential candidate needed answered:
         </p>
         <BulletList className="mb-4" items={[
-          "What Elite is?",
-          "Why it matters?",
-          "What members experience?",
-          "How to become a strong candidate?",
-          "Where to get help?",
+          "What Elite is",
+          "Why it matters",
+          "What members experience",
+          "How to become a strong candidate",
+          "Where to get help",
         ]} />
-        <h4 className="text-base font-semibold text-neutral-800 mt-4 mb-1">Design solution</h4>
-        <BulletList className="mb-6" items={[
-          "Update the imagery and video with fresh content to make this program feel current and tangible",
-          "Separated the value of membership from the steps to join",
-          "Highlighted events and local Community Managers",
-          "Reduced repeated copy",
-          "Made the Nomination button persistent and accessible",
-        ]} />
+        <h4 className="text-base font-semibold text-neutral-800 mt-4 mb-1">Design solutions</h4>
+        <ul className="space-y-1.5 mb-6">
+          <li className="flex gap-2 text-sm text-neutral-800">
+            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+            <strong>Fresh imagery and video:</strong>&nbsp;Updated the content to make the program feel current and tangible.
+          </li>
+          <li className="flex gap-2 text-sm text-neutral-800">
+            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+            <span><strong>Separated the value of membership</strong> from the steps to join</span>
+          </li>
+          <li className="flex gap-2 text-sm text-neutral-800">
+            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+            <strong>Highlighted events and local Community Managers</strong>
+          </li>
+          <li className="flex gap-2 text-sm text-neutral-800">
+            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+            <strong>Reduced repeated copy</strong>
+          </li>
+          <li className="flex gap-2 text-sm text-neutral-800">
+            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+            <span><strong>Made the Nomination button</strong> persistent and accessible</span>
+          </li>
+        </ul>
         <VisualHint>Show: the original page structure, the revised narrative, mobile sticky action, and web nomination treatment.</VisualHint>
         <div className="not-prose mx-auto mb-6 w-full sm:w-[30%]">
           <Image src="/images/Elite Ecosystem/New-elite-page.gif" alt="New Elite page" width={800} height={1200} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
@@ -224,9 +239,9 @@ export default function Elite() {
             <div className="flex flex-col gap-4">
               <figure className="flex flex-col flex-1">
                 <div className="overflow-hidden rounded-lg flex-1">
-                  <Image src="/images/Elite Ecosystem/elite-page-section-4.png" alt="Benefits of being Elites" width={400} height={800} className="w-full h-full rounded-lg" style={{ objectFit: "cover", objectPosition: "top" }} />
+                  <Image src="/images/Elite Ecosystem/elite-page-section-4.png" alt="Benefits of being Elite" width={400} height={800} className="w-full h-full rounded-lg" style={{ objectFit: "cover", objectPosition: "top" }} />
                 </div>
-                <figcaption className="text-xs text-neutral-500 text-center mt-2">Benefits of being Elites</figcaption>
+                <figcaption className="text-xs text-neutral-500 text-center mt-2">Benefits of being Elite</figcaption>
               </figure>
               <figure className="flex flex-col flex-1">
                 <div className="overflow-hidden rounded-lg flex-1">
@@ -243,9 +258,9 @@ export default function Elite() {
             </figure>
             <figure className="flex flex-col">
               <div className="overflow-hidden rounded-lg flex-1">
-                <Image src="/images/Elite Ecosystem/elite-page-section-6.png" alt="Events and Elites stories" width={400} height={800} className="w-full h-full rounded-lg" style={{ objectFit: "cover", objectPosition: "top" }} />
+                <Image src="/images/Elite Ecosystem/elite-page-section-6.png" alt="Elite events and stories" width={400} height={800} className="w-full h-full rounded-lg" style={{ objectFit: "cover", objectPosition: "top" }} />
               </div>
-              <figcaption className="text-xs text-neutral-500 text-center mt-2">Events and Elites stories</figcaption>
+              <figcaption className="text-xs text-neutral-500 text-center mt-2">Elite events and stories</figcaption>
             </figure>
           </div>
           </div>
@@ -277,11 +292,20 @@ export default function Elite() {
           on the redesigned Elite page.
         </p>
         <p className="text-sm text-neutral-800 mb-4">This created a deliberate sequence:</p>
-        <BulletList className="mb-6" items={[
-          "Recognize recent contribution",
-          "Introduce an aspirational next step",
-          "Provide a place to understand the community before nominating",
-        ]} />
+        <ul className="space-y-1.5 mb-6">
+          <li className="flex gap-2 text-sm text-neutral-800">
+            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+            <strong>Recognize recent contribution</strong>
+          </li>
+          <li className="flex gap-2 text-sm text-neutral-800">
+            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+            <strong>Introduce an aspirational next step</strong>
+          </li>
+          <li className="flex gap-2 text-sm text-neutral-800">
+            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+            <strong>Provide a place to understand the community before nominating</strong>
+          </li>
+        </ul>
         <VisualHint>Show: post-review context, targeted Elite introduction, and transition into the Elite page.</VisualHint>
         <div className="not-prose grid grid-cols-1 sm:grid-cols-3 gap-6 mx-auto mb-6" style={{ width: "90%" }}>
           {[
@@ -358,7 +382,7 @@ export default function Elite() {
 
         <p className="text-sm text-neutral-800 mb-6">
           I also organized the rejection reasons and partnered with Marketing to keep guidance consistent
-          across the app and follow-up email. Marketing owned the email experience; I connected its message
+          across the app and follow-up email. <strong>Marketing owned the email experience</strong>; I connected its message
           to the product logic and language.
         </p>
         <h4 className="text-base font-semibold text-neutral-800 mt-4 mb-1">Why it mattered</h4>
@@ -375,11 +399,20 @@ export default function Elite() {
 
       <h3>Each surface prepared people for the next step</h3>
       <p>The three projects shared a common design logic:</p>
-      <BulletList size="base" items={[
-        "The awareness experience introduced Elite only after a person demonstrated contribution intent.",
-        "The Elite page built understanding and aspiration before asking for a nomination.",
-        "The nomination flow preserved motivation when someone was not yet ready.",
-      ]} />
+      <ul className="space-y-1.5">
+        <li className="flex gap-2 text-base">
+          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+          <span><strong>The awareness experience</strong> introduced Elite only after a person demonstrated contribution intent.</span>
+        </li>
+        <li className="flex gap-2 text-base">
+          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+          <span><strong>The Elite page</strong> built understanding and aspiration before asking for a nomination.</span>
+        </li>
+        <li className="flex gap-2 text-base">
+          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+          <span><strong>The nomination flow</strong> preserved motivation when someone was not yet ready.</span>
+        </li>
+      </ul>
       <p className="mt-4">
         Copy and interaction worked together across the journey. Awareness language reflected effort
         already made. The Elite page explained the value of the community without promising membership.
@@ -392,9 +425,9 @@ export default function Elite() {
 
       <div className="not-prose grid grid-cols-1 sm:grid-cols-3 gap-6 my-6 mx-auto" style={{ width: "90%" }}>
         {[
-          { src: "/images/Elite Ecosystem/Awareness-2.png", alt: "Know Elite exists", caption: "Know the existence of Elite Community" },
-          { src: "/images/Elite Ecosystem/New-elite-page.gif", alt: "Understand Elite", caption: "Understand what is Elite Community" },
-          { src: "/images/Elite Ecosystem/Nomation-4.gif", alt: "Get guidance", caption: "Get guidance about how to become an Elite" },
+          { src: "/images/Elite Ecosystem/Awareness-2.png", alt: "Know Elite exists", caption: "Discover the Elite community" },
+          { src: "/images/Elite Ecosystem/New-elite-page.gif", alt: "Understand Elite", caption: "Understand what Elite offers" },
+          { src: "/images/Elite Ecosystem/Nomation-4.gif", alt: "Get guidance", caption: "Get guidance on becoming Elite" },
         ].map(({ src, alt, caption }) => (
           <figure key={src} className="flex flex-col items-center">
             <Image src={src} alt={alt} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
@@ -416,7 +449,7 @@ export default function Elite() {
         "The nomination work estimated that increasing valid nominations from 20% to 25% could add approximately 5K Elites annually.",
       ]} />
       <p className="mt-4">
-        These figures represent opportunity sizing and projections, not measured product outcomes. They
+        These figures represent <strong>opportunity sizing and projections, not measured product outcomes</strong>. They
         helped the team prioritize the funnel and understand how improvements in awareness and nomination
         quality could translate into more contribution.
       </p>
@@ -432,12 +465,24 @@ export default function Elite() {
         how their body of work was developing.
       </p>
       <p>The emerging strategy extends the journey from isolated touchpoints toward visible progression:</p>
-      <BulletList size="base" items={[
-        "Introduce Elite after a person’s first meaningful contributions",
-        "Show how reviews, photos, and other activity build a strong contributor profile",
-        "Provide ongoing guidance before nomination rather than only after rejection",
-        "Preserve human judgment while making progress easier to understand",
-      ]} />
+      <ul className="space-y-1.5">
+        <li className="flex gap-2 text-base">
+          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+          <span><strong>Introduce Elite</strong> after a person&apos;s first meaningful contributions</span>
+        </li>
+        <li className="flex gap-2 text-base">
+          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+          <span><strong>Show how reviews, photos, and other activity</strong> build a strong contributor profile</span>
+        </li>
+        <li className="flex gap-2 text-base">
+          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+          <span><strong>Provide ongoing guidance</strong> before nomination rather than only after rejection</span>
+        </li>
+        <li className="flex gap-2 text-base">
+          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+          <span><strong>Preserve human judgment</strong> while making progress easier to understand</span>
+        </li>
+      </ul>
       <p className="mt-4">
         This direction connects Elite to Yelp&apos;s broader contribution strategy. The goal is to help
         more casual contributors develop into recognized local voices, while keeping membership grounded
@@ -451,18 +496,18 @@ export default function Elite() {
 
       <h3>Ecosystem design required balancing growth with selectivity</h3>
       <p>
-        The most important shift was recognizing that awareness, consideration, and rejection were not
-        separate interface problems. They shaped one person&apos;s understanding of Elite and their
+        <strong>The most important shift was recognizing that awareness, consideration, and rejection were not
+        separate interface problems.</strong> They shaped one person&apos;s understanding of Elite and their
         willingness to keep contributing.
       </p>
       <p>
-        The work also required a careful balance. We wanted to make the path clearer without turning
+        <strong>The work also required a careful balance.</strong> We wanted to make the path clearer without turning
         Elite into a mechanical checklist or weakening the role of Community Managers. The strongest
         designs gave people useful guidance while preserving the human judgment that makes the program
         meaningful.
       </p>
       <p>
-        I also learned that rejection can remain a productive moment. People who nominate themselves
+        <strong>I also learned that rejection can remain a productive moment.</strong> People who nominate themselves
         already have motivation. Clear reasons and a relevant next step can redirect that energy toward
         stronger contributions instead of allowing it to disappear.
       </p>

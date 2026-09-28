@@ -19,8 +19,8 @@ interface Section {
 const ALL_PROJECTS = [
   {
     title: "Community Q&A",
-    description: "Designed and scaled a 0→1 community-driven contribution model across multiple product surfaces at Yelp.",
-    tags: ["0→1", "Community", "Scale"],
+    description: "Designed and scaled a new community contribution model across multiple Yelp surfaces.",
+    tags: ["Community", "Growth", "Scale"],
     href: "/work/community-qa",
     company: "Yelp",
   },

@@ -36,13 +36,13 @@ function CardLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-function BulletList({ items, className, size = "sm" }: { items: string[]; className?: string; size?: "sm" | "base" }) {
+function BulletList({ items, className, size = "sm" }: { items: React.ReactNode[]; className?: string; size?: "sm" | "base" }) {
   const textClass = size === "base" ? "text-base" : "text-sm text-neutral-800";
   const dotMt = size === "base" ? "mt-2" : "mt-1.5";
   return (
     <ul className={`space-y-1.5 ${className ?? ""}`}>
-      {items.map((item) => (
-        <li key={item} className={`flex gap-2 ${textClass}`}>
+      {items.map((item, i) => (
+        <li key={i} className={`flex gap-2 ${textClass}`}>
           <span className={`${dotMt} w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0`} />
           {item}
         </li>
@@ -83,7 +83,7 @@ export default function Recognition() {
       subtitle="Building a system that turns contribution into lasting engagement"
       role="Lead Product Designer"
       scope="Contributor motivation, credibility signals, and reward strategy"
-      team="Contribution and Content"
+      team="Contributions and Content Design"
       year="2023–present"
       tags={["Engagement", "Retention", "Systems Design"]}
       sections={SECTIONS}
@@ -162,16 +162,16 @@ export default function Recognition() {
         contribution:
       </p>
       <BulletList size="base" items={[
-        "Review contribution increased approximately 6–8% compared with the control",
-        "About 20% of people who received the Recognition message earned one",
-        "Reviews written toward Recognition showed stronger quality signals",
+        <>Review contribution increased approximately <strong>6–8%</strong> compared with the control</>,
+        <>About <strong>20%</strong> of people who received the Recognition message earned one</>,
+        <>Reviews written toward Recognition showed <strong>stronger quality signals</strong></>,
       ]} />
       <p className="mt-4">
         The test proved the motivational value, but the experience ended after the reward moment.
       </p>
       <BulletList size="base" className="my-2" items={[
-        "Contributors could not return to their Recognitions",
-        "Readers never saw them in the context of a review",
+        <strong key="gap-1">Contributors could not return to their Recognitions</strong>,
+        <strong key="gap-2">Readers never saw them in the context of a review</strong>,
       ]} />
       <div className="not-prose flex justify-center gap-4 my-6" style={{ height: "50vh" }}>
         <div className="flex flex-col items-center" style={{ width: "calc(50vh * (360 / 780) * 1.2)" }}>
@@ -198,12 +198,12 @@ export default function Recognition() {
         Recognition needed to create value for two audiences with different needs.
       </p>
       <p>
-        For contributors, it had to feel like meaningful acknowledgment rather than a decorative badge.
+        <strong>For contributors</strong>, it had to feel like meaningful acknowledgment rather than a decorative badge.
         People needed a place to revisit their achievements, understand what they represented, and
         connect them to the reviews that earned them.
       </p>
       <p>
-        For readers, Recognition needed to work as a fast credibility signal without adding noise to
+        <strong>For readers</strong>, Recognition needed to work as a fast credibility signal without adding noise to
         an already dense review surface. Readers also needed a way to verify the signal by exploring
         the contributor&apos;s related reviews.
       </p>
@@ -227,14 +227,14 @@ export default function Recognition() {
         </p>
         <p className="text-sm text-neutral-800 mb-6">
           I explored placing Recognition inside the Impact section, but that blurred two different ideas.
-          Impact described what happened because of a contribution. Recognition represented an achievement
+          <strong>Impact</strong> described what happened because of a contribution. Recognition represented an <strong>Achievement</strong>
           earned through a body of work.
         </p>
         <p className="text-sm text-neutral-800 mb-6">
-          I kept Recognition within Achievements, positioned it directly below Yelp Elite, and moved
+          I kept Recognition within Achievements, positioned it <strong>directly below Yelp Elite</strong>, and moved
           the section higher on the page for better discovery. The Recognition details experience showed
-          when each achievement was earned, how many related reviews the contributor had written, and the
-          reviews connected to it.
+          <strong>when each achievement was earned, how many related reviews the contributor had written, and the
+          reviews connected to it</strong>.
         </p>
         <VisualHint>Show: rejected Impact placement, final Me Tab placement, Recognition details, and related review list.</VisualHint>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6 mt-2">
@@ -276,9 +276,9 @@ export default function Recognition() {
           difficult to interpret.
         </p>
         <p className="text-sm text-neutral-800 mb-6">
-          The final design replaced the statistics row when a contributor had a Recognition relevant to
-          that business. It showed the category and the number of reviews behind it. On web, readers
-          could open the contributor&apos;s related reviews and evaluate the experience supporting the
+          The final design replaced the statistics row when a contributor had a Recognition <strong>relevant to
+          that business</strong>. It showed <strong>the category and the number of reviews behind it</strong>. On web, readers
+          could <strong>open the contributor&apos;s related reviews</strong> and evaluate the experience supporting the
           Recognition.
         </p>
         <VisualHint>Show: the three placement explorations, final user passport, and category-specific review destination.</VisualHint>
@@ -316,8 +316,8 @@ export default function Recognition() {
           without erasing what contributors had already earned.
         </p>
         <p className="text-sm text-neutral-800 mb-6">
-          I reframed the experience around keeping a Recognition active. Contributors could still see
-          what they had earned, while writing another relevant review restored its public visibility.
+          I reframed the experience around <strong>keeping a Recognition active</strong>. Contributors could still see
+          what they had earned, while writing another relevant review <strong>restored its public visibility</strong>.
           This preserved the integrity of the reader-facing signal without erasing the contributor&apos;s
           history.
         </p>
@@ -373,9 +373,9 @@ export default function Recognition() {
       </p>
       <p>The emerging system distinguishes several jobs that a reward can perform:</p>
       <BulletList size="base" items={[
-        "Acknowledgement gives something back in response",
-        "Status communicates what a body of work says about the contributor — Recognition",
-        "Incentive helps shape the next meaningful action — Streaks",
+        <><strong>Acknowledgement</strong> reflects that a contribution mattered.</>,
+        <><strong>Recognition</strong> communicates what a body of work says about the contributor.</>,
+        <><strong>Streaks</strong> encourage the next meaningful contribution.</>,
       ]} />
       <p className="mt-4">
         I now lead the design of <strong>Monthly Review Streaks</strong>, an ongoing initiative that
@@ -399,17 +399,17 @@ export default function Recognition() {
 
       <h3>Productizing an idea required a different kind of design leadership</h3>
       <p>
-        The initial experiment had already proven that Recognition could influence behavior. My role
+        <strong>The initial experiment had already proven that Recognition could influence behavior.</strong> My role
         was to determine how that moment should live within the larger product and become useful to
         people beyond the person receiving it.
       </p>
       <p>
-        Sequencing became a design decision. Establishing the contributor&apos;s permanent record first
+        <strong>Sequencing became a design decision.</strong> Establishing the contributor&apos;s permanent record first
         gave the reader-facing signal somewhere credible to lead. Designing for contributors and readers
         separately also kept each surface focused on the value it needed to provide.
       </p>
       <p>
-        The work changed how I think about motivation systems. A reward can generate a short-term
+        <strong>The work changed how I think about motivation systems.</strong> A reward can generate a short-term
         response, but a coherent system must help people understand their progress without reducing
         contribution to points or pressure. Recognition established the foundation. Streaks now explore
         how the system can support consistency over time.
