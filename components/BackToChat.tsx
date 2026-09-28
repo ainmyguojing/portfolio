@@ -6,8 +6,9 @@ import { usePathname } from "next/navigation";
 export default function BackToChat() {
   const pathname = usePathname();
   const isChat = pathname === "/chat";
+  const isHome = pathname === "/";
 
-  if (isChat) return null;
+  if (!isHome || isChat) return null;
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 pointer-events-none" style={{ height: "15vh" }}>
