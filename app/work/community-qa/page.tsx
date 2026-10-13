@@ -75,11 +75,12 @@ function FullWidthImage({ src, alt, caption }: { src: string; alt: string; capti
 
 function ImageRow({ images, scale = "90%", matchHeight = false }: { images: { src: string; alt: string; caption: string }[]; scale?: string; matchHeight?: boolean }) {
   const cols = images.length === 2 ? "sm:grid-cols-2" : "sm:grid-cols-3";
+  const itemWidth = images.length === 3 ? "w-[50vw] sm:w-full mx-auto" : "w-full";
   if (matchHeight) {
     return (
       <div className={`not-prose grid grid-cols-1 ${cols} gap-6 my-6 mx-auto`} style={{ width: scale }}>
         {images.map(({ src, alt, caption }) => (
-          <figure key={src} className="flex flex-col items-center">
+          <figure key={src} className={`flex flex-col items-center ${itemWidth}`}>
             <div className="w-full flex-1 flex items-center justify-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={src} alt={alt} className="rounded-lg object-contain w-full h-full" />
@@ -93,7 +94,7 @@ function ImageRow({ images, scale = "90%", matchHeight = false }: { images: { sr
   return (
     <div className={`not-prose grid grid-cols-1 ${cols} gap-6 my-6 mx-auto`} style={{ width: scale }}>
       {images.map(({ src, alt, caption }) => (
-        <figure key={src} className="flex flex-col items-center">
+        <figure key={src} className={`flex flex-col items-center ${itemWidth}`}>
           <Image src={src} alt={alt} width={400} height={800} className="w-full rounded-lg" style={{ objectFit: "contain" }} />
           <figcaption className="text-xs text-neutral-500 text-center mt-2 w-full">{caption}</figcaption>
         </figure>
@@ -160,24 +161,19 @@ export default function CommunityQA() {
     >
       {/* ──────────── Hero media ──────────── */}
       <VisualHint>Hero visual: One strong product image with the five results as large, simple typography.</VisualHint>
-      <div className="not-prose flex gap-1 items-start justify-center my-8" style={{ height: 320, "--media-h": "320px" } as React.CSSProperties}>
+      <div className="not-prose relative left-1/2 my-8 grid w-[80vw] -translate-x-1/2 grid-cols-[0.5fr_1.698fr] items-start gap-1">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/Community%20Q%26A/Comp%201_2.gif"
           alt="Community Q&A interaction"
-          style={{
-            height: "100%",
-            width: "auto",
-            flexShrink: 0,
-            clipPath: "inset(0.5% 2.5% 0.5% 2.5% round calc(var(--media-h) * 0.08))",
-          }}
+          className="h-auto w-full"
+          style={{ clipPath: "inset(0.9% 3% 0.9% 3% round 15% / 7.5%)" }}
         />
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/Community%20Q%26A/CQA_desktop.png"
           alt="Community Q&A desktop view"
-          className="rounded-xl object-contain"
-          style={{ height: "100%", width: "auto" }}
+          className="h-auto w-full rounded-xl object-contain"
         />
       </div>
 

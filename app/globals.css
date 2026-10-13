@@ -73,6 +73,13 @@ img {
 .bg-neutral-300 { background: rgba(255,255,255,0.3) !important; }
 
 @layer components {
+  @media (max-width: 639px) {
+    .mobile-project-card {
+      border-bottom-left-radius: 8px !important;
+      border-bottom-right-radius: 8px !important;
+    }
+  }
+
   /* Card shell */
   .card {
     @apply rounded-2xl;

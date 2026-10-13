@@ -337,7 +337,7 @@ export default function CaseStudyLayout({
 
       {/* Footer with project carousel */}
       <footer className="border-t mt-0" style={{ borderColor: "rgba(255,255,255,0.1)", background: "rgba(8,108,102,0.7)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }}>
-        <div className="max-w-[82vw] mx-auto px-4 sm:px-0 pt-10 pb-4">
+        <div className="mx-auto w-full max-w-none px-4 pt-10 pb-4 sm:max-w-[82vw] sm:px-0">
           <div className="flex items-center gap-3 mb-5">
             <p className="section-label">More Projects</p>
             <div className="flex items-center gap-1 ml-2">
@@ -361,15 +361,15 @@ export default function CaseStudyLayout({
               </button>
             </div>
           </div>
-          <div id="project-carousel" className="flex gap-4 overflow-x-auto py-4 -my-4 px-1" style={{ scrollbarWidth: "none" }}>
+          <div id="project-carousel" className="flex snap-x snap-mandatory gap-4 overflow-x-auto py-4 -my-4 px-0 sm:px-1" style={{ scrollbarWidth: "none" }}>
             {otherProjects.map((project, i) => {
               const next = otherProjects[i + 1];
               const showDivider = next && project.company !== next.company;
               return (
                 <div key={project.href} className="flex items-stretch gap-4 shrink-0">
-                  <Link href={project.href} className="group block w-[28.8rem]">
+                  <Link href={project.href} className="group block w-[78vw] snap-start sm:w-[28.8rem]">
                     <motion.div
-                      className="h-full p-6 flex flex-col rounded-2xl"
+                      className="h-full p-5 sm:p-6 flex flex-col rounded-2xl"
                       style={{
                         background: "rgba(255,255,255,0.08)",
                         border: "1px solid rgba(255,255,255,0.15)",
@@ -380,9 +380,9 @@ export default function CaseStudyLayout({
                       whileHover={{ scale: 1.018, background: "rgba(255,255,255,0.14)" }}
                       transition={{ duration: 0.25, ease: [0.2, 0.8, 0.2, 1] }}
                     >
-                      <div className="flex justify-between mb-4 gap-1.5">
+                      <div className="flex flex-wrap justify-between mb-4 gap-1.5">
                         <span className="tag">{project.company}</span>
-                        <div className="flex gap-1.5">
+                        <div className="flex flex-wrap justify-end gap-1.5">
                           {project.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
                         </div>
                       </div>

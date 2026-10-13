@@ -96,7 +96,7 @@ export default function Home() {
           </div>
 
           {/* Heading text */}
-          <div className="relative z-10 pt-2 sm:pt-4">
+          <div className="relative z-10 flex h-[227px] flex-col justify-end pt-2 sm:pt-4 lg:block lg:h-auto">
             <div style={{ overflow: "hidden", paddingBottom: "0.1em" }}>
               <motion.div
                 initial={{ y: "-110%" }}
@@ -124,18 +124,17 @@ export default function Home() {
 
         {/* Bio */}
         <motion.div
-          className="relative z-10 mt-5"
+          className="relative z-10 mt-3 lg:mt-5 lg:ml-[245px]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 2.6 }}
-          style={{ marginLeft: 245 }}
         >
-          <p className="text-xl text-white leading-relaxed max-w-xl flex items-center gap-2 flex-wrap" style={{ marginTop: 32 }}>
+          <p className="mt-0 text-xl text-white leading-relaxed max-w-xl flex items-center gap-2 flex-wrap lg:mt-8">
             I&apos;m a Lead Product Designer at
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/images/Yelp%20Logo/Other.svg" alt="Yelp" style={{ height: "1.44em", marginLeft: "8px", position: "relative", top: "-2px" }} className="inline-block align-middle" />
           </p>
-          <p className="text-xl leading-relaxed max-w-xl mt-3 text-white">
+          <p className="mt-1 text-xl leading-relaxed max-w-xl text-white sm:mt-3">
             Specializing in consumer products and community ecosystems.
           </p>
           <p className="text-xl leading-relaxed max-w-2xl mt-0.5 text-white">
@@ -145,12 +144,10 @@ export default function Home() {
             I design experiences to turn participation into lasting engagement.
           </p>
         </motion.div>
-      </section>
 
       {/* ─── View my work / About me ─── */}
       <motion.section
-        className="relative z-10 max-w-[82vw] mx-auto pb-10 flex items-center gap-12"
-        style={{ paddingTop: 86 }}
+        className="relative z-10 flex w-full flex-col items-start gap-4 pb-10 pt-8 sm:flex-row sm:items-center sm:gap-12 sm:pt-[86px]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 3.0 }}
@@ -166,7 +163,7 @@ export default function Home() {
               parent.onmouseleave = () => { el.style.width = "20px"; };
             }}
           />
-          <span className="relative z-10 pl-7 pr-6">View my work ↓</span>
+          <span className="relative z-10 whitespace-nowrap pl-7 pr-6">View my work ↓</span>
         </a>
         <Link href="/about" className="group relative inline-flex items-center text-base font-medium text-white transition-colors duration-200" style={{ height: 40 }}>
           <span
@@ -179,9 +176,10 @@ export default function Home() {
               parent.onmouseleave = () => { el.style.width = "20px"; };
             }}
           />
-          <span className="relative z-10 pl-7 pr-6">About me →</span>
+          <span className="relative z-10 whitespace-nowrap pl-7 pr-6">About me →</span>
         </Link>
       </motion.section>
+      </section>
 
       {/* ─── Selected Work · Yelp ─── */}
       <section id="selected-work" className="relative z-10 max-w-[82vw] mx-auto pt-8">
@@ -198,12 +196,10 @@ export default function Home() {
       {/* ─── Featured — Community Q&A ─── */}
       {/* Pill IS the container — content can never overflow */}
       <motion.div
-        className="mx-auto mt-6 py-16 sm:py-20 px-8 sm:px-16 overflow-hidden"
+        className="mobile-project-card mx-auto sm:ml-[calc((100vw-82vw)/2-60px)] mt-6 pt-24 pb-10 sm:py-20 px-8 sm:px-16 overflow-hidden rounded-t-full sm:rounded-full w-[82vw] sm:w-auto"
         style={{
           background: "#0C8F87",
-          borderRadius: 9999,
           maxWidth: "calc(82vw + 60px)",
-          marginLeft: "calc((100vw - 82vw) / 2 - 60px)",
         }}
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -212,7 +208,7 @@ export default function Home() {
       >
         <Link href={featured.href} className="group block">
           <div className="flex flex-col sm:flex-row gap-8 items-center">
-            <div className="flex-shrink-0 sm:w-[32%] flex flex-col justify-between sm:pl-4">
+            <div className="order-2 sm:order-1 flex-shrink-0 sm:w-[32%] flex flex-col justify-between sm:pl-4">
               <div>
                 <h2 className="text-3xl tracking-tight mb-3 leading-tight text-white">
                   {featured.title}
@@ -226,23 +222,23 @@ export default function Home() {
               </div>
               <span className="cta-link mt-6">View case study <ArrowIcon /></span>
             </div>
-            <div className="flex-1 min-w-0 flex gap-1 items-start" style={{ marginRight: 40, height: 320, "--media-h": "320px" } as React.CSSProperties}>
+            <div className="order-1 sm:order-2 flex-1 min-w-0 flex justify-center sm:justify-start gap-1 items-center sm:items-start sm:mr-10 h-[190px] sm:h-[320px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/Community%20Q%26A/Comp%201_2.gif"
                 alt="Community Q&A interaction"
+                className="h-auto w-[40vw] sm:h-full sm:w-auto"
                 style={{
-                  height: "100%",
-                  width: "auto",
+                  maxWidth: "100%",
                   flexShrink: 0,
-                  clipPath: "inset(0.5% 2.5% 0.5% 2.5% round calc(var(--media-h) * 0.08))",
+                  clipPath: "inset(0.9% 3% 0.9% 3% round 15% / 7.5%)",
                 }}
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/Community%20Q%26A/CQA_desktop.png"
                 alt="Community Q&A desktop view"
-                className="rounded-xl object-contain"
+                className="hidden sm:block rounded-xl object-contain"
                 style={{ height: "100%", width: "auto" }}
               />
             </div>
@@ -262,17 +258,16 @@ export default function Home() {
             >
               <Link href={project.href} className="group block h-full">
                 <motion.div
-                  className="flex flex-col h-full"
+                  className="mobile-project-card flex flex-col h-full rounded-t-full sm:rounded-b-3xl"
                   style={{
                     background: "#0C8F87",
-                    borderRadius: "9999px 9999px 24px 24px",
                   }}
                   whileHover={{ scale: 1.04 }}
                   transition={{ duration: 0.3, ease: [0.2, 0.8, 0.2, 1] }}
                 >
                   {/* Image area — inside the arch top */}
-                  <div className="px-6 pb-4" style={{ paddingTop: 64 }}>
-                    <div className="relative flex items-center justify-center" style={{ height: 280 }}>
+                  <div className="px-6 pb-4 pt-24 sm:pt-16">
+                    <div className="relative flex items-center justify-center h-[240px] sm:h-[280px]">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={project.cover} alt={project.title} className="rounded-xl object-contain" style={{ width: "90%", maxHeight: "100%" }} />
                       {project.href === "/work/year-on-yelp" && (
@@ -317,7 +312,7 @@ export default function Home() {
         >
           Selected Work · Doc.ai
         </motion.p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-4">
           {docAiProjects.map((project, i) => (
             <motion.div
               key={project.href}
@@ -328,17 +323,22 @@ export default function Home() {
             >
               <Link href={project.href} className="group block h-full">
                 <motion.div
-                  className="h-full flex flex-col items-center relative"
+                  className="mobile-project-card h-full flex flex-col items-center relative overflow-hidden rounded-t-full bg-[#0C8F87] sm:overflow-visible sm:rounded-none sm:bg-transparent"
                   whileHover={{ scale: 1.04 }}
                   transition={{ duration: 0.3, ease: [0.2, 0.8, 0.2, 1] }}
                 >
                   {/* Circle background — contains image + text, image overflows */}
-                  <div className="relative flex flex-col items-center" style={{ width: "85%" }}>
-                    <div className="absolute rounded-full" style={{ background: "#0C8F87", width: "100%", aspectRatio: "1 / 1", top: 0, left: 0 }} />
+                  <div className="relative flex w-full flex-col items-center sm:w-[85%]">
+                    <div className="absolute hidden rounded-full sm:block" style={{ background: "#0C8F87", width: "100%", aspectRatio: "1 / 1", top: 0, left: 0 }} />
                     {/* Image — overflows the circle */}
-                    <div className="relative z-10 flex items-center justify-center" style={{ paddingTop: 40, height: 300 }}>
+                    <div className="relative z-10 flex h-[280px] items-center justify-center pt-24 sm:h-[300px] sm:pt-10">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={project.cover} alt={project.title} className="rounded-xl object-contain" style={{ width: "110%", maxHeight: "100%" }} />
+                      <img
+                        src={project.cover}
+                        alt={project.title}
+                        className={`rounded-xl object-contain ${project.href === "/other-work/design-system" ? "w-[80%] sm:w-[110%]" : "w-[110%]"}`}
+                        style={{ maxHeight: "100%" }}
+                      />
                     </div>
                     {/* Text — inside the circle */}
                     <div className="relative z-10 px-6 pt-4 pb-8" style={{ maxWidth: "90%" }}>
