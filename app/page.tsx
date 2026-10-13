@@ -129,18 +129,18 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 2.6 }}
         >
-          <p className="mt-0 text-base sm:text-xl text-white leading-relaxed max-w-xl flex items-center gap-2 flex-wrap lg:mt-8">
+          <p className="mt-0 text-base sm:text-lg text-white leading-relaxed max-w-xl flex items-center gap-2 flex-wrap lg:mt-8">
             I&apos;m a Lead Product Designer at
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/images/Yelp%20Logo/Other.svg" alt="Yelp" style={{ height: "1.44em", marginLeft: "8px", position: "relative", top: "-2px" }} className="inline-block align-middle" />
           </p>
-          <p className="mt-1 text-base sm:text-xl leading-relaxed max-w-xl text-white sm:mt-3">
+          <p className="mt-1 text-base sm:text-lg leading-relaxed max-w-xl text-white sm:mt-3">
             Specializing in consumer products and community ecosystems.
           </p>
-          <p className="text-base sm:text-xl leading-relaxed max-w-2xl mt-0.5 text-white">
+          <p className="text-base sm:text-lg leading-relaxed max-w-2xl mt-0.5 text-white">
             I lead work from early strategy and validation through launch and growth.
           </p>
-          <p className="text-base sm:text-xl leading-relaxed max-w-2xl mt-0.5 text-white">
+          <p className="text-base sm:text-lg leading-relaxed max-w-2xl mt-0.5 text-white">
             I design experiences to turn participation into lasting engagement.
           </p>
         </motion.div>
@@ -152,7 +152,7 @@ export default function Home() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 3.0 }}
       >
-        <a href="#selected-work" className="group relative inline-flex items-center text-sm sm:text-base font-medium text-white transition-colors duration-200" style={{ height: 40 }}>
+        <a href="#selected-work" className="group relative inline-flex items-center text-sm sm:text-base font-normal text-white transition-colors duration-200" style={{ height: 40 }}>
           <span
             className="absolute left-0 top-0 bottom-0 transition-all duration-300 ease-out"
             style={{ width: 20, borderRadius: "0 9999px 9999px 0", background: "#FF258E" }}
@@ -165,7 +165,7 @@ export default function Home() {
           />
           <span className="relative z-10 whitespace-nowrap pl-7 pr-6">View my work ↓</span>
         </a>
-        <Link href="/about" className="group relative inline-flex items-center text-sm sm:text-base font-medium text-white transition-colors duration-200" style={{ height: 40 }}>
+        <Link href="/about" className="group relative inline-flex items-center text-sm sm:text-base font-normal text-white transition-colors duration-200" style={{ height: 40 }}>
           <span
             className="absolute left-0 top-0 bottom-0 transition-all duration-300 ease-out"
             style={{ width: 20, borderRadius: "0 9999px 9999px 0", background: "#FF258E" }}
