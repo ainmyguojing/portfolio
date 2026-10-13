@@ -261,7 +261,7 @@ export default function CaseStudyLayout({
 }: CaseStudyLayoutProps) {
   const otherProjects = ALL_PROJECTS.filter((p) => p.href !== currentHref);
   return (
-    <div className="min-h-screen pt-14">
+    <div className="case-study-page min-h-screen pt-14">
       {sections && sections.length > 0 && <SideIndex sections={sections} />}
 
       {/* Hero */}
@@ -295,7 +295,7 @@ export default function CaseStudyLayout({
           <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight tracking-tight mb-4">
             {title}
           </h1>
-          <p className="text-lg leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.7)" }}>{subtitle}</p>
+          <p className="text-base leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.7)" }}>{subtitle}</p>
 
           {introContent && <div className="mb-10">{introContent}</div>}
 

@@ -129,18 +129,18 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 2.6 }}
         >
-          <p className="mt-0 text-xl text-white leading-relaxed max-w-xl flex items-center gap-2 flex-wrap lg:mt-8">
+          <p className="mt-0 text-base sm:text-xl text-white leading-relaxed max-w-xl flex items-center gap-2 flex-wrap lg:mt-8">
             I&apos;m a Lead Product Designer at
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/images/Yelp%20Logo/Other.svg" alt="Yelp" style={{ height: "1.44em", marginLeft: "8px", position: "relative", top: "-2px" }} className="inline-block align-middle" />
           </p>
-          <p className="mt-1 text-xl leading-relaxed max-w-xl text-white sm:mt-3">
+          <p className="mt-1 text-base sm:text-xl leading-relaxed max-w-xl text-white sm:mt-3">
             Specializing in consumer products and community ecosystems.
           </p>
-          <p className="text-xl leading-relaxed max-w-2xl mt-0.5 text-white">
+          <p className="text-base sm:text-xl leading-relaxed max-w-2xl mt-0.5 text-white">
             I lead work from early strategy and validation through launch and growth.
           </p>
-          <p className="text-xl leading-relaxed max-w-2xl mt-0.5 text-white">
+          <p className="text-base sm:text-xl leading-relaxed max-w-2xl mt-0.5 text-white">
             I design experiences to turn participation into lasting engagement.
           </p>
         </motion.div>
@@ -152,7 +152,7 @@ export default function Home() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 3.0 }}
       >
-        <a href="#selected-work" className="group relative inline-flex items-center text-base font-medium text-white transition-colors duration-200" style={{ height: 40 }}>
+        <a href="#selected-work" className="group relative inline-flex items-center text-sm sm:text-base font-medium text-white transition-colors duration-200" style={{ height: 40 }}>
           <span
             className="absolute left-0 top-0 bottom-0 transition-all duration-300 ease-out"
             style={{ width: 20, borderRadius: "0 9999px 9999px 0", background: "#FF258E" }}
@@ -165,7 +165,7 @@ export default function Home() {
           />
           <span className="relative z-10 whitespace-nowrap pl-7 pr-6">View my work ↓</span>
         </a>
-        <Link href="/about" className="group relative inline-flex items-center text-base font-medium text-white transition-colors duration-200" style={{ height: 40 }}>
+        <Link href="/about" className="group relative inline-flex items-center text-sm sm:text-base font-medium text-white transition-colors duration-200" style={{ height: 40 }}>
           <span
             className="absolute left-0 top-0 bottom-0 transition-all duration-300 ease-out"
             style={{ width: 20, borderRadius: "0 9999px 9999px 0", background: "#FF258E" }}
@@ -210,17 +210,17 @@ export default function Home() {
           <div className="flex flex-col gap-4 items-center sm:flex-row sm:gap-8">
             <div className="order-2 sm:order-1 flex-shrink-0 sm:w-[32%] flex flex-col justify-between sm:pl-4">
               <div>
-                <h2 className="text-3xl tracking-tight mb-3 leading-tight text-white">
+                <h2 className="text-lg font-medium text-white mb-2 leading-snug">
                   {featured.title}
                 </h2>
-                <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.6)", minHeight: 60 }}>
                   {featured.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mt-4">
+                <div className="flex flex-wrap gap-1.5 mb-4">
                   {featured.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
                 </div>
               </div>
-              <span className="cta-link mt-6">View case study <ArrowIcon /></span>
+              <span className="cta-link-sm">View case study <ArrowIcon size="sm" /></span>
             </div>
             <div className="order-1 sm:order-2 flex-1 min-w-0 flex justify-center sm:justify-start gap-1 items-center sm:items-start sm:mr-10 h-[190px] sm:h-[320px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -343,13 +343,13 @@ export default function Home() {
                     {/* Text — inside the circle */}
                     <div className="relative z-10 px-6 pt-4 pb-8" style={{ maxWidth: "90%" }}>
                       <p className="section-label mb-2">{project.category}</p>
-                      <h2 className="text-2xl text-white mb-3 leading-snug">
+                      <h2 className="text-lg font-medium text-white mb-2 leading-snug">
                         {project.title}
                       </h2>
-                      <p className="text-base leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.6)", minHeight: 72 }}>
+                      <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.6)", minHeight: 60 }}>
                         {project.description}
                       </p>
-                      <span className="cta-link">View project <ArrowIcon /></span>
+                      <span className="cta-link-sm">View project <ArrowIcon size="sm" /></span>
                     </div>
                   </div>
                 </motion.div>
