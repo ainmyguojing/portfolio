@@ -75,7 +75,7 @@ export default function Home() {
   return (
     <div className="min-h-screen pt-14 overflow-x-hidden px-4 sm:px-0">
       {/* ─── Hero ─── */}
-      <section className="relative z-10 max-w-[82vw] mx-auto pt-16 sm:pt-24 pb-8">
+      <section className="relative z-10 -mt-16 max-w-[82vw] mx-auto pt-16 pb-8 sm:mt-0 sm:pt-24">
         <div className="relative">
           {/* Pink shape — upper half circle (dome up) + lower half circle (dome down, offset right) */}
           <div className="absolute pointer-events-none select-none" style={{ left: -60, top: -16 }}>
@@ -196,7 +196,7 @@ export default function Home() {
       {/* ─── Featured — Community Q&A ─── */}
       {/* Pill IS the container — content can never overflow */}
       <motion.div
-        className="mobile-project-card mx-auto sm:ml-[calc((100vw-82vw)/2-60px)] mt-6 pt-24 pb-10 sm:py-20 px-8 sm:px-16 overflow-hidden rounded-t-full sm:rounded-full w-[82vw] sm:w-auto"
+        className="mobile-project-card mx-auto sm:ml-[calc((100vw-82vw)/2-60px)] mt-6 pt-16 pb-10 sm:py-20 px-8 sm:px-16 overflow-hidden rounded-t-full sm:rounded-full w-[82vw] sm:w-auto"
         style={{
           background: "#0C8F87",
           maxWidth: "calc(82vw + 60px)",
@@ -207,7 +207,7 @@ export default function Home() {
         transition={{ duration: 0.3, ease: [0.2, 0.8, 0.2, 1] }}
       >
         <Link href={featured.href} className="group block">
-          <div className="flex flex-col sm:flex-row gap-8 items-center">
+          <div className="flex flex-col gap-4 items-center sm:flex-row sm:gap-8">
             <div className="order-2 sm:order-1 flex-shrink-0 sm:w-[32%] flex flex-col justify-between sm:pl-4">
               <div>
                 <h2 className="text-3xl tracking-tight mb-3 leading-tight text-white">
@@ -266,7 +266,7 @@ export default function Home() {
                   transition={{ duration: 0.3, ease: [0.2, 0.8, 0.2, 1] }}
                 >
                   {/* Image area — inside the arch top */}
-                  <div className="px-6 pb-4 pt-24 sm:pt-16">
+                  <div className={`px-6 pb-4 ${project.href === "/work/recognition" || project.href === "/work/elite" ? "pt-20 sm:pt-16" : "pt-16"}`}>
                     <div className="relative flex items-center justify-center h-[240px] sm:h-[280px]">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={project.cover} alt={project.title} className="rounded-xl object-contain" style={{ width: "90%", maxHeight: "100%" }} />
@@ -331,7 +331,7 @@ export default function Home() {
                   <div className="relative flex w-full flex-col items-center sm:w-[85%]">
                     <div className="absolute hidden rounded-full sm:block" style={{ background: "#0C8F87", width: "100%", aspectRatio: "1 / 1", top: 0, left: 0 }} />
                     {/* Image — overflows the circle */}
-                    <div className="relative z-10 flex h-[280px] items-center justify-center pt-24 sm:h-[300px] sm:pt-10">
+                    <div className="relative z-10 flex h-[280px] items-center justify-center pt-16 sm:h-[300px] sm:pt-10">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={project.cover}

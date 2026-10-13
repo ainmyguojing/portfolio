@@ -161,7 +161,7 @@ export default function CommunityQA() {
     >
       {/* ──────────── Hero media ──────────── */}
       <VisualHint>Hero visual: One strong product image with the five results as large, simple typography.</VisualHint>
-      <div className="not-prose relative left-1/2 my-8 grid w-[80vw] -translate-x-1/2 grid-cols-[0.5fr_1.698fr] items-start gap-1">
+      <div className="not-prose mx-auto my-8 grid w-[95%] grid-cols-[0.5fr_1.698fr] items-start gap-1">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/Community%20Q%26A/Comp%201_2.gif"
@@ -179,26 +179,26 @@ export default function CommunityQA() {
 
       {/* ──────────── Impact ──────────── */}
       <h3>Impact at a Glance</h3>
-      <div className="not-prose grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+      <div className="not-prose mt-3 grid grid-cols-3 gap-2 sm:mt-4 sm:gap-4">
         {[
           { stat: "~30K", detail: "questions each month" },
           { stat: "40K+", detail: "answers each month" },
           { stat: "~7K", detail: "new contributors activated monthly" },
         ].map(({ stat, detail }) => (
-          <div key={stat} className="rounded-xl border border-neutral-100 bg-neutral-50 p-5">
-            <p className="text-lg font-semibold text-neutral-800 mb-1">{stat}</p>
-            <p className="text-sm text-neutral-500">{detail}</p>
+          <div key={stat} className="rounded-xl border border-neutral-100 bg-neutral-50 p-3 sm:p-5">
+            <p className="mb-1 text-base font-semibold text-neutral-800 sm:text-lg">{stat}</p>
+            <p className="text-[10px] leading-tight text-neutral-500 sm:text-sm sm:leading-normal">{detail}</p>
           </div>
         ))}
       </div>
-      <div className="not-prose grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+      <div className="not-prose mt-2 grid grid-cols-2 gap-2 sm:mt-4 sm:gap-4">
         {[
           { stat: "8M+", detail: "monthly impressions" },
           { stat: "~2×", detail: "the one-year retention of review contribution" },
         ].map(({ stat, detail }) => (
-          <div key={stat} className="rounded-xl border border-neutral-100 bg-neutral-50 p-5">
-            <p className="text-lg font-semibold text-neutral-800 mb-1">{stat}</p>
-            <p className="text-sm text-neutral-500">{detail}</p>
+          <div key={stat} className="rounded-xl border border-neutral-100 bg-neutral-50 p-3 sm:p-5">
+            <p className="mb-1 text-base font-semibold text-neutral-800 sm:text-lg">{stat}</p>
+            <p className="text-[10px] leading-tight text-neutral-500 sm:text-sm sm:leading-normal">{detail}</p>
           </div>
         ))}
       </div>

@@ -31,7 +31,7 @@ export default function Nav() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b" style={{ borderColor: "rgba(255,255,255,0.1)", background: "rgba(8,108,102,0.85)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }}>
+    <header className="fixed top-0 left-0 right-0 z-50 border-b" style={{ fontFamily: "var(--font-poppins)", borderColor: "rgba(255,255,255,0.1)", background: "rgba(8,108,102,0.85)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }}>
       <nav className="max-w-[82vw] mx-auto px-4 sm:px-0 h-14 flex items-center justify-between">
         <Link
           href="/"

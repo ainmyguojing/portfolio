@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import BackToChat from "@/components/BackToChat";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Jing Guo — Lead Product Designer",
@@ -16,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="text-white antialiased" style={{ background: "#086C66" }}>
+      <body className={`${poppins.variable} text-white antialiased`} style={{ background: "#086C66" }}>
         <Nav />
         <main>{children}</main>
         <BackToChat />
