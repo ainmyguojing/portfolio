@@ -80,7 +80,7 @@ export default function YearOnYelp() {
       sections={SECTIONS}
       currentHref="/work/year-on-yelp"
       introContent={
-        <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
+        <p className="text-base leading-relaxed" style={{ color: "var(--body-copy)" }}>
           I led product design and creative direction for Yelp&apos;s 2023 annual contributor recap.
           I transformed a long scrolling summary into a personalized story system, established the
           constellation theme, and coordinated illustration, animation, content, product, and engineering
@@ -139,7 +139,7 @@ export default function YearOnYelp() {
       <p>
         One participant explained why appreciation mattered:
       </p>
-      <blockquote className="border-l-2 pl-4 my-4 italic" style={{ borderColor: "var(--accent)", color: "rgba(255,255,255,0.7)" }}>
+      <blockquote className="border-l-2 pl-4 my-4 italic" style={{ borderColor: "var(--accent)", color: "var(--body-copy)" }}>
         &ldquo;I loved what this did at the end of the year to help reinforce that we contribute to the
         site for public service. Sharing the impact and feeling appreciated goes a long way for brand
         affinity.&rdquo;

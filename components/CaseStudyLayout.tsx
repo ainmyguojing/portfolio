@@ -295,7 +295,7 @@ export default function CaseStudyLayout({
           <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight tracking-tight mb-4">
             {title}
           </h1>
-          <p className="text-base leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.7)" }}>{subtitle}</p>
+          <p className="text-base leading-relaxed mb-6" style={{ color: "var(--body-copy)" }}>{subtitle}</p>
 
           {introContent && <div className="mb-10">{introContent}</div>}
 
@@ -330,7 +330,7 @@ export default function CaseStudyLayout({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, delay: 0.15, ease: [0.2, 0.8, 0.2, 1] }}
       >
-        <div className="prose prose-invert max-w-none prose-headings:font-bold prose-headings:text-white prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3 prose-p:leading-relaxed prose-strong:text-white" style={{ "--tw-prose-body": "rgba(255,255,255,0.7)", "--tw-prose-bullets": "rgba(255,255,255,0.4)" } as React.CSSProperties}>
+        <div className="prose prose-invert max-w-none prose-headings:font-bold prose-headings:text-white prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3 prose-p:leading-relaxed prose-strong:text-white" style={{ "--tw-prose-body": "var(--body-copy)", "--tw-prose-bullets": "rgba(255,255,255,0.4)" } as React.CSSProperties}>
           {children}
         </div>
       </motion.section>
@@ -386,7 +386,7 @@ export default function CaseStudyLayout({
                           {project.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
                         </div>
                       </div>
-                      <h2 className="text-base text-white mb-2 leading-snug">
+                      <h2 className="text-base font-medium text-white mb-2 leading-snug">
                         <span className="title-highlight px-1.5">{project.title}</span>
                       </h2>
                       <p className="text-sm leading-relaxed flex-1 mb-5" style={{ color: "rgba(255,255,255,0.6)" }}>

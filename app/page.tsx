@@ -147,7 +147,7 @@ export default function Home() {
 
       {/* ─── View my work / About me ─── */}
       <motion.section
-        className="relative z-10 flex w-full flex-col items-start gap-4 pb-10 pt-8 sm:flex-row sm:items-center sm:gap-12 sm:pt-[86px]"
+        className="relative z-10 flex w-full flex-col items-start gap-4 pb-10 pt-8 sm:flex-row sm:items-center sm:gap-12 sm:pt-[86px] lg:pt-[110px]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 3.0 }}

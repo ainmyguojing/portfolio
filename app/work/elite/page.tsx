@@ -89,7 +89,7 @@ export default function Elite() {
       sections={SECTIONS}
       currentHref="/work/elite"
       introContent={
-        <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
+        <p className="text-base leading-relaxed" style={{ color: "var(--body-copy)" }}>
           Yelp Elite is one of the company&apos;s most valuable contributor communities, but many
           potential candidates did not know it existed or understand how to join. I led design across
           key parts of the journey, introducing Elite to promising contributors, rebuilding its main

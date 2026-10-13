@@ -152,7 +152,7 @@ export default function CommunityQA() {
       sections={SECTIONS}
       currentHref="/work/community-qa"
       introContent={
-        <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
+        <p className="text-base leading-relaxed" style={{ color: "var(--body-copy)" }}>
           I led the design of Community Q&amp;A from early vision through validation, launch, and growth.
           The product expanded contribution beyond reviews and developed into a strategic source of fresh
           local content for search, SEO, and Yelp&apos;s AI experiences.

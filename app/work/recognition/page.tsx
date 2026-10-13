@@ -89,7 +89,7 @@ export default function Recognition() {
       sections={SECTIONS}
       currentHref="/work/recognition"
       introContent={
-        <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
+        <p className="text-base leading-relaxed" style={{ color: "var(--body-copy)" }}>
           I led the evolution of Yelp&apos;s Recognition experience from a temporary reward moment into
           a lasting part of the product. I designed where achievements live, how they build contributor
           pride, and how they help readers evaluate credibility. That work became a foundation for a
