@@ -51,6 +51,24 @@ export default function Nav() {
     { label: "About", href: "/about" },
   ];
 
+  if (isChat) {
+    return (
+      <Link
+        href="/"
+        className="fixed left-1/2 top-4 z-50 -translate-x-1/2 whitespace-nowrap rounded-full px-5 py-2 text-sm font-medium text-white shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110"
+        style={{
+          background: "rgba(255,37,142,0.92)",
+          border: "1px solid rgba(255,255,255,0.24)",
+          backdropFilter: "blur(14px)",
+          WebkitBackdropFilter: "blur(14px)",
+          boxShadow: "0 10px 28px rgba(0,65,61,0.24), inset 0 1px 0 rgba(255,255,255,0.22)",
+        }}
+      >
+        Switch to classic view
+      </Link>
+    );
+  }
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 border-b transition-transform duration-300 ease-out sm:translate-y-0 ${isMobileVisible ? "translate-y-0" : "-translate-y-full"}`}
@@ -64,7 +82,7 @@ export default function Nav() {
           Jing Guo
         </Link>
         <div className="flex items-center gap-6">
-          {!isChat && navItems.map((item) => {
+          {navItems.map((item) => {
             const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href.replace("/#projects", ""));
             return (
               <Link
@@ -79,15 +97,6 @@ export default function Nav() {
               </Link>
             );
           })}
-          {isChat && (
-            <Link
-              href="/"
-              className="text-sm font-medium text-white px-4 py-1.5 rounded-full hover:brightness-110 transition-all duration-200"
-              style={{ background: "#FF258E" }}
-            >
-              Switch to classic view
-            </Link>
-          )}
         </div>
       </nav>
     </header>
