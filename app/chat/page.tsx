@@ -241,7 +241,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <p className="text-base leading-relaxed text-neutral-700">
+                  <p className="text-sm leading-relaxed text-neutral-700 sm:text-base">
                     {phase === 1 ? (
                       <TypewriterText text={INTRO_LINES[0]} onComplete={handleLine1Complete} />
                     ) : (
@@ -249,7 +249,7 @@ export default function Home() {
                     )}
                   </p>
                   {phase >= 2 && (
-                    <p className="text-base leading-relaxed text-neutral-700 mt-1">
+                    <p className="mt-1 text-sm leading-relaxed text-neutral-700 sm:text-base">
                       {phase === 2 ? (
                         <TypewriterText text={INTRO_LINES[1]} onComplete={handleLine2Complete} />
                       ) : (
@@ -258,7 +258,7 @@ export default function Home() {
                     </p>
                   )}
                   {phase >= 3 && (
-                    <p className="text-base leading-relaxed text-neutral-700 mt-1 font-semibold">
+                    <p className="mt-1 text-sm font-semibold leading-relaxed text-neutral-700 sm:text-base">
                       {phase === 3 ? (
                         <TypewriterText text={INTRO_LINES[2]} onComplete={handleLine3Complete} speed={50} />
                       ) : (
@@ -267,7 +267,7 @@ export default function Home() {
                     </p>
                   )}
                   {phase >= 4 && (
-                    <p className="text-base leading-relaxed text-neutral-700 mt-1">
+                    <p className="mt-1 text-sm leading-relaxed text-neutral-700 sm:text-base">
                       {phase === 4 ? (
                         <TypewriterText text={INTRO_LINES[3]} onComplete={handleLine4Complete} />
                       ) : (
@@ -434,17 +434,10 @@ export default function Home() {
       </div>
 
       {/* Bottom input area */}
-      <AnimatePresence>
-        {phase >= 6 && (
-          <motion.div
-            className="sticky bottom-0 bg-gradient-to-t from-[#086C66] via-[#086C66] to-transparent pt-16 sm:pt-12 pb-[32px] px-[10px] sm:px-0"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, ease: [0.2, 0.8, 0.2, 1] }}
-          >
+      <div className="sticky bottom-0 bg-gradient-to-t from-[#086C66] via-[#086C66] to-transparent pt-16 sm:pt-12 pb-[32px] px-[10px] sm:px-0">
             <div className="max-w-full sm:max-w-[75vw] mx-auto">
               {/* Suggestion pills — horizontal scroll on mobile, wrap on desktop */}
-              {(messages.length === 0 ? SUGGESTION_PILLS.length > 0 : followUpSuggestions.length > 0) && !isLoading && (
+              {phase >= 6 && (messages.length === 0 ? SUGGESTION_PILLS.length > 0 : followUpSuggestions.length > 0) && !isLoading && (
                 <div className="flex sm:flex-wrap gap-2 mb-3 overflow-x-auto sm:overflow-x-visible" style={{ scrollbarWidth: "none" }}>
                   {(messages.length === 0 ? SUGGESTION_PILLS : followUpSuggestions).map((pill) => (
                     <button
@@ -465,7 +458,7 @@ export default function Home() {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Ask anything to know me and my work."
-                  className="flex-1 bg-transparent outline-none text-sm"
+                  className="flex-1 bg-transparent text-base outline-none sm:text-sm"
                   style={{ color: "#171717" }}
                   disabled={isLoading}
                 />
@@ -480,9 +473,7 @@ export default function Home() {
                 </button>
               </form>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      </div>
     </div>
   );
 }

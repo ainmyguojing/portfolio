@@ -22,6 +22,7 @@ const projects = [
     tags: ["Engagement", "Retention", "Systems Design"],
     href: "/work/recognition",
     cover: "/images/Recogntion-cover-image.svg",
+    mobileCover: "/images/Recogntion-cover-image-mobile.png",
   },
   {
     title: "Elite Contributor Ecosystem",
@@ -30,6 +31,7 @@ const projects = [
     tags: ["Community", "Identity", "Lifecycle Design"],
     href: "/work/elite",
     cover: "/images/Elite-cover-image.svg",
+    mobileCover: "/images/Elite-cover-image-mobile.png",
   },
   {
     title: "Year on Yelp",
@@ -38,6 +40,7 @@ const projects = [
     tags: ["Personalization", "Retention", "Identity"],
     href: "/work/year-on-yelp",
     cover: "/images/Year%20on%20Yelp/Year%20on%20Yelp.png",
+    mobileCover: null,
   },
 ];
 
@@ -49,6 +52,7 @@ const docAiProjects = [
       "Led end-to-end product design for a clinical-research SaaS platform, translating complex workflows into a cohesive web and mobile experience.",
     href: "/other-work/smart-omix",
     cover: "/images/Smart-omix.png",
+    mobileCover: null,
   },
   {
     title: "Design System",
@@ -57,6 +61,7 @@ const docAiProjects = [
       "Built a Material UI-based design system with shared components, governance, and engineer-ready documentation for Doc.ai’s SaaS products.",
     href: "/other-work/design-system",
     cover: "/images/Design-system.svg",
+    mobileCover: "/images/Design-system-mobile.png",
   },
 ];
 
@@ -265,7 +270,10 @@ export default function Home() {
                   <div className={`px-6 pb-4 ${project.href === "/work/recognition" || project.href === "/work/elite" ? "pt-20 sm:pt-16" : "pt-16"}`}>
                     <div className="relative flex items-center justify-center h-[240px] sm:h-[280px]">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={project.cover} alt={project.title} className="rounded-xl object-contain" style={{ width: "90%", maxHeight: "100%" }} />
+                      <picture className="contents">
+                        {project.mobileCover && <source media="(max-width: 639px)" srcSet={project.mobileCover} />}
+                        <img src={project.cover} alt={project.title} className="rounded-xl object-contain" style={{ width: "90%", maxHeight: "100%" }} />
+                      </picture>
                       {project.href === "/work/year-on-yelp" && (
                         /* eslint-disable-next-line @next/next/no-img-element */
                         <img
@@ -329,12 +337,15 @@ export default function Home() {
                     {/* Image — overflows the circle */}
                     <div className="relative z-10 flex h-[280px] items-center justify-center pt-16 sm:h-[300px] sm:pt-10">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={project.cover}
-                        alt={project.title}
-                        className={`rounded-xl object-contain ${project.href === "/other-work/design-system" ? "w-[80%] sm:w-[110%]" : "w-[110%]"}`}
-                        style={{ maxHeight: "100%" }}
-                      />
+                      <picture className="contents">
+                        {project.mobileCover && <source media="(max-width: 639px)" srcSet={project.mobileCover} />}
+                        <img
+                          src={project.cover}
+                          alt={project.title}
+                          className={`rounded-xl object-contain ${project.href === "/other-work/design-system" ? "w-[80%] sm:w-[110%]" : "w-[110%]"}`}
+                          style={{ maxHeight: "100%" }}
+                        />
+                      </picture>
                     </div>
                     {/* Text — inside the circle */}
                     <div className="relative z-10 px-6 pt-4 pb-8" style={{ maxWidth: "90%" }}>
@@ -354,7 +365,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <Footer />
+      <Footer floatingClearance />
     </div>
   );
 }
