@@ -99,7 +99,7 @@ export default function About() {
                 <div className="max-w-2xl">
                   <div className="flex items-baseline gap-2 mb-1">
                     <span className="text-sm font-semibold text-neutral-900">Doc.ai</span>
-                    <span className="text-xs text-neutral-400">September 2021 – October 2022</span>
+                    <span className="text-xs text-neutral-400">September 2020 – October 2022</span>
                   </div>
                   <p className="text-sm font-medium text-neutral-800 mb-1">Product Designer, SaaS</p>
                   <p className="text-sm text-neutral-600 leading-relaxed">
