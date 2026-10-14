@@ -22,7 +22,7 @@ function SectionDivider({ id }: { id?: string }) {
 
 function Card({ children, id }: { children: React.ReactNode; id?: string }) {
   return (
-    <div id={id} className="not-prose bg-white rounded-2xl border border-neutral-200 p-5 sm:p-10 my-6">
+    <div id={id} className="design-move-card not-prose bg-white rounded-2xl border border-neutral-200 p-5 sm:p-10 my-6">
       {children}
     </div>
   );

@@ -91,11 +91,10 @@ export default function Home() {
               background: "#FF258E",
             }} />
             {/* Lower half: flat top, dome down — offset right */}
-            <div style={{
+            <div className="home-hero-lower-dome" style={{
               width: 486, height: 243,
               borderRadius: "0 0 243px 243px",
               background: "#FF258E",
-              marginLeft: 230,
               marginTop: 12,
             }} />
           </div>

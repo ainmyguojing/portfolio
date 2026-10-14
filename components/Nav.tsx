@@ -84,16 +84,9 @@ export default function Nav() {
               aria-current={isActive ? "page" : undefined}
               className="relative inline-flex h-10 items-stretch text-sm text-white"
             >
-              {isActive ? (
-                <>
-                  <span className="absolute inset-0 rounded-full bg-[#FF258E]" aria-hidden="true" />
-                  <span className="mobile-nav-glass relative mx-4 flex items-center rounded-full border px-4">{item.label}</span>
-                </>
-              ) : (
-                <span className="mobile-nav-glass flex items-center rounded-full border px-4" style={{ color: "rgba(255,255,255,0.78)" }}>
-                  {item.label}
-                </span>
-              )}
+              <span className="mobile-nav-glass flex items-center rounded-full border px-4" style={{ color: "rgba(255,255,255,0.78)" }}>
+                {item.label}
+              </span>
             </Link>
           );
         })}
