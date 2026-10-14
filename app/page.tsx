@@ -127,7 +127,7 @@ export default function Home() {
           className="relative z-10 mt-3 lg:mt-5 lg:ml-[245px]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2.6 }}
+          transition={{ duration: 0.8, delay: 2.0 }}
         >
           <p className="mt-0 text-base sm:text-lg text-white leading-relaxed max-w-xl flex items-center gap-2 flex-wrap lg:mt-8">
             I&apos;m a Lead Product Designer at
@@ -150,7 +150,7 @@ export default function Home() {
         className="relative z-10 flex w-full flex-col items-start gap-4 pb-10 pt-8 sm:flex-row sm:items-center sm:gap-12 sm:pt-[86px] lg:translate-y-6 lg:pt-[110px]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 3.0 }}
+        transition={{ duration: 0.6, delay: 2.3 }}
       >
         <a href="#selected-work" className="group relative inline-flex items-center text-sm sm:text-base font-normal text-white transition-colors duration-200" style={{ height: 40 }}>
           <span
@@ -196,9 +196,8 @@ export default function Home() {
       {/* ─── Featured — Community Q&A ─── */}
       {/* Pill IS the container — content can never overflow */}
       <motion.div
-        className="mobile-project-card mx-auto sm:ml-[calc((100vw-82vw)/2-60px)] mt-6 pt-16 pb-10 sm:py-20 px-8 sm:px-16 overflow-hidden rounded-t-full sm:rounded-full w-[82vw] sm:w-auto"
+        className="project-glass mobile-project-card mx-auto sm:ml-[calc((100vw-82vw)/2-60px)] mt-6 pt-16 pb-10 sm:py-20 px-8 sm:px-16 overflow-hidden rounded-t-full sm:rounded-full w-[82vw] sm:w-auto"
         style={{
-          background: "#0C8F87",
           maxWidth: "calc(82vw + 60px)",
         }}
         initial={{ opacity: 0, y: 40 }}
@@ -254,14 +253,11 @@ export default function Home() {
               key={project.href}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 3.5 + i * 0.12, ease: [0, 0, 0.2, 1] }}
+              transition={{ duration: 0.8, delay: 2.8 + i * 0.12, ease: [0, 0, 0.2, 1] }}
             >
               <Link href={project.href} className="group block h-full">
                 <motion.div
-                  className="mobile-project-card flex flex-col h-full rounded-t-full sm:rounded-b-3xl"
-                  style={{
-                    background: "#0C8F87",
-                  }}
+                  className="project-glass mobile-project-card flex flex-col h-full rounded-t-full sm:rounded-b-3xl"
                   whileHover={{ scale: 1.04 }}
                   transition={{ duration: 0.3, ease: [0.2, 0.8, 0.2, 1] }}
                 >
@@ -323,13 +319,13 @@ export default function Home() {
             >
               <Link href={project.href} className="group block h-full">
                 <motion.div
-                  className="mobile-project-card h-full flex flex-col items-center relative overflow-hidden rounded-t-full bg-[#0C8F87] sm:overflow-visible sm:rounded-none sm:bg-transparent"
+                  className="project-glass doc-project-shell mobile-project-card h-full flex flex-col items-center relative overflow-hidden rounded-t-full sm:overflow-visible sm:rounded-none"
                   whileHover={{ scale: 1.04 }}
                   transition={{ duration: 0.3, ease: [0.2, 0.8, 0.2, 1] }}
                 >
                   {/* Circle background — contains image + text, image overflows */}
                   <div className="relative flex w-full flex-col items-center sm:w-[85%]">
-                    <div className="absolute hidden rounded-full sm:block" style={{ background: "#0C8F87", width: "100%", aspectRatio: "1 / 1", top: 0, left: 0 }} />
+                    <div className="project-glass absolute hidden rounded-full sm:block" style={{ width: "100%", aspectRatio: "1 / 1", top: 0, left: 0 }} />
                     {/* Image — overflows the circle */}
                     <div className="relative z-10 flex h-[280px] items-center justify-center pt-16 sm:h-[300px] sm:pt-10">
                       {/* eslint-disable-next-line @next/next/no-img-element */}

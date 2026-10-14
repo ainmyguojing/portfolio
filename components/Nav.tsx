@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 function HalfCircleBracket({ side }: { side: "left" | "right" }) {
   const r = side === "left"
@@ -24,6 +25,26 @@ function HalfCircleBracket({ side }: { side: "left" | "right" }) {
 export default function Nav() {
   const pathname = usePathname();
   const isChat = pathname === "/chat";
+  const [isMobileVisible, setIsMobileVisible] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    setIsMobileVisible(false);
+    lastScrollY.current = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const difference = currentScrollY - lastScrollY.current;
+
+      if (Math.abs(difference) < 6) return;
+
+      setIsMobileVisible(difference < 0);
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [pathname]);
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -31,7 +52,10 @@ export default function Nav() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b" style={{ borderColor: "rgba(255,255,255,0.1)", background: "rgba(8,108,102,0.85)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 border-b transition-transform duration-300 ease-out sm:translate-y-0 ${isMobileVisible ? "translate-y-0" : "-translate-y-full"}`}
+      style={{ borderColor: "rgba(255,255,255,0.1)", background: "rgba(8,108,102,0.85)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }}
+    >
       <nav className="max-w-[82vw] mx-auto px-4 sm:px-0 h-14 flex items-center justify-between">
         <Link
           href="/"
