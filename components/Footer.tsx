@@ -1,6 +1,6 @@
 export default function Footer({ floatingClearance = false }: { floatingClearance?: boolean }) {
   return (
-    <footer className="border-t mt-24" style={{ borderColor: "rgba(255,255,255,0.1)", background: "rgba(8,108,102,0.7)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }}>
+    <footer className={`border-t ${floatingClearance ? "mt-8 sm:mt-24" : "mt-24"}`} style={{ borderColor: "rgba(255,255,255,0.1)", background: "rgba(8,108,102,0.7)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }}>
       <div className={`max-w-4xl mx-auto px-6 pt-10 flex flex-col sm:flex-row items-center justify-between gap-4 ${floatingClearance ? "pb-28 sm:pb-24" : "pb-10"}`}>
         <p className="text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>
           Interested in my work?{" "}

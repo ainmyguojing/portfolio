@@ -306,7 +306,7 @@ export default function Home() {
       </section>
 
       {/* ─── Doc.ai projects ─── */}
-      <section className="relative z-10 max-w-[82vw] mx-auto pb-24 space-y-4">
+      <section className="relative z-10 max-w-[82vw] mx-auto pb-8 sm:pb-24 space-y-4">
         <motion.p
           className="section-label mb-5"
           initial={{ opacity: 0 }}
