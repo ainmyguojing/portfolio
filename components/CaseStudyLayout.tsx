@@ -389,7 +389,7 @@ export default function CaseStudyLayout({
                       <h2 className="text-base font-medium text-white mb-2 leading-snug">
                         <span className="title-highlight px-1.5">{project.title}</span>
                       </h2>
-                      <p className="text-sm leading-relaxed flex-1 mb-5" style={{ color: "rgba(255,255,255,0.6)" }}>
+                      <p className="text-sm leading-relaxed flex-1 mb-5" style={{ color: "var(--body-copy)" }}>
                         {project.description}
                       </p>
                       <span className="cta-link-sm">

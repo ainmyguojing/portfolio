@@ -147,7 +147,7 @@ export default function Home() {
 
       {/* ─── View my work / About me ─── */}
       <motion.section
-        className="relative z-10 flex w-full flex-col items-start gap-4 pb-10 pt-8 sm:flex-row sm:items-center sm:gap-12 sm:pt-[86px] lg:pt-[110px]"
+        className="relative z-10 flex w-full flex-col items-start gap-4 pb-10 pt-8 sm:flex-row sm:items-center sm:gap-12 sm:pt-[86px] lg:translate-y-6 lg:pt-[110px]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 3.0 }}
@@ -213,7 +213,7 @@ export default function Home() {
                 <h2 className="text-lg font-medium text-white mb-2 leading-snug">
                   {featured.title}
                 </h2>
-                <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.6)", minHeight: 60 }}>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--body-copy)", minHeight: 60 }}>
                   {featured.description}
                 </p>
                 <div className="flex flex-wrap gap-1.5 mb-4">
@@ -286,7 +286,7 @@ export default function Home() {
                     <h2 className="text-lg font-medium text-white mb-2 leading-snug">
                       {project.title}
                     </h2>
-                    <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.6)", minHeight: 60 }}>
+                    <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--body-copy)", minHeight: 60 }}>
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-1.5 mb-4">
@@ -346,7 +346,7 @@ export default function Home() {
                       <h2 className="text-lg font-medium text-white mb-2 leading-snug">
                         {project.title}
                       </h2>
-                      <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.6)", minHeight: 60 }}>
+                      <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--body-copy)", minHeight: 60 }}>
                         {project.description}
                       </p>
                       <span className="cta-link-sm">View project <ArrowIcon size="sm" /></span>
